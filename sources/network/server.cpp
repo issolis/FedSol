@@ -44,27 +44,40 @@ void Server::handleClient(int clientSockID)
     try
     {
 
-        uint32_t size;
+        uint32_t posBufferSize;
 
-        recvAll(clientSockID, &size, sizeof(size));
-        size = ntohl(size);
+        recvAll(clientSockID, &posBufferSize, sizeof(posBufferSize));
+        posBufferSize = ntohl(posBufferSize);
 
-        std::vector<char> buffer(size);
+        std::vector<char> posBuffer(posBufferSize);
+        recvAll(clientSockID, posBuffer.data(), posBufferSize);
 
-        std::cout << "Bytes Received " << size << std::endl;
+        uint32_t modelBufferSize;
 
-        recvAll(clientSockID, buffer.data(), size);
+        recvAll(clientSockID, &modelBufferSize, sizeof(modelBufferSize));
+        modelBufferSize = ntohl(modelBufferSize);
+
+        std::vector<char> modelBuffer(modelBufferSize);
+        recvAll(clientSockID, modelBuffer.data(), modelBufferSize);
+
 
         Model localmodel = Model(); 
+        localmodel.deserializePos(posBuffer); 
 
-        localmodel.deserializePos(buffer); 
-        std::cout<<localmodel.getNonSerializedPos()[0]<<std::endl; 
-        std::cout<<localmodel.getNonSerializedPos()[1]<<std::endl; 
-        std::cout<<localmodel.getNonSerializedPos()[2]<<std::endl; 
-        std::cout<<localmodel.getNonSerializedPos()[3]<<std::endl; 
+        Model modelReceived = localmodel.deserialize(modelBuffer); 
 
-        std::cout << "Received Bytes:\n";
-        printBytes(buffer.data(), buffer.size());
+        std::cout << modelReceived.getID() << std::endl; 
+
+        modelReceived.getArchitecture().printArchitecture(); 
+        modelReceived.serialize(); 
+
+        std::vector<char> buff = modelReceived.serialize();
+
+        printBytes(buff.data(), buff.size()); 
+
+
+        printBytes(modelBuffer.data(), modelBuffer.size());
+
 
         std::string response = "Message received";
 

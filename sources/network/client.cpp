@@ -29,18 +29,21 @@ Client::Client(unsigned short port, std::string serverIP)
     }
 }
 
-void Client::send(std::vector<char> &buffer)
+void Client::send(std::vector<char> &posBuffer, std::vector<char> &modelBuffer)
 {
-    uint32_t size = htonl(buffer.size());
+    uint32_t posBufferSize = htonl(posBuffer.size());
 
-    sendAll(sockID, &size, sizeof(size));
-    sendAll(sockID, buffer.data(), buffer.size());
+    sendAll(sockID, &posBufferSize, sizeof(posBufferSize));
+    sendAll(sockID, posBuffer.data(), posBuffer.size());
 
-    std::cout << "Sent Bytes:\n";
-    printBytes(buffer.data(), buffer.size());
+    uint32_t modelBufferSize = htonl(modelBuffer.size());
 
+    sendAll(sockID, &modelBufferSize, sizeof(modelBufferSize)); 
+    sendAll(sockID, modelBuffer.data(),  modelBuffer.size());
+
+
+   // Response 
     uint32_t resp_size;
-
     recvAll(sockID, &resp_size, sizeof(resp_size));
     resp_size = ntohl(resp_size);
 

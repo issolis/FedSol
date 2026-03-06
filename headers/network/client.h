@@ -18,7 +18,7 @@ class Client{
 
     public: 
         Client(unsigned short port, std::string serverIP); 
-        void send(std::vector<char> &buffer); 
+        void send(std::vector<char> &buffer,  std::vector<char> &modelBuffer); 
 
 }; 
 

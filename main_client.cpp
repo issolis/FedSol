@@ -14,15 +14,15 @@ int main()
 
     Layer input;
     input.type = LAYER_INPUT;
-    input.output_dim[0] = 28;
-    input.output_dim[1] = 28;
+    input.output_dim[0] = 30;
+    input.output_dim[1] = 30;
     input.output_dim[2] = 1;
 
     arch.addLayer(input);
 
     Layer dense;
     dense.type = LAYER_DENSE;
-    dense.in_features = 784;
+    dense.in_features = 900;
     dense.out_features = 10;
 
     arch.addLayer(dense);
@@ -34,7 +34,7 @@ int main()
         weights.push_back(i);
 
     // -------- CLIENT MODEL --------
-    Model clientModel(1, arch, weights);
+    Model clientModel(127368712, arch, weights);
 
     std::vector<char> modelBuffer = clientModel.serialize();
     std::vector<char> posBuffer = clientModel.getSerializedPos();
@@ -50,7 +50,7 @@ int main()
     printBytes(posBuffer.data(), posBuffer.size());
 
     Client client(9000, "127.0.0.1");
-    client.send(posBuffer);
+    client.send(posBuffer, modelBuffer);
 
         /*
 

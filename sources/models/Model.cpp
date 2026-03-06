@@ -144,3 +144,7 @@ std::vector<char> Model::getSerializedPos()
 {
     return serializedPos;
 }
+
+uint32_t Model::getID(){
+    return id; 
+}

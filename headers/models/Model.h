@@ -34,6 +34,8 @@ public:
     std::vector<uint32_t> getWeights() const; 
     std::vector<char> getSerializedPos();
 
+    uint32_t getID(); 
+
 };
 
 #endif
