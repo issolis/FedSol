@@ -44,6 +44,8 @@ std::vector<char> Model::serialize(){
 
     memcpy(ptr, weights.data(), numWeights * sizeof(uint32_t));
 
+    serializedPos = serializePos(); 
+
     return buffer;
 }
 
@@ -137,4 +139,8 @@ Architecture Model::Model::getArchitecture() const
 std::vector<uint32_t> Model::getWeights() const
 {
     return weights;
+}
+std::vector<char> Model::getSerializedPos()
+{
+    return serializedPos;
 }

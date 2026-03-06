@@ -15,6 +15,7 @@ private:
     std::vector<uint32_t> weights;
     std::vector<uint32_t> nonSerializedPos;
     std::vector<char> serializedPos;
+    std::vector<char> serializePos();
 
 public:
     Model(
@@ -24,7 +25,6 @@ public:
 
     Model();
 
-    std::vector<char> serializePos();
     std::vector<char> serialize();
     std::vector<uint32_t> getNonSerializedPos() ;
     void deserializePos(const std::vector<char> &buffer);
@@ -32,6 +32,8 @@ public:
     void setSerializedPos(const std::vector<char> &serializedPos);
     Architecture getArchitecture() const; 
     std::vector<uint32_t> getWeights() const; 
+    std::vector<char> getSerializedPos();
+
 };
 
 #endif

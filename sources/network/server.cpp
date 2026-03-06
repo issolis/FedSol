@@ -1,6 +1,5 @@
 #include "network/server.h"
 #include "models/Model.h"
-
 Server::Server(unsigned short port, uint32_t backlog)
 {
     server_fd = socket(AF_INET, SOCK_STREAM, 0);
@@ -44,6 +43,7 @@ void Server::handleClient(int clientSockID)
 {
     try
     {
+
         uint32_t size;
 
         recvAll(clientSockID, &size, sizeof(size));
@@ -55,41 +55,16 @@ void Server::handleClient(int clientSockID)
 
         recvAll(clientSockID, buffer.data(), size);
 
+        Model localmodel = Model(); 
+
+        localmodel.deserializePos(buffer); 
+        std::cout<<localmodel.getNonSerializedPos()[0]<<std::endl; 
+        std::cout<<localmodel.getNonSerializedPos()[1]<<std::endl; 
+        std::cout<<localmodel.getNonSerializedPos()[2]<<std::endl; 
+        std::cout<<localmodel.getNonSerializedPos()[3]<<std::endl; 
+
         std::cout << "Received Bytes:\n";
         printBytes(buffer.data(), buffer.size());
-
-        // ---------- PARSE PROTOCOL ----------
-
-        const char* ptr = buffer.data();
-
-        uint32_t posSize;
-        memcpy(&posSize, ptr, sizeof(posSize));
-        posSize = ntohl(posSize);
-        ptr += sizeof(posSize);
-
-        std::vector<char> posBuffer(ptr, ptr + posSize);
-        ptr += posSize;
-
-        uint32_t modelSize;
-        memcpy(&modelSize, ptr, sizeof(modelSize));
-        modelSize = ntohl(modelSize);
-        ptr += sizeof(modelSize);
-
-        std::vector<char> modelBuffer(ptr, ptr + modelSize);
-
-        std::cout << "posBuffer bytes: " << posSize << std::endl;
-        std::cout << "modelBuffer bytes: " << modelSize << std::endl;
-
-        // ---------- DESERIALIZE MODEL ----------
-
-        Model model;
-        model.setSerializedPos(posBuffer);
-
-        Model result = model.deserialize(modelBuffer);
-
-        std::cout << "Model received successfully\n";
-
-        // ---------- RESPONSE ----------
 
         std::string response = "Message received";
 
