@@ -1,0 +1,16 @@
+#ifndef LAYERTYPE_H
+#define LAYERTYPE_H
+typedef enum
+{
+    NONETYPE,
+    LAYER_INPUT,
+    LAYER_CONV2D,
+    LAYER_MAXPOOL2D,
+    LAYER_FLATTEN,
+    LAYER_DENSE,
+    LAYER_BATCHNORM,
+    LAYER_DROPOUT,
+    LAYER_ACTIVATION
+} LayerType;
+
+#endif
