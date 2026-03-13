@@ -36,7 +36,7 @@ int main()
     // -------- CLIENT MODEL --------
     Model clientModel(1, arch, weights);
 
-    std::vector<char> modelBuffer = clientModel.serialize();
+    std::vector<char> modelBuffer = clientModel.serializeModel();
     std::vector<char> posBuffer = clientModel.serializePos();
 
     std::cout << "Model bytes: " << modelBuffer.size() << std::endl;
@@ -47,7 +47,7 @@ int main()
 
     serverModel.setSerializedPos(posBuffer);
 
-    Model reconstructed = serverModel.deserialize(modelBuffer);
+    Model reconstructed = serverModel.deserializeModel(modelBuffer);
 
     // -------- PRINT RESULTS --------
     std::cout << "\nRecovered positions:\n";

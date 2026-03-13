@@ -1,17 +1,28 @@
 #include "models/Model.h"
 
-
 Model::Model(uint32_t id, Architecture architecture, std::vector<uint32_t> weights)
 {
     this->id = id;
     this->architecture = architecture;
     this->weights = weights;
+
+    this->serializeModel(); 
 }
 
-Model::Model(){
+Model::  Model(std::vector<char> serializedPos, std::vector<char> serializedModel){
+    this->serializedPos = serializedPos;
+    Model model = deserializeModel(serializedModel);
+    
+    this->id = model.id; 
+    this->architecture =  model.architecture; 
+    this->weights = model.weights; 
+    this->nonSerializedPos = model.nonSerializedPos; 
+    this->serializedPos = model.serializedPos; 
+
+    this->serializeModel();
 }
 
-std::vector<char> Model::serialize(){
+std::vector<char> Model::serializeModel(){
     nonSerializedPos.clear();
     uint32_t numLayers = architecture.getLayers().size();
     uint32_t numWeights = weights.size();
@@ -45,6 +56,7 @@ std::vector<char> Model::serialize(){
     memcpy(ptr, weights.data(), numWeights * sizeof(uint32_t));
 
     serializedPos = serializePos(); 
+    serialedModel = buffer; 
 
     return buffer;
 }
@@ -64,7 +76,7 @@ std::vector<char> Model::serialize(){
     return buffer;
 }
 
-void Model::deserializePos(const std::vector<char>& buffer){
+std::vector<uint32_t> Model::deserializePos(const std::vector<char>& buffer){
     nonSerializedPos.clear();
 
     const char* ptr = buffer.data();
@@ -80,9 +92,11 @@ void Model::deserializePos(const std::vector<char>& buffer){
 
         nonSerializedPos.push_back(value);
     }
+
+    return nonSerializedPos; 
 }
 
-Model Model::deserialize(const std::vector<char> &buffer){
+Model Model::deserializeModel(const std::vector<char> &buffer){
     deserializePos(serializedPos);
 
     const char* ptr = buffer.data();
@@ -90,7 +104,6 @@ Model Model::deserialize(const std::vector<char> &buffer){
     uint32_t id;
     memcpy(&id, ptr, sizeof(id));
     ptr += nonSerializedPos[0];
-    std::cout << nonSerializedPos[0] << std::endl;
 
     Architecture architecture;
     uint32_t numLayers;
@@ -123,15 +136,12 @@ Model Model::deserialize(const std::vector<char> &buffer){
     model.nonSerializedPos = nonSerializedPos;
     return model;
 }
+
 std::vector<uint32_t> Model::getNonSerializedPos() {
     return nonSerializedPos;
 }
 
-void Model::setSerializedPos(const std::vector<char>& serializedPos){
-    this->serializedPos = serializedPos;
-}
-
-Architecture Model::Model::getArchitecture() const
+Architecture Model::getArchitecture() const
 {
     return architecture;
 }
@@ -140,6 +150,7 @@ std::vector<uint32_t> Model::getWeights() const
 {
     return weights;
 }
+
 std::vector<char> Model::getSerializedPos()
 {
     return serializedPos;
@@ -147,4 +158,8 @@ std::vector<char> Model::getSerializedPos()
 
 uint32_t Model::getID(){
     return id; 
+}
+
+std::vector<char> Model::getSerializedModel(){
+    return serialedModel; 
 }

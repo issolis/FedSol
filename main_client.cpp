@@ -36,18 +36,11 @@ int main()
     // -------- CLIENT MODEL --------
     Model clientModel(127368712, arch, weights);
 
-    std::vector<char> modelBuffer = clientModel.serialize();
+    std::vector<char> modelBuffer = clientModel.getSerializedModel();
     std::vector<char> posBuffer = clientModel.getSerializedPos();
 
     std::cout << "Model bytes: " << modelBuffer.size() << std::endl;
     std::cout << "Pos bytes: " << posBuffer.size() << std::endl;
-
-    std::cout << clientModel.getNonSerializedPos()[0] << std::endl;
-    std::cout << clientModel.getNonSerializedPos()[1] << std::endl;
-    std::cout << clientModel.getNonSerializedPos()[2] << std::endl;
-    std::cout << clientModel.getNonSerializedPos()[3] << std::endl;
-
-    printBytes(posBuffer.data(), posBuffer.size());
 
     Client client(9000, "127.0.0.1");
     client.send(posBuffer, modelBuffer);

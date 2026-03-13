@@ -61,23 +61,11 @@ void Server::handleClient(int clientSockID)
         recvAll(clientSockID, modelBuffer.data(), modelBufferSize);
 
 
-        Model localmodel = Model(); 
-        localmodel.deserializePos(posBuffer); 
-
-        Model modelReceived = localmodel.deserialize(modelBuffer); 
+        Model modelReceived = Model(posBuffer,modelBuffer); 
 
         std::cout << modelReceived.getID() << std::endl; 
 
         modelReceived.getArchitecture().printArchitecture(); 
-        modelReceived.serialize(); 
-
-        std::vector<char> buff = modelReceived.serialize();
-
-        printBytes(buff.data(), buff.size()); 
-
-
-        printBytes(modelBuffer.data(), modelBuffer.size());
-
 
         std::string response = "Message received";
 
