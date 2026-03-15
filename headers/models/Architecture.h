@@ -2,26 +2,22 @@
 #define ARCHITECTURE_H
 
 #include <vector>
-#include "models/Layer.h"
 #include <iostream>
+#include "models/Layer.h"
 
 class Architecture
 {
 private:
     std::vector<Layer> layers;
+
 public:
     Architecture();
     ~Architecture();
+
     void addLayer(const Layer& layer);
+
     void printArchitecture();
-    std::vector<Layer> getLayers() const;
-   
+    const std::vector<Layer>& getLayers() const;
 };
-
-
-
-
-
-
 
 #endif

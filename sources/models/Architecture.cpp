@@ -1,4 +1,5 @@
 #include "models/Architecture.h"
+#include <iostream>
 
 Architecture::Architecture(){
 }
@@ -8,9 +9,10 @@ Architecture::~Architecture(){
 
 void Architecture::addLayer(const Layer& layer){
     layers.push_back(layer);
-}  
+}
 
 void Architecture::printArchitecture(){
+
     std::cout << "Architecture with " << layers.size() << " layers:\n";
 
     for (size_t i = 0; i < layers.size(); ++i) {
@@ -21,18 +23,18 @@ void Architecture::printArchitecture(){
 
         switch(layer.type){
 
-            case NONETYPE:
+            case LayerType::NONETYPE:
                 std::cout << "NONE";
                 break;
 
-            case LAYER_INPUT:
+            case LayerType::LAYER_INPUT:
                 std::cout << "INPUT "
                           << "(" << layer.output_dim[0] << ", "
                           << layer.output_dim[1] << ", "
                           << layer.output_dim[2] << ")";
                 break;
 
-            case LAYER_CONV2D:
+            case LayerType::LAYER_CONV2D:
                 std::cout << "CONV2D "
                           << "kernel=" << layer.kernel_size
                           << " stride=" << layer.stride
@@ -45,13 +47,13 @@ void Architecture::printArchitecture(){
                           << layer.output_dim[2] << ")";
                 break;
 
-            case LAYER_MAXPOOL2D:
+            case LayerType::LAYER_MAXPOOL2D:
                 std::cout << "MAXPOOL2D "
                           << "kernel=" << layer.kernel_size
                           << " stride=" << layer.stride;
                 break;
 
-            case LAYER_FLATTEN:
+            case LayerType::LAYER_FLATTEN:
                 std::cout << "FLATTEN "
                           << "in=(" << layer.input_dim[0] << ", "
                           << layer.input_dim[1] << ", "
@@ -59,23 +61,23 @@ void Architecture::printArchitecture(){
                           << "out=" << layer.out_features;
                 break;
 
-            case LAYER_DENSE:
+            case LayerType::LAYER_DENSE:
                 std::cout << "DENSE "
                           << "(" << layer.in_features
                           << " -> " << layer.out_features << ")";
                 break;
 
-            case LAYER_BATCHNORM:
+            case LayerType::LAYER_BATCHNORM:
                 std::cout << "BATCHNORM";
                 break;
 
-            case LAYER_DROPOUT:
+            case LayerType::LAYER_DROPOUT:
                 std::cout << "DROPOUT";
                 break;
 
-            case LAYER_ACTIVATION:
+            case LayerType::LAYER_ACTIVATION:
                 std::cout << "ACTIVATION "
-                          << layer.activation;
+                          << static_cast<uint32_t>(layer.activation);
                 break;
 
             default:
@@ -86,6 +88,7 @@ void Architecture::printArchitecture(){
         std::cout << "\n";
     }
 }
-std::vector<Layer> Architecture::getLayers() const{
+
+const std::vector<Layer>& Architecture::getLayers() const{
     return layers;
 }

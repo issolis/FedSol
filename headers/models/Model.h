@@ -17,18 +17,13 @@ private:
     std::vector<char> serializedPos;
     std::vector<char> serialedModel;
 
-    std::vector<uint32_t> deserializePos(const std::vector<char> &buffer);
-    Model deserializeModel(const std::vector<char> &buffer);
-    std::vector<char> serializePos();
-    std::vector<char> serializeModel();
-
 public:
     Model(
         uint32_t id,
         Architecture architecture,
         std::vector<uint32_t> weights);
 
-    Model(std::vector<char> serializedPos, std::vector<char> serializedModel);
+    Model(); 
 
     std::vector<uint32_t> getNonSerializedPos();
     Architecture getArchitecture() const;

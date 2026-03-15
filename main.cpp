@@ -1,66 +1,98 @@
 #include <iostream>
-#include <vector>
-
 #include "models/Model.h"
 #include "models/Architecture.h"
-#include "models/Layer.h"
+#include "serializer/modelSerializer.h"
 
 int main()
 {
-    // -------- CREATE ARCHITECTURE --------
+    std::cout << "=== TEST SERIALIZER ===\n\n";
+
+    // ------------------------------------------------
+    // 1. Crear arquitectura
+    // ------------------------------------------------
+
     Architecture arch;
 
     Layer input;
-    input.type = LAYER_INPUT;
+    input.type = LayerType::LAYER_INPUT;
     input.output_dim[0] = 28;
     input.output_dim[1] = 28;
     input.output_dim[2] = 1;
 
-    arch.addLayer(input);
+    Layer conv;
+    conv.type = LayerType::LAYER_CONV2D;
+    conv.kernel_size = 3;
+    conv.stride = 1;
+    conv.padding = 1;
+    conv.input_dim[0] = 28;
+    conv.input_dim[1] = 28;
+    conv.input_dim[2] = 1;
+    conv.output_dim[0] = 28;
+    conv.output_dim[1] = 28;
+    conv.output_dim[2] = 32;
 
     Layer dense;
-    dense.type = LAYER_DENSE;
-    dense.in_features = 784;
+    dense.type = LayerType::LAYER_DENSE;
+    dense.in_features = 5408;
     dense.out_features = 10;
 
+    arch.addLayer(input);
+    arch.addLayer(conv);
     arch.addLayer(dense);
 
-    // -------- CREATE WEIGHTS --------
+    std::cout << "Original architecture:\n";
+    arch.printArchitecture();
+    std::cout << "\n";
+
+    // ------------------------------------------------
+    // 2. Crear weights
+    // ------------------------------------------------
+
     std::vector<uint32_t> weights;
 
-    for(uint32_t i = 0; i < 10; i++)
-    {
-        weights.push_back(i);
-    }
+    for (uint32_t i = 0; i < 10; i++)
+        weights.push_back(i * 10);
 
-    // -------- CLIENT MODEL --------
-    Model clientModel(1, arch, weights);
+    // ------------------------------------------------
+    // 3. Crear modelo
+    // ------------------------------------------------
 
-    std::vector<char> modelBuffer = clientModel.serializeModel();
-    std::vector<char> posBuffer = clientModel.serializePos();
+    Model model(1, arch, weights);
 
-    std::cout << "Model bytes: " << modelBuffer.size() << std::endl;
-    std::cout << "Pos bytes: " << posBuffer.size() << std::endl;
+    // ------------------------------------------------
+    // 4. Serializar
+    // ------------------------------------------------
 
-    // -------- SERVER SIDE --------
-    Model serverModel;
+    auto serialized = ModelSerializer::serialize(model);
 
-    serverModel.setSerializedPos(posBuffer);
+    std::vector<char> posBuffer = serialized.first;
+    std::vector<char> modelBuffer = serialized.second;
 
-    Model reconstructed = serverModel.deserializeModel(modelBuffer);
+    std::cout << "Serialized sizes:\n";
+    std::cout << "posBuffer: " << posBuffer.size() << "\n";
+    std::cout << "modelBuffer: " << modelBuffer.size() << "\n\n";
 
-    // -------- PRINT RESULTS --------
-    std::cout << "\nRecovered positions:\n";
+    // ------------------------------------------------
+    // 5. Deserializar
+    // ------------------------------------------------
 
-    std::vector<uint32_t> pos = reconstructed.getNonSerializedPos();
+    Model recovered =
+        ModelSerializer::deserialize(posBuffer, modelBuffer);
 
-    for(size_t i = 0; i < pos.size(); i++)
-    {
-        std::cout << "pos[" << i << "] = " << pos[i] << std::endl;
-    }
+    // ------------------------------------------------
+    // 6. Verificar
+    // ------------------------------------------------
 
-    std::cout << "\nRecovered architecture:\n";
-    reconstructed.getArchitecture().printArchitecture();
+    std::cout << "Recovered architecture:\n";
+
+    recovered.getArchitecture().printArchitecture();
+
+    std::cout << "\nRecovered weights:\n";
+
+    for (uint32_t w : recovered.getWeights())
+        std::cout << w << " ";
+
+    std::cout << "\n\nTEST COMPLETED\n";
 
     return 0;
 }

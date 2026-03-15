@@ -1,5 +1,7 @@
 #include "network/server.h"
 #include "models/Model.h"
+#include "serializer/modelSerializer.h"
+
 Server::Server(unsigned short port, uint32_t backlog)
 {
     server_fd = socket(AF_INET, SOCK_STREAM, 0);
@@ -26,6 +28,8 @@ Server::Server(unsigned short port, uint32_t backlog)
     listen(server_fd, backlog);
 
     std::cout << "Server listening on port " << port << std::endl;
+
+    serializer = Serializer();
 }
 
 void Server::run()
@@ -35,11 +39,46 @@ void Server::run()
         int clientSock = accept(server_fd, nullptr, nullptr);
         if (clientSock < 0)
             continue;
+
         std::thread(&Server::handleClient, this, clientSock).detach();
     }
 }
 
 void Server::handleClient(int clientSockID)
+{
+    std::cout << "Client connected: " << clientSockID << std::endl;
+
+    uint32_t bufferSize;
+
+    recvAll(clientSockID, &bufferSize, sizeof(bufferSize));
+    bufferSize = ntohl(bufferSize);
+
+    std::vector<char> buffer(bufferSize);
+    recvAll(clientSockID, buffer.data(), bufferSize);
+
+    auto [code, content] = serializer.deserializeMessage(buffer);
+
+    std::cout << "[SERVER] Code: " << code << std::endl;
+    std::cout << "[SERVER] Content: " << content << std::endl;
+
+    switch (code)
+    {
+    case 0:
+    {
+        uint32_t id = receiveID(clientSockID);
+        break;
+    }
+    case 1:
+        receiveModel(clientSockID);
+        close(clientSockID);
+        break;
+
+    default:
+        break;
+    }
+}
+
+void Server::receiveModel(int clientSockID)
 {
     try
     {
@@ -60,10 +99,9 @@ void Server::handleClient(int clientSockID)
         std::vector<char> modelBuffer(modelBufferSize);
         recvAll(clientSockID, modelBuffer.data(), modelBufferSize);
 
+        Model modelReceived = ModelSerializer::deserialize(posBuffer, modelBuffer);
 
-        Model modelReceived = Model(posBuffer,modelBuffer); 
-
-        std::cout << modelReceived.getID() << std::endl; 
+        std::cout<<modelReceived.getID()<<std::endl; 
 
         modelReceived.getArchitecture().printArchitecture(); 
 
@@ -82,6 +120,12 @@ void Server::handleClient(int clientSockID)
     {
         std::cout << "Unknown client error\n";
     }
+}
 
-    close(clientSockID);
+uint32_t Server::receiveID(int sockID)
+{
+    std::vector<char> buffer(sizeof(uint32_t));
+    recvAll(sockID, buffer.data(), sizeof(uint32_t));
+    uint32_t nodeID = Serializer::deserializeID(buffer);
+    return nodeID;
 }

@@ -6,14 +6,18 @@ SERVER_SRC = main_server.cpp \
              sources/network/net_utils.cpp \
              sources/models/Model.cpp \
              sources/models/Architecture.cpp \
-             sources/models/Layer.cpp
+             sources/models/Layer.cpp \
+             sources/serializer/*.cpp
+             
 
 CLIENT_SRC = main_client.cpp \
              sources/network/client.cpp \
              sources/network/net_utils.cpp \
              sources/models/Model.cpp \
              sources/models/Architecture.cpp \
-             sources/models/Layer.cpp
+             sources/models/Layer.cpp \
+             sources/serializer/serializer.cpp \
+             sources/serializer/modelSerializer.cpp
 
 SERVER_BIN = server_app
 CLIENT_BIN = client_app

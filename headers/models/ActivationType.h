@@ -1,14 +1,16 @@
 #ifndef ACTIVATIONTYPE_H
 #define ACTIVATIONTYPE_H
 
-typedef enum
+#include <cstdint>
+
+enum class ActivationType : uint32_t
 {
-    NONEACT, 
-    ACT_NONE,
-    ACT_RELU,
-    ACT_SIGMOID,
-    ACT_TANH,
-    ACT_SOFTMAX
-} ActivationType;
+    NONEACT = 0,
+    ACT_NONE = 1,
+    ACT_RELU = 2,
+    ACT_SIGMOID = 3,
+    ACT_TANH = 4,
+    ACT_SOFTMAX = 5
+};
 
 #endif
