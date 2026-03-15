@@ -12,20 +12,20 @@
 #include "models/Model.h"
 #include "net_utils.h"
 
+
 class Client{
     private:
         unsigned short port;
         std::string serverIP; 
-        void sendMessage(int sockID, int code, std::string content, bool closeConnection); 
+        std::string password; 
         Model model; 
 
     public: 
-        Client(unsigned short port, std::string serverIP); 
+        Client(unsigned short port, std::string serverIP, std::string password); 
         void sendModel(); 
         void listener(); 
         void setModel(Model &model); 
         void sendID(int sockID);
-        int getNewConnection();  
 
 
 

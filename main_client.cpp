@@ -140,7 +140,7 @@ int main()
     Model clientModel(21, arch, weights); // CAMBIO: evitar new
 
     // -------- CLIENT --------
-    Client client(9000, "127.0.0.1");
+    Client client(9000, "127.0.0.1", "federated123" );
 
     client.setModel(clientModel); // pasamos dirección
     client.listener();

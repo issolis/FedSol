@@ -56,12 +56,13 @@ void Server::handleClient(int clientSockID)
     std::vector<char> buffer(bufferSize);
     recvAll(clientSockID, buffer.data(), bufferSize);
 
-    auto [code, content] = serializer.deserializeMessage(buffer);
+    Message message = serializer.deserializeMessage(buffer);
 
-    std::cout << "[SERVER] Code: " << code << std::endl;
-    std::cout << "[SERVER] Content: " << content << std::endl;
+    std::cout << "[SERVER] Code: " << message.code << std::endl;
+    std::cout << "[SERVER] Content: " << message.content << std::endl;
+    std::cout << "[SERVER] Password: " << message.password << std::endl;
 
-    switch (code)
+    switch (message.code)
     {
     case 0:
     {

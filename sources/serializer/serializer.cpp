@@ -1,49 +1,67 @@
 #include "serializer/serializer.h"
 #include <cstring>
+#include <arpa/inet.h>
 
 Serializer::Serializer()
 {
 }
-
-std::vector<char> Serializer::serializeMessage(uint32_t code, std::string content)
+std::vector<char> Serializer::serializeMessage(
+    int code,
+    const std::string& password,
+    const std::string& content)
 {
+    uint32_t passwordSize = password.size();
     uint32_t contentSize = content.size();
 
     uint32_t totalSize =
-        sizeof(uint32_t) + // code
-        sizeof(uint32_t) + // content size
-        contentSize;       // content
+        sizeof(code) +
+        sizeof(passwordSize) + passwordSize +
+        sizeof(contentSize) + contentSize;
 
     std::vector<char> buffer(totalSize);
-    char *ptr = buffer.data();
 
-    memcpy(ptr, &code, sizeof(uint32_t));
-    ptr += sizeof(uint32_t);
+    char* ptr = buffer.data();
 
-    memcpy(ptr, &contentSize, sizeof(uint32_t));
-    ptr += sizeof(uint32_t);
+    memcpy(ptr, &code, sizeof(code));
+    ptr += sizeof(code);
+
+    memcpy(ptr, &passwordSize, sizeof(passwordSize));
+    ptr += sizeof(passwordSize);
+
+    memcpy(ptr, password.data(), passwordSize);
+    ptr += passwordSize;
+
+    memcpy(ptr, &contentSize, sizeof(contentSize));
+    ptr += sizeof(contentSize);
 
     memcpy(ptr, content.data(), contentSize);
 
     return buffer;
 }
 
-std::pair<uint32_t, std::string> Serializer::deserializeMessage(std::vector<char> buffer)
+Message Serializer::deserializeMessage(const std::vector<char>& buffer)
 {
-    const char *ptr = buffer.data();
+    Message msg;
+    const char* ptr = buffer.data();
 
-    uint32_t code;
+    uint32_t passwordSize;
     uint32_t contentSize;
 
-    memcpy(&code, ptr, sizeof(uint32_t));
-    ptr += sizeof(uint32_t);
+    memcpy(&msg.code, ptr, sizeof(msg.code));
+    ptr += sizeof(msg.code);
 
-    memcpy(&contentSize, ptr, sizeof(uint32_t));
-    ptr += sizeof(uint32_t);
+    memcpy(&passwordSize, ptr, sizeof(passwordSize));
+    ptr += sizeof(passwordSize);
 
-    std::string content(ptr, ptr + contentSize);
+    msg.password.assign(ptr, passwordSize);
+    ptr += passwordSize;
 
-    return {code, content};
+    memcpy(&contentSize, ptr, sizeof(contentSize));
+    ptr += sizeof(contentSize);
+
+    msg.content.assign(ptr, contentSize);
+
+    return msg;
 }
 
 uint32_t Serializer::deserializeID(const std::vector<char>& buffer)

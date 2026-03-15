@@ -1,18 +1,22 @@
 #include "network/client.h"
 #include <utility>
 #include "serializer/modelSerializer.h"
+#include "network/connection.h"
 
-Client::Client(unsigned short port, std::string serverIP)
+Client::Client(unsigned short port, std::string serverIP, std::string password)
 {
     this->port = port;
     this->serverIP = serverIP;
+    this->password =  password;
 }
 
 void Client::sendModel()
 {
-    int sockID = getNewConnection();
+    int sockID = Connection::createConnection(serverIP, port);
+    std::string content = "initialConnection";
 
-    sendMessage(sockID, 1, "sending model", false);
+    Connection::sendMessage(sockID, 1, content, password, false);
+    
 
     std::pair<std::vector<char>, std::vector<char>> serializedModel = ModelSerializer::serialize(model); 
 
@@ -45,56 +49,13 @@ void Client::sendModel()
     close(sockID);
 }
 
-int Client::getNewConnection()
-{
-    int sockID = socket(AF_INET, SOCK_STREAM, 0);
-    sockaddr_in server_addr{};
 
-    if (sockID < 0)
-    {
-        std::cerr << "Socket creation error\n";
-        exit(EXIT_FAILURE);
-    }
-
-    memset(&server_addr, 0, sizeof(server_addr));
-
-    server_addr.sin_family = AF_INET;
-    server_addr.sin_port = htons(port);
-
-    if (inet_pton(AF_INET, serverIP.c_str(), &server_addr.sin_addr) <= 0)
-    {
-        std::cerr << "Invalid address\n";
-        exit(EXIT_FAILURE);
-    }
-
-    if (connect(sockID, (sockaddr *)&server_addr, sizeof(server_addr)) < 0)
-    {
-        std::cerr << "Connection failed\n";
-        exit(EXIT_FAILURE);
-    }
-
-    return sockID;
-}
-
-void Client::sendMessage(int sockID, int code, std::string content, bool closeConnection)
-{
-
-    Serializer serializer = Serializer();
-    std::vector<char> buffer = serializer.serializeMessage(code, content);
-
-    uint32_t bufferSize = htonl(buffer.size());
-
-    sendAll(sockID, &bufferSize, sizeof(bufferSize));
-    sendAll(sockID, buffer.data(), buffer.size());
-
-    if (closeConnection)
-        close(sockID);
-}
 
 void Client::listener()
 {
-    int sockID = getNewConnection();
-    sendMessage(sockID, 0, "initialConnection", false);
+    int sockID = Connection::createConnection(serverIP, port);
+    std::string content = "initialConnection"; 
+    Connection::sendMessage(sockID, 0, content, password, false);
     sendID(sockID);
 
     sendModel(); 
@@ -108,12 +69,12 @@ void Client::listener()
         bufferSize = ntohl(bufferSize);
         std::vector<char> buffer(bufferSize);
         recvAll(sockID, buffer.data(), bufferSize);
-        auto [code, content] = serializer.deserializeMessage(buffer);
+        Message message= serializer.deserializeMessage(buffer);
 
         std::cout << "[CLIENT] Command received: "
-                  << code << " content: " << content << std::endl;
+                  << message.code << " content: " << message.password << std::endl;
 
-        switch (code)
+        switch (message.code)
         {
             //
         }
