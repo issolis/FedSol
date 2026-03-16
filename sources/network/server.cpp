@@ -46,36 +46,47 @@ void Server::run()
 
 void Server::handleClient(int clientSockID)
 {
-    std::cout << "Client connected: " << clientSockID << std::endl;
 
-    uint32_t bufferSize;
-
-    recvAll(clientSockID, &bufferSize, sizeof(bufferSize));
-    bufferSize = ntohl(bufferSize);
-
-    std::vector<char> buffer(bufferSize);
-    recvAll(clientSockID, buffer.data(), bufferSize);
-
-    Message message = serializer.deserializeMessage(buffer);
-
-    std::cout << "[SERVER] Code: " << message.code << std::endl;
-    std::cout << "[SERVER] Content: " << message.content << std::endl;
-    std::cout << "[SERVER] Password: " << message.password << std::endl;
-
-    switch (message.code)
+    try
     {
-    case 0:
-    {
-        uint32_t id = receiveID(clientSockID);
-        break;
+        std::cout << "Client connected: " << clientSockID << std::endl;
+
+        uint32_t bufferSize;
+        recvAll(clientSockID, &bufferSize, sizeof(bufferSize));
+        bufferSize = ntohl(bufferSize);
+
+        std::vector<char> buffer(bufferSize);
+        recvAll(clientSockID, buffer.data(), bufferSize);
+
+        Message message = serializer.deserializeMessage(buffer);
+
+        std::cout << "[SERVER] Code: " << message.code << std::endl;
+        std::cout << "[SERVER] Content: " << message.content << std::endl;
+
+
+        switch (message.code)
+        {
+        case 0:
+        {
+            authenticate(message.password, clientSockID);
+            break;
+        }
+
+        case 1:
+        {
+            receiveModel(clientSockID);
+            close(clientSockID);
+            break;
+        }
+
+        default:
+            std::cout << "[SERVER] Unknown message code" << std::endl;
+            break;
+        }
     }
-    case 1:
-        receiveModel(clientSockID);
-        close(clientSockID);
-        break;
-
-    default:
-        break;
+    catch (const std::exception &e)
+    {
+        std::cerr << e.what() << '\n';
     }
 }
 
@@ -102,9 +113,9 @@ void Server::receiveModel(int clientSockID)
 
         Model modelReceived = ModelSerializer::deserialize(posBuffer, modelBuffer);
 
-        std::cout<<modelReceived.getID()<<std::endl; 
+        std::cout << modelReceived.getID() << std::endl;
 
-        modelReceived.getArchitecture().printArchitecture(); 
+        modelReceived.getArchitecture().printArchitecture();
 
         std::string response = "Message received";
 
@@ -121,6 +132,34 @@ void Server::receiveModel(int clientSockID)
     {
         std::cout << "Unknown client error\n";
     }
+}
+
+void Server::authenticate(std::string &password, int clientSockID)
+{
+    std::string response;
+
+    if (!authManager.authenticate(password))
+    {
+        std::cout << "[SERVER] Authentication failed\n";
+
+        response = "AUTH_FAILED";
+
+        uint32_t resp_size = htonl(response.size());
+        sendAll(clientSockID, &resp_size, sizeof(resp_size));
+        sendAll(clientSockID, response.data(), response.size());
+
+        close(clientSockID);
+        return;
+    }
+
+    std::cout << "[SERVER] Authentication success\n";
+    response = "AUTH_SUCCESSFUL";
+    uint32_t resp_size = htonl(response.size());
+    sendAll(clientSockID, &resp_size, sizeof(resp_size));
+    sendAll(clientSockID, response.data(), response.size());
+    uint32_t id = receiveID(clientSockID);
+    clientMap[id] = clientSockID;
+    std::cout << "Client registered with id: " << id << std::endl;
 }
 
 uint32_t Server::receiveID(int sockID)

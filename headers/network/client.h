@@ -21,13 +21,12 @@ class Client{
         Model model; 
 
     public: 
-        Client(unsigned short port, std::string serverIP, std::string password); 
+        Client(unsigned short port, std::string serverIP, std::string password, Model &model); 
         void sendModel(); 
         void listener(); 
         void setModel(Model &model); 
         void sendID(int sockID);
-
-
+        bool authenticate(int sockID, const std::string& password, uint32_t id); 
 
 }; 
 

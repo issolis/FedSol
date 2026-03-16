@@ -3,11 +3,12 @@
 #include "serializer/modelSerializer.h"
 #include "network/connection.h"
 
-Client::Client(unsigned short port, std::string serverIP, std::string password)
+Client::Client(unsigned short port, std::string serverIP, std::string password, Model &model)
 {
     this->port = port;
     this->serverIP = serverIP;
-    this->password =  password;
+    this->password = password;
+    this->model = model;
 }
 
 void Client::sendModel()
@@ -16,12 +17,11 @@ void Client::sendModel()
     std::string content = "initialConnection";
 
     Connection::sendMessage(sockID, 1, content, password, false);
-    
 
-    std::pair<std::vector<char>, std::vector<char>> serializedModel = ModelSerializer::serialize(model); 
+    std::pair<std::vector<char>, std::vector<char>> serializedModel = ModelSerializer::serialize(model);
 
-    std::vector<char> modelBuffer = serializedModel.second; 
-    std::vector<char> posBuffer = serializedModel.first; 
+    std::vector<char> modelBuffer = serializedModel.second;
+    std::vector<char> posBuffer = serializedModel.first;
 
     uint32_t posBufferSize = htonl(posBuffer.size());
 
@@ -49,16 +49,16 @@ void Client::sendModel()
     close(sockID);
 }
 
-
-
 void Client::listener()
 {
     int sockID = Connection::createConnection(serverIP, port);
-    std::string content = "initialConnection"; 
-    Connection::sendMessage(sockID, 0, content, password, false);
-    sendID(sockID);
 
-    sendModel(); 
+    if (!authenticate(sockID, password, model.getID()))
+    {
+        std::cout << "Login failed\n";
+        close(sockID);
+        return;
+    }
     Serializer serializer;
 
     while (true)
@@ -69,7 +69,7 @@ void Client::listener()
         bufferSize = ntohl(bufferSize);
         std::vector<char> buffer(bufferSize);
         recvAll(sockID, buffer.data(), bufferSize);
-        Message message= serializer.deserializeMessage(buffer);
+        Message message = serializer.deserializeMessage(buffer);
 
         std::cout << "[CLIENT] Command received: "
                   << message.code << " content: " << message.password << std::endl;
@@ -81,7 +81,7 @@ void Client::listener()
     }
 }
 
-void Client::setModel(Model& model)
+void Client::setModel(Model &model)
 {
     this->model = model;
 }
@@ -90,4 +90,37 @@ void Client::sendID(int sockID)
 {
     auto buffer = Serializer::serializeID(model.getID());
     sendAll(sockID, buffer.data(), buffer.size());
+}
+
+bool Client::authenticate(int sockID, const std::string &password, uint32_t id)
+{
+    std::string content = "Auth";
+
+    Connection::sendMessage(sockID, 0, content, password, false);
+
+    uint32_t resp_size;
+    recvAll(sockID, &resp_size, sizeof(resp_size));
+    resp_size = ntohl(resp_size);
+
+    std::vector<char> resp_buffer(resp_size);
+    recvAll(sockID, resp_buffer.data(), resp_size);
+
+    std::string response(resp_buffer.begin(), resp_buffer.end());
+
+    std::cout << "Server response: " << response << std::endl;
+
+    if (response == "AUTH_SUCCESSFUL")
+    {
+        sendID(sockID);
+        return true;
+    }
+
+    if (response == "AUTH_FAILED")
+    {
+        std::cout << "Authentication rejected by server\n";
+        return false;
+    }
+
+    std::cout << "Unknown server response\n";
+    return false;
 }

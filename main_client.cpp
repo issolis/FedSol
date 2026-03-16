@@ -137,12 +137,10 @@ int main()
         weights.push_back(i);
 
     // -------- CLIENT MODEL --------
-    Model clientModel(21, arch, weights); // CAMBIO: evitar new
+    Model clientModel(10, arch, weights); // CAMBIO: evitar new
 
     // -------- CLIENT --------
-    Client client(9000, "127.0.0.1", "federated123" );
-
-    client.setModel(clientModel); // pasamos dirección
+    Client client(9000, "127.0.0.1", "federated123", clientModel );
     client.listener();
 
     return 0;

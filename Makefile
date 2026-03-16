@@ -8,7 +8,11 @@ SERVER_SRC = main_server.cpp \
              sources/models/Architecture.cpp \
              sources/models/Layer.cpp \
              sources/network/connection.cpp \
-             sources/serializer/*.cpp
+             sources/serializer/*.cpp \
+             sources/security/AuthManager.cpp \
+             sources/security/envUtils.cpp \
+             sources/security/SHA256.cpp
+
              
 
 CLIENT_SRC = main_client.cpp \

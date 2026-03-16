@@ -8,7 +8,8 @@
 #include <arpa/inet.h>
 #include <sys/socket.h>
 #include <unistd.h>
-
+#include "security/AuthManager.h"
+#include <unordered_map>
 #include "network/net_utils.h"
 
 
@@ -19,12 +20,16 @@ private:
     Serializer serializer; 
     void handleClient(int clientSockID); 
     void receiveModel(int sockID); 
+    void authenticate(std::string &password, int sockID); 
     uint32_t receiveID(int clientSockID);
+    std::unordered_map<uint32_t, int> clientMap;
+    AuthManager authManager; 
 
 
 public:
     Server(unsigned short port, uint32_t backlog);
     void run();
+    
     
 };
 

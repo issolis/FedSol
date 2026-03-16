@@ -26,7 +26,7 @@ int Connection::createConnection(const std::string &serverIP, uint16_t port)
     return sockID;
 }
 
-void Connection::sendMessage(int sockID, int code, std::string &content, std::string &password, bool closeConnection)
+void Connection::sendMessage(int sockID, int code,  std::string &content,const std::string &password, bool closeConnection)
 {
 
     Serializer serializer = Serializer();
