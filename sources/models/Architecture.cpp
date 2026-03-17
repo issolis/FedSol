@@ -92,3 +92,20 @@ void Architecture::printArchitecture(){
 const std::vector<Layer>& Architecture::getLayers() const{
     return layers;
 }
+
+bool Architecture::equals(const Architecture& other) const
+{
+    const std::vector<Layer>& layers1 = this->getLayers();
+    const std::vector<Layer>& layers2 = other.getLayers();
+
+    if(layers1.size() != layers2.size())
+        return false;
+
+    for(size_t i = 0; i < layers1.size(); i++)
+    {
+        if(!(layers1[i] == layers2[i]))
+            return false;
+    }
+
+    return true;
+}

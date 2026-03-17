@@ -25,6 +25,8 @@ public:
     int out_features;
 
     ActivationType activation;
+
+    bool operator==(const Layer& other) const; 
 };
 
 

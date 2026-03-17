@@ -26,6 +26,7 @@ class Client{
         void listener(); 
         void setModel(Model &model); 
         void sendID(int sockID);
+        void sendArch(int sockID);
         bool authenticate(int sockID, const std::string& password, uint32_t id); 
 
 }; 

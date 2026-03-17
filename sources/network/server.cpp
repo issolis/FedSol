@@ -2,10 +2,10 @@
 #include "models/Model.h"
 #include "serializer/modelSerializer.h"
 
-Server::Server(unsigned short port, uint32_t backlog)
+Server::Server(unsigned short port, uint32_t backlog, Model &globalModel)
 {
     server_fd = socket(AF_INET, SOCK_STREAM, 0);
-
+    this->globalModel = globalModel;
     if (server_fd < 0)
     {
         std::cerr << "Socket creation failed\n";
@@ -63,7 +63,6 @@ void Server::handleClient(int clientSockID)
         std::cout << "[SERVER] Code: " << message.code << std::endl;
         std::cout << "[SERVER] Content: " << message.content << std::endl;
 
-
         switch (message.code)
         {
         case 0:
@@ -114,9 +113,6 @@ void Server::receiveModel(int clientSockID)
         Model modelReceived = ModelSerializer::deserialize(posBuffer, modelBuffer);
 
         std::cout << modelReceived.getID() << std::endl;
-
-        modelReceived.getArchitecture().printArchitecture();
-
         std::string response = "Message received";
 
         uint32_t resp_size = htonl(response.size());
@@ -158,8 +154,32 @@ void Server::authenticate(std::string &password, int clientSockID)
     sendAll(clientSockID, &resp_size, sizeof(resp_size));
     sendAll(clientSockID, response.data(), response.size());
     uint32_t id = receiveID(clientSockID);
+
+    Architecture clientArch = receiveArch(clientSockID);
+
+    if (!verifyArchitecture(clientArch))
+    {
+        std::cout << "[SERVER] Architecture mismatch\n";
+
+        std::string resp = "ARCH_INVALID";
+        uint32_t size = htonl(resp.size());
+
+        sendAll(clientSockID, &size, sizeof(size));
+        sendAll(clientSockID, resp.data(), resp.size());
+
+        close(clientSockID);
+        return;
+    }
+
     clientMap[id] = clientSockID;
-    std::cout << "Client registered with id: " << id << std::endl;
+    std::cout << "[SERVER] Client registered with id: " << id << std::endl;
+    std::cout << "[SERVER] Architecture verified\n";
+
+    std::string resp = "ARCH_OK";
+    uint32_t size = htonl(resp.size());
+
+    sendAll(clientSockID, &size, sizeof(size));
+    sendAll(clientSockID, resp.data(), resp.size());
 }
 
 uint32_t Server::receiveID(int sockID)
@@ -168,4 +188,29 @@ uint32_t Server::receiveID(int sockID)
     recvAll(sockID, buffer.data(), sizeof(uint32_t));
     uint32_t nodeID = Serializer::deserializeID(buffer);
     return nodeID;
+}
+
+Architecture Server::receiveArch(int sockID)
+{
+    uint32_t archSize;
+
+    recvAll(sockID, &archSize, sizeof(archSize));
+    archSize = ntohl(archSize);
+
+    std::cout << "Receiving architecture size: "
+              << archSize << std::endl;
+
+    std::vector<char> buffer(archSize);
+    recvAll(sockID, buffer.data(), archSize);
+
+    Architecture arch =
+        Serializer::deserializeArchitecture(buffer);
+
+    return arch;
+}
+
+bool Server::verifyArchitecture(const Architecture &clientArch)
+{
+    Architecture arch = globalModel.getArchitecture();
+    return clientArch.equals(arch);
 }

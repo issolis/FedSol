@@ -16,6 +16,8 @@ public:
 
     void addLayer(const Layer& layer);
 
+    bool equals(const Architecture& other) const; 
+
     void printArchitecture();
     const std::vector<Layer>& getLayers() const;
 };

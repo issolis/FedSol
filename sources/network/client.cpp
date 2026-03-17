@@ -112,8 +112,33 @@ bool Client::authenticate(int sockID, const std::string &password, uint32_t id)
     if (response == "AUTH_SUCCESSFUL")
     {
         sendID(sockID);
-        return true;
-    }
+        sendArch(sockID);
+
+        uint32_t arch_resp_size;
+        recvAll(sockID, &arch_resp_size, sizeof(arch_resp_size));
+        arch_resp_size = ntohl(arch_resp_size);
+
+        std::vector<char> arch_resp_buffer(arch_resp_size);
+        recvAll(sockID, arch_resp_buffer.data(), arch_resp_size);
+
+        std::string arch_response(arch_resp_buffer.begin(),
+                                  arch_resp_buffer.end());
+
+        if (arch_response == "ARCH_OK")
+        {
+            std::cout << "Architecture accepted\n";
+            return true;
+        }
+
+        if (arch_response == "ARCH_INVALID")
+        {
+            std::cout << "Architecture rejected by server\n";
+            return false;
+        }
+
+        std::cout << "Unknown architecture response\n";
+        return false;
+    }   
 
     if (response == "AUTH_FAILED")
     {
@@ -123,4 +148,13 @@ bool Client::authenticate(int sockID, const std::string &password, uint32_t id)
 
     std::cout << "Unknown server response\n";
     return false;
+}
+
+void Client::sendArch(int sockID)
+{
+    std::vector<char> buffer = Serializer::serializeArchitecture(model.getArchitecture());
+    uint32_t bufferSize = htonl(buffer.size());
+
+    sendAll(sockID, &bufferSize, sizeof(uint32_t));
+    sendAll(sockID, buffer.data(), buffer.size());
 }

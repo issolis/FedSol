@@ -15,3 +15,37 @@ Layer::Layer(){
     this->out_features = 0;
     this->activation = ActivationType::NONEACT;
 }
+
+bool Layer::operator==(const Layer& other) const
+{
+    if(type != other.type)
+        return false;
+
+    for(int i = 0; i < 3; i++)
+        if(input_dim[i] != other.input_dim[i])
+            return false;
+
+    for(int i = 0; i < 3; i++)
+        if(output_dim[i] != other.output_dim[i])
+            return false;
+
+    if(kernel_size != other.kernel_size)
+        return false;
+
+    if(stride != other.stride)
+        return false;
+
+    if(padding != other.padding)
+        return false;
+
+    if(in_features != other.in_features)
+        return false;
+
+    if(out_features != other.out_features)
+        return false;
+
+    if(activation != other.activation)
+        return false;
+
+    return true;
+}

@@ -4,6 +4,9 @@
 #include <utility>
 #include <iostream>
 #include "network/message.h"
+#include <cstring>
+#include <arpa/inet.h>
+#include <models/Architecture.h>
 
 
 class Serializer
@@ -15,6 +18,8 @@ public:
     static Message deserializeMessage(const std::vector<char>& buffer); 
     static std::vector<char> serializeID(uint32_t id);
     static uint32_t deserializeID(const std::vector<char> &buffer);
+    static std::vector<char> serializeArchitecture(const Architecture& arch);
+    static Architecture deserializeArchitecture(const std::vector<char>& buffer); 
 };
 
 #endif
