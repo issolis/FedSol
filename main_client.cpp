@@ -131,10 +131,10 @@ int main()
     arch.addLayer(output);
 
     // -------- CREATE WEIGHTS --------
-    std::vector<uint32_t> weights;
+    std::vector<float> weights;
 
     for (uint32_t i = 0; i < 10; i++)
-        weights.push_back(i);
+        weights.push_back(i + 0.32);
 
     // -------- CLIENT MODEL --------
     Model clientModel(10, arch, weights); // CAMBIO: evitar new

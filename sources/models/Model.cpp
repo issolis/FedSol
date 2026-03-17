@@ -1,6 +1,6 @@
 #include "models/Model.h"
 
-Model::Model(uint32_t id, Architecture architecture, std::vector<uint32_t> weights)
+Model::Model(uint32_t id, Architecture& architecture, std::vector<float>& weights)
 {
     this->id = id;
     this->architecture = architecture;
@@ -21,7 +21,7 @@ Architecture Model::getArchitecture() const
     return architecture;
 }
 
-std::vector<uint32_t> Model::getWeights() const
+std::vector<float> Model::getWeights() const
 {
     return weights;
 }
@@ -31,7 +31,7 @@ std::vector<char> Model::getSerializedPos()
     return serializedPos;
 }
 
-uint32_t Model::getID()
+uint32_t Model::getID() const
 {
     return id;
 }

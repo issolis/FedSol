@@ -10,7 +10,8 @@
 #include <unistd.h>
 #include <utility>
 #include "models/Model.h"
-#include "net_utils.h"
+#include "network/net_utils.h"
+#include "protocol/protocol.h"
 
 
 class Client{
@@ -25,8 +26,6 @@ class Client{
         void sendModel(); 
         void listener(); 
         void setModel(Model &model); 
-        void sendID(int sockID);
-        void sendArch(int sockID);
         bool authenticate(int sockID, const std::string& password, uint32_t id); 
 
 }; 

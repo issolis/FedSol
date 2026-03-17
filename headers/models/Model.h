@@ -12,7 +12,7 @@ class Model
 private:
     uint32_t id;
     Architecture architecture;
-    std::vector<uint32_t> weights;
+    std::vector<float> weights;
     std::vector<uint32_t> nonSerializedPos;
     std::vector<char> serializedPos;
     std::vector<char> serialedModel;
@@ -20,18 +20,18 @@ private:
 public:
     Model(
         uint32_t id,
-        Architecture architecture,
-        std::vector<uint32_t> weights);
+        Architecture& architecture,
+        std::vector<float>& weights);
 
     Model(); 
 
     std::vector<uint32_t> getNonSerializedPos();
     Architecture getArchitecture() const;
-    std::vector<uint32_t> getWeights() const;
+    std::vector<float> getWeights() const;
     std::vector<char> getSerializedPos();
     std::vector<char> getSerializedModel();
 
-    uint32_t getID();
+    uint32_t getID() const;
 };
 
 #endif

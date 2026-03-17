@@ -20,10 +20,7 @@ private:
     sockaddr_in address{};
     Serializer serializer;
     void handleClient(int clientSockID);
-    void receiveModel(int sockID);
     void authenticate(std::string &password, int sockID);
-    uint32_t receiveID(int clientSockID);
-    Architecture receiveArch(int sockID);
     Model globalModel;
     std::unordered_map<uint32_t, int> clientMap;
     AuthManager authManager;

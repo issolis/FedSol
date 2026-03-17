@@ -1,6 +1,6 @@
 #include "network/server.h"
 #include "models/Model.h"
-#include "serializer/modelSerializer.h"
+#include "protocol/protocol.h"
 
 Server::Server(unsigned short port, uint32_t backlog, Model &globalModel)
 {
@@ -51,17 +51,11 @@ void Server::handleClient(int clientSockID)
     {
         std::cout << "Client connected: " << clientSockID << std::endl;
 
-        uint32_t bufferSize;
-        recvAll(clientSockID, &bufferSize, sizeof(bufferSize));
-        bufferSize = ntohl(bufferSize);
 
-        std::vector<char> buffer(bufferSize);
-        recvAll(clientSockID, buffer.data(), bufferSize);
-
-        Message message = serializer.deserializeMessage(buffer);
+        AuthMessage message = Protocol::receiveAuthMessage(clientSockID); 
 
         std::cout << "[SERVER] Code: " << message.code << std::endl;
-        std::cout << "[SERVER] Content: " << message.content << std::endl;
+        std::cout << "[SERVER] Password: " << message.content << std::endl;
 
         switch (message.code)
         {
@@ -73,7 +67,7 @@ void Server::handleClient(int clientSockID)
 
         case 1:
         {
-            receiveModel(clientSockID);
+            //receiveModel(clientSockID);
             close(clientSockID);
             break;
         }
@@ -89,47 +83,6 @@ void Server::handleClient(int clientSockID)
     }
 }
 
-void Server::receiveModel(int clientSockID)
-{
-    try
-    {
-
-        uint32_t posBufferSize;
-
-        recvAll(clientSockID, &posBufferSize, sizeof(posBufferSize));
-        posBufferSize = ntohl(posBufferSize);
-
-        std::vector<char> posBuffer(posBufferSize);
-        recvAll(clientSockID, posBuffer.data(), posBufferSize);
-
-        uint32_t modelBufferSize;
-
-        recvAll(clientSockID, &modelBufferSize, sizeof(modelBufferSize));
-        modelBufferSize = ntohl(modelBufferSize);
-
-        std::vector<char> modelBuffer(modelBufferSize);
-        recvAll(clientSockID, modelBuffer.data(), modelBufferSize);
-
-        Model modelReceived = ModelSerializer::deserialize(posBuffer, modelBuffer);
-
-        std::cout << modelReceived.getID() << std::endl;
-        std::string response = "Message received";
-
-        uint32_t resp_size = htonl(response.size());
-
-        sendAll(clientSockID, &resp_size, sizeof(resp_size));
-        sendAll(clientSockID, response.data(), response.size());
-    }
-    catch (const std::runtime_error &e)
-    {
-        std::cout << "Client disconnected: " << e.what() << std::endl;
-    }
-    catch (...)
-    {
-        std::cout << "Unknown client error\n";
-    }
-}
-
 void Server::authenticate(std::string &password, int clientSockID)
 {
     std::string response;
@@ -140,32 +93,23 @@ void Server::authenticate(std::string &password, int clientSockID)
 
         response = "AUTH_FAILED";
 
-        uint32_t resp_size = htonl(response.size());
-        sendAll(clientSockID, &resp_size, sizeof(resp_size));
-        sendAll(clientSockID, response.data(), response.size());
-
+        Protocol::sendMessage(clientSockID, 0, response); 
         close(clientSockID);
         return;
     }
 
     std::cout << "[SERVER] Authentication success\n";
     response = "AUTH_SUCCESSFUL";
-    uint32_t resp_size = htonl(response.size());
-    sendAll(clientSockID, &resp_size, sizeof(resp_size));
-    sendAll(clientSockID, response.data(), response.size());
-    uint32_t id = receiveID(clientSockID);
-
-    Architecture clientArch = receiveArch(clientSockID);
+    Protocol::sendMessage(clientSockID, 0, response); 
+    uint32_t id = Protocol::receiveID(clientSockID);
+    Architecture clientArch = Protocol::receiveArchitecture(clientSockID);
 
     if (!verifyArchitecture(clientArch))
     {
         std::cout << "[SERVER] Architecture mismatch\n";
 
         std::string resp = "ARCH_INVALID";
-        uint32_t size = htonl(resp.size());
-
-        sendAll(clientSockID, &size, sizeof(size));
-        sendAll(clientSockID, resp.data(), resp.size());
+        Protocol::sendMessage(clientSockID, 0, resp); 
 
         close(clientSockID);
         return;
@@ -176,37 +120,7 @@ void Server::authenticate(std::string &password, int clientSockID)
     std::cout << "[SERVER] Architecture verified\n";
 
     std::string resp = "ARCH_OK";
-    uint32_t size = htonl(resp.size());
-
-    sendAll(clientSockID, &size, sizeof(size));
-    sendAll(clientSockID, resp.data(), resp.size());
-}
-
-uint32_t Server::receiveID(int sockID)
-{
-    std::vector<char> buffer(sizeof(uint32_t));
-    recvAll(sockID, buffer.data(), sizeof(uint32_t));
-    uint32_t nodeID = Serializer::deserializeID(buffer);
-    return nodeID;
-}
-
-Architecture Server::receiveArch(int sockID)
-{
-    uint32_t archSize;
-
-    recvAll(sockID, &archSize, sizeof(archSize));
-    archSize = ntohl(archSize);
-
-    std::cout << "Receiving architecture size: "
-              << archSize << std::endl;
-
-    std::vector<char> buffer(archSize);
-    recvAll(sockID, buffer.data(), archSize);
-
-    Architecture arch =
-        Serializer::deserializeArchitecture(buffer);
-
-    return arch;
+    Protocol::sendMessage(clientSockID, 0, resp); 
 }
 
 bool Server::verifyArchitecture(const Architecture &clientArch)

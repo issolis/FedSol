@@ -16,7 +16,6 @@ private:
 public:
     Connection();
     static int createConnection(const std::string& serverIP, uint16_t port); 
-    static void sendMessage(int sockID, int code,  std::string &content, const std::string &password, bool closeConnection); 
 };
 
 

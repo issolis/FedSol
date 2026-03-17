@@ -11,7 +11,8 @@ SERVER_SRC = main_server.cpp \
              sources/serializer/*.cpp \
              sources/security/AuthManager.cpp \
              sources/security/envUtils.cpp \
-             sources/security/SHA256.cpp
+             sources/security/SHA256.cpp \
+             sources/protocol/*.cpp
 
              
 
@@ -23,7 +24,7 @@ CLIENT_SRC = main_client.cpp \
              sources/models/Layer.cpp \
              sources/serializer/serializer.cpp \
              sources/network/connection.cpp \
-             sources/serializer/modelSerializer.cpp
+             sources/protocol/*.cpp
 
 SERVER_BIN = server_app
 CLIENT_BIN = client_app

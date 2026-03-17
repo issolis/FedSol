@@ -26,17 +26,3 @@ int Connection::createConnection(const std::string &serverIP, uint16_t port)
     return sockID;
 }
 
-void Connection::sendMessage(int sockID, int code,  std::string &content,const std::string &password, bool closeConnection)
-{
-
-    Serializer serializer = Serializer();
-    std::vector<char> buffer = serializer.serializeMessage(code, password, content);
-
-    uint32_t bufferSize = htonl(buffer.size());
-
-    sendAll(sockID, &bufferSize, sizeof(bufferSize));
-    sendAll(sockID, buffer.data(), buffer.size());
-
-    if (closeConnection)
-        close(sockID);
-}
