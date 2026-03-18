@@ -1,6 +1,7 @@
 #include "network/client.h"
 #include <utility>
 #include "network/connection.h"
+#include "logger/logger.h"
 
 Client::Client(unsigned short port, std::string serverIP, std::string password, Model &model)
 {
@@ -13,10 +14,12 @@ Client::Client(unsigned short port, std::string serverIP, std::string password, 
 void Client::listener()
 {
     int sockID = Connection::createConnection(serverIP, port);
-
+    Logger::log(LogLevel::INFO,
+                "[Sock " + std::to_string(sockID) + "] Connected to server");
     if (!authenticate(sockID, password, model.getID()))
     {
-        std::cout << "Login failed\n";
+        Logger::log(LogLevel::INFO,
+                    "[Sock " + std::to_string(sockID) + "] Received weights. Starting training");
         close(sockID);
         return;
     }
@@ -26,7 +29,10 @@ void Client::listener()
         while (true)
         {
             Message msg = Protocol::receiveMessage(sockID);
-            std::cout << msg.content << std::endl;
+            Logger::log(LogLevel::DEBUG,
+                        "[Sock " + std::to_string(sockID) + "] Message content: " + msg.content);
+            Logger::log(LogLevel::DEBUG,
+                        "[Sock " + std::to_string(sockID) + "] Message code: " + std::to_string(msg.code));
 
             switch (msg.code)
             {
@@ -35,13 +41,14 @@ void Client::listener()
                 state = 1;
 
                 std::vector<float> weights = Protocol::receiveWeights(sockID);
-                std::cout<< weights[0] << std::endl; 
 
                 {
                     std::lock_guard<std::mutex> lock(modelMutex);
                     model.setWeights(weights);
                 }
-                ///TRAINING
+                Logger::log(LogLevel::INFO,
+                            "[Sock " + std::to_string(sockID) + "] Received weights. Starting training");
+                /// TRAINING
 
                 reportTrainingEnded();
                 break;
@@ -56,18 +63,23 @@ void Client::listener()
                 }
 
                 Protocol::sendWeights(sockID, weights);
+                Logger::log(LogLevel::INFO,
+                            "[Client " + std::to_string(model.getID()) + "] Sending weights to server");
                 break;
             }
 
             default:
-                std::cout << "Unknown message code\n";
+                Logger::log(LogLevel::WARNING,
+                            "[Sock " + std::to_string(sockID) + "] Unknown message code");
                 break;
             }
         }
     }
     catch (const std::exception &e)
     {
-        std::cout << "Disconnected from server: " << e.what() << std::endl;
+        Logger::log(LogLevel::ERROR,
+                    "[Sock " + std::to_string(sockID) + "] Disconnected from server: " + std::string(e.what()));
+
         close(sockID);
     }
 }
@@ -88,49 +100,85 @@ void Client::reportTrainingEnded()
     int sockID = Connection::createConnection(serverIP, port);
     Protocol::sendAuthMessage(sockID, 1, password, "Training Ended");
     Protocol::sendID(sockID, model.getID());
+    Logger::log(LogLevel::INFO,
+                "[Client " + std::to_string(model.getID()) + "] Finished training");
     close(sockID);
 }
 
-void Client::run(){
+void Client::run()
+{
+    Logger::init("logs/client_" + std::to_string(model.getID()) + ".log");
+    Logger::log(LogLevel::INFO,
+                "[Client " + std::to_string(model.getID()) + "] Finished training");
     std::thread(&Client::listener, this).detach();
-    while(true); 
+    while (true)
+        ;
 }
 
 bool Client::authenticate(int sockID, const std::string &password, uint32_t id)
 {
     std::string content = "Auth";
+
+    Logger::log(LogLevel::INFO,
+                "[Sock " + std::to_string(sockID) + "] Sending authentication request");
+
     Protocol::sendAuthMessage(sockID, 0, password, content);
+
     Message msg = Protocol::receiveMessage(sockID);
 
-    std::cout << "Server response: " << msg.content << std::endl;
+    Logger::log(LogLevel::DEBUG,
+                "[Sock " + std::to_string(sockID) + "] Server response: " + msg.content);
 
     if (msg.content == "AUTH_SUCCESSFUL")
     {
+        Logger::log(LogLevel::INFO,
+                    "[Sock " + std::to_string(sockID) + "] Authentication successful");
+
         Protocol::sendID(sockID, this->model.getID());
+
+        Logger::log(LogLevel::DEBUG,
+                    "[Client " + std::to_string(id) + "] Sent client ID");
+
         Protocol::sendArchitecture(sockID, this->model.getArchitecture());
+
+        Logger::log(LogLevel::DEBUG,
+                    "[Client " + std::to_string(id) + "] Sent architecture");
+
         Message msg = Protocol::receiveMessage(sockID);
+
+        Logger::log(LogLevel::DEBUG,
+                    "[Client " + std::to_string(id) + "] Architecture response: " + msg.content);
 
         if (msg.content == "ARCH_OK")
         {
-            std::cout << "Architecture accepted\n";
+            Logger::log(LogLevel::INFO,
+                        "[Client " + std::to_string(id) + "] Architecture verified");
+
             return true;
         }
-
         else
         {
-            std::cout << "Architecture rejected by server\n";
+            Logger::log(LogLevel::ERROR,
+                        "[Client " + std::to_string(id) + "] Architecture rejected by server");
+
             return false;
         }
 
-        std::cout << "Unknown architecture response\n";
+        Logger::log(LogLevel::WARNING,
+                    "[Client " + std::to_string(id) + "] Unknown architecture response");
+
         return false;
     }
     else
     {
-        std::cout << "Authentication rejected by server\n";
+        Logger::log(LogLevel::ERROR,
+                    "[Sock " + std::to_string(sockID) + "] Authentication rejected by server");
+
         return false;
     }
 
-    std::cout << "Unknown server response\n";
+    Logger::log(LogLevel::WARNING,
+                "[Sock " + std::to_string(sockID) + "] Unknown server response");
+
     return false;
 }

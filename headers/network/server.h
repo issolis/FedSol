@@ -17,28 +17,28 @@
 #include "FedAvg/FedAvg.h"
 #include <algorithm>
 #include "network/connection.h"
+#include "network/sharedState.h"
+#include "network/FLcoordinator.h"
+#include "logger/logger.h"
 
 class Server
 {
 private:
     int server_fd;
     Serializer serializer;
-
-    std::unordered_map<uint32_t, int> clientMap;
-    std::unordered_map<uint32_t, int> statesMap;
-    std::atomic<bool> aggregationStarted = false;
+    FLCoordinator coordinator; 
     std::mutex clientsMutex;
     std::mutex statesMutex;
     std::mutex modelMutex;
-    Model globalModel;
+    Model &globalModel;
     AuthManager authManager;
+    SharedState shared; 
+    uint32_t epochs = 0; 
     
 
     void handleClient(int clientSockID);
     void removeClient(uint32_t id);
     void authenticate(std::string &password, int sockID);
-    void startTraining();
-    void aggregate();
     void handleMessage(AuthMessage& message, int clientSockID); 
 
     

@@ -12,7 +12,6 @@ AuthManager::AuthManager()
 bool AuthManager::authenticate(const std::string &password)
 {
     std::string receivedHash = hashPassword(password);
-    std::cout<< receivedHash << std::endl; 
     return (receivedHash) == storedHash;
 }
 

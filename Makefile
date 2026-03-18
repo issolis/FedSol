@@ -8,13 +8,15 @@ SERVER_SRC = main_server.cpp \
              sources/models/Architecture.cpp \
              sources/models/Layer.cpp \
              sources/network/connection.cpp \
+             sources/network/FLcoordinator.cpp \
              sources/network/sharedState.cpp \
              sources/serializer/*.cpp \
              sources/security/AuthManager.cpp \
              sources/security/envUtils.cpp \
              sources/security/SHA256.cpp \
              sources/protocol/*.cpp \
-             sources/FedAvg/*.cpp
+             sources/FedAvg/*.cpp \
+             sources/logger/logger.cpp
 
              
 
@@ -26,7 +28,8 @@ CLIENT_SRC = main_client.cpp \
              sources/models/Layer.cpp \
              sources/serializer/serializer.cpp \
              sources/network/connection.cpp \
-             sources/protocol/*.cpp
+             sources/protocol/*.cpp\
+             sources/logger/logger.cpp
 
 SERVER_BIN = server_app
 CLIENT_BIN = client_app

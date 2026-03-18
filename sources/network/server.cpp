@@ -1,16 +1,16 @@
 #include "network/server.h"
 
-
-Server::Server(unsigned short port, uint32_t backlog, Model &globalModel)
+Server::Server(unsigned short port, uint32_t backlog, Model &globalModel) : globalModel(globalModel), coordinator(shared, globalModel)
 {
-    server_fd = Connection::createServerConnection(backlog, port); 
-    std::cout << "Server listening on port " << port << std::endl;
-    this->globalModel = globalModel;
+    Logger::init("logs/server.log");
+    server_fd = Connection::createServerConnection(backlog, port);
+    Logger::log(LogLevel::INFO, "Client starting...");
     serializer = Serializer();
 }
 
 void Server::run()
 {
+
     std::thread(&Server::consoleLoop, this).detach();
     while (true)
     {
@@ -27,13 +27,13 @@ void Server::handleClient(int clientSockID)
 
     try
     {
-        std::cout << "Client connected: " << clientSockID << std::endl;
+        Logger::log(LogLevel::INFO, "Client connected with socket id: " + std::to_string(clientSockID));
         AuthMessage message = Protocol::receiveAuthMessage(clientSockID);
 
-        std::cout << "[SERVER] Code: " << message.code << std::endl;
-        std::cout << "[SERVER] Content: " << message.content << std::endl;
+        Logger::log(LogLevel::DEBUG, "Code: " + std::to_string(message.code));
+        Logger::log(LogLevel::DEBUG, "Content: " + message.content);
 
-        handleMessage(message, clientSockID); 
+        handleMessage(message, clientSockID);
     }
     catch (const std::exception &e)
     {
@@ -41,7 +41,7 @@ void Server::handleClient(int clientSockID)
     }
 }
 
-void Server::handleMessage(AuthMessage& message, int clientSockID)
+void Server::handleMessage(AuthMessage &message, int clientSockID)
 {
     switch (message.code)
     {
@@ -54,42 +54,52 @@ void Server::handleMessage(AuthMessage& message, int clientSockID)
     case 1:
     {
         uint32_t id = Protocol::receiveID(clientSockID);
-        std::cout << id << std::endl;
+        Logger::log(LogLevel::INFO,
+                    "[Client " + std::to_string(id) + "] Finished training for epoch");
 
         bool ready = false;
 
         {
-            std::lock_guard<std::mutex> lock(statesMutex);
+            std::lock_guard<std::mutex> lock(shared.statesMutex);
 
-            if (statesMap.find(id) != statesMap.end())
+            if (shared.statesMap.find(id) != shared.statesMap.end())
             {
-                statesMap[id] = 0;
+                shared.statesMap[id] = 0;
             }
             else
             {
-                std::cout << "[SERVER] Unknown client ID: " << id << "\n";
+                Logger::log(LogLevel::WARNING, "Unknown client ID: " + std::to_string(id));
             }
 
-            ready = std::all_of(statesMap.begin(), statesMap.end(),
-                                [](const auto &pair)
-                                { return pair.second == 0; });
+            ready = std::all_of(
+                shared.statesMap.begin(),
+                shared.statesMap.end(),
+                [](const auto &pair)
+                {
+                    return pair.second == 0;
+                });
         }
 
         close(clientSockID);
 
-        if (ready && !aggregationStarted.exchange(true))
+        if (ready && !shared.aggregationStarted.exchange(true))
         {
-            std::cout << "[SERVER] All clients finished. Aggregating...\n";
-            aggregate();
+            Logger::log(LogLevel::INFO, "All clients finished. Aggregating...");
+            epochs -= 1;
+            Logger::log(LogLevel::INFO,
+                        "[SERVER] Completed one epoch. Remaining: " + std::to_string(epochs));
+            coordinator.aggregate(epochs == 0);
         }
 
         break;
     }
 
     default:
-        std::cout << "[SERVER] Unknown message code" << std::endl;
+    {
+        Logger::log(LogLevel::WARNING, "Unknown message code");
         close(clientSockID);
         break;
+    }
     }
 }
 
@@ -99,24 +109,27 @@ void Server::authenticate(std::string &password, int clientSockID)
 
     if (!authManager.authenticate(password))
     {
-        std::cout << "[SERVER] Authentication failed\n";
+        Logger::log(LogLevel::ERROR,
+                    "[Sock " + std::to_string(clientSockID) + "] Authentication failed");
 
         response = "AUTH_FAILED";
-
         Protocol::sendMessage(clientSockID, 0, response);
+
         close(clientSockID);
         return;
     }
 
-    std::cout << "[SERVER] Authentication success\n";
     response = "AUTH_SUCCESSFUL";
     Protocol::sendMessage(clientSockID, 0, response);
+
     uint32_t id = Protocol::receiveID(clientSockID);
+    Logger::log(LogLevel::INFO, "[Client " + std::to_string(id) + "] Authentication success");
     Architecture clientArch = Protocol::receiveArchitecture(clientSockID);
 
     if (!verifyArchitecture(clientArch))
     {
-        std::cout << "[SERVER] Architecture mismatch\n";
+        Logger::log(LogLevel::ERROR,
+                    "[Client " + std::to_string(id) + "] Architecture mismatch");
 
         std::string resp = "ARCH_INVALID";
         Protocol::sendMessage(clientSockID, 0, resp);
@@ -124,14 +137,19 @@ void Server::authenticate(std::string &password, int clientSockID)
         close(clientSockID);
         return;
     }
+
     {
-        std::lock_guard<std::mutex> lockID(clientsMutex);
-        std::lock_guard<std::mutex> lockStates(statesMutex);
-        statesMap[id] = 0;
-        clientMap[id] = clientSockID;
+        std::lock_guard<std::mutex> lockID(shared.clientsMutex);
+        std::lock_guard<std::mutex> lockStates(shared.statesMutex);
+
+        shared.statesMap[id] = 0;
+        shared.clientMap[id] = clientSockID;
     }
-    std::cout << "[SERVER] Client registered with id: " << id << std::endl;
-    std::cout << "[SERVER] Architecture verified\n";
+
+    Logger::log(LogLevel::INFO,
+                "[Client " + std::to_string(id) + "] Architecture verified");
+    Logger::log(LogLevel::INFO,
+                "[Client " + std::to_string(id) + "] Registered");
 
     std::string resp = "ARCH_OK";
     Protocol::sendMessage(clientSockID, 0, resp);
@@ -154,7 +172,9 @@ void Server::consoleLoop()
         switch (option)
         {
         case 1:
-            startTraining();
+            std::cout << "Number of epochs: ";
+            std::cin >> epochs;
+            coordinator.startTraining();
             break;
         default:
             break;
@@ -162,117 +182,16 @@ void Server::consoleLoop()
     }
 }
 
-void Server::startTraining()
-{
-    std::vector<std::pair<uint32_t, int>> clients;
-
-    {
-        std::lock_guard<std::mutex> lock(clientsMutex);
-        clients = {clientMap.begin(), clientMap.end()};
-    }
-
-    {
-        std::lock_guard<std::mutex> lock(statesMutex);
-        for (const auto &[id, _] : clients)
-        {
-            statesMap[id] = 1;
-        }
-    }
-
-    for (const auto &[id, sock] : clients)
-    {
-        try
-        {
-            Protocol::sendMessage(sock, 1, "Start Training");
-            std::vector<float> weights;
-            {
-                std::lock_guard<std::mutex> lock(modelMutex);
-                weights = globalModel.getWeights();
-            }
-
-            Protocol::sendWeights(sock, weights);
-        }
-        catch (const std::exception &e)
-        {
-            std::cout << "[ERROR] Client " << id << " failed. Removing...\n";
-
-            removeClient(id);
-        }
-    }
-}
-
-void Server::aggregate()
-{
-    std::vector<std::pair<uint32_t, int>> clients;
-
-    {
-        std::lock_guard<std::mutex> lock(clientsMutex);
-        clients = {clientMap.begin(), clientMap.end()};
-    }
-
-    std::vector<std::vector<float>> weightsList;
-    std::vector<uint32_t> sizesList;
-
-    std::mutex weightsMutex;
-    std::vector<std::thread> threads;
-
-    for (const auto &[id, sock] : clients)
-    {
-        threads.emplace_back([&, id, sock]()
-                             {
-            try
-            {
-                Protocol::sendMessage(sock, 2, "Weights");
-
-                std::vector<float> weights = Protocol::receiveWeights(sock);
-
-                {
-                    std::lock_guard<std::mutex> lock(weightsMutex);
-                    weightsList.push_back(weights);
-                    sizesList.push_back(weights.size());
-                }
-            }
-            catch (...)
-            {
-                std::cout << "[ERROR] Client " << id << " failed during aggregation\n";
-                removeClient(id);
-            } });
-    }
-
-    for (auto &t : threads)
-        t.join();
-
-    if (weightsList.empty())
-    {
-        std::cout << "[ERROR] No weights received\n";
-        return;
-    }
-
-    std::vector<float> weights = FedAvg::fedAvg(weightsList, sizesList);
-
-    {
-        std::lock_guard<std::mutex> lock(modelMutex);
-        globalModel.setWeights(weights);
-    }
-    {
-        std::lock_guard<std::mutex> lock(statesMutex);
-        for (auto &[id, state] : statesMap)
-            state = 1; // TRAINING
-    }
-    aggregationStarted = false;
-    startTraining();
-}
-
 void Server::removeClient(uint32_t id)
 {
     {
-        std::lock_guard<std::mutex> lock(clientsMutex);
-        clientMap.erase(id);
+        std::lock_guard<std::mutex> lock(shared.clientsMutex);
+        shared.clientMap.erase(id);
     }
 
     {
-        std::lock_guard<std::mutex> lock(statesMutex);
-        statesMap.erase(id);
+        std::lock_guard<std::mutex> lock(shared.statesMutex);
+        shared.statesMap.erase(id);
     }
 }
 
