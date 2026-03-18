@@ -1,5 +1,5 @@
 CXX = g++
-CXXFLAGS = -std=c++17 -pthread -Iheaders
+CXXFLAGS = -std=c++17 -pthread -Iheaders -O3 -mavx2 -fopenmp
 
 SERVER_SRC = main_server.cpp \
              sources/network/server.cpp \
@@ -8,11 +8,13 @@ SERVER_SRC = main_server.cpp \
              sources/models/Architecture.cpp \
              sources/models/Layer.cpp \
              sources/network/connection.cpp \
+             sources/network/sharedState.cpp \
              sources/serializer/*.cpp \
              sources/security/AuthManager.cpp \
              sources/security/envUtils.cpp \
              sources/security/SHA256.cpp \
-             sources/protocol/*.cpp
+             sources/protocol/*.cpp \
+             sources/FedAvg/*.cpp
 
              
 

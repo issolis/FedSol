@@ -12,7 +12,8 @@
 #include "models/Model.h"
 #include "network/net_utils.h"
 #include "protocol/protocol.h"
-
+#include <thread>
+#include <mutex>
 
 class Client{
     private:
@@ -20,13 +21,17 @@ class Client{
         std::string serverIP; 
         std::string password; 
         Model model; 
+        int state = 0; 
+        std::mutex modelMutex; 
 
     public: 
         Client(unsigned short port, std::string serverIP, std::string password, Model &model); 
-        void sendModel(); 
         void listener(); 
         void setModel(Model &model); 
         bool authenticate(int sockID, const std::string& password, uint32_t id); 
+        int getState(); 
+        void reportTrainingEnded(); 
+        void run(); 
 
 }; 
 

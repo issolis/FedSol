@@ -1,11 +1,14 @@
 #include <iostream>
 #include <vector>
+#include <thread>
+#include <chrono>
+
 #include "models/Model.h"
 #include "models/Architecture.h"
 #include "models/Layer.h"
 #include "network/client.h"
 
-int main()
+void runClient(uint32_t id)
 {
     // -------- CREATE ARCHITECTURE --------
     Architecture arch;
@@ -132,16 +135,34 @@ int main()
 
     // -------- CREATE WEIGHTS --------
     std::vector<float> weights;
-
     for (uint32_t i = 0; i < 10; i++)
-        weights.push_back(i + 0.32);
+        weights.push_back(i + 0.32 + id); // 🔥 diferente por cliente
 
-    // -------- CLIENT MODEL --------
-    Model clientModel(10, arch, weights); // CAMBIO: evitar new
+    // -------- MODEL --------
+    Model clientModel(id, arch, weights);
 
     // -------- CLIENT --------
-    Client client(9000, "127.0.0.1", "federated123", clientModel );
-    client.listener();
+    Client client(9000, "127.0.0.1", "federated123", clientModel);
+
+    std::cout << "[CLIENT " << id << "] Started\n";
+
+    client.run();
+}
+
+int main()
+{
+    const int NUM_CLIENTS = 4;
+
+    std::vector<std::thread> threads;
+
+    for (int i = 0; i < NUM_CLIENTS; i++)
+    {
+        threads.emplace_back(runClient, i + 1);
+        std::this_thread::sleep_for(std::chrono::milliseconds(200));
+    }
+
+    for (auto &t : threads)
+        t.join();
 
     return 0;
 }

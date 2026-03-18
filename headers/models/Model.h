@@ -13,9 +13,7 @@ private:
     uint32_t id;
     Architecture architecture;
     std::vector<float> weights;
-    std::vector<uint32_t> nonSerializedPos;
-    std::vector<char> serializedPos;
-    std::vector<char> serialedModel;
+
 
 public:
     Model(
@@ -25,13 +23,10 @@ public:
 
     Model(); 
 
-    std::vector<uint32_t> getNonSerializedPos();
     Architecture getArchitecture() const;
     std::vector<float> getWeights() const;
-    std::vector<char> getSerializedPos();
-    std::vector<char> getSerializedModel();
-
     uint32_t getID() const;
+    void setWeights(std::vector<float>& weights); 
 };
 
 #endif

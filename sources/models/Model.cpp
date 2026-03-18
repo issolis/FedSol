@@ -11,11 +11,6 @@ Model::Model()
 {
 }
 
-std::vector<uint32_t> Model::getNonSerializedPos()
-{
-    return nonSerializedPos;
-}
-
 Architecture Model::getArchitecture() const
 {
     return architecture;
@@ -26,17 +21,11 @@ std::vector<float> Model::getWeights() const
     return weights;
 }
 
-std::vector<char> Model::getSerializedPos()
-{
-    return serializedPos;
-}
-
 uint32_t Model::getID() const
 {
     return id;
 }
 
-std::vector<char> Model::getSerializedModel()
-{
-    return serialedModel;
+void Model::setWeights(std::vector<float>& weights){
+    this->weights = weights;
 }

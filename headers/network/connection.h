@@ -8,17 +8,15 @@
 #include "serializer/serializer.h"
 #include "network/net_utils.h"
 
-
 class Connection
 {
 private:
     /* data */
 public:
     Connection();
-    static int createConnection(const std::string& serverIP, uint16_t port); 
+
+    static int createServerConnection(int backlog, unsigned short port);
+    static int createConnection(const std::string &serverIP, uint16_t port);
 };
-
-
-
 
 #endif

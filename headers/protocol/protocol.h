@@ -29,6 +29,8 @@ public:
 
     static void sendMessage(int sockID, int code, const std::string& content);
     static Message receiveMessage(int sockID);
+
+
 };
 
 #endif
