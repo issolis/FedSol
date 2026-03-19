@@ -14,6 +14,7 @@
 #include "protocol/protocol.h"
 #include <thread>
 #include <mutex>
+#include <jsonManager/jsonManager.h>
 
 class Client{
     private:

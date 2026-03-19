@@ -1,0 +1,333 @@
+{
+    "client": {
+        "id": 1
+    },
+    "connection": {
+        "password": "federated123",
+        "port": 9000,
+        "server_ip": "127.0.0.1"
+    },
+    "model": {
+        "architecture": {
+            "layers": [
+                {
+                    "activation": 0,
+                    "in_features": 0,
+                    "input_dim": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "kernel_size": 0,
+                    "out_features": 0,
+                    "output_dim": [
+                        32,
+                        32,
+                        3
+                    ],
+                    "padding": 0,
+                    "stride": 0,
+                    "type": 1
+                },
+                {
+                    "activation": 0,
+                    "in_features": 0,
+                    "input_dim": [
+                        32,
+                        32,
+                        3
+                    ],
+                    "kernel_size": 3,
+                    "out_features": 0,
+                    "output_dim": [
+                        32,
+                        32,
+                        32
+                    ],
+                    "padding": 1,
+                    "stride": 1,
+                    "type": 2
+                },
+                {
+                    "activation": 2,
+                    "in_features": 0,
+                    "input_dim": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "kernel_size": 0,
+                    "out_features": 0,
+                    "output_dim": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "padding": 0,
+                    "stride": 0,
+                    "type": 8
+                },
+                {
+                    "activation": 0,
+                    "in_features": 0,
+                    "input_dim": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "kernel_size": 2,
+                    "out_features": 0,
+                    "output_dim": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "padding": 0,
+                    "stride": 2,
+                    "type": 3
+                },
+                {
+                    "activation": 0,
+                    "in_features": 0,
+                    "input_dim": [
+                        16,
+                        16,
+                        32
+                    ],
+                    "kernel_size": 3,
+                    "out_features": 0,
+                    "output_dim": [
+                        16,
+                        16,
+                        64
+                    ],
+                    "padding": 1,
+                    "stride": 1,
+                    "type": 2
+                },
+                {
+                    "activation": 2,
+                    "in_features": 0,
+                    "input_dim": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "kernel_size": 0,
+                    "out_features": 0,
+                    "output_dim": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "padding": 0,
+                    "stride": 0,
+                    "type": 8
+                },
+                {
+                    "activation": 0,
+                    "in_features": 0,
+                    "input_dim": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "kernel_size": 2,
+                    "out_features": 0,
+                    "output_dim": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "padding": 0,
+                    "stride": 2,
+                    "type": 3
+                },
+                {
+                    "activation": 0,
+                    "in_features": 0,
+                    "input_dim": [
+                        8,
+                        8,
+                        64
+                    ],
+                    "kernel_size": 3,
+                    "out_features": 0,
+                    "output_dim": [
+                        8,
+                        8,
+                        128
+                    ],
+                    "padding": 1,
+                    "stride": 1,
+                    "type": 2
+                },
+                {
+                    "activation": 2,
+                    "in_features": 0,
+                    "input_dim": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "kernel_size": 0,
+                    "out_features": 0,
+                    "output_dim": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "padding": 0,
+                    "stride": 0,
+                    "type": 8
+                },
+                {
+                    "activation": 0,
+                    "in_features": 0,
+                    "input_dim": [
+                        8,
+                        8,
+                        128
+                    ],
+                    "kernel_size": 0,
+                    "out_features": 8192,
+                    "output_dim": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "padding": 0,
+                    "stride": 0,
+                    "type": 4
+                },
+                {
+                    "activation": 0,
+                    "in_features": 8192,
+                    "input_dim": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "kernel_size": 0,
+                    "out_features": 1024,
+                    "output_dim": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "padding": 0,
+                    "stride": 0,
+                    "type": 5
+                },
+                {
+                    "activation": 2,
+                    "in_features": 0,
+                    "input_dim": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "kernel_size": 0,
+                    "out_features": 0,
+                    "output_dim": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "padding": 0,
+                    "stride": 0,
+                    "type": 8
+                },
+                {
+                    "activation": 0,
+                    "in_features": 1024,
+                    "input_dim": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "kernel_size": 0,
+                    "out_features": 256,
+                    "output_dim": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "padding": 0,
+                    "stride": 0,
+                    "type": 5
+                },
+                {
+                    "activation": 2,
+                    "in_features": 0,
+                    "input_dim": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "kernel_size": 0,
+                    "out_features": 0,
+                    "output_dim": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "padding": 0,
+                    "stride": 0,
+                    "type": 8
+                },
+                {
+                    "activation": 0,
+                    "in_features": 256,
+                    "input_dim": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "kernel_size": 0,
+                    "out_features": 10,
+                    "output_dim": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "padding": 0,
+                    "stride": 0,
+                    "type": 5
+                },
+                {
+                    "activation": 5,
+                    "in_features": 0,
+                    "input_dim": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "kernel_size": 0,
+                    "out_features": 0,
+                    "output_dim": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "padding": 0,
+                    "stride": 0,
+                    "type": 8
+                }
+            ]
+        },
+        "id": 1,
+        "weights": [
+            0.3199999928474426,
+            1.3200000524520874,
+            2.319999933242798,
+            3.319999933242798,
+            4.320000171661377,
+            5.320000171661377,
+            6.320000171661377,
+            7.320000171661377,
+            8.319999694824219,
+            9.319999694824219
+        ]
+    }
+}

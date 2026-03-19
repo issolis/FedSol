@@ -40,7 +40,6 @@ void FLCoordinator::startTraining()
         {
             std::cout << "[ERROR] Client " << id << " failed. Removing...\n";
 
-            // MISMO COMPORTAMIENTO
             {
                 std::lock_guard<std::mutex> lock1(shared.clientsMutex);
                 std::lock_guard<std::mutex> lock2(shared.statesMutex);

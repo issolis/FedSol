@@ -1,252 +1,117 @@
-[Wed Mar 18 11:48:06 2026] [INFO] [Client 1] Finished training
-[Wed Mar 18 11:48:06 2026] [INFO] [Sock 4] Connected to server
-[Wed Mar 18 11:48:06 2026] [INFO] [Sock 4] Sending authentication request
-[Wed Mar 18 11:48:06 2026] [DEBUG] [Sock 4] Server response: AUTH_SUCCESSFUL
-[Wed Mar 18 11:48:06 2026] [INFO] [Sock 4] Authentication successful
-[Wed Mar 18 11:48:06 2026] [DEBUG] [Client 1] Sent client ID
-[Wed Mar 18 11:48:06 2026] [DEBUG] [Client 1] Sent architecture
-[Wed Mar 18 11:48:06 2026] [DEBUG] [Client 1] Architecture response: ARCH_OK
-[Wed Mar 18 11:48:06 2026] [INFO] [Client 1] Architecture verified
-[Wed Mar 18 11:48:06 2026] [INFO] [Client 2] Finished training
-[Wed Mar 18 11:48:06 2026] [INFO] [Sock 5] Connected to server
-[Wed Mar 18 11:48:06 2026] [INFO] [Sock 5] Sending authentication request
-[Wed Mar 18 11:48:06 2026] [DEBUG] [Sock 5] Server response: AUTH_SUCCESSFUL
-[Wed Mar 18 11:48:06 2026] [INFO] [Sock 5] Authentication successful
-[Wed Mar 18 11:48:06 2026] [DEBUG] [Client 2] Sent client ID
-[Wed Mar 18 11:48:06 2026] [DEBUG] [Client 2] Sent architecture
-[Wed Mar 18 11:48:06 2026] [DEBUG] [Client 2] Architecture response: ARCH_OK
-[Wed Mar 18 11:48:06 2026] [INFO] [Client 2] Architecture verified
-[Wed Mar 18 11:48:06 2026] [INFO] [Client 3] Finished training
-[Wed Mar 18 11:48:06 2026] [INFO] [Sock 6] Connected to server
-[Wed Mar 18 11:48:06 2026] [INFO] [Sock 6] Sending authentication request
-[Wed Mar 18 11:48:06 2026] [DEBUG] [Sock 6] Server response: AUTH_SUCCESSFUL
-[Wed Mar 18 11:48:06 2026] [INFO] [Sock 6] Authentication successful
-[Wed Mar 18 11:48:06 2026] [DEBUG] [Client 3] Sent client ID
-[Wed Mar 18 11:48:06 2026] [DEBUG] [Client 3] Sent architecture
-[Wed Mar 18 11:48:06 2026] [DEBUG] [Client 3] Architecture response: ARCH_OK
-[Wed Mar 18 11:48:06 2026] [INFO] [Client 3] Architecture verified
-[Wed Mar 18 11:48:07 2026] [INFO] [Client 4] Finished training
-[Wed Mar 18 11:48:07 2026] [INFO] [Sock 7] Connected to server
-[Wed Mar 18 11:48:07 2026] [INFO] [Sock 7] Sending authentication request
-[Wed Mar 18 11:48:07 2026] [DEBUG] [Sock 7] Server response: AUTH_SUCCESSFUL
-[Wed Mar 18 11:48:07 2026] [INFO] [Sock 7] Authentication successful
-[Wed Mar 18 11:48:07 2026] [DEBUG] [Client 4] Sent client ID
-[Wed Mar 18 11:48:07 2026] [DEBUG] [Client 4] Sent architecture
-[Wed Mar 18 11:48:07 2026] [DEBUG] [Client 4] Architecture response: ARCH_OK
-[Wed Mar 18 11:48:07 2026] [INFO] [Client 4] Architecture verified
-[Wed Mar 18 11:52:40 2026] [INFO] [Client 1] Finished training
-[Wed Mar 18 11:52:40 2026] [INFO] [Sock 4] Connected to server
-[Wed Mar 18 11:52:40 2026] [INFO] [Sock 4] Sending authentication request
-[Wed Mar 18 11:52:40 2026] [DEBUG] [Sock 4] Server response: AUTH_SUCCESSFUL
-[Wed Mar 18 11:52:40 2026] [INFO] [Sock 4] Authentication successful
-[Wed Mar 18 11:52:40 2026] [DEBUG] [Client 1] Sent client ID
-[Wed Mar 18 11:52:40 2026] [DEBUG] [Client 1] Sent architecture
-[Wed Mar 18 11:52:40 2026] [DEBUG] [Client 1] Architecture response: ARCH_OK
-[Wed Mar 18 11:52:40 2026] [INFO] [Client 1] Architecture verified
-[Wed Mar 18 11:52:41 2026] [INFO] [Client 2] Finished training
-[Wed Mar 18 11:52:41 2026] [INFO] [Sock 5] Connected to server
-[Wed Mar 18 11:52:41 2026] [INFO] [Sock 5] Sending authentication request
-[Wed Mar 18 11:52:41 2026] [DEBUG] [Sock 5] Server response: AUTH_SUCCESSFUL
-[Wed Mar 18 11:52:41 2026] [INFO] [Sock 5] Authentication successful
-[Wed Mar 18 11:52:41 2026] [DEBUG] [Client 2] Sent client ID
-[Wed Mar 18 11:52:41 2026] [DEBUG] [Client 2] Sent architecture
-[Wed Mar 18 11:52:41 2026] [DEBUG] [Client 2] Architecture response: ARCH_OK
-[Wed Mar 18 11:52:41 2026] [INFO] [Client 2] Architecture verified
-[Wed Mar 18 11:52:41 2026] [INFO] [Client 3] Finished training
-[Wed Mar 18 11:52:41 2026] [INFO] [Sock 6] Connected to server
-[Wed Mar 18 11:52:41 2026] [INFO] [Sock 6] Sending authentication request
-[Wed Mar 18 11:52:41 2026] [DEBUG] [Sock 6] Server response: AUTH_SUCCESSFUL
-[Wed Mar 18 11:52:41 2026] [INFO] [Sock 6] Authentication successful
-[Wed Mar 18 11:52:41 2026] [DEBUG] [Client 3] Sent client ID
-[Wed Mar 18 11:52:41 2026] [DEBUG] [Client 3] Sent architecture
-[Wed Mar 18 11:52:41 2026] [DEBUG] [Client 3] Architecture response: ARCH_OK
-[Wed Mar 18 11:52:41 2026] [INFO] [Client 3] Architecture verified
-[Wed Mar 18 11:52:41 2026] [INFO] [Client 4] Finished training
-[Wed Mar 18 11:52:41 2026] [INFO] [Sock 7] Connected to server
-[Wed Mar 18 11:52:41 2026] [INFO] [Sock 7] Sending authentication request
-[Wed Mar 18 11:52:41 2026] [DEBUG] [Sock 7] Server response: AUTH_SUCCESSFUL
-[Wed Mar 18 11:52:41 2026] [INFO] [Sock 7] Authentication successful
-[Wed Mar 18 11:52:41 2026] [DEBUG] [Client 4] Sent client ID
-[Wed Mar 18 11:52:41 2026] [DEBUG] [Client 4] Sent architecture
-[Wed Mar 18 11:52:41 2026] [DEBUG] [Client 4] Architecture response: ARCH_OK
-[Wed Mar 18 11:52:41 2026] [INFO] [Client 4] Architecture verified
-[Wed Mar 18 11:52:47 2026] [DEBUG] [Sock 5] Message content: Start Training
-[Wed Mar 18 11:52:47 2026] [DEBUG] [Sock 5] Message code: 1
-[Wed Mar 18 11:52:47 2026] [INFO] [Sock 5] Received weights. Starting training
-[Wed Mar 18 11:52:47 2026] [DEBUG] [Sock 6] Message content: Start Training
-[Wed Mar 18 11:52:47 2026] [DEBUG] [Sock 6] Message code: 1
-[Wed Mar 18 11:52:47 2026] [INFO] [Sock 6] Received weights. Starting training
-[Wed Mar 18 11:52:47 2026] [INFO] [Client 2] Finished training
-[Wed Mar 18 11:52:47 2026] [DEBUG] [Sock 4] Message content: Start Training
-[Wed Mar 18 11:52:47 2026] [DEBUG] [Sock 4] Message code: 1
-[Wed Mar 18 11:52:47 2026] [INFO] [Sock 4] Received weights. Starting training
-[Wed Mar 18 11:52:47 2026] [INFO] [Client 3] Finished training
-[Wed Mar 18 11:52:47 2026] [INFO] [Client 1] Finished training
-[Wed Mar 18 11:52:47 2026] [DEBUG] [Sock 7] Message content: Start Training
-[Wed Mar 18 11:52:47 2026] [DEBUG] [Sock 7] Message code: 1
-[Wed Mar 18 11:52:47 2026] [INFO] [Sock 7] Received weights. Starting training
-[Wed Mar 18 11:52:47 2026] [INFO] [Client 4] Finished training
-[Wed Mar 18 11:52:47 2026] [DEBUG] [Sock 7] Message content: Weights
-[Wed Mar 18 11:52:47 2026] [DEBUG] [Sock 7] Message code: 2
-[Wed Mar 18 11:52:47 2026] [INFO] [Client 4] Sending weights to server
-[Wed Mar 18 11:52:47 2026] [DEBUG] [Sock 5] Message content: Weights
-[Wed Mar 18 11:52:47 2026] [DEBUG] [Sock 5] Message code: 2
-[Wed Mar 18 11:52:47 2026] [INFO] [Client 2] Sending weights to server
-[Wed Mar 18 11:52:47 2026] [DEBUG] [Sock 6] Message content: Weights
-[Wed Mar 18 11:52:47 2026] [DEBUG] [Sock 6] Message code: 2
-[Wed Mar 18 11:52:47 2026] [INFO] [Client 3] Sending weights to server
-[Wed Mar 18 11:52:47 2026] [DEBUG] [Sock 4] Message content: Weights
-[Wed Mar 18 11:52:47 2026] [DEBUG] [Sock 4] Message code: 2
-[Wed Mar 18 11:52:47 2026] [INFO] [Client 1] Sending weights to server
-[Wed Mar 18 11:52:47 2026] [DEBUG] [Sock 7] Message content: Start Training
-[Wed Mar 18 11:52:47 2026] [DEBUG] [Sock 7] Message code: 1
-[Wed Mar 18 11:52:47 2026] [INFO] [Sock 7] Received weights. Starting training
-[Wed Mar 18 11:52:47 2026] [INFO] [Client 4] Finished training
-[Wed Mar 18 11:52:47 2026] [DEBUG] [Sock 6] Message content: Start Training
-[Wed Mar 18 11:52:47 2026] [DEBUG] [Sock 6] Message code: 1
-[Wed Mar 18 11:52:47 2026] [INFO] [Sock 6] Received weights. Starting training
-[Wed Mar 18 11:52:47 2026] [INFO] [Client 3] Finished training
-[Wed Mar 18 11:52:47 2026] [DEBUG] [Sock 5] Message content: Start Training
-[Wed Mar 18 11:52:47 2026] [DEBUG] [Sock 5] Message code: 1
-[Wed Mar 18 11:52:47 2026] [INFO] [Sock 5] Received weights. Starting training
-[Wed Mar 18 11:52:47 2026] [INFO] [Client 2] Finished training
-[Wed Mar 18 11:52:47 2026] [DEBUG] [Sock 4] Message content: Start Training
-[Wed Mar 18 11:52:47 2026] [DEBUG] [Sock 4] Message code: 1
-[Wed Mar 18 11:52:47 2026] [INFO] [Sock 4] Received weights. Starting training
-[Wed Mar 18 11:52:47 2026] [DEBUG] [Sock 5] Message content: Weights
-[Wed Mar 18 11:52:47 2026] [DEBUG] [Sock 5] Message code: 2
-[Wed Mar 18 11:52:47 2026] [INFO] [Client 2] Sending weights to server
-[Wed Mar 18 11:52:47 2026] [INFO] [Client 1] Finished training
-[Wed Mar 18 11:52:47 2026] [DEBUG] [Sock 4] Message content: Weights
-[Wed Mar 18 11:52:47 2026] [DEBUG] [Sock 4] Message code: 2
-[Wed Mar 18 11:52:47 2026] [INFO] [Client 1] Sending weights to server
-[Wed Mar 18 11:52:47 2026] [DEBUG] [Sock 6] Message content: Weights
-[Wed Mar 18 11:52:47 2026] [DEBUG] [Sock 6] Message code: 2
-[Wed Mar 18 11:52:47 2026] [INFO] [Client 3] Sending weights to server
-[Wed Mar 18 11:52:47 2026] [DEBUG] [Sock 7] Message content: Weights
-[Wed Mar 18 11:52:47 2026] [DEBUG] [Sock 7] Message code: 2
-[Wed Mar 18 11:52:47 2026] [INFO] [Client 4] Sending weights to server
-[Wed Mar 18 11:52:47 2026] [DEBUG] [Sock 7] Message content: Start Training
-[Wed Mar 18 11:52:47 2026] [DEBUG] [Sock 7] Message code: 1
-[Wed Mar 18 11:52:47 2026] [INFO] [Sock 7] Received weights. Starting training
-[Wed Mar 18 11:52:47 2026] [INFO] [Client 4] Finished training
-[Wed Mar 18 11:52:47 2026] [DEBUG] [Sock 6] Message content: Start Training
-[Wed Mar 18 11:52:47 2026] [DEBUG] [Sock 6] Message code: 1
-[Wed Mar 18 11:52:47 2026] [INFO] [Sock 6] Received weights. Starting training
-[Wed Mar 18 11:52:47 2026] [INFO] [Client 3] Finished training
-[Wed Mar 18 11:52:47 2026] [DEBUG] [Sock 4] Message content: Start Training
-[Wed Mar 18 11:52:47 2026] [DEBUG] [Sock 4] Message code: 1
-[Wed Mar 18 11:52:47 2026] [INFO] [Sock 4] Received weights. Starting training
-[Wed Mar 18 11:52:47 2026] [INFO] [Client 1] Finished training
-[Wed Mar 18 11:52:47 2026] [DEBUG] [Sock 5] Message content: Start Training
-[Wed Mar 18 11:52:47 2026] [DEBUG] [Sock 5] Message code: 1
-[Wed Mar 18 11:52:47 2026] [INFO] [Sock 5] Received weights. Starting training
-[Wed Mar 18 11:52:47 2026] [INFO] [Client 2] Finished training
-[Wed Mar 18 11:52:47 2026] [DEBUG] [Sock 4] Message content: Weights
-[Wed Mar 18 11:52:47 2026] [DEBUG] [Sock 4] Message code: 2
-[Wed Mar 18 11:52:47 2026] [INFO] [Client 1] Sending weights to server
-[Wed Mar 18 11:52:47 2026] [DEBUG] [Sock 5] Message content: Weights
-[Wed Mar 18 11:52:47 2026] [DEBUG] [Sock 5] Message code: 2
-[Wed Mar 18 11:52:47 2026] [INFO] [Client 2] Sending weights to server
-[Wed Mar 18 11:52:47 2026] [DEBUG] [Sock 6] Message content: Weights
-[Wed Mar 18 11:52:47 2026] [DEBUG] [Sock 6] Message code: 2
-[Wed Mar 18 11:52:47 2026] [INFO] [Client 3] Sending weights to server
-[Wed Mar 18 11:52:47 2026] [DEBUG] [Sock 7] Message content: Weights
-[Wed Mar 18 11:52:47 2026] [DEBUG] [Sock 7] Message code: 2
-[Wed Mar 18 11:52:47 2026] [INFO] [Client 4] Sending weights to server
-[Wed Mar 18 11:53:08 2026] [DEBUG] [Sock 7] Message content: Start Training
-[Wed Mar 18 11:53:08 2026] [DEBUG] [Sock 7] Message code: 1
-[Wed Mar 18 11:53:08 2026] [INFO] [Sock 7] Received weights. Starting training
-[Wed Mar 18 11:53:08 2026] [INFO] [Client 4] Finished training
-[Wed Mar 18 11:53:08 2026] [DEBUG] [Sock 7] Message content: Start Training
-[Wed Mar 18 11:53:08 2026] [DEBUG] [Sock 7] Message code: 1
-[Wed Mar 18 11:53:08 2026] [INFO] [Sock 7] Received weights. Starting training
-[Wed Mar 18 11:53:08 2026] [INFO] [Client 4] Finished training
-[Wed Mar 18 11:53:08 2026] [DEBUG] [Sock 7] Message content: Start Training
-[Wed Mar 18 11:53:08 2026] [DEBUG] [Sock 7] Message code: 1
-[Wed Mar 18 11:53:08 2026] [INFO] [Sock 7] Received weights. Starting training
-[Wed Mar 18 11:53:08 2026] [INFO] [Client 4] Finished training
-[Wed Mar 18 11:53:08 2026] [DEBUG] [Sock 7] Message content: Start Training
-[Wed Mar 18 11:53:08 2026] [DEBUG] [Sock 7] Message code: 1
-[Wed Mar 18 11:53:08 2026] [INFO] [Sock 7] Received weights. Starting training
-[Wed Mar 18 11:53:08 2026] [INFO] [Client 4] Finished training
-[Wed Mar 18 11:53:08 2026] [DEBUG] [Sock 7] Message content: Start Training
-[Wed Mar 18 11:53:08 2026] [DEBUG] [Sock 7] Message code: 1
-[Wed Mar 18 11:53:08 2026] [INFO] [Sock 7] Received weights. Starting training
-[Wed Mar 18 11:53:08 2026] [INFO] [Client 4] Finished training
-[Wed Mar 18 11:53:08 2026] [DEBUG] [Sock 7] Message content: Start Training
-[Wed Mar 18 11:53:08 2026] [DEBUG] [Sock 7] Message code: 1
-[Wed Mar 18 11:53:08 2026] [INFO] [Sock 7] Received weights. Starting training
-[Wed Mar 18 11:53:08 2026] [DEBUG] [Sock 6] Message content: Start Training
-[Wed Mar 18 11:53:08 2026] [DEBUG] [Sock 6] Message code: 1
-[Wed Mar 18 11:53:08 2026] [INFO] [Sock 6] Received weights. Starting training
-[Wed Mar 18 11:53:08 2026] [INFO] [Client 3] Finished training
-[Wed Mar 18 11:53:08 2026] [DEBUG] [Sock 6] Message content: Start Training
-[Wed Mar 18 11:53:08 2026] [DEBUG] [Sock 6] Message code: 1
-[Wed Mar 18 11:53:08 2026] [INFO] [Sock 6] Received weights. Starting training
-[Wed Mar 18 11:53:08 2026] [INFO] [Client 3] Finished training
-[Wed Mar 18 11:53:08 2026] [DEBUG] [Sock 6] Message content: Start Training
-[Wed Mar 18 11:53:08 2026] [DEBUG] [Sock 6] Message code: 1
-[Wed Mar 18 11:53:08 2026] [INFO] [Sock 6] Received weights. Starting training
-[Wed Mar 18 11:53:08 2026] [INFO] [Client 3] Finished training
-[Wed Mar 18 11:53:08 2026] [DEBUG] [Sock 6] Message content: Start Training
-[Wed Mar 18 11:53:08 2026] [DEBUG] [Sock 6] Message code: 1
-[Wed Mar 18 11:53:08 2026] [INFO] [Sock 6] Received weights. Starting training
-[Wed Mar 18 11:53:08 2026] [INFO] [Client 3] Finished training
-[Wed Mar 18 11:53:08 2026] [DEBUG] [Sock 6] Message content: Start Training
-[Wed Mar 18 11:53:08 2026] [DEBUG] [Sock 6] Message code: 1
-[Wed Mar 18 11:53:08 2026] [INFO] [Sock 6] Received weights. Starting training
-[Wed Mar 18 11:53:08 2026] [DEBUG] [Sock 5] Message content: Start Training
-[Wed Mar 18 11:53:08 2026] [DEBUG] [Sock 5] Message code: 1
-[Wed Mar 18 11:53:08 2026] [INFO] [Sock 5] Received weights. Starting training
-[Wed Mar 18 11:53:08 2026] [INFO] [Client 2] Finished training
-[Wed Mar 18 11:53:08 2026] [DEBUG] [Sock 5] Message content: Start Training
-[Wed Mar 18 11:53:08 2026] [DEBUG] [Sock 5] Message code: 1
-[Wed Mar 18 11:53:08 2026] [INFO] [Sock 5] Received weights. Starting training
-[Wed Mar 18 11:53:08 2026] [INFO] [Client 2] Finished training
-[Wed Mar 18 11:53:08 2026] [DEBUG] [Sock 5] Message content: Start Training
-[Wed Mar 18 11:53:08 2026] [DEBUG] [Sock 5] Message code: 1
-[Wed Mar 18 11:53:08 2026] [INFO] [Sock 5] Received weights. Starting training
-[Wed Mar 18 11:53:08 2026] [INFO] [Client 2] Finished training
-[Wed Mar 18 11:53:08 2026] [DEBUG] [Sock 5] Message content: Start Training
-[Wed Mar 18 11:53:08 2026] [DEBUG] [Sock 5] Message code: 1
-[Wed Mar 18 11:53:08 2026] [INFO] [Sock 5] Received weights. Starting training
-[Wed Mar 18 11:53:08 2026] [INFO] [Client 3] Finished training
-[Wed Mar 18 11:53:08 2026] [DEBUG] [Sock 6] Message content: Start Training
-[Wed Mar 18 11:53:08 2026] [DEBUG] [Sock 6] Message code: 1
-[Wed Mar 18 11:53:08 2026] [DEBUG] [Sock 4] Message content: Start Training
-[Wed Mar 18 11:53:08 2026] [DEBUG] [Sock 4] Message code: 1
-[Wed Mar 18 11:53:08 2026] [INFO] [Sock 4] Received weights. Starting training
-[Wed Mar 18 11:53:08 2026] [INFO] [Client 1] Finished training
-[Wed Mar 18 11:53:08 2026] [DEBUG] [Sock 4] Message content: Start Training
-[Wed Mar 18 11:53:08 2026] [DEBUG] [Sock 4] Message code: 1
-[Wed Mar 18 11:53:08 2026] [INFO] [Sock 4] Received weights. Starting training
-[Wed Mar 18 11:53:08 2026] [INFO] [Client 1] Finished training
-[Wed Mar 18 11:53:08 2026] [DEBUG] [Sock 4] Message content: Start Training
-[Wed Mar 18 11:53:08 2026] [DEBUG] [Sock 4] Message code: 1
-[Wed Mar 18 11:53:08 2026] [INFO] [Sock 4] Received weights. Starting training
-[Wed Mar 18 11:53:08 2026] [INFO] [Client 1] Finished training
-[Wed Mar 18 11:53:08 2026] [DEBUG] [Sock 4] Message content: Start Training
-[Wed Mar 18 11:53:08 2026] [DEBUG] [Sock 4] Message code: 1
-[Wed Mar 18 11:53:08 2026] [INFO] [Sock 4] Received weights. Starting training
-[Wed Mar 18 11:53:08 2026] [INFO] [Client 1] Finished training
-[Wed Mar 18 11:53:08 2026] [DEBUG] [Sock 4] Message content: Start Training
-[Wed Mar 18 11:53:08 2026] [DEBUG] [Sock 4] Message code: 1
-[Wed Mar 18 11:53:08 2026] [INFO] [Sock 4] Received weights. Starting training
-[Wed Mar 18 11:53:08 2026] [INFO] [Client 1] Finished training
-[Wed Mar 18 11:53:08 2026] [DEBUG] [Sock 4] Message content: Start Training
-[Wed Mar 18 11:53:08 2026] [DEBUG] [Sock 4] Message code: 1
-[Wed Mar 18 11:53:08 2026] [INFO] [Sock 4] Received weights. Starting training
-[Wed Mar 18 11:53:08 2026] [INFO] [Client 1] Finished training
-[Wed Mar 18 11:53:08 2026] [DEBUG] [Sock 4] Message content: Start Training
-[Wed Mar 18 11:53:08 2026] [DEBUG] [Sock 4] Message code: 1
-[Wed Mar 18 11:53:08 2026] [INFO] [Sock 4] Received weights. Starting training
-[Wed Mar 18 11:53:08 2026] [ERROR] [Sock 4] Disconnected from server: Connection failed
-[Wed Mar 18 11:53:08 2026] [INFO] [Sock 6] Received weights. Starting training
-[Wed Mar 18 11:53:08 2026] [ERROR] [Sock 6] Disconnected from server: Connection failed
-[Wed Mar 18 11:53:08 2026] [ERROR] [Sock 7] Disconnected from server: client disconnected
-[Wed Mar 18 11:53:08 2026] [INFO] [Client 2] Finished training
-[Wed Mar 18 11:53:08 2026] [DEBUG] [Sock 5] Message content: Start Training
-[Wed Mar 18 11:53:08 2026] [DEBUG] [Sock 5] Message code: 1
-[Wed Mar 18 11:53:08 2026] [INFO] [Sock 5] Received weights. Starting training
-[Wed Mar 18 11:53:08 2026] [ERROR] [Sock 5] Disconnected from server: Connection failed
+[Wed Mar 18 15:13:06 2026] [INFO] [Client 1] Finished training
+[Wed Mar 18 15:13:06 2026] [INFO] [Sock 4] Connected to server
+[Wed Mar 18 15:13:06 2026] [INFO] [Sock 4] Sending authentication request
+[Wed Mar 18 15:13:06 2026] [DEBUG] [Sock 4] Server response: AUTH_SUCCESSFUL
+[Wed Mar 18 15:13:06 2026] [INFO] [Sock 4] Authentication successful
+[Wed Mar 18 15:13:06 2026] [DEBUG] [Client 1] Sent client ID
+[Wed Mar 18 15:13:06 2026] [DEBUG] [Client 1] Sent architecture
+[Wed Mar 18 15:13:06 2026] [DEBUG] [Client 1] Architecture response: ARCH_OK
+[Wed Mar 18 15:13:06 2026] [INFO] [Client 1] Architecture verified
+[Wed Mar 18 15:16:07 2026] [DEBUG] [Sock 4] Message content: Start Training
+[Wed Mar 18 15:16:07 2026] [DEBUG] [Sock 4] Message code: 1
+[Wed Mar 18 15:16:07 2026] [INFO] [Sock 4] Received weights. Starting training
+[Wed Mar 18 15:16:07 2026] [INFO] [Client 1] Finished training
+[Wed Mar 18 15:16:07 2026] [DEBUG] [Sock 4] Message content: Weights
+[Wed Mar 18 15:16:07 2026] [DEBUG] [Sock 4] Message code: 2
+[Wed Mar 18 15:16:07 2026] [INFO] [Client 1] Sending weights to server
+[Wed Mar 18 15:16:07 2026] [DEBUG] [Sock 4] Message content: Start Training
+[Wed Mar 18 15:16:07 2026] [DEBUG] [Sock 4] Message code: 1
+[Wed Mar 18 15:16:07 2026] [INFO] [Sock 4] Received weights. Starting training
+[Wed Mar 18 15:16:07 2026] [INFO] [Client 1] Finished training
+[Wed Mar 18 15:16:07 2026] [DEBUG] [Sock 4] Message content: Weights
+[Wed Mar 18 15:16:07 2026] [DEBUG] [Sock 4] Message code: 2
+[Wed Mar 18 15:16:07 2026] [INFO] [Client 1] Sending weights to server
+[Wed Mar 18 15:16:07 2026] [DEBUG] [Sock 4] Message content: Start Training
+[Wed Mar 18 15:16:07 2026] [DEBUG] [Sock 4] Message code: 1
+[Wed Mar 18 15:16:07 2026] [INFO] [Sock 4] Received weights. Starting training
+[Wed Mar 18 15:16:07 2026] [INFO] [Client 1] Finished training
+[Wed Mar 18 15:16:07 2026] [DEBUG] [Sock 4] Message content: Weights
+[Wed Mar 18 15:16:07 2026] [DEBUG] [Sock 4] Message code: 2
+[Wed Mar 18 15:16:07 2026] [INFO] [Client 1] Sending weights to server
+[Wed Mar 18 15:18:03 2026] [ERROR] [Sock 4] Disconnected from server: Client disconnected (recv = 0)
+[Wed Mar 18 15:21:22 2026] [INFO] [Client 1] Finished training
+[Wed Mar 18 15:21:22 2026] [INFO] [Sock 4] Connected to server
+[Wed Mar 18 15:21:22 2026] [INFO] [Sock 4] Sending authentication request
+[Wed Mar 18 15:21:22 2026] [DEBUG] [Sock 4] Server response: AUTH_SUCCESSFUL
+[Wed Mar 18 15:21:22 2026] [INFO] [Sock 4] Authentication successful
+[Wed Mar 18 15:21:22 2026] [DEBUG] [Client 1] Sent client ID
+[Wed Mar 18 15:21:22 2026] [DEBUG] [Client 1] Sent architecture
+[Wed Mar 18 15:21:22 2026] [DEBUG] [Client 1] Architecture response: ARCH_INVALID
+[Wed Mar 18 15:21:22 2026] [ERROR] [Client 1] Architecture rejected by server
+[Wed Mar 18 15:21:22 2026] [INFO] [Sock 4] Received weights. Starting training
+[Wed Mar 18 15:22:12 2026] [INFO] [Client 1] Finished training
+[Wed Mar 18 15:22:12 2026] [INFO] [Sock 4] Connected to server
+[Wed Mar 18 15:22:12 2026] [INFO] [Sock 4] Sending authentication request
+[Wed Mar 18 15:22:12 2026] [DEBUG] [Sock 4] Server response: AUTH_SUCCESSFUL
+[Wed Mar 18 15:22:12 2026] [INFO] [Sock 4] Authentication successful
+[Wed Mar 18 15:22:12 2026] [DEBUG] [Client 1] Sent client ID
+[Wed Mar 18 15:22:12 2026] [DEBUG] [Client 1] Sent architecture
+[Wed Mar 18 15:22:12 2026] [DEBUG] [Client 1] Architecture response: ARCH_OK
+[Wed Mar 18 15:22:12 2026] [INFO] [Client 1] Architecture verified
+[Wed Mar 18 15:22:23 2026] [DEBUG] [Sock 4] Message content: Start Training
+[Wed Mar 18 15:22:23 2026] [DEBUG] [Sock 4] Message code: 1
+[Wed Mar 18 15:22:23 2026] [INFO] [Sock 4] Received weights. Starting training
+[Wed Mar 18 15:22:23 2026] [INFO] [Client 1] Finished training
+[Wed Mar 18 15:22:23 2026] [DEBUG] [Sock 4] Message content: Weights
+[Wed Mar 18 15:22:23 2026] [DEBUG] [Sock 4] Message code: 2
+[Wed Mar 18 15:22:23 2026] [INFO] [Client 1] Sending weights to server
+[Wed Mar 18 15:22:23 2026] [DEBUG] [Sock 4] Message content: Start Training
+[Wed Mar 18 15:22:23 2026] [DEBUG] [Sock 4] Message code: 1
+[Wed Mar 18 15:22:23 2026] [INFO] [Sock 4] Received weights. Starting training
+[Wed Mar 18 15:22:23 2026] [INFO] [Client 1] Finished training
+[Wed Mar 18 15:22:23 2026] [DEBUG] [Sock 4] Message content: Weights
+[Wed Mar 18 15:22:23 2026] [DEBUG] [Sock 4] Message code: 2
+[Wed Mar 18 15:22:23 2026] [INFO] [Client 1] Sending weights to server
+[Wed Mar 18 15:22:23 2026] [DEBUG] [Sock 4] Message content: Start Training
+[Wed Mar 18 15:22:23 2026] [DEBUG] [Sock 4] Message code: 1
+[Wed Mar 18 15:22:23 2026] [INFO] [Sock 4] Received weights. Starting training
+[Wed Mar 18 15:22:23 2026] [INFO] [Client 1] Finished training
+[Wed Mar 18 15:22:23 2026] [DEBUG] [Sock 4] Message content: Weights
+[Wed Mar 18 15:22:23 2026] [DEBUG] [Sock 4] Message code: 2
+[Wed Mar 18 15:22:23 2026] [INFO] [Client 1] Sending weights to server
+[Wed Mar 18 15:22:23 2026] [DEBUG] [Sock 4] Message content: Start Training
+[Wed Mar 18 15:22:23 2026] [DEBUG] [Sock 4] Message code: 1
+[Wed Mar 18 15:22:23 2026] [INFO] [Sock 4] Received weights. Starting training
+[Wed Mar 18 15:22:23 2026] [INFO] [Client 1] Finished training
+[Wed Mar 18 15:22:23 2026] [DEBUG] [Sock 4] Message content: Weights
+[Wed Mar 18 15:22:23 2026] [DEBUG] [Sock 4] Message code: 2
+[Wed Mar 18 15:22:23 2026] [INFO] [Client 1] Sending weights to server
+[Wed Mar 18 15:22:23 2026] [DEBUG] [Sock 4] Message content: Start Training
+[Wed Mar 18 15:22:23 2026] [DEBUG] [Sock 4] Message code: 1
+[Wed Mar 18 15:22:23 2026] [INFO] [Sock 4] Received weights. Starting training
+[Wed Mar 18 15:22:23 2026] [INFO] [Client 1] Finished training
+[Wed Mar 18 15:22:23 2026] [DEBUG] [Sock 4] Message content: Weights
+[Wed Mar 18 15:22:23 2026] [DEBUG] [Sock 4] Message code: 2
+[Wed Mar 18 15:22:23 2026] [INFO] [Client 1] Sending weights to server
+[Wed Mar 18 15:23:18 2026] [ERROR] [Sock 4] Disconnected from server: Client disconnected (recv = 0)
+[Wed Mar 18 15:26:24 2026] [INFO] [Client 1] Finished training
+[Wed Mar 18 15:26:24 2026] [INFO] [Sock 4] Connected to server
+[Wed Mar 18 15:26:24 2026] [INFO] [Sock 4] Sending authentication request
+[Wed Mar 18 15:26:24 2026] [DEBUG] [Sock 4] Server response: AUTH_SUCCESSFUL
+[Wed Mar 18 15:26:24 2026] [INFO] [Sock 4] Authentication successful
+[Wed Mar 18 15:26:24 2026] [DEBUG] [Client 1] Sent client ID
+[Wed Mar 18 15:26:24 2026] [DEBUG] [Client 1] Sent architecture
+[Wed Mar 18 15:26:24 2026] [DEBUG] [Client 1] Architecture response: ARCH_OK
+[Wed Mar 18 15:26:24 2026] [INFO] [Client 1] Architecture verified
+[Wed Mar 18 15:26:34 2026] [DEBUG] [Sock 4] Message content: Start Training
+[Wed Mar 18 15:26:34 2026] [DEBUG] [Sock 4] Message code: 1
+[Wed Mar 18 15:26:34 2026] [INFO] [Sock 4] Received weights. Starting training
+[Wed Mar 18 15:26:34 2026] [INFO] [Client 1] Finished training
+[Wed Mar 18 15:26:34 2026] [DEBUG] [Sock 4] Message content: Weights
+[Wed Mar 18 15:26:34 2026] [DEBUG] [Sock 4] Message code: 2
+[Wed Mar 18 15:26:34 2026] [INFO] [Client 1] Sending weights to server
+[Wed Mar 18 15:26:34 2026] [DEBUG] [Sock 4] Message content: Start Training
+[Wed Mar 18 15:26:34 2026] [DEBUG] [Sock 4] Message code: 1
+[Wed Mar 18 15:26:34 2026] [INFO] [Sock 4] Received weights. Starting training
+[Wed Mar 18 15:26:34 2026] [INFO] [Client 1] Finished training
+[Wed Mar 18 15:26:34 2026] [DEBUG] [Sock 4] Message content: Weights
+[Wed Mar 18 15:26:34 2026] [DEBUG] [Sock 4] Message code: 2
+[Wed Mar 18 15:26:34 2026] [INFO] [Client 1] Sending weights to server
+[Wed Mar 18 15:26:34 2026] [DEBUG] [Sock 4] Message content: Start Training
+[Wed Mar 18 15:26:34 2026] [DEBUG] [Sock 4] Message code: 1
+[Wed Mar 18 15:26:34 2026] [INFO] [Sock 4] Received weights. Starting training
+[Wed Mar 18 15:26:34 2026] [INFO] [Client 1] Finished training
+[Wed Mar 18 15:26:34 2026] [DEBUG] [Sock 4] Message content: Weights
+[Wed Mar 18 15:26:34 2026] [DEBUG] [Sock 4] Message code: 2
+[Wed Mar 18 15:26:34 2026] [INFO] [Client 1] Sending weights to server
+[Wed Mar 18 20:23:21 2026] [ERROR] [Sock 4] Disconnected from server: Client disconnected (recv = 0)

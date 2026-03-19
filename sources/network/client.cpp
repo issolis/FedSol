@@ -45,6 +45,7 @@ void Client::listener()
                 {
                     std::lock_guard<std::mutex> lock(modelMutex);
                     model.setWeights(weights);
+                    JSONManager::updateWeightsInJSON("configClient.json", weights);
                 }
                 Logger::log(LogLevel::INFO,
                             "[Sock " + std::to_string(sockID) + "] Received weights. Starting training");

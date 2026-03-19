@@ -16,7 +16,9 @@ SERVER_SRC = main_server.cpp \
              sources/security/SHA256.cpp \
              sources/protocol/*.cpp \
              sources/FedAvg/*.cpp \
-             sources/logger/logger.cpp
+             sources/logger/logger.cpp \
+             sources/jsonManager/jsonManager.cpp\
+             sources/jsonManager/jsonServerManager.cpp
 
              
 
@@ -29,7 +31,9 @@ CLIENT_SRC = main_client.cpp \
              sources/serializer/serializer.cpp \
              sources/network/connection.cpp \
              sources/protocol/*.cpp\
-             sources/logger/logger.cpp
+             sources/logger/logger.cpp \
+             sources/jsonManager/jsonManager.cpp\
+             sources/jsonManager/jsonClientManager.cpp
 
 SERVER_BIN = server_app
 CLIENT_BIN = client_app
@@ -46,7 +50,7 @@ clean:
 	rm -f $(SERVER_BIN) $(CLIENT_BIN)
 
 run_server: $(SERVER_BIN)
-	./$(SERVER_BIN)
+	./$(SERVER_BIN) $(CONFIG)
 
 run_client: $(CLIENT_BIN)
-	./$(CLIENT_BIN)
+	./$(CLIENT_BIN) $(CONFIG)
