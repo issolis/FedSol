@@ -1,24 +1,31 @@
-[Wed Mar 18 15:26:24 2026] [INFO] Client connected with socket id: 5
-[Wed Mar 18 15:26:24 2026] [DEBUG] Code: 0
-[Wed Mar 18 15:26:24 2026] [DEBUG] Content: Auth
-[Wed Mar 18 15:26:24 2026] [INFO] [Client 1] Authentication success
-[Wed Mar 18 15:26:24 2026] [INFO] [Client 1] Architecture verified
-[Wed Mar 18 15:26:24 2026] [INFO] [Client 1] Registered
-[Wed Mar 18 15:26:34 2026] [INFO] Client connected with socket id: 6
-[Wed Mar 18 15:26:34 2026] [DEBUG] Code: 1
-[Wed Mar 18 15:26:34 2026] [DEBUG] Content: Training Ended
-[Wed Mar 18 15:26:34 2026] [INFO] [Client 1] Finished training for epoch
-[Wed Mar 18 15:26:34 2026] [INFO] All clients finished. Aggregating...
-[Wed Mar 18 15:26:34 2026] [INFO] [SERVER] Completed one epoch. Remaining: 2
-[Wed Mar 18 15:26:34 2026] [INFO] Client connected with socket id: 7
-[Wed Mar 18 15:26:34 2026] [DEBUG] Code: 1
-[Wed Mar 18 15:26:34 2026] [DEBUG] Content: Training Ended
-[Wed Mar 18 15:26:34 2026] [INFO] [Client 1] Finished training for epoch
-[Wed Mar 18 15:26:34 2026] [INFO] All clients finished. Aggregating...
-[Wed Mar 18 15:26:34 2026] [INFO] [SERVER] Completed one epoch. Remaining: 1
-[Wed Mar 18 15:26:34 2026] [INFO] Client connected with socket id: 6
-[Wed Mar 18 15:26:34 2026] [DEBUG] Code: 1
-[Wed Mar 18 15:26:34 2026] [DEBUG] Content: Training Ended
-[Wed Mar 18 15:26:34 2026] [INFO] [Client 1] Finished training for epoch
-[Wed Mar 18 15:26:34 2026] [INFO] All clients finished. Aggregating...
-[Wed Mar 18 15:26:34 2026] [INFO] [SERVER] Completed one epoch. Remaining: 0
+[Fri Mar 20 16:01:59 2026] [INFO] Starting training...
+[Fri Mar 20 16:01:59 2026] [INFO] Client connected with socket id: 6
+[Fri Mar 20 16:01:59 2026] [DEBUG] Code: 1
+[Fri Mar 20 16:01:59 2026] [DEBUG] Content: Training Ended
+[Fri Mar 20 16:01:59 2026] [INFO] [Client 1] Finished training for epoch
+[Fri Mar 20 16:01:59 2026] [INFO] All clients finished. Aggregating...
+[Fri Mar 20 16:01:59 2026] [INFO] [SERVER] Completed one epoch. Remaining: 4
+[Fri Mar 20 16:01:59 2026] [INFO] Client connected with socket id: 7
+[Fri Mar 20 16:01:59 2026] [DEBUG] Code: 1
+[Fri Mar 20 16:01:59 2026] [DEBUG] Content: Training Ended
+[Fri Mar 20 16:01:59 2026] [INFO] [Client 1] Finished training for epoch
+[Fri Mar 20 16:01:59 2026] [INFO] All clients finished. Aggregating...
+[Fri Mar 20 16:01:59 2026] [INFO] [SERVER] Completed one epoch. Remaining: 3
+[Fri Mar 20 16:01:59 2026] [INFO] Client connected with socket id: 6
+[Fri Mar 20 16:01:59 2026] [DEBUG] Code: 1
+[Fri Mar 20 16:01:59 2026] [DEBUG] Content: Training Ended
+[Fri Mar 20 16:01:59 2026] [INFO] [Client 1] Finished training for epoch
+[Fri Mar 20 16:01:59 2026] [INFO] All clients finished. Aggregating...
+[Fri Mar 20 16:01:59 2026] [INFO] [SERVER] Completed one epoch. Remaining: 2
+[Fri Mar 20 16:01:59 2026] [INFO] Client connected with socket id: 7
+[Fri Mar 20 16:01:59 2026] [DEBUG] Code: 1
+[Fri Mar 20 16:01:59 2026] [DEBUG] Content: Training Ended
+[Fri Mar 20 16:01:59 2026] [INFO] [Client 1] Finished training for epoch
+[Fri Mar 20 16:01:59 2026] [INFO] All clients finished. Aggregating...
+[Fri Mar 20 16:01:59 2026] [INFO] [SERVER] Completed one epoch. Remaining: 1
+[Fri Mar 20 16:01:59 2026] [INFO] Client connected with socket id: 6
+[Fri Mar 20 16:01:59 2026] [DEBUG] Code: 1
+[Fri Mar 20 16:01:59 2026] [DEBUG] Content: Training Ended
+[Fri Mar 20 16:01:59 2026] [INFO] [Client 1] Finished training for epoch
+[Fri Mar 20 16:01:59 2026] [INFO] All clients finished. Aggregating...
+[Fri Mar 20 16:01:59 2026] [INFO] [SERVER] Completed one epoch. Remaining: 0

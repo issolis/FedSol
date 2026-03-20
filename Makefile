@@ -18,7 +18,8 @@ SERVER_SRC = main_server.cpp \
              sources/FedAvg/*.cpp \
              sources/logger/logger.cpp \
              sources/jsonManager/jsonManager.cpp\
-             sources/jsonManager/jsonServerManager.cpp
+             sources/jsonManager/jsonServerManager.cpp \
+             sources/weightsUtils/weightsUtils.cpp
 
              
 
@@ -33,7 +34,7 @@ CLIENT_SRC = main_client.cpp \
              sources/protocol/*.cpp\
              sources/logger/logger.cpp \
              sources/jsonManager/jsonManager.cpp\
-             sources/jsonManager/jsonClientManager.cpp
+             sources/jsonManager/jsonClientManager.cpp 
 
 SERVER_BIN = server_app
 CLIENT_BIN = client_app

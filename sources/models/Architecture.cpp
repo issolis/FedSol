@@ -11,7 +11,7 @@ void Architecture::addLayer(const Layer& layer){
     layers.push_back(layer);
 }
 
-void Architecture::printArchitecture(){
+void Architecture::printArchitecture() const{
 
     std::cout << "Architecture with " << layers.size() << " layers:\n";
 

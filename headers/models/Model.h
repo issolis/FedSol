@@ -6,13 +6,14 @@
 #include <cstdint>
 #include <cstring>
 #include "Architecture.h"
-
+#include  <mutex>
 class Model
 {
 private:
     uint32_t id;
     Architecture architecture;
     std::vector<float> weights;
+      mutable std::mutex weightsMutex;
 
 
 public:
@@ -26,7 +27,7 @@ public:
     Architecture getArchitecture() const;
     std::vector<float> getWeights() const;
     uint32_t getID() const;
-    void setWeights(std::vector<float>& weights); 
+    void setWeights(const std::vector<float>& weights); 
 };
 
 #endif

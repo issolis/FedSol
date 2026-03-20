@@ -1,11 +1,16 @@
 #include "network/server.h"
+#include "weightsUtils/weightsUtils.h"
+#include <thread>
+#include <chrono>
 
-Server::Server(unsigned short port, uint32_t backlog, Model &globalModel) : globalModel(globalModel), coordinator(shared, globalModel)
+
+Server::Server(unsigned short port, uint32_t backlog, Model &globalModel, const std::string &path) : globalModel(globalModel), coordinator(shared, globalModel)
 {
     Logger::init("logs/server.log");
     server_fd = Connection::createServerConnection(backlog, port);
     Logger::log(LogLevel::INFO, "Client starting...");
     serializer = Serializer();
+    this->path = path; 
 }
 
 void Server::run()
@@ -88,7 +93,7 @@ void Server::handleMessage(AuthMessage &message, int clientSockID)
             epochs -= 1;
             Logger::log(LogLevel::INFO,
                         "[SERVER] Completed one epoch. Remaining: " + std::to_string(epochs));
-            coordinator.aggregate(epochs == 0);
+            coordinator.aggregate(epochs == 0, path);
         }
 
         break;
@@ -159,24 +164,137 @@ void Server::consoleLoop()
 {
     while (true)
     {
-
         int option;
-        std::cout << "\n===== SERVER MENU =====\n";
-        std::cout << "1. Start Training\n";
-        std::cout << "2. Clients listed\n";
-        std::cout << "3. Exit\n";
+
+        std::cout << "\n===== SERVER MENU =====" << std::endl;
+        std::cout << "1. Start Training" << std::endl;
+        std::cout << "2. List Clients" << std::endl;
+        std::cout << "3. Populate Random Weights" << std::endl;
+        std::cout << "4. Exit" << std::endl;
         std::cout << "Option: ";
 
-        std::cin >> option;
+        if (!(std::cin >> option))
+        {
+            std::cin.clear();
+            std::cin.ignore(10000, '\n');
+            std::cout << "[ERROR] Invalid input." << std::endl;
+            continue;
+        }
 
         switch (option)
         {
         case 1:
-            std::cout << "Number of epochs: ";
-            std::cin >> epochs;
-            coordinator.startTraining();
+        {
+            bool validWeights = WeightUtils::validateWeights(
+                this->globalModel.getArchitecture(),
+                this->globalModel.getWeights());
+
+            if (!validWeights)
+            {
+                size_t expected = WeightUtils::computeExpectedWeights(
+                    this->globalModel.getArchitecture());
+
+                std::cout << "[WARNING] Cannot start training." << std::endl;
+                std::cout << "[WARNING] Weights do not match architecture." << std::endl;
+                std::cout << "[WARNING] Expected: " << expected << std::endl;
+                std::cout << "[WARNING] Current: " << this->globalModel.getWeights().size() << std::endl;
+                std::cout << "[WARNING] Use option 3 to populate random weights first." << std::endl;
+
+                break;
+            }
+
+            std::cout<<("Number of epochs: ");
+
+            if (!(std::cin >> epochs))
+            {
+                std::cin.clear();
+                std::cin.ignore(10000, '\n');
+                Logger::log(LogLevel::ERROR, "Invalid epoch value.");
+                break;
+            }
+
+            char confirm;
+            std::cout << "Start training with " << epochs << " epochs? (y/n): ";
+            std::cin >> confirm;
+
+            if (confirm == 'y' || confirm == 'Y')
+            {
+                Logger::log(LogLevel::INFO, "Starting training...");
+                std::cout << "[INFO] Starting training..." << std::endl;
+                coordinator.startTraining();
+            }
+            else
+            {
+                std::cout << "Training cancelled." << std::endl;
+                Logger::log(LogLevel::INFO, "Training cancelled.");
+            }
+
             break;
+        }
+
+        case 2:
+        {
+            // coordinator.listClients(); // o el método que tengas
+
+            std::this_thread::sleep_for(std::chrono::seconds(2));
+            break;
+        }
+
+        case 3:
+        {
+            size_t expected = WeightUtils::computeExpectedWeights(
+                this->globalModel.getArchitecture());
+
+            char confirm;
+            Logger::log(LogLevel::WARNING,
+                        "overwrite current model weights.");
+            std::cout << "[WARNING] This will overwrite current model weights." << std::endl;
+            std::cout << "[INFO] Expected weights count: " << expected << std::endl;
+            std::cout << "[INFO] Continue? (y/n): ";
+
+            std::cin >> confirm;
+
+            if (confirm == 'y' || confirm == 'Y')
+            {
+                std::vector<float> randomWeights =
+                    WeightUtils::generateRandomWeights(expected);
+                this->globalModel.setWeights(randomWeights);
+
+                Logger::log(LogLevel::INFO,
+                            "Random weights generated and loaded into model.");
+                std::cout << "[INFO] Random weights generated and loaded into model." << std::endl;
+            }
+            else
+            {
+                Logger::log(LogLevel::INFO, "Random population cancelled.");
+                std::cout << "[INFO] Random population cancelled." << std::endl;
+            }
+
+            break;
+        }
+
+        case 4:
+        {
+            char confirm;
+            std::cout << "Are you sure you want to exit? (y/n): ";
+            std::cin >> confirm;
+
+            if (confirm == 'y' || confirm == 'Y')
+            {
+                Logger::log(LogLevel::INFO, "Server shutting down...");
+                std::cout << "Server shutting down..." << std::endl;
+                return;
+            }
+            else
+            {
+                std::cout << "Exit cancelled." << std::endl;
+            }
+
+            break;
+        }
+
         default:
+            std::cout << "[ERROR] Invalid option." << std::endl;
             break;
         }
     }

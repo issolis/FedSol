@@ -16,16 +16,20 @@ Architecture Model::getArchitecture() const
     return architecture;
 }
 
-std::vector<float> Model::getWeights() const
-{
-    return weights;
-}
 
 uint32_t Model::getID() const
 {
     return id;
 }
 
-void Model::setWeights(std::vector<float>& weights){
+void Model::setWeights(const std::vector<float>& weights)
+{
+    std::lock_guard<std::mutex> lock(weightsMutex);
     this->weights = weights;
+}
+
+std::vector<float> Model::getWeights() const
+{
+    std::lock_guard<std::mutex> lock(weightsMutex);
+    return weights;
 }

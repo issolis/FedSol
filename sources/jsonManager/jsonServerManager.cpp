@@ -25,9 +25,9 @@ void JSONServerManager::startServerFromJSON(const std::string& path)
 
         layer.type = static_cast<LayerType>(l["type"].get<int>());
 
-        if (l.contains("out_dim"))
+        if (l.contains("output_dim"))
         {
-            auto dims = l["out_dim"];
+            auto dims = l["output_dim"];
             for (int i = 0; i < 3; i++)
                 layer.output_dim[i] = dims[i];
         }

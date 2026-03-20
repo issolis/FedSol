@@ -20,7 +20,7 @@ public:
     FLCoordinator(SharedState& shared, Model& model);
 
     void startTraining();
-    void aggregate(bool endTraining);
+    void aggregate(bool endTraining, const std::string &path);
 };
 
 #endif

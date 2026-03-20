@@ -18,7 +18,7 @@ public:
 
     bool equals(const Architecture& other) const; 
 
-    void printArchitecture();
+    void printArchitecture() const;
     const std::vector<Layer>& getLayers() const;
 };
 

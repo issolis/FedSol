@@ -21,12 +21,13 @@ class Client{
         unsigned short port;
         std::string serverIP; 
         std::string password; 
-        Model model; 
+        std::string path; 
+        Model *model; 
         int state = 0; 
         std::mutex modelMutex; 
 
     public: 
-        Client(unsigned short port, std::string serverIP, std::string password, Model &model); 
+        Client(unsigned short port, std::string serverIP, std::string password, Model &model,const std::string &path); 
         void listener(); 
         void setModel(Model &model); 
         bool authenticate(int sockID, const std::string& password, uint32_t id); 

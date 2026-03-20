@@ -34,6 +34,7 @@ private:
     AuthManager authManager;
     SharedState shared; 
     uint32_t epochs = 0; 
+    std::string path; 
     
 
     void handleClient(int clientSockID);
@@ -45,7 +46,7 @@ private:
     bool verifyArchitecture(const Architecture &clientArch);
 
 public:
-    Server(unsigned short port, uint32_t backlog, Model &globaModel);
+    Server(unsigned short port, uint32_t backlog, Model &globaModel, const std::string &path);
     void run();
     void consoleLoop();
 };

@@ -1,5 +1,5 @@
 #include "network/FLcoordinator.h"
-
+#include "jsonManager/jsonManager.h"
 FLCoordinator::FLCoordinator(SharedState &shared, Model &model)
     : shared(shared), globalModel(model)
 {
@@ -50,7 +50,7 @@ void FLCoordinator::startTraining()
     }
 }
 
-void FLCoordinator::aggregate(bool endTraining)
+void FLCoordinator::aggregate(bool endTraining, const std::string &path)
 {
     std::vector<std::pair<uint32_t, int>> clients;
 
@@ -111,6 +111,7 @@ void FLCoordinator::aggregate(bool endTraining)
     {
         std::lock_guard<std::mutex> lock(modelMutex);
         globalModel.setWeights(weights);
+        JSONManager::updateWeightsInJSON(path, weights);
     }
 
     {

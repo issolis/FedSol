@@ -3,12 +3,13 @@
 #include "network/connection.h"
 #include "logger/logger.h"
 
-Client::Client(unsigned short port, std::string serverIP, std::string password, Model &model)
+Client::Client(unsigned short port, std::string serverIP, std::string password, Model &model, const std::string& path)
 {
     this->port = port;
     this->serverIP = serverIP;
     this->password = password;
-    this->model = model;
+    this->model = &model;
+    this->path = path; 
 }
 
 void Client::listener()
@@ -16,7 +17,7 @@ void Client::listener()
     int sockID = Connection::createConnection(serverIP, port);
     Logger::log(LogLevel::INFO,
                 "[Sock " + std::to_string(sockID) + "] Connected to server");
-    if (!authenticate(sockID, password, model.getID()))
+    if (!authenticate(sockID, password, model->getID()))
     {
         Logger::log(LogLevel::INFO,
                     "[Sock " + std::to_string(sockID) + "] Received weights. Starting training");
@@ -44,8 +45,8 @@ void Client::listener()
 
                 {
                     std::lock_guard<std::mutex> lock(modelMutex);
-                    model.setWeights(weights);
-                    JSONManager::updateWeightsInJSON("configClient.json", weights);
+                    model->setWeights(weights);
+                    JSONManager::updateWeightsInJSON(path, weights);
                 }
                 Logger::log(LogLevel::INFO,
                             "[Sock " + std::to_string(sockID) + "] Received weights. Starting training");
@@ -60,12 +61,12 @@ void Client::listener()
                 std::vector<float> weights;
                 {
                     std::lock_guard<std::mutex> lock(modelMutex);
-                    weights = model.getWeights();
+                    weights = model->getWeights();
                 }
 
                 Protocol::sendWeights(sockID, weights);
                 Logger::log(LogLevel::INFO,
-                            "[Client " + std::to_string(model.getID()) + "] Sending weights to server");
+                            "[Client " + std::to_string(model->getID()) + "] Sending weights to server");
                 break;
             }
 
@@ -87,7 +88,7 @@ void Client::listener()
 
 void Client::setModel(Model &model)
 {
-    this->model = model;
+    this->model = &model;
 }
 
 int Client::getState()
@@ -100,17 +101,17 @@ void Client::reportTrainingEnded()
     state = 0;
     int sockID = Connection::createConnection(serverIP, port);
     Protocol::sendAuthMessage(sockID, 1, password, "Training Ended");
-    Protocol::sendID(sockID, model.getID());
+    Protocol::sendID(sockID, model->getID());
     Logger::log(LogLevel::INFO,
-                "[Client " + std::to_string(model.getID()) + "] Finished training");
+                "[Client " + std::to_string(model->getID()) + "] Finished training");
     close(sockID);
 }
 
 void Client::run()
 {
-    Logger::init("logs/client_" + std::to_string(model.getID()) + ".log");
+    Logger::init("logs/client_" + std::to_string(model->getID()) + ".log");
     Logger::log(LogLevel::INFO,
-                "[Client " + std::to_string(model.getID()) + "] Finished training");
+                "[Client " + std::to_string(model->getID()) + "] Finished training");
     std::thread(&Client::listener, this).detach();
     while (true)
         ;
@@ -135,12 +136,12 @@ bool Client::authenticate(int sockID, const std::string &password, uint32_t id)
         Logger::log(LogLevel::INFO,
                     "[Sock " + std::to_string(sockID) + "] Authentication successful");
 
-        Protocol::sendID(sockID, this->model.getID());
+        Protocol::sendID(sockID, this->model->getID());
 
         Logger::log(LogLevel::DEBUG,
                     "[Client " + std::to_string(id) + "] Sent client ID");
 
-        Protocol::sendArchitecture(sockID, this->model.getArchitecture());
+        Protocol::sendArchitecture(sockID, this->model->getArchitecture());
 
         Logger::log(LogLevel::DEBUG,
                     "[Client " + std::to_string(id) + "] Sent architecture");
