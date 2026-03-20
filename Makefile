@@ -1,5 +1,8 @@
 CXX = g++
-CXXFLAGS = -std=c++17 -pthread -Iheaders -O3 -mavx2 -fopenmp
+
+CXXFLAGS_COMMON = -std=c++17 -pthread -Iheaders -O3 -fopenmp
+CXXFLAGS_SERVER = $(CXXFLAGS_COMMON) -mavx2
+CXXFLAGS_CLIENT = $(CXXFLAGS_COMMON)
 
 SERVER_SRC = main_server.cpp \
              sources/network/server.cpp \
@@ -21,8 +24,6 @@ SERVER_SRC = main_server.cpp \
              sources/jsonManager/jsonServerManager.cpp \
              sources/weightsUtils/weightsUtils.cpp
 
-             
-
 CLIENT_SRC = main_client.cpp \
              sources/network/client.cpp \
              sources/network/net_utils.cpp \
@@ -42,10 +43,10 @@ CLIENT_BIN = client_app
 all: $(SERVER_BIN) $(CLIENT_BIN)
 
 $(SERVER_BIN):
-	$(CXX) $(CXXFLAGS) $(SERVER_SRC) -o $(SERVER_BIN)
+	$(CXX) $(CXXFLAGS_SERVER) $(SERVER_SRC) -o $(SERVER_BIN)
 
 $(CLIENT_BIN):
-	$(CXX) $(CXXFLAGS) $(CLIENT_SRC) -o $(CLIENT_BIN)
+	$(CXX) $(CXXFLAGS_CLIENT) $(CLIENT_SRC) -o $(CLIENT_BIN)
 
 clean:
 	rm -f $(SERVER_BIN) $(CLIENT_BIN)
