@@ -5,7 +5,7 @@ using json = nlohmann::json;
 void JSONClientManager::startClientFromJSON(const std::string &path)
 {
     json j = JSONManager::load(path);
-    std::string path = j["path"]; 
+
 
     // -------- CLIENT --------
     uint32_t id = j["client"]["id"];

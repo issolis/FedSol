@@ -5,7 +5,7 @@ using json = nlohmann::json;
 void JSONServerManager::startServerFromJSON(const std::string &path)
 {
     json j = JSONManager::load(path);
-    std::string path = j["path"];
+
 
     // --- SERVER ---
     unsigned short port = j["port"];

@@ -2,7 +2,6 @@
     "client": {
         "id": 1
     },
-    "path": "clienConfig.json", 
     "connection": {
         "password": "federated123",
         "port": 9000,
