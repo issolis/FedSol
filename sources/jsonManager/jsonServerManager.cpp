@@ -2,10 +2,11 @@
 
 using json = nlohmann::json;
 
-void JSONServerManager::startServerFromJSON(const std::string& path)
+void JSONServerManager::startServerFromJSON(const std::string &path)
 {
-    json j = JSONManager::load(path); 
-    
+    json j = JSONManager::load(path);
+    std::string path = j["path"];
+
     // --- SERVER ---
     unsigned short port = j["port"];
     uint32_t backlog = j["backlog"];
@@ -64,6 +65,6 @@ void JSONServerManager::startServerFromJSON(const std::string& path)
     Model model(id, arch, weights);
 
     // --- SERVER FINAL ---
-    Server server(port, backlog, model);
-    server.run(); 
+    Server server(port, backlog, model, path);
+    server.run();
 }

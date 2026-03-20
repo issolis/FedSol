@@ -1,5 +1,6 @@
 {
     "backlog": 10,
+    "path": "clienConfig.json", 
     "model": {
         "architecture": {
             "layers": [

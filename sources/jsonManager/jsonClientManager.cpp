@@ -5,6 +5,7 @@ using json = nlohmann::json;
 void JSONClientManager::startClientFromJSON(const std::string &path)
 {
     json j = JSONManager::load(path);
+    std::string path = j["path"]; 
 
     // -------- CLIENT --------
     uint32_t id = j["client"]["id"];
@@ -68,6 +69,6 @@ void JSONClientManager::startClientFromJSON(const std::string &path)
     Model model(id, arch, weights);
 
     // -------- CLIENT --------
-    Client client(port, serverIP, password, model);
+    Client client(port, serverIP, password, model, path);
     client.run(); 
 }
