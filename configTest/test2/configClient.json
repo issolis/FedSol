@@ -1,0 +1,72 @@
+{
+    "client": {
+        "id": 3
+    },
+    "connection": {
+        "password": "federated123",
+        "port": 9000,
+        "server_ip": "192.168.68.118"
+    },
+    "dataset": {
+        "target_dtype": "long",
+        "test_path": "input_client/dataset_test.npz",
+        "train_path": "input_client/dataset_train.npz",
+        "type": "npz"
+    },
+    "evaluation": {
+        "metrics": [
+            {
+                "name": "loss"
+            },
+            {
+                "name": "accuracy"
+            },
+            {
+                "average": "macro",
+                "name": "precision",
+                "zero_division": 0
+            },
+            {
+                "average": "macro",
+                "name": "recall",
+                "zero_division": 0
+            },
+            {
+                "average": "macro",
+                "name": "f1",
+                "zero_division": 0
+            },
+            {
+                "name": "confusion_matrix"
+            }
+        ],
+        "prediction_config": {
+            "method": "argmax"
+        },
+        "report_function": {
+            "name": "default_report",
+            "params": {
+                "base_dir": "globalResults",
+                "print_to_console": true,
+                "save_results": true,
+                "use_timestamp_path": true
+            }
+        },
+        "task_type": "multiclass_classification"
+    },
+    "model": {
+        "id": 1,
+        "pt_path": "input_server/model.pt"
+    },
+    "training": {
+        "epochs": 1,
+        "batch_size": 2,
+        "imgsz": 320,
+        "lr": 0.01,
+        "optimizer": "sgd",
+        "loss": {
+            "name": "yolo_default",
+            "params": {}
+        }
+    }
+}

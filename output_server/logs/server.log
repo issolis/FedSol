@@ -1,0 +1,305 @@
+[Sat May 23 22:38:31 2026] [INFO] Client starting...
+[Sat May 23 22:38:31 2026] [INFO] [MODE] INITIALIZATION
+[Sat May 23 22:38:58 2026] [INFO] Client connected with socket id: 5
+[Sat May 23 22:38:58 2026] [DEBUG] Code: 0
+[Sat May 23 22:38:58 2026] [DEBUG] Content: Auth
+[Sat May 23 22:38:58 2026] [INFO] [Client 1] Authentication success
+[Sat May 23 22:38:58 2026] [ERROR] [Client 1] PT hash mismatch — model rejected
+[Sat May 23 22:38:58 2026] [INFO] Client connected with socket id: 6
+[Sat May 23 22:38:58 2026] [DEBUG] Code: 99
+[Sat May 23 22:38:58 2026] [DEBUG] Content: Error
+[Sat May 23 22:38:58 2026] [ERROR] [Protocol] Error received: [Client::listener] PT handshake failed
+[Sat May 23 22:38:58 2026] [ERROR] [Server] Client error: [Client::listener] PT handshake failed
+[Sat May 23 22:40:38 2026] [INFO] Client starting...
+[Sat May 23 22:40:38 2026] [INFO] [MODE] INITIALIZATION
+[Sat May 23 22:41:31 2026] [INFO] [Console] Operator authenticated.
+[Sat May 23 22:44:41 2026] [INFO] Client starting...
+[Sat May 23 22:44:41 2026] [INFO] [MODE] INITIALIZATION
+[Sat May 23 22:46:37 2026] [INFO] [Console] Operator authenticated.
+[Sat May 23 22:46:58 2026] [INFO] Client connected with socket id: 5
+[Sat May 23 22:46:58 2026] [DEBUG] Code: 0
+[Sat May 23 22:46:58 2026] [DEBUG] Content: Auth
+[Sat May 23 22:46:58 2026] [INFO] [Client 1] Authentication success
+[Sat May 23 22:46:58 2026] [INFO] [Client 1] PT hash verified
+[Sat May 23 22:46:58 2026] [INFO] [Client 1] Registered
+[Sat May 23 22:46:58 2026] [INFO] [MODE] READY
+[Sat May 23 22:47:26 2026] [INFO] Client connected with socket id: 6
+[Sat May 23 22:47:26 2026] [DEBUG] Code: 0
+[Sat May 23 22:47:26 2026] [DEBUG] Content: Auth
+[Sat May 23 22:47:26 2026] [INFO] [Client 1] Authentication success
+[Sat May 23 22:47:26 2026] [ERROR] [Client 1] Duplicate ID. Already connected.
+[Sat May 23 22:47:26 2026] [INFO] Client connected with socket id: 7
+[Sat May 23 22:47:26 2026] [DEBUG] Code: 99
+[Sat May 23 22:47:26 2026] [DEBUG] Content: Error
+[Sat May 23 22:47:26 2026] [ERROR] [Protocol] Error received: [Client::listener] PT handshake failed
+[Sat May 23 22:47:26 2026] [ERROR] [Server] Client error: [Client::listener] PT handshake failed
+[Sat May 23 22:48:52 2026] [INFO] Client connected with socket id: 6
+[Sat May 23 22:48:52 2026] [DEBUG] Code: 0
+[Sat May 23 22:48:52 2026] [DEBUG] Content: Auth
+[Sat May 23 22:48:52 2026] [INFO] [Client 2] Authentication success
+[Sat May 23 22:48:52 2026] [INFO] [Client 2] PT hash verified
+[Sat May 23 22:48:52 2026] [INFO] [Client 2] Registered
+[Sat May 23 22:49:58 2026] [INFO] [DatasetSplitter] Running: PYTHONPATH=code python3 -m FedSolPython.scripts.split_dataset input_server/dataset 2
+[2026-05-23 22:49:58] [INFO] [split_dataset] YOLO — 863 images → 2 clients (~432 each)
+[2026-05-23 22:50:15] [INFO] [split_dataset] Client 0: 432 images → dataset_train_0.tar.gz (222.8 MB)
+[2026-05-23 22:50:29] [INFO] [split_dataset] Client 1: 431 images → dataset_train_1.tar.gz (220.0 MB)
+[2026-05-23 22:50:29] [INFO] [split_dataset] Done. 2 .tar.gz files saved to 'input_server/'
+[Sat May 23 22:50:29 2026] [INFO] [DatasetSplitter] Split completed successfully
+[Sat May 23 22:50:32 2026] [INFO] [Protocol] Sending file: ./input_server/dataset_train_1.tar.gz (230708714 bytes)
+[Sat May 23 22:50:32 2026] [INFO] [Protocol] Sending file: ./input_server/dataset_train_0.tar.gz (233593703 bytes)
+[Sat May 23 22:58:20 2026] [INFO] [SERVER] pt_path mode — weight validation skipped.
+[Sat May 23 22:58:22 2026] [INFO] Client connected with socket id: 7
+[Sat May 23 22:58:22 2026] [DEBUG] Code: 0
+[Sat May 23 22:58:22 2026] [DEBUG] Content: Auth
+[Sat May 23 22:58:22 2026] [INFO] [Client 1] Authentication success
+[Sat May 23 22:58:22 2026] [ERROR] [Client 1] Duplicate ID. Already connected.
+[Sat May 23 22:58:22 2026] [INFO] Client connected with socket id: 8
+[Sat May 23 22:58:22 2026] [DEBUG] Code: 99
+[Sat May 23 22:58:22 2026] [DEBUG] Content: Error
+[Sat May 23 22:58:22 2026] [ERROR] [Protocol] Error received: [Client::listener] PT handshake failed
+[Sat May 23 22:58:22 2026] [ERROR] [Server] Client error: [Client::listener] PT handshake failed
+[Sat May 23 22:58:22 2026] [INFO] Starting training...
+[Sat May 23 22:58:22 2026] [ERROR] Client 2 failed. Removing..
+[Sat May 23 22:58:23 2026] [ERROR] Client 1 failed. Removing..
+[Sat May 23 22:58:23 2026] [ERROR] [Trainer] Training could not start for any client.
+[Sat May 23 22:58:30 2026] [INFO] Client connected with socket id: 7
+[Sat May 23 22:58:30 2026] [DEBUG] Code: 0
+[Sat May 23 22:58:30 2026] [DEBUG] Content: Auth
+[Sat May 23 22:58:30 2026] [INFO] [Client 2] Authentication success
+[Sat May 23 22:58:30 2026] [INFO] [Client 2] PT hash verified
+[Sat May 23 22:58:30 2026] [INFO] [Client 2] Registered
+[Sat May 23 22:58:30 2026] [INFO] [MODE] READY
+[Sat May 23 22:58:41 2026] [INFO] Client connected with socket id: 5
+[Sat May 23 22:58:41 2026] [DEBUG] Code: 0
+[Sat May 23 22:58:41 2026] [DEBUG] Content: Auth
+[Sat May 23 22:58:41 2026] [INFO] [Client 1] Authentication success
+[Sat May 23 22:58:41 2026] [INFO] [Client 1] PT hash verified
+[Sat May 23 22:58:41 2026] [INFO] [Client 1] Registered
+[Sat May 23 22:59:02 2026] [INFO] [DatasetSplitter] Running: PYTHONPATH=code python3 -m FedSolPython.scripts.split_dataset input_server/dataset 2
+[2026-05-23 22:59:02] [INFO] [split_dataset] YOLO — 863 images → 2 clients (~432 each)
+[2026-05-23 22:59:16] [INFO] [split_dataset] Client 0: 432 images → dataset_train_0.tar.gz (222.8 MB)
+[2026-05-23 22:59:28] [INFO] [split_dataset] Client 1: 431 images → dataset_train_1.tar.gz (220.0 MB)
+[2026-05-23 22:59:28] [INFO] [split_dataset] Done. 2 .tar.gz files saved to 'input_server/'
+[Sat May 23 22:59:28 2026] [INFO] [DatasetSplitter] Split completed successfully
+[Sat May 23 22:59:30 2026] [INFO] [Protocol] Sending file: ./input_server/dataset_train_1.tar.gz (230708753 bytes)
+[Sat May 23 22:59:30 2026] [INFO] [Protocol] Sending file: ./input_server/dataset_train_0.tar.gz (233593672 bytes)
+[Sat May 23 23:00:17 2026] [INFO] [SERVER] pt_path mode — weight validation skipped.
+[Sat May 23 23:00:23 2026] [INFO] Starting training...
+[Sat May 23 23:00:41 2026] [DEBUG] [Watchdog] Client 1 sock 5 state: TRAINING
+[Sat May 23 23:00:41 2026] [DEBUG] [Watchdog] Client 2 sock 7 state: TRAINING
+[Sat May 23 23:01:11 2026] [DEBUG] [Watchdog] Client 1 sock 5 state: TRAINING
+[Sat May 23 23:01:12 2026] [DEBUG] [Watchdog] Client 2 sock 7 state: TRAINING
+[Sat May 23 23:01:42 2026] [DEBUG] [Watchdog] Client 1 sock 5 state: TRAINING
+[Sat May 23 23:01:42 2026] [DEBUG] [Watchdog] Client 2 sock 7 state: TRAINING
+[Sat May 23 23:02:12 2026] [DEBUG] [Watchdog] Client 1 sock 5 state: TRAINING
+[Sat May 23 23:02:12 2026] [DEBUG] [Watchdog] Client 2 sock 7 state: TRAINING
+[Sat May 23 23:02:43 2026] [DEBUG] [Watchdog] Client 1 sock 5 state: TRAINING
+[Sat May 23 23:02:43 2026] [DEBUG] [Watchdog] Client 2 sock 7 state: TRAINING
+[Sat May 23 23:03:14 2026] [DEBUG] [Watchdog] Client 1 sock 5 state: TRAINING
+[Sat May 23 23:03:14 2026] [DEBUG] [Watchdog] Client 2 sock 7 state: TRAINING
+[Sat May 23 23:03:45 2026] [DEBUG] [Watchdog] Client 1 sock 5 state: TRAINING
+[Sat May 23 23:03:45 2026] [DEBUG] [Watchdog] Client 2 sock 7 state: TRAINING
+[Sat May 23 23:03:48 2026] [INFO] Client connected with socket id: 6
+[Sat May 23 23:03:58 2026] [DEBUG] Code: 1
+[Sat May 23 23:03:58 2026] [DEBUG] Content: Training Ended
+[Sat May 23 23:03:58 2026] [INFO] [Client 2] Finished training. Sample size: 431
+[Sat May 23 23:04:15 2026] [DEBUG] [Watchdog] Client 1 sock 5 state: TRAINING
+[Sat May 23 23:04:46 2026] [DEBUG] [Watchdog] Client 1 sock 5 state: TRAINING
+[Sat May 23 23:05:16 2026] [DEBUG] [Watchdog] Client 1 sock 5 state: TRAINING
+[Sat May 23 23:05:47 2026] [DEBUG] [Watchdog] Client 1 sock 5 state: TRAINING
+[Sat May 23 23:06:17 2026] [DEBUG] [Watchdog] Client 1 sock 5 state: TRAINING
+[Sat May 23 23:06:47 2026] [DEBUG] [Watchdog] Client 1 sock 5 state: TRAINING
+[Sat May 23 23:07:18 2026] [DEBUG] [Watchdog] Client 1 sock 5 state: TRAINING
+[Sat May 23 23:07:49 2026] [DEBUG] [Watchdog] Client 1 sock 5 state: TRAINING
+[Sat May 23 23:08:19 2026] [DEBUG] [Watchdog] Client 1 sock 5 state: TRAINING
+[Sat May 23 23:12:15 2026] [INFO] Client starting...
+[Sat May 23 23:12:15 2026] [INFO] [MODE] INITIALIZATION
+[Sat May 23 23:17:29 2026] [INFO] Client connected with socket id: 5
+[Sat May 23 23:17:29 2026] [DEBUG] Code: 0
+[Sat May 23 23:17:29 2026] [DEBUG] Content: Auth
+[Sat May 23 23:17:29 2026] [INFO] [Client 1] Authentication success
+[Sat May 23 23:17:29 2026] [INFO] [Client 1] PT hash verified
+[Sat May 23 23:17:29 2026] [INFO] [Client 1] Registered
+[Sat May 23 23:17:29 2026] [INFO] [MODE] READY
+[Sat May 23 23:17:40 2026] [INFO] Client connected with socket id: 6
+[Sat May 23 23:17:40 2026] [DEBUG] Code: 0
+[Sat May 23 23:17:40 2026] [DEBUG] Content: Auth
+[Sat May 23 23:17:40 2026] [INFO] [Client 2] Authentication success
+[Sat May 23 23:17:40 2026] [INFO] [Client 2] PT hash verified
+[Sat May 23 23:17:40 2026] [INFO] [Client 2] Registered
+[Sat May 23 23:17:47 2026] [INFO] [Console] Operator authenticated.
+[Sat May 23 23:17:49 2026] [INFO] [SERVER] pt_path mode — weight validation skipped.
+[Sat May 23 23:17:52 2026] [INFO] Starting training...
+[Sat May 23 23:18:15 2026] [DEBUG] [Watchdog] Client 2 sock 6 state: TRAINING
+[Sat May 23 23:18:16 2026] [DEBUG] [Watchdog] Client 1 sock 5 state: TRAINING
+[Sat May 23 23:18:46 2026] [DEBUG] [Watchdog] Client 2 sock 6 state: TRAINING
+[Sat May 23 23:18:46 2026] [DEBUG] [Watchdog] Client 1 sock 5 state: TRAINING
+[Sat May 23 23:19:16 2026] [DEBUG] [Watchdog] Client 2 sock 6 state: TRAINING
+[Sat May 23 23:19:16 2026] [DEBUG] [Watchdog] Client 1 sock 5 state: TRAINING
+[Sat May 23 23:19:46 2026] [DEBUG] [Watchdog] Client 2 sock 6 state: TRAINING
+[Sat May 23 23:19:46 2026] [DEBUG] [Watchdog] Client 1 sock 5 state: TRAINING
+[Sat May 23 23:20:17 2026] [DEBUG] [Watchdog] Client 2 sock 6 state: TRAINING
+[Sat May 23 23:20:17 2026] [DEBUG] [Watchdog] Client 1 sock 5 state: TRAINING
+[Sat May 23 23:20:48 2026] [DEBUG] [Watchdog] Client 2 sock 6 state: TRAINING
+[Sat May 23 23:20:48 2026] [DEBUG] [Watchdog] Client 1 sock 5 state: TRAINING
+[Sat May 23 23:21:03 2026] [INFO] Client connected with socket id: 7
+[Sat May 23 23:21:12 2026] [DEBUG] Code: 1
+[Sat May 23 23:21:12 2026] [DEBUG] Content: Training Ended
+[Sat May 23 23:21:12 2026] [INFO] [Client 2] Finished training. Sample size: 431
+[Sat May 23 23:21:18 2026] [DEBUG] [Watchdog] Client 1 sock 5 state: TRAINING
+[Sat May 23 23:21:48 2026] [DEBUG] [Watchdog] Client 1 sock 5 state: TRAINING
+[Sat May 23 23:22:19 2026] [DEBUG] [Watchdog] Client 1 sock 5 state: TRAINING
+[Sat May 23 23:22:49 2026] [DEBUG] [Watchdog] Client 1 sock 5 state: TRAINING
+[Sat May 23 23:22:57 2026] [INFO] [Console] Shutdown sent to client 2
+[Sat May 23 23:22:57 2026] [INFO] [Console] Shutdown sent to client 1
+[Sat May 23 23:23:00 2026] [WARNING] Training start ignored because training is already active.
+[Sat May 23 23:23:06 2026] [WARNING] Training start ignored because training is already active.
+[Sat May 23 23:23:09 2026] [WARNING] Training start ignored because training is already active.
+[Sat May 23 23:23:10 2026] [WARNING] Training start ignored because training is already active.
+[Sat May 23 23:23:11 2026] [WARNING] Training start ignored because training is already active.
+[Sat May 23 23:23:34 2026] [INFO] Client starting...
+[Sat May 23 23:23:34 2026] [INFO] [MODE] INITIALIZATION
+[Sat May 23 23:27:52 2026] [INFO] [Console] Operator authenticated.
+[Sat May 23 23:28:06 2026] [INFO] Client connected with socket id: 5
+[Sat May 23 23:28:06 2026] [DEBUG] Code: 0
+[Sat May 23 23:28:06 2026] [DEBUG] Content: Auth
+[Sat May 23 23:28:06 2026] [INFO] [Client 1] Authentication success
+[Sat May 23 23:28:06 2026] [INFO] [Client 1] PT hash verified
+[Sat May 23 23:28:06 2026] [INFO] [Client 1] Registered
+[Sat May 23 23:28:06 2026] [INFO] [MODE] READY
+[Sat May 23 23:28:10 2026] [INFO] Client connected with socket id: 6
+[Sat May 23 23:28:10 2026] [DEBUG] Code: 0
+[Sat May 23 23:28:10 2026] [DEBUG] Content: Auth
+[Sat May 23 23:28:11 2026] [INFO] [Client 2] Authentication success
+[Sat May 23 23:28:11 2026] [INFO] [Client 2] PT hash verified
+[Sat May 23 23:28:11 2026] [INFO] [Client 2] Registered
+[Sat May 23 23:28:15 2026] [INFO] [SERVER] pt_path mode — weight validation skipped.
+[Sat May 23 23:28:19 2026] [INFO] Starting training...
+[Sat May 23 23:28:34 2026] [DEBUG] [Watchdog] Client 2 sock 6 state: TRAINING
+[Sat May 23 23:28:34 2026] [DEBUG] [Watchdog] Client 1 sock 5 state: TRAINING
+[Sat May 23 23:29:04 2026] [DEBUG] [Watchdog] Client 2 sock 6 state: TRAINING
+[Sat May 23 23:29:04 2026] [DEBUG] [Watchdog] Client 1 sock 5 state: TRAINING
+[Sat May 23 23:29:34 2026] [DEBUG] [Watchdog] Client 2 sock 6 state: TRAINING
+[Sat May 23 23:29:35 2026] [DEBUG] [Watchdog] Client 1 sock 5 state: TRAINING
+[Sat May 23 23:30:05 2026] [DEBUG] [Watchdog] Client 2 sock 6 state: TRAINING
+[Sat May 23 23:30:05 2026] [DEBUG] [Watchdog] Client 1 sock 5 state: TRAINING
+[Sat May 23 23:30:35 2026] [DEBUG] [Watchdog] Client 2 sock 6 state: TRAINING
+[Sat May 23 23:30:36 2026] [DEBUG] [Watchdog] Client 1 sock 5 state: TRAINING
+[Sat May 23 23:31:07 2026] [DEBUG] [Watchdog] Client 2 sock 6 state: TRAINING
+[Sat May 23 23:31:07 2026] [DEBUG] [Watchdog] Client 1 sock 5 state: TRAINING
+[Sat May 23 23:31:37 2026] [DEBUG] [Watchdog] Client 2 sock 6 state: TRAINING
+[Sat May 23 23:31:38 2026] [DEBUG] [Watchdog] Client 1 sock 5 state: TRAINING
+[Sat May 23 23:32:08 2026] [DEBUG] [Watchdog] Client 2 sock 6 state: TRAINING
+[Sat May 23 23:32:08 2026] [DEBUG] [Watchdog] Client 1 sock 5 state: TRAINING
+[Sat May 23 23:32:38 2026] [DEBUG] [Watchdog] Client 2 sock 6 state: TRAINING
+[Sat May 23 23:32:38 2026] [DEBUG] [Watchdog] Client 1 sock 5 state: TRAINING
+[Sat May 23 23:33:09 2026] [DEBUG] [Watchdog] Client 2 sock 6 state: TRAINING
+[Sat May 23 23:33:09 2026] [DEBUG] [Watchdog] Client 1 sock 5 state: TRAINING
+[Sat May 23 23:33:39 2026] [DEBUG] [Watchdog] Client 2 sock 6 state: TRAINING
+[Sat May 23 23:33:40 2026] [DEBUG] [Watchdog] Client 1 sock 5 state: TRAINING
+[Sat May 23 23:34:10 2026] [DEBUG] [Watchdog] Client 2 sock 6 state: TRAINING
+[Sat May 23 23:34:12 2026] [DEBUG] [Watchdog] Client 1 sock 5 state: TRAINING
+[Sat May 23 23:34:43 2026] [DEBUG] [Watchdog] Client 2 sock 6 state: TRAINING
+[Sat May 23 23:34:44 2026] [DEBUG] [Watchdog] Client 1 sock 5 state: TRAINING
+[Sat May 23 23:35:14 2026] [DEBUG] [Watchdog] Client 2 sock 6 state: TRAINING
+[Sat May 23 23:35:15 2026] [DEBUG] [Watchdog] Client 1 sock 5 state: TRAINING
+[Sat May 23 23:35:45 2026] [DEBUG] [Watchdog] Client 2 sock 6 state: TRAINING
+[Sat May 23 23:35:46 2026] [DEBUG] [Watchdog] Client 1 sock 5 state: TRAINING
+[Sat May 23 23:36:17 2026] [DEBUG] [Watchdog] Client 2 sock 6 state: TRAINING
+[Sat May 23 23:36:18 2026] [DEBUG] [Watchdog] Client 1 sock 5 state: TRAINING
+[Sat May 23 23:36:48 2026] [DEBUG] [Watchdog] Client 2 sock 6 state: TRAINING
+[Sat May 23 23:36:48 2026] [DEBUG] [Watchdog] Client 1 sock 5 state: TRAINING
+[Sat May 23 23:37:18 2026] [DEBUG] [Watchdog] Client 2 sock 6 state: TRAINING
+[Sat May 23 23:37:18 2026] [DEBUG] [Watchdog] Client 1 sock 5 state: TRAINING
+[Sat May 23 23:37:48 2026] [DEBUG] [Watchdog] Client 2 sock 6 state: TRAINING
+[Sat May 23 23:37:49 2026] [DEBUG] [Watchdog] Client 1 sock 5 state: TRAINING
+[Sat May 23 23:38:19 2026] [DEBUG] [Watchdog] Client 2 sock 6 state: TRAINING
+[Sat May 23 23:38:19 2026] [DEBUG] [Watchdog] Client 1 sock 5 state: TRAINING
+[Sat May 23 23:38:49 2026] [DEBUG] [Watchdog] Client 2 sock 6 state: TRAINING
+[Sat May 23 23:38:49 2026] [DEBUG] [Watchdog] Client 1 sock 5 state: TRAINING
+[Sat May 23 23:39:20 2026] [DEBUG] [Watchdog] Client 2 sock 6 state: TRAINING
+[Sat May 23 23:39:20 2026] [DEBUG] [Watchdog] Client 1 sock 5 state: TRAINING
+[Sat May 23 23:39:50 2026] [DEBUG] [Watchdog] Client 2 sock 6 state: TRAINING
+[Sat May 23 23:39:50 2026] [DEBUG] [Watchdog] Client 1 sock 5 state: TRAINING
+[Sat May 23 23:40:20 2026] [DEBUG] [Watchdog] Client 2 sock 6 state: TRAINING
+[Sat May 23 23:40:20 2026] [DEBUG] [Watchdog] Client 1 sock 5 state: TRAINING
+[Sat May 23 23:40:51 2026] [DEBUG] [Watchdog] Client 2 sock 6 state: TRAINING
+[Sat May 23 23:40:51 2026] [DEBUG] [Watchdog] Client 1 sock 5 state: TRAINING
+[Sat May 23 23:41:21 2026] [DEBUG] [Watchdog] Client 2 sock 6 state: TRAINING
+[Sat May 23 23:41:21 2026] [DEBUG] [Watchdog] Client 1 sock 5 state: TRAINING
+[Sat May 23 23:41:51 2026] [DEBUG] [Watchdog] Client 2 sock 6 state: TRAINING
+[Sat May 23 23:41:51 2026] [DEBUG] [Watchdog] Client 1 sock 5 state: TRAINING
+[Sat May 23 23:42:21 2026] [DEBUG] [Watchdog] Client 2 sock 6 state: TRAINING
+[Sat May 23 23:42:22 2026] [DEBUG] [Watchdog] Client 1 sock 5 state: TRAINING
+[Sat May 23 23:42:52 2026] [DEBUG] [Watchdog] Client 2 sock 6 state: TRAINING
+[Sat May 23 23:42:52 2026] [DEBUG] [Watchdog] Client 1 sock 5 state: TRAINING
+[Sat May 23 23:43:23 2026] [DEBUG] [Watchdog] Client 2 sock 6 state: TRAINING
+[Sat May 23 23:43:23 2026] [DEBUG] [Watchdog] Client 1 sock 5 state: TRAINING
+[Sat May 23 23:43:53 2026] [DEBUG] [Watchdog] Client 2 sock 6 state: TRAINING
+[Sat May 23 23:43:53 2026] [DEBUG] [Watchdog] Client 1 sock 5 state: TRAINING
+[Sat May 23 23:44:23 2026] [DEBUG] [Watchdog] Client 2 sock 6 state: TRAINING
+[Sat May 23 23:44:23 2026] [DEBUG] [Watchdog] Client 1 sock 5 state: TRAINING
+[Sat May 23 23:44:54 2026] [DEBUG] [Watchdog] Client 2 sock 6 state: TRAINING
+[Sat May 23 23:44:54 2026] [DEBUG] [Watchdog] Client 1 sock 5 state: TRAINING
+[Sat May 23 23:45:24 2026] [DEBUG] [Watchdog] Client 2 sock 6 state: TRAINING
+[Sat May 23 23:45:24 2026] [DEBUG] [Watchdog] Client 1 sock 5 state: TRAINING
+[Sat May 23 23:45:54 2026] [DEBUG] [Watchdog] Client 2 sock 6 state: TRAINING
+[Sat May 23 23:45:54 2026] [DEBUG] [Watchdog] Client 1 sock 5 state: TRAINING
+[Sat May 23 23:46:24 2026] [DEBUG] [Watchdog] Client 2 sock 6 state: TRAINING
+[Sat May 23 23:46:24 2026] [DEBUG] [Watchdog] Client 1 sock 5 state: TRAINING
+[Sat May 23 23:46:55 2026] [DEBUG] [Watchdog] Client 2 sock 6 state: TRAINING
+[Sat May 23 23:46:55 2026] [DEBUG] [Watchdog] Client 1 sock 5 state: TRAINING
+[Sat May 23 23:47:25 2026] [DEBUG] [Watchdog] Client 2 sock 6 state: TRAINING
+[Sat May 23 23:47:25 2026] [DEBUG] [Watchdog] Client 1 sock 5 state: TRAINING
+[Sat May 23 23:47:55 2026] [DEBUG] [Watchdog] Client 2 sock 6 state: TRAINING
+[Sat May 23 23:47:56 2026] [DEBUG] [Watchdog] Client 1 sock 5 state: TRAINING
+[Sat May 23 23:48:26 2026] [DEBUG] [Watchdog] Client 2 sock 6 state: TRAINING
+[Sat May 23 23:48:26 2026] [DEBUG] [Watchdog] Client 1 sock 5 state: TRAINING
+[Sat May 23 23:48:56 2026] [DEBUG] [Watchdog] Client 2 sock 6 state: TRAINING
+[Sat May 23 23:48:56 2026] [DEBUG] [Watchdog] Client 1 sock 5 state: TRAINING
+[Sat May 23 23:49:27 2026] [DEBUG] [Watchdog] Client 2 sock 6 state: TRAINING
+[Sat May 23 23:49:27 2026] [DEBUG] [Watchdog] Client 1 sock 5 state: TRAINING
+[Sat May 23 23:49:57 2026] [DEBUG] [Watchdog] Client 2 sock 6 state: TRAINING
+[Sat May 23 23:49:58 2026] [DEBUG] [Watchdog] Client 1 sock 5 state: TRAINING
+[Sat May 23 23:50:28 2026] [DEBUG] [Watchdog] Client 2 sock 6 state: TRAINING
+[Sat May 23 23:50:29 2026] [DEBUG] [Watchdog] Client 1 sock 5 state: TRAINING
+[Sat May 23 23:50:54 2026] [INFO] Client connected with socket id: 7
+[Sat May 23 23:50:59 2026] [DEBUG] [Watchdog] Client 2 sock 6 state: IDLE
+[Sat May 23 23:50:59 2026] [DEBUG] [Watchdog] Client 1 sock 5 state: TRAINING
+[Sat May 23 23:51:00 2026] [DEBUG] Code: 1
+[Sat May 23 23:51:00 2026] [DEBUG] Content: Training Ended
+[Sat May 23 23:51:00 2026] [INFO] [Client 2] Finished training. Sample size: 431
+[Sat May 23 23:51:30 2026] [DEBUG] [Watchdog] Client 1 sock 5 state: TRAINING
+[Sat May 23 23:52:00 2026] [DEBUG] [Watchdog] Client 1 sock 5 state: TRAINING
+[Sat May 23 23:52:11 2026] [INFO] Client connected with socket id: 8
+[Sat May 23 23:52:18 2026] [DEBUG] Code: 1
+[Sat May 23 23:52:18 2026] [DEBUG] Content: Training Ended
+[Sat May 23 23:52:18 2026] [INFO] [Client 1] Finished training. Sample size: 432
+[Sat May 23 23:52:18 2026] [INFO] All clients finished. Aggregating...
+[Sat May 23 23:52:21 2026] [INFO] [Aggregator] comm_time_ms: 3500
+[Sat May 23 23:52:21 2026] [INFO] [Aggregator] aggregation_time_ms: 12
+[Sat May 23 23:52:24 2026] [INFO] [EXPORTER] Running: PYTHONPATH=code python3 -m FedSolPython.scripts.build_and_save "input_server/config.json"
+[2026-05-23 23:52:26] [INFO] Starting build from config: input_server/config.json
+[2026-05-23 23:52:27] [INFO] pt_path mode: loading model from 'input_server/model.pt'
+[2026-05-23 23:52:30] [INFO] Federated weights applied to YOLO (nc=1): 3,021,443 floats
+[2026-05-23 23:52:31] [INFO] Archived model saved to: output_server/models/model_20260523_235230.pt
+[2026-05-23 23:52:31] [INFO] Updated .pt written back to: input_server/model.pt
+[Sat May 23 23:52:32 2026] [INFO] [EXPORTER] Model exported successfully
+[Sat May 23 23:52:32 2026] [INFO] [SERVER] Completed one epoch. Remaining: 0
+[Sat May 23 23:52:32 2026] [INFO] [SERVER] Training finished.
+[Sat May 23 23:52:52 2026] [INFO] [EVALUATOR] Running evaluation script: evaluate
+[Sat May 23 23:53:56 2026] [INFO] [EVALUATOR] Evaluation completed successfully
+[Sat May 23 23:58:14 2026] [INFO] [EVALUATOR] Running evaluation script: evaluate
+[Sat May 23 23:59:37 2026] [INFO] [EVALUATOR] Evaluation completed successfully
+[Sun May 24 00:01:57 2026] [INFO] [EVALUATOR] Running evaluation script: evaluate
+[Sun May 24 00:03:02 2026] [INFO] [EVALUATOR] Evaluation completed successfully
+[Sun May 24 00:15:20 2026] [INFO] [EVALUATOR] Running evaluation script: evaluate
+[Sun May 24 00:16:43 2026] [INFO] [EVALUATOR] Evaluation completed successfully
+[Sun May 24 00:17:30 2026] [INFO] [EVALUATOR] Running evaluation script: evaluate
+[Sun May 24 00:18:34 2026] [INFO] [EVALUATOR] Evaluation completed successfully
+[Sun May 24 00:50:50 2026] [INFO] [EVALUATOR] Running evaluation script: evaluate
+[Sun May 24 00:52:16 2026] [INFO] [EVALUATOR] Evaluation completed successfully
+[Sun May 24 00:53:48 2026] [INFO] [EVALUATOR] Running evaluation script: evaluate
+[Sun May 24 00:54:59 2026] [INFO] [EVALUATOR] Evaluation completed successfully
+[Sun May 24 01:00:52 2026] [INFO] [EVALUATOR] Running evaluation script: evaluate
+[Sun May 24 01:02:56 2026] [INFO] [EVALUATOR] Evaluation completed successfully

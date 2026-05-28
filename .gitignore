@@ -1,0 +1,17 @@
+.env
+configTest/*/*.npz
+input_client/*.npz
+input_client/*.gz
+input_client/dataset*/*
+input_client/*.npz
+output_client/yolo_runs/*
+
+input_server/*.npz
+input_server/*.gz
+input_server/dataset/*
+input_server/config.json
+output_server/models/*.pt
+
+runs/*
+
+FedSolPython/*/__pycache__

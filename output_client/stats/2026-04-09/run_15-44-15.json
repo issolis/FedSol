@@ -1,0 +1,60 @@
+{
+    "config_path": "configClient.json",
+    "device": "cpu",
+    "epochs": 5,
+    "batch_size": 32,
+    "optimizer": "adam",
+    "learning_rate": 0.001,
+    "loss_function": {
+        "name": "cross_entropy",
+        "params": {}
+    },
+    "total_samples": 1000,
+    "epochs_stats": [
+        {
+            "epoch": 1,
+            "loss": 1.007741067558527,
+            "accuracy": 0.676,
+            "correct_predictions": 676,
+            "total_samples": 1000,
+            "duration_seconds": 0.43869471549987793
+        },
+        {
+            "epoch": 2,
+            "loss": 0.9753788989037275,
+            "accuracy": 0.692,
+            "correct_predictions": 692,
+            "total_samples": 1000,
+            "duration_seconds": 0.442838191986084
+        },
+        {
+            "epoch": 3,
+            "loss": 0.9676402378827333,
+            "accuracy": 0.693,
+            "correct_predictions": 693,
+            "total_samples": 1000,
+            "duration_seconds": 0.47562742233276367
+        },
+        {
+            "epoch": 4,
+            "loss": 0.9704991523176432,
+            "accuracy": 0.696,
+            "correct_predictions": 696,
+            "total_samples": 1000,
+            "duration_seconds": 0.43125295639038086
+        },
+        {
+            "epoch": 5,
+            "loss": 0.9649155810475349,
+            "accuracy": 0.7,
+            "correct_predictions": 700,
+            "total_samples": 1000,
+            "duration_seconds": 0.45951151847839355
+        }
+    ],
+    "total_training_time_seconds": 2.2487950325012207,
+    "final_loss": 0.9649155810475349,
+    "final_accuracy": 0.7,
+    "weights_count": 2610,
+    "timestamp": "2026-04-09T15:44:15.887304"
+}

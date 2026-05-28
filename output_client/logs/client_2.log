@@ -1,0 +1,17 @@
+[Fri May 22 00:55:47 2026] [INFO] [Client 2] Starting client
+[Fri May 22 00:55:47 2026] [INFO] [Sock 4] Connected to server (pt_path mode)
+[Fri May 22 00:55:47 2026] [INFO] [Sock 4] Authentication successful (pt_path mode)
+[Fri May 22 00:55:47 2026] [DEBUG] [Client 2] Sent client ID
+[Fri May 22 00:55:47 2026] [DEBUG] [Client 2] Sent .pt hash: eccd1f0b...
+[Fri May 22 00:55:47 2026] [DEBUG] [Client 2] Hash response: HASH_OK
+[Fri May 22 00:55:47 2026] [INFO] [Client 2] PT hash verified
+[Fri May 22 00:55:47 2026] [INFO] [Sock 4] Authenticated successfully (pt_path mode)
+[Fri May 22 01:00:00 2026] [DEBUG] [Sock 4] Message content: Sending dataset
+[Fri May 22 01:00:00 2026] [DEBUG] [Sock 4] Message code: 3
+[Fri May 22 01:00:00 2026] [INFO] [Client] Receiving dataset, saving to: input_client/dataset.tar.gz
+[Fri May 22 01:00:01 2026] [INFO] [Protocol] Receiving file: input_client/dataset.tar.gz (230707548 bytes)
+[Fri May 22 01:00:02 2026] [INFO] [Protocol] File saved to: input_client/dataset.tar.gz
+[Fri May 22 01:00:04 2026] [INFO] [Client] Dataset received successfully
+[Fri May 22 01:00:47 2026] [DEBUG] [Sock 4] Message content: Shutdown
+[Fri May 22 01:00:47 2026] [DEBUG] [Sock 4] Message code: 4
+[Fri May 22 01:00:47 2026] [INFO] [Client 2] Shutdown received. Exiting.

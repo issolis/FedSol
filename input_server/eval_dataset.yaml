@@ -1,0 +1,5 @@
+train: /home/isaac/Documents/TEC/v1_fedsol/FedSol/input_server/dataset/val/images
+val: /home/isaac/Documents/TEC/v1_fedsol/FedSol/input_server/dataset/val/images
+nc: 1
+names:
+  - pina

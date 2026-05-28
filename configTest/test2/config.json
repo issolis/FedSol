@@ -1,0 +1,62 @@
+{
+    "backlog": 10,
+    "dataset": {
+        "target_dtype": "long",
+        "test_path": "input_server/dataset_test.npz",
+        "train_path": "input_server/dataset_train.npz",
+        "type": "npz"
+    },
+    "evaluation": {
+        "metrics": [
+            {
+                "name": "loss"
+            },
+            {
+                "name": "accuracy"
+            },
+            {
+                "average": "macro",
+                "name": "precision",
+                "zero_division": 0
+            },
+            {
+                "average": "macro",
+                "name": "recall",
+                "zero_division": 0
+            },
+            {
+                "average": "macro",
+                "name": "f1",
+                "zero_division": 0
+            },
+            {
+                "name": "confusion_matrix"
+            }
+        ],
+        "prediction_config": {
+            "method": "argmax"
+        },
+        "report_function": {
+            "name": "default_report",
+            "params": {
+                "base_dir": "output_server/globalResults",
+                "print_to_console": true,
+                "save_results": true,
+                "use_timestamp_path": true
+            }
+        },
+        "task_type": "multiclass_classification"
+    },
+    "model": {
+        "id": 0,
+        "pt_path": "input_server/model.pt"
+       
+    },
+    "port": 9000,
+    "training": {
+        "loss": {
+            "name": "cross_entropy",
+            "params": {}
+        }
+    }
+}

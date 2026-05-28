@@ -1,0 +1,198 @@
+[Wed May 20 18:39:28 2026] [INFO] [Client 1] Starting client
+[Wed May 20 18:39:28 2026] [INFO] [Sock 4] Connected to server (pt_path mode)
+[Wed May 20 18:39:28 2026] [INFO] [Sock 4] Authentication successful (pt_path mode)
+[Wed May 20 18:39:28 2026] [DEBUG] [Client 1] Sent client ID
+[Wed May 20 18:39:28 2026] [DEBUG] [Client 1] Sent .pt hash: eccd1f0b...
+[Wed May 20 18:39:28 2026] [DEBUG] [Client 1] Hash response: HASH_OK
+[Wed May 20 18:39:28 2026] [INFO] [Client 1] PT hash verified
+[Wed May 20 18:39:28 2026] [INFO] [Sock 4] Authenticated successfully (pt_path mode)
+[Wed May 20 18:39:53 2026] [DEBUG] [Sock 4] Message content: Start Training
+[Wed May 20 18:39:53 2026] [DEBUG] [Sock 4] Message code: 1
+[Wed May 20 18:39:54 2026] [INFO] [Client 1] State: TRAINING
+[Wed May 20 18:40:11 2026] [DEBUG] [Sock 4] Message content: Ping
+[Wed May 20 19:48:16 2026] [INFO] [Client 1] Starting client
+[Wed May 20 19:48:16 2026] [INFO] [Sock 4] Connected to server (pt_path mode)
+[Wed May 20 19:48:16 2026] [INFO] [Sock 4] Authentication successful (pt_path mode)
+[Wed May 20 19:48:16 2026] [DEBUG] [Client 1] Sent client ID
+[Wed May 20 19:48:16 2026] [DEBUG] [Client 1] Sent .pt hash: eccd1f0b...
+[Wed May 20 19:48:16 2026] [DEBUG] [Client 1] Hash response: HASH_OK
+[Wed May 20 19:48:16 2026] [INFO] [Client 1] PT hash verified
+[Wed May 20 19:48:16 2026] [INFO] [Sock 4] Authenticated successfully (pt_path mode)
+[Wed May 20 19:50:10 2026] [INFO] [Client 1] Starting client
+[Wed May 20 19:51:23 2026] [INFO] [Client 1] Starting client
+[Wed May 20 19:51:23 2026] [INFO] [Sock 4] Connected to server (pt_path mode)
+[Wed May 20 19:51:23 2026] [INFO] [Sock 4] Authentication successful (pt_path mode)
+[Wed May 20 19:51:23 2026] [DEBUG] [Client 1] Sent client ID
+[Wed May 20 19:51:23 2026] [DEBUG] [Client 1] Sent .pt hash: eccd1f0b...
+[Wed May 20 19:51:23 2026] [DEBUG] [Client 1] Hash response: HASH_OK
+[Wed May 20 19:51:23 2026] [INFO] [Client 1] PT hash verified
+[Wed May 20 19:51:23 2026] [INFO] [Sock 4] Authenticated successfully (pt_path mode)
+[Wed May 20 19:52:06 2026] [DEBUG] [Sock 4] Message content: Sending dataset
+[Wed May 20 19:52:06 2026] [DEBUG] [Sock 4] Message code: 3
+[Wed May 20 19:52:06 2026] [INFO] [Client] Receiving dataset, saving to: input_client/dataset_received.tar.gz
+[Wed May 20 19:52:09 2026] [ERROR] [Protocol] Invalid file size: 393004536
+[Wed May 20 19:52:09 2026] [ERROR] [Client 1] Disconnected from server: Invalid file size: 393004536
+[Wed May 20 20:31:01 2026] [INFO] [Client 1] Starting client
+[Wed May 20 20:31:45 2026] [INFO] [Client 1] Starting client
+[Wed May 20 20:32:05 2026] [INFO] [Client 1] Starting client
+[Wed May 20 20:33:11 2026] [INFO] [Client 1] Starting client
+[Wed May 20 20:34:41 2026] [INFO] [Client 1] Starting client
+[Wed May 20 20:34:41 2026] [INFO] [Sock 4] Connected to server (pt_path mode)
+[Wed May 20 20:34:41 2026] [INFO] [Sock 4] Authentication successful (pt_path mode)
+[Wed May 20 20:34:41 2026] [DEBUG] [Client 1] Sent client ID
+[Wed May 20 20:34:41 2026] [DEBUG] [Client 1] Sent .pt hash: eccd1f0b...
+[Wed May 20 20:34:41 2026] [DEBUG] [Client 1] Hash response: HASH_OK
+[Wed May 20 20:34:41 2026] [INFO] [Client 1] PT hash verified
+[Wed May 20 20:34:41 2026] [INFO] [Sock 4] Authenticated successfully (pt_path mode)
+[Wed May 20 20:35:16 2026] [ERROR] [Client 1] Disconnected from server: Client disconnected (recv = 0)
+[Wed May 20 20:37:21 2026] [INFO] [Client 1] Starting client
+[Wed May 20 20:37:35 2026] [INFO] [Client 1] Starting client
+[Wed May 20 20:37:35 2026] [INFO] [Sock 4] Connected to server (pt_path mode)
+[Wed May 20 20:37:35 2026] [INFO] [Sock 4] Authentication successful (pt_path mode)
+[Wed May 20 20:37:35 2026] [DEBUG] [Client 1] Sent client ID
+[Wed May 20 20:37:35 2026] [DEBUG] [Client 1] Sent .pt hash: eccd1f0b...
+[Wed May 20 20:37:35 2026] [DEBUG] [Client 1] Hash response: HASH_OK
+[Wed May 20 20:37:35 2026] [INFO] [Client 1] PT hash verified
+[Wed May 20 20:37:35 2026] [INFO] [Sock 4] Authenticated successfully (pt_path mode)
+[Wed May 20 20:38:18 2026] [DEBUG] [Sock 4] Message content: Sending dataset
+[Wed May 20 20:38:18 2026] [DEBUG] [Sock 4] Message code: 3
+[Wed May 20 20:38:18 2026] [INFO] [Client] Receiving dataset, saving to: input_client/dataset.tar.gz
+[Wed May 20 20:38:21 2026] [ERROR] [Protocol] Invalid file size: 393004567
+[Wed May 20 20:38:21 2026] [ERROR] [Client 1] Disconnected from server: Invalid file size: 393004567
+[Wed May 20 20:42:12 2026] [INFO] [Client 1] Starting client
+[Wed May 20 20:42:12 2026] [INFO] [Sock 4] Connected to server (pt_path mode)
+[Wed May 20 20:42:12 2026] [INFO] [Sock 4] Authentication successful (pt_path mode)
+[Wed May 20 20:42:12 2026] [DEBUG] [Client 1] Sent client ID
+[Wed May 20 20:42:12 2026] [DEBUG] [Client 1] Sent .pt hash: eccd1f0b...
+[Wed May 20 20:42:12 2026] [DEBUG] [Client 1] Hash response: HASH_OK
+[Wed May 20 20:42:12 2026] [INFO] [Client 1] PT hash verified
+[Wed May 20 20:42:12 2026] [INFO] [Sock 4] Authenticated successfully (pt_path mode)
+[Wed May 20 20:43:40 2026] [DEBUG] [Sock 4] Message content: Sending dataset
+[Wed May 20 20:43:40 2026] [DEBUG] [Sock 4] Message code: 3
+[Wed May 20 20:43:40 2026] [INFO] [Client] Receiving dataset, saving to: input_client/dataset.tar.gz
+[Wed May 20 20:43:43 2026] [INFO] [Protocol] Receiving file: input_client/dataset.tar.gz (393004535 bytes)
+[Wed May 20 20:43:44 2026] [INFO] [Protocol] File saved to: input_client/dataset.tar.gz
+[Wed May 20 20:43:44 2026] [INFO] [Client] Dataset received successfully
+[Wed May 20 21:47:11 2026] [INFO] [Client 1] Starting client
+[Wed May 20 21:48:51 2026] [INFO] [Client 1] Starting client
+[Wed May 20 21:48:51 2026] [INFO] [Sock 4] Connected to server (pt_path mode)
+[Wed May 20 21:48:51 2026] [INFO] [Sock 4] Authentication successful (pt_path mode)
+[Wed May 20 21:48:51 2026] [DEBUG] [Client 1] Sent client ID
+[Wed May 20 21:48:51 2026] [DEBUG] [Client 1] Sent .pt hash: eccd1f0b...
+[Wed May 20 21:48:51 2026] [DEBUG] [Client 1] Hash response: HASH_OK
+[Wed May 20 21:48:51 2026] [INFO] [Client 1] PT hash verified
+[Wed May 20 21:48:51 2026] [INFO] [Sock 4] Authenticated successfully (pt_path mode)
+[Wed May 20 22:12:12 2026] [INFO] [Client 1] Starting client
+[Wed May 20 22:12:41 2026] [INFO] [Client 1] Starting client
+[Wed May 20 22:12:41 2026] [INFO] [Sock 4] Connected to server (pt_path mode)
+[Wed May 20 22:12:41 2026] [INFO] [Sock 4] Authentication successful (pt_path mode)
+[Wed May 20 22:12:41 2026] [DEBUG] [Client 1] Sent client ID
+[Wed May 20 22:12:41 2026] [DEBUG] [Client 1] Sent .pt hash: eccd1f0b...
+[Wed May 20 22:12:42 2026] [DEBUG] [Client 1] Hash response: HASH_OK
+[Wed May 20 22:12:42 2026] [INFO] [Client 1] PT hash verified
+[Wed May 20 22:12:42 2026] [INFO] [Sock 4] Authenticated successfully (pt_path mode)
+[Wed May 20 22:15:56 2026] [DEBUG] [Sock 4] Message content: Sending dataset
+[Wed May 20 22:15:56 2026] [DEBUG] [Sock 4] Message code: 3
+[Wed May 20 22:15:56 2026] [INFO] [Client] Receiving dataset, saving to: input_client/dataset.tar.gz
+[Wed May 20 22:15:58 2026] [INFO] [Protocol] Receiving file: input_client/dataset.tar.gz (393004571 bytes)
+[Wed May 20 22:15:59 2026] [INFO] [Protocol] File saved to: input_client/dataset.tar.gz
+[Wed May 20 22:16:00 2026] [INFO] [Client] Dataset received successfully
+[Wed May 20 22:16:08 2026] [DEBUG] [Sock 4] Message content: Start Training
+[Wed May 20 22:16:08 2026] [DEBUG] [Sock 4] Message code: 1
+[Wed May 20 22:16:09 2026] [INFO] [Client 1] State: TRAINING
+[Wed May 20 22:16:21 2026] [DEBUG] [Sock 4] Message content: Ping
+[Wed May 20 22:16:21 2026] [DEBUG] [Sock 4] Message code: 5
+[Wed May 20 22:16:21 2026] [DEBUG] [Client 1] PONG: TRAINING
+[Wed May 20 22:16:51 2026] [DEBUG] [Sock 4] Message content: Ping
+[Wed May 20 22:16:51 2026] [DEBUG] [Sock 4] Message code: 5
+[Wed May 20 22:16:51 2026] [DEBUG] [Client 1] PONG: TRAINING
+[Wed May 20 22:17:21 2026] [DEBUG] [Sock 4] Message content: Ping
+[Wed May 20 22:17:21 2026] [DEBUG] [Sock 4] Message code: 5
+[Wed May 20 22:17:21 2026] [DEBUG] [Client 1] PONG: TRAINING
+[Wed May 20 22:26:20 2026] [INFO] [Client 1] Starting client
+[Wed May 20 22:26:20 2026] [INFO] [Sock 4] Connected to server (pt_path mode)
+[Wed May 20 22:26:20 2026] [INFO] [Sock 4] Authentication successful (pt_path mode)
+[Wed May 20 22:26:20 2026] [DEBUG] [Client 1] Sent client ID
+[Wed May 20 22:26:20 2026] [DEBUG] [Client 1] Sent .pt hash: eccd1f0b...
+[Wed May 20 22:26:20 2026] [DEBUG] [Client 1] Hash response: HASH_OK
+[Wed May 20 22:26:20 2026] [INFO] [Client 1] PT hash verified
+[Wed May 20 22:26:20 2026] [INFO] [Sock 4] Authenticated successfully (pt_path mode)
+[Wed May 20 22:27:05 2026] [DEBUG] [Sock 4] Message content: Start Training
+[Wed May 20 22:27:05 2026] [DEBUG] [Sock 4] Message code: 1
+[Wed May 20 22:27:08 2026] [INFO] [Client 1] State: TRAINING
+[Wed May 20 22:27:21 2026] [DEBUG] [Sock 4] Message content: Ping
+[Wed May 20 22:27:21 2026] [DEBUG] [Sock 4] Message code: 5
+[Wed May 20 22:27:21 2026] [DEBUG] [Client 1] PONG: TRAINING
+[Wed May 20 22:27:49 2026] [INFO] [Client 1] State: IDLE
+[Wed May 20 22:27:51 2026] [INFO] [Client 1] Finished training
+[Wed May 20 22:27:51 2026] [DEBUG] [Sock 4] Message content: Weights
+[Wed May 20 22:27:51 2026] [DEBUG] [Sock 4] Message code: 2
+[Wed May 20 22:27:51 2026] [INFO] [Client 1] Sending weights to server
+[Wed May 20 22:51:59 2026] [INFO] [Client 1] Starting client
+[Wed May 20 22:51:59 2026] [INFO] [Sock 4] Connected to server (pt_path mode)
+[Wed May 20 22:51:59 2026] [INFO] [Sock 4] Authentication successful (pt_path mode)
+[Wed May 20 22:51:59 2026] [DEBUG] [Client 1] Sent client ID
+[Wed May 20 22:51:59 2026] [DEBUG] [Client 1] Sent .pt hash: 06ff8a1c...
+[Wed May 20 22:51:59 2026] [DEBUG] [Client 1] Hash response: ID_DUPLICATE
+[Wed May 20 22:51:59 2026] [ERROR] [Client 1] PT hash rejected by server: ID_DUPLICATE
+[Wed May 20 22:51:59 2026] [ERROR] [Sock 4] PT handshake failed
+[Wed May 20 22:51:59 2026] [ERROR] [Client 1] Disconnected from server: PT handshake failed
+[Wed May 20 22:52:47 2026] [INFO] [Client 1] Starting client
+[Wed May 20 22:52:47 2026] [INFO] [Sock 4] Connected to server (pt_path mode)
+[Wed May 20 22:52:47 2026] [INFO] [Sock 4] Authentication successful (pt_path mode)
+[Wed May 20 22:52:47 2026] [DEBUG] [Client 1] Sent client ID
+[Wed May 20 22:52:47 2026] [DEBUG] [Client 1] Sent .pt hash: 06ff8a1c...
+[Wed May 20 22:52:47 2026] [DEBUG] [Client 1] Hash response: ID_DUPLICATE
+[Wed May 20 22:52:47 2026] [ERROR] [Client 1] PT hash rejected by server: ID_DUPLICATE
+[Wed May 20 22:52:47 2026] [ERROR] [Sock 4] PT handshake failed
+[Wed May 20 22:52:47 2026] [ERROR] [Client 1] Disconnected from server: PT handshake failed
+[Wed May 20 22:53:20 2026] [INFO] [Client 1] Starting client
+[Wed May 20 22:53:20 2026] [INFO] [Sock 4] Connected to server (pt_path mode)
+[Wed May 20 22:53:20 2026] [INFO] [Sock 4] Authentication successful (pt_path mode)
+[Wed May 20 22:53:20 2026] [DEBUG] [Client 1] Sent client ID
+[Wed May 20 22:53:20 2026] [DEBUG] [Client 1] Sent .pt hash: 06ff8a1c...
+[Wed May 20 22:53:20 2026] [DEBUG] [Client 1] Hash response: HASH_INVALID
+[Wed May 20 22:53:20 2026] [ERROR] [Client 1] PT hash rejected by server: HASH_INVALID
+[Wed May 20 22:53:20 2026] [ERROR] [Sock 4] PT handshake failed
+[Wed May 20 22:53:20 2026] [ERROR] [Client 1] Disconnected from server: PT handshake failed
+[Wed May 20 22:54:18 2026] [INFO] [Client 1] Starting client
+[Wed May 20 22:54:18 2026] [INFO] [Sock 4] Connected to server (pt_path mode)
+[Wed May 20 22:54:18 2026] [INFO] [Sock 4] Authentication successful (pt_path mode)
+[Wed May 20 22:54:18 2026] [DEBUG] [Client 1] Sent client ID
+[Wed May 20 22:54:18 2026] [DEBUG] [Client 1] Sent .pt hash: 06ff8a1c...
+[Wed May 20 22:54:18 2026] [DEBUG] [Client 1] Hash response: HASH_OK
+[Wed May 20 22:54:18 2026] [INFO] [Client 1] PT hash verified
+[Wed May 20 22:54:18 2026] [INFO] [Sock 4] Authenticated successfully (pt_path mode)
+[Wed May 20 23:02:46 2026] [INFO] [Client 1] Starting client
+[Wed May 20 23:02:46 2026] [INFO] [Sock 4] Connected to server (pt_path mode)
+[Wed May 20 23:02:46 2026] [INFO] [Sock 4] Authentication successful (pt_path mode)
+[Wed May 20 23:02:46 2026] [DEBUG] [Client 1] Sent client ID
+[Wed May 20 23:02:46 2026] [DEBUG] [Client 1] Sent .pt hash: 06ff8a1c...
+[Wed May 20 23:02:46 2026] [DEBUG] [Client 1] Hash response: ID_DUPLICATE
+[Wed May 20 23:02:46 2026] [ERROR] [Client 1] PT hash rejected by server: ID_DUPLICATE
+[Wed May 20 23:02:46 2026] [ERROR] [Sock 4] PT handshake failed
+[Wed May 20 23:02:46 2026] [ERROR] [Client 1] Disconnected from server: PT handshake failed
+[Wed May 20 23:32:50 2026] [INFO] [Client 1] Starting client
+[Wed May 20 23:33:00 2026] [INFO] [Client 1] Starting client
+[Wed May 20 23:33:00 2026] [INFO] [Sock 4] Connected to server (pt_path mode)
+[Wed May 20 23:33:00 2026] [INFO] [Sock 4] Authentication successful (pt_path mode)
+[Wed May 20 23:33:00 2026] [DEBUG] [Client 1] Sent client ID
+[Wed May 20 23:33:00 2026] [DEBUG] [Client 1] Sent .pt hash: d046e0d6...
+[Wed May 20 23:33:00 2026] [DEBUG] [Client 1] Hash response: HASH_OK
+[Wed May 20 23:33:00 2026] [INFO] [Client 1] PT hash verified
+[Wed May 20 23:33:00 2026] [INFO] [Sock 4] Authenticated successfully (pt_path mode)
+[Wed May 20 23:33:29 2026] [DEBUG] [Sock 4] Message content: Sending dataset
+[Wed May 20 23:33:29 2026] [DEBUG] [Sock 4] Message code: 3
+[Wed May 20 23:33:29 2026] [INFO] [Client] Receiving dataset, saving to: input_client/dataset.tar.gz
+[Wed May 20 23:33:31 2026] [INFO] [Protocol] Receiving file: input_client/dataset.tar.gz (393004531 bytes)
+[Wed May 20 23:33:32 2026] [INFO] [Protocol] File saved to: input_client/dataset.tar.gz
+[Wed May 20 23:33:33 2026] [INFO] [Client] Dataset received successfully
+[Wed May 20 23:44:21 2026] [INFO] [Client 1] Starting client
+[Wed May 20 23:45:23 2026] [INFO] [Client 1] Starting client
+[Wed May 20 23:45:23 2026] [INFO] [Sock 4] Connected to server (pt_path mode)
+[Wed May 20 23:45:23 2026] [INFO] [Sock 4] Authentication successful (pt_path mode)
+[Wed May 20 23:45:23 2026] [DEBUG] [Client 1] Sent client ID
+[Wed May 20 23:45:23 2026] [DEBUG] [Client 1] Sent .pt hash: eccd1f0b...
+[Wed May 20 23:45:23 2026] [DEBUG] [Client 1] Hash response: HASH_OK
+[Wed May 20 23:45:23 2026] [INFO] [Client 1] PT hash verified
+[Wed May 20 23:45:23 2026] [INFO] [Sock 4] Authenticated successfully (pt_path mode)

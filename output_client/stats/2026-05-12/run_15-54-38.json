@@ -1,0 +1,28 @@
+{
+    "config_path": "input_client/configClient.json",
+    "device": "cpu",
+    "epochs": 1,
+    "batch_size": 32,
+    "optimizer": "adam",
+    "learning_rate": 0.001,
+    "loss_function": {
+        "name": "cross_entropy",
+        "params": {}
+    },
+    "total_samples": 18000,
+    "epochs_stats": [
+        {
+            "epoch": 1,
+            "loss": 0.04491409236330748,
+            "accuracy": 0.9834444444444445,
+            "correct_predictions": 17702,
+            "total_samples": 18000,
+            "duration_seconds": 7.22986364364624
+        }
+    ],
+    "total_training_time_seconds": 7.230026960372925,
+    "final_loss": 0.04491409236330748,
+    "final_accuracy": 0.9834444444444445,
+    "weights_count": 103018,
+    "timestamp": "2026-05-12T15:54:38.153766"
+}

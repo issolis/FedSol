@@ -1,0 +1,57 @@
+{
+    "client": {
+        "id": 2
+    },
+    "connection": {
+        "password": "federated123",
+        "port": 9000,
+        "server_ip": "192.168.68.118"
+    },
+    "dataset": {
+        "names": [
+            "pina"
+        ],
+        "nc": 1,
+        "receive_path": "input_client/dataset.tar.gz",
+        "train_path": "input_client/dataset_local/dataset/train",
+        "type": "yolo",
+        "val_path": "input_client/dataset_local/dataset/val"
+    },
+    "evaluation": {
+        "metrics": [
+            "map50",
+            "map50_95",
+            "precision",
+            "recall"
+        ],
+        "prediction_config": {
+            "conf": 0.25,
+            "iou": 0.45
+        },
+        "report_function": {
+            "name": "default_report",
+            "params": {
+                "base_dir": "globalResults",
+                "print_to_console": true,
+                "save_results": true,
+                "use_timestamp_path": true
+            }
+        },
+        "task_type": "object_detection"
+    },
+    "model": {
+        "id": 1,
+        "pt_path": "input_client/model.pt"
+    },
+    "training": {
+        "epochs": 10,
+        "batch_size": 2,
+        "imgsz": 320,
+        "lr": 0.01,
+        "optimizer": "sgd",
+        "loss": {
+            "name": "yolo_default",
+            "params": {}
+        }
+    }
+}
