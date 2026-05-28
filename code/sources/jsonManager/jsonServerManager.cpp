@@ -18,6 +18,15 @@ void JSONServerManager::startServerFromJSON(const std::string &path)
     // --- DATASET PATH ---
     std::string datasetPath = j["dataset"]["train_path"];
 
+    // --- FedSol V2: backdoor defense toggle ---
+    // Optional top-level boolean. Defaults to false so existing configs that
+    // predate the defense keep the original FedAvg behavior.
+    bool defenseEnabled = false;
+    if (j.contains("defense"))
+        defenseEnabled = j["defense"].get<bool>();
+    std::cout << "[INFO] Backdoor defense: "
+              << (defenseEnabled ? "ENABLED" : "DISABLED") << "\n";
+
     // ── pt_path mode ─────────────────────────────────────────────────────────
     if (j["model"].contains("pt_path"))
     {
@@ -79,7 +88,7 @@ void JSONServerManager::startServerFromJSON(const std::string &path)
 
         Model model(id, arch, weights);
 
-        Server server(port, backlog, model, path, datasetPath, ptHash);
+        Server server(port, backlog, model, path, datasetPath, defenseEnabled, ptHash);
         server.run();
         return;
     }
@@ -136,6 +145,6 @@ void JSONServerManager::startServerFromJSON(const std::string &path)
     Model model(id, arch, weights);
 
     // --- SERVER FINAL ---
-    Server server(port, backlog, model, path, datasetPath);
+    Server server(port, backlog, model, path, datasetPath, defenseEnabled);
     server.run();
 }

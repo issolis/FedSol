@@ -24,6 +24,7 @@ public:
     std::atomic<uint32_t> epochs{0};
     std::atomic<bool> aggregationStarted{false};
     std::atomic<bool> trainingActive{false};
+    std::atomic<bool> defenseEnabled{false};
     
     std::mutex socketIOMutex;
 

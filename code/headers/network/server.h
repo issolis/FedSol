@@ -51,12 +51,13 @@ private:
     std::atomic<bool> running{true};
     std::thread consoleThread;
     std::string ptHash; 
+    bool defenseEnabled; 
     
     void handleClient(int clientSockID);
     void handleMessage(AuthMessage &message, int clientSockID);
 
 public:
-    Server(unsigned short port, uint32_t backlog, Model &globaModel, const std::string &path, const std::string &datasetPath, const std::string &ptHash = "");
+    Server(unsigned short port, uint32_t backlog, Model &globaModel, const std::string &path, const std::string &datasetPath, bool defenseEnabled = false, const std::string &ptHash = "");
     void run();
     void consoleLoop();
 };

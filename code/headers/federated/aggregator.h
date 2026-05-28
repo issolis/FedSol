@@ -10,11 +10,11 @@
 #include "protocol/protocol.h"
 #include "jsonManager/jsonManager.h"
 #include "models/Model.h"
-
 #include "federated/FedAvg.h"
 #include "federated/modelExporter.h"
 #include "federated/sharedState.h"
 #include "logger/logger.h"
+#include "security/backdoorDefense.h"
 
 
 class Aggregator

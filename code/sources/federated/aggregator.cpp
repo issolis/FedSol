@@ -3,7 +3,7 @@
 #include "protocol/OP_CODES.h"
 
 using Clock = std::chrono::steady_clock;
-using Ms    = std::chrono::milliseconds;
+using Ms = std::chrono::milliseconds;
 
 Aggregator::Aggregator(SharedState &shared, Model &globalModel)
     : shared(shared), globalModel(globalModel)
@@ -21,6 +21,7 @@ bool Aggregator::aggregate(const std::string &path)
 
     std::vector<std::vector<float>> weightsList;
     std::vector<uint32_t> sampleSizesList;
+    std::vector<uint32_t> clientIDsList;
 
     std::mutex weightsMutex;
     std::vector<std::thread> threads;
@@ -68,6 +69,7 @@ bool Aggregator::aggregate(const std::string &path)
                     std::lock_guard<std::mutex> lock(weightsMutex);
                     weightsList.push_back(weights);
                     sampleSizesList.push_back(sampleSize);
+                    clientIDsList.push_back(clientID); 
                 }
             }
             catch (...)
@@ -96,6 +98,13 @@ bool Aggregator::aggregate(const std::string &path)
         t.join();
 
     auto t_comm_end = Clock::now();
+
+    BackdoorDefense::filter(
+        shared.defenseEnabled.load(),
+        globalModel.getWeights(),
+        weightsList,
+        sampleSizesList,
+        clientIDsList);
 
     if (weightsList.empty())
     {

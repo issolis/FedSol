@@ -8,6 +8,7 @@ Server::Server(
     Model &globalModel,
     const std::string &path,
     const std::string &datasetPath,
+    bool defenseEnabled,
     const std::string &ptHash)
     : globalModel(globalModel),
       trainer(shared, globalModel),
@@ -23,6 +24,11 @@ Server::Server(
     this->path = path;
     this->datasetPath = datasetPath;
     this->ptHash = ptHash;
+
+    shared.defenseEnabled.store(defenseEnabled); // ← AÑADIDO
+    Logger::log(LogLevel::INFO,
+                std::string("[Server] Backdoor defense is ") +
+                    (defenseEnabled ? "ENABLED" : "DISABLED") + ".");
 }
 
 void Server::run()
@@ -79,17 +85,17 @@ void Server::handleMessage(AuthMessage &message, int clientSockID)
 {
     switch (message.code)
     {
-     case AuthOp::HANDSHAKE:
+    case AuthOp::HANDSHAKE:
     {
         if (shared.trainingActive.load())
         {
             Logger::log(LogLevel::WARNING,
-                "[Server] New client rejected — training in progress.");
+                        "[Server] New client rejected — training in progress.");
             Protocol::sendMessage(clientSockID, ServerOp::AUTH_RESPONSE, "TRAINING_IN_PROGRESS");
             close(clientSockID);
             break;
         }
-        
+
         if (!this->ptHash.empty())
         {
             // pt_path mode: validate by .pt hash
@@ -102,7 +108,7 @@ void Server::handleMessage(AuthMessage &message, int clientSockID)
         }
         break;
     }
-    
+
     case AuthOp::TRAINING_FINISHED:
     {
         roundManager.handleTrainingFinished(clientSockID, path);
@@ -150,7 +156,7 @@ void Server::consoleLoop()
         {
         case 1:
         {
-            ServerConsoleManager::handleStartTraining(this->globalModel, shared, trainer,this->ptHash);
+            ServerConsoleManager::handleStartTraining(this->globalModel, shared, trainer, this->ptHash);
             break;
         }
 
