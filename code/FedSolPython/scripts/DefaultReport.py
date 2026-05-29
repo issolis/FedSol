@@ -46,11 +46,12 @@ class DefaultReport:
 
         # ── Build mAP history from all saved JSONs ────────────────────────────
         history = DefaultReport._load_history(base_dir, json_path)
+        timing_history = DefaultReport._load_timing_history(base_dir)
 
         # ── Generate HTML report ──────────────────────────────────────────────
         curves = results.get("curves", {})
         meta   = results.get("_meta", {})
-        html   = DefaultReport._build_html(scalar_results, curves, meta, history)
+        html   = DefaultReport._build_html(scalar_results, curves, meta, history, timing_history)
 
         with open(html_path, "w", encoding="utf-8") as f:
             f.write(html)
@@ -85,10 +86,33 @@ class DefaultReport:
                 pass
         return history
 
+    # ── Timing history loader ────────────────────────────────────────────────
+
+    @staticmethod
+    def _load_timing_history(base_dir):
+        pattern = os.path.join(base_dir, "stats", "timing_*.json")
+        files   = sorted(glob.glob(pattern))
+        timing  = []
+        for fpath in files:
+            try:
+                with open(fpath) as f:
+                    d = json.load(f)
+                timing.append({
+                    "timestamp":       d.get("timestamp", ""),
+                    "training_ms":     d.get("training_time_ms", 0),
+                    "comm_ms":         d.get("comm_time_ms", 0),
+                    "agg_ms":          d.get("agg_time_ms", 0),
+                    "round_total_ms":  d.get("round_total_ms", 0),
+                    "clients":         d.get("clients", {}),
+                })
+            except Exception:
+                pass
+        return timing
+
     # ── HTML builder ─────────────────────────────────────────────────────────
 
     @staticmethod
-    def _build_html(results, curves, meta, history):
+    def _build_html(results, curves, meta, history, timing_history=None):
         ts         = datetime.now().strftime("%Y-%m-%d  %H:%M:%S")
         map50      = results.get("map50", 0)
         map50_95   = results.get("map50_95", 0)
@@ -119,6 +143,8 @@ class DefaultReport:
         for c in raw_confs:
             idx = min(int(c * 20), 19)
             bins[idx] += 1
+
+        timing_json = json.dumps(timing_history or [])
 
         # History JSON
         hist_json = json.dumps(history)
@@ -323,6 +349,18 @@ class DefaultReport:
     <canvas id="historyChart"></canvas>
   </div>
 
+  <!-- Timing per Round -->
+  <div class="chart-panel full" id="timingPanel">
+    <div class="chart-title">Tiempos por Ronda (ms)</div>
+    <canvas id="timingChart" style="max-height:220px"></canvas>
+  </div>
+
+  <!-- Sample sizes per Round -->
+  <div class="chart-panel full" id="samplesPanel">
+    <div class="chart-title">Sample Size por Cliente por Ronda</div>
+    <canvas id="samplesChart" style="max-height:220px"></canvas>
+  </div>
+
 </div>
 
 <footer>FedSol · Federated Learning for YOLOv8 · {ts}</footer>
@@ -501,6 +539,66 @@ if (history.length > 0) {{
 }} else {{
   document.getElementById('historyChart').parentElement.innerHTML +=
     '<p style="color:#4a5568;font-family:Fira Code;font-size:11px;margin-top:20px">Sin historial previo — aparecerá después del primer round guardado.</p>';
+}}
+
+// ── Timing per round ────────────────────────────────────────────────────────
+const timingHistory = {timing_json};
+if (timingHistory.length > 0) {{
+  const tLabels = timingHistory.map((_, i) => 'Round ' + (i + 1));
+  new Chart(document.getElementById('timingChart'), {{
+    type: 'bar',
+    data: {{
+      labels: tLabels,
+      datasets: [
+        {{ label: 'Entrenamiento', data: timingHistory.map(t => t.training_ms),
+           backgroundColor: 'rgba(57,211,83,0.75)', borderWidth: 0, borderRadius: 3 }},
+        {{ label: 'Comunicación', data: timingHistory.map(t => t.comm_ms),
+           backgroundColor: 'rgba(29,140,248,0.75)', borderWidth: 0, borderRadius: 3 }},
+        {{ label: 'Agregación', data: timingHistory.map(t => t.agg_ms),
+           backgroundColor: 'rgba(255,209,102,0.75)', borderWidth: 0, borderRadius: 3 }},
+      ]
+    }},
+    options: deepMerge(baseOpts, {{
+      plugins: {{ legend: {{ display: true, labels: {{ color: TEXT, font: {{ family: 'Fira Code', size: 10 }}, boxWidth: 12 }} }} }},
+      scales: {{
+        x: {{ stacked: false, title: {{ display: true, text: 'Ronda', color: TEXT, font: {{ family: 'Fira Code', size: 10 }} }} }},
+        y: {{ title: {{ display: true, text: 'ms', color: TEXT, font: {{ family: 'Fira Code', size: 10 }} }} }},
+      }}
+    }})
+  }});
+}} else {{
+  document.getElementById('timingPanel').innerHTML +=
+    '<p style="color:#4a5568;font-family:Fira Code;font-size:11px;margin-top:16px">Sin datos de timing.</p>';
+}}
+
+// ── Sample sizes per round ───────────────────────────────────────────────────
+if (timingHistory.length > 0) {{
+  const allClientIds = [...new Set(timingHistory.flatMap(t => Object.keys(t.clients)))].sort();
+  const colors = ['#39d353','#1d8cf8','#ff6b6b','#ffd166','#a78bfa','#22d3ee'];
+  const sLabels = timingHistory.map((_, i) => 'Round ' + (i + 1));
+  const sDatasets = allClientIds.map((cid, idx) => ({{
+    label: 'Client ' + cid,
+    data: timingHistory.map(t => t.clients[cid] || 0),
+    borderColor: colors[idx % colors.length],
+    backgroundColor: colors[idx % colors.length] + '22',
+    borderWidth: 2, pointRadius: 4,
+    pointBackgroundColor: colors[idx % colors.length],
+    fill: false, tension: 0.3,
+  }}));
+  new Chart(document.getElementById('samplesChart'), {{
+    type: 'line',
+    data: {{ labels: sLabels, datasets: sDatasets }},
+    options: deepMerge(baseOpts, {{
+      plugins: {{ legend: {{ display: true, labels: {{ color: TEXT, font: {{ family: 'Fira Code', size: 10 }}, boxWidth: 12 }} }} }},
+      scales: {{
+        x: {{ title: {{ display: true, text: 'Ronda', color: TEXT, font: {{ family: 'Fira Code', size: 10 }} }} }},
+        y: {{ title: {{ display: true, text: 'Samples', color: TEXT, font: {{ family: 'Fira Code', size: 10 }} }} }},
+      }}
+    }})
+  }});
+}} else {{
+  document.getElementById('samplesPanel').innerHTML +=
+    '<p style="color:#4a5568;font-family:Fira Code;font-size:11px;margin-top:16px">Sin datos de samples.</p>';
 }}
 </script>
 </body>

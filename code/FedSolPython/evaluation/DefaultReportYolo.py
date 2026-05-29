@@ -31,7 +31,8 @@ class DefaultReportYolo:
         base_dir = params.get("base_dir", "output_server/globalResults")
 
         history = DefaultReportYolo._load_history(base_dir)
-        html    = DefaultReportYolo._build_html(results, curves, extras, meta, history)
+        timing_history = DefaultReportYolo._load_timing_history(base_dir)
+        html    = DefaultReportYolo._build_html(results, curves, extras, meta, history, timing_history)
 
         os.makedirs(os.path.dirname(html_path), exist_ok=True)
         with open(html_path, "w", encoding="utf-8") as f:
@@ -64,10 +65,31 @@ class DefaultReportYolo:
                 pass
         return history
 
+    @staticmethod
+    def _load_timing_history(base_dir: str) -> list:
+        pattern = os.path.join(base_dir, "stats", "timing_*.json")
+        files   = sorted(glob.glob(pattern))
+        timing  = []
+        for fpath in files:
+            try:
+                with open(fpath) as f:
+                    d = json.load(f)
+                timing.append({
+                    "timestamp":       d.get("timestamp", ""),
+                    "training_ms":     d.get("training_time_ms", 0),
+                    "comm_ms":         d.get("comm_time_ms", 0),
+                    "agg_ms":          d.get("agg_time_ms", 0),
+                    "round_total_ms":  d.get("round_total_ms", 0),
+                    "clients":         d.get("clients", {}),
+                })
+            except Exception:
+                pass
+        return timing
+
     # ── HTML ──────────────────────────────────────────────────────────────────
 
     @staticmethod
-    def _build_html(results, curves, extras, meta, history) -> str:
+    def _build_html(results, curves, extras, meta, history, timing_history=None) -> str:
         ts        = datetime.now().strftime("%Y-%m-%d  %H:%M:%S")
         map50     = results.get("map50",     0)
         map50_95  = results.get("map50_95",  0)
@@ -123,6 +145,7 @@ class DefaultReportYolo:
         pr_json       = json.dumps(pr_data)
         f1_json       = json.dumps(f1_data)
         conf_bins_json= json.dumps(conf_bins)
+        timing_json   = json.dumps(timing_history or [])
         hist_json     = json.dumps(history)
         cm_json       = json.dumps({"labels": ["TP", "FP", "FN"], "values": [tp50, fp, fn]})
         iou_hist_json = json.dumps(iou_hist)
@@ -342,6 +365,18 @@ class DefaultReportYolo:
     <canvas id="detsImgChart" style="max-height:160px"></canvas>
   </div>
 
+  <!-- Timing per Round -->
+  <div class="chart-panel full" id="timingPanel">
+    <div class="chart-title"><div class="bar" style="background:var(--green)"></div>Tiempos por Ronda (ms)</div>
+    <canvas id="timingChart" style="max-height:220px"></canvas>
+  </div>
+
+  <!-- Sample sizes per Round -->
+  <div class="chart-panel full" id="samplesPanel">
+    <div class="chart-title"><div class="bar" style="background:var(--blue)"></div>Sample Size por Cliente por Ronda</div>
+    <canvas id="samplesChart" style="max-height:220px"></canvas>
+  </div>
+
 </div>
 
 <footer>FedSol · Federated Learning for YOLOv8 · {ts}</footer>
@@ -502,6 +537,63 @@ new Chart(document.getElementById('detsImgChart'), {{
     y:{{ ...base.scales.y, title:{{ display:true, text:'Detecciones', color:TICK, font:FONT }} }}
   }} }})
 }});
+
+// ── Timing per round ────────────────────────────────────────────────────────
+const timingHistory = {timing_json};
+if (timingHistory.length > 0) {{
+  const tLabels = timingHistory.map((_, i) => 'R' + (i + 1));
+  new Chart(document.getElementById('timingChart'), {{
+    type: 'bar',
+    data: {{
+      labels: tLabels,
+      datasets: [
+        {{ label: 'Entrenamiento', data: timingHistory.map(t => t.training_ms),
+           backgroundColor: G+'cc', borderWidth: 0, borderRadius: 3 }},
+        {{ label: 'Comunicación', data: timingHistory.map(t => t.comm_ms),
+           backgroundColor: B+'cc', borderWidth: 0, borderRadius: 3 }},
+        {{ label: 'Agregación', data: timingHistory.map(t => t.agg_ms),
+           backgroundColor: Y+'cc', borderWidth: 0, borderRadius: 3 }},
+      ]
+    }},
+    options:o({{
+      plugins: {{ legend: {{ display: true, labels: {{ color: TICK, font: FONT, boxWidth: 12 }} }} }},
+      scales: {{
+        x: {{ ...base.scales.x, title: {{ display: true, text: 'Ronda', color: TICK, font: FONT }} }},
+        y: {{ ...base.scales.y, title: {{ display: true, text: 'ms', color: TICK, font: FONT }} }},
+      }}
+    }})
+  }});
+}} else {{
+  document.getElementById('timingPanel').innerHTML +=
+    '<p style="color:#4a5568;font-family:Fira Code;font-size:11px;margin-top:16px">Sin datos de timing.</p>';
+}}
+if (timingHistory.length > 0) {{
+  const allCids = [...new Set(timingHistory.flatMap(t => Object.keys(t.clients)))].sort();
+  const cColors = [G, B, R, Y, P, C];
+  const sLabels = timingHistory.map((_, i) => 'R' + (i + 1));
+  new Chart(document.getElementById('samplesChart'), {{
+    type: 'line',
+    data: {{ labels: sLabels, datasets: allCids.map((cid, idx) => ({{
+      label: 'Client ' + cid,
+      data: timingHistory.map(t => t.clients[cid] || 0),
+      borderColor: cColors[idx % cColors.length],
+      backgroundColor: cColors[idx % cColors.length] + '22',
+      borderWidth: 2, pointRadius: 4,
+      pointBackgroundColor: cColors[idx % cColors.length],
+      fill: false, tension: 0.3,
+    }})) }},
+    options:o({{
+      plugins: {{ legend: {{ display: true, labels: {{ color: TICK, font: FONT, boxWidth: 12 }} }} }},
+      scales: {{
+        x: {{ ...base.scales.x, title: {{ display: true, text: 'Ronda', color: TICK, font: FONT }} }},
+        y: {{ ...base.scales.y, title: {{ display: true, text: 'Samples', color: TICK, font: FONT }} }},
+      }}
+    }})
+  }});
+}} else {{
+  document.getElementById('samplesPanel').innerHTML +=
+    '<p style="color:#4a5568;font-family:Fira Code;font-size:11px;margin-top:16px">Sin datos de samples.</p>';
+}}
 </script>
 </body>
 </html>"""

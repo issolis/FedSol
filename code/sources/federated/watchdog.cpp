@@ -52,12 +52,12 @@ bool Watchdog::pingClient(uint32_t id, int sock)
 
         setsockopt(sock, SOL_SOCKET, SO_RCVTIMEO, &noTimeout, sizeof(noTimeout));
 
-        Logger::log(
+        /*Logger::log(
             LogLevel::DEBUG,
             "[Watchdog] Client " + std::to_string(id) +
             " sock " + std::to_string(sock) +
             " state: " + state
-        );
+        );*/
 
         return true;
     }

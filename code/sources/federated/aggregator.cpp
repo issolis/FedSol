@@ -123,6 +123,8 @@ bool Aggregator::aggregate(const std::string &path)
     auto comm_ms = std::chrono::duration_cast<Ms>(t_comm_end - t_comm_start).count();
     auto agg_ms = std::chrono::duration_cast<Ms>(t_agg_end - t_comm_end).count();
 
+    shared.lastCommMs.store(comm_ms);
+    shared.lastAggMs.store(agg_ms);
     Logger::log(LogLevel::INFO,
                 "[Aggregator] comm_time_ms: " + std::to_string(comm_ms));
     Logger::log(LogLevel::INFO,

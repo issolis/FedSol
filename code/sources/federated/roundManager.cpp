@@ -5,6 +5,12 @@
 #include <algorithm>
 #include <unistd.h>
 #include <mutex>
+#include <chrono>
+#include <fstream>
+#include <ctime>
+#include <iomanip>
+#include <sstream>
+#include <sys/stat.h>
 
 RoundManager::RoundManager(
     SharedState &shared,
@@ -111,6 +117,15 @@ void RoundManager::tryAggregateAndContinue()
         return;
     }
 
+    auto t_training_end = std::chrono::steady_clock::now();
+    long long training_ms = 0;
+    {
+        std::lock_guard<std::mutex> lock(shared.roundTimeMutex);
+        training_ms = std::chrono::duration_cast<std::chrono::milliseconds>(
+            t_training_end - shared.roundStartTime).count();
+    }
+    Logger::log(LogLevel::INFO,
+        "[RoundTimer] training_time_ms: " + std::to_string(training_ms));
     Logger::log(LogLevel::INFO, "All clients finished. Aggregating...");
 
     bool ok = aggregator.aggregate(path);
@@ -123,6 +138,48 @@ void RoundManager::tryAggregateAndContinue()
         if (previousEpochs > 0)
         {
             remainingEpochs = shared.epochs.fetch_sub(1) - 1;
+        }
+
+        auto t_round_end = std::chrono::steady_clock::now();
+        long long round_ms = 0;
+        {
+            std::lock_guard<std::mutex> lock(shared.roundTimeMutex);
+            round_ms = std::chrono::duration_cast<std::chrono::milliseconds>(
+                t_round_end - shared.roundStartTime).count();
+        }
+        Logger::log(LogLevel::INFO,
+            "[RoundTimer] round_total_ms: " + std::to_string(round_ms));
+
+        {
+            std::time_t now_t = std::time(nullptr);
+            std::tm tm_buf;
+            localtime_r(&now_t, &tm_buf);
+            std::ostringstream ts_ss;
+            ts_ss << std::put_time(&tm_buf, "%Y-%m-%d_%H-%M-%S");
+            std::string ts_str = ts_ss.str();
+
+            mkdir("output_server", 0755);
+            mkdir("output_server/globalResults", 0755);
+            mkdir("output_server/globalResults/stats", 0755);
+
+            std::string fpath = "output_server/globalResults/stats/timing_" + ts_str + ".json";
+            std::ofstream tf(fpath);
+            tf << "{\n";
+            tf << "  \"timestamp\": \"" << ts_str << "\",\n";
+            tf << "  \"training_time_ms\": " << training_ms << ",\n";
+            tf << "  \"comm_time_ms\": "     << shared.lastCommMs.load() << ",\n";
+            tf << "  \"agg_time_ms\": "      << shared.lastAggMs.load()  << ",\n";
+            tf << "  \"round_total_ms\": "   << round_ms << ",\n";
+            tf << "  \"clients\": {\n";
+            std::lock_guard<std::mutex> sLock(shared.samplesMutex);
+            bool first = true;
+            for (const auto &[cid, nsamp] : shared.samplesMap) {
+                if (!first) tf << ",\n";
+                tf << "    \"" << cid << "\": " << nsamp;
+                first = false;
+            }
+            tf << "\n  }\n}\n";
+            Logger::log(LogLevel::INFO, "[RoundTimer] Timing saved -> " + fpath);
         }
 
         Logger::log(

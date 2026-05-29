@@ -1,5 +1,6 @@
 #include "federated/trainer.h"
 #include "protocol/serverProtocol.h"
+#include <chrono>
 
 #include <vector>
 #include <utility>
@@ -38,6 +39,11 @@ void Trainer::startTraining()
     }
 
     shared.trainingActive = true;
+    {
+        std::lock_guard<std::mutex> lock(shared.roundTimeMutex);
+        shared.roundStartTime = std::chrono::steady_clock::now();
+    }
+    Logger::log(LogLevel::INFO, "[RoundTimer] Round started.");
     size_t startedClients = 0;
     std::vector<float> weights = globalModel.getWeights();
 

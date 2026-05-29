@@ -3,6 +3,7 @@
 
 #include <unordered_map>
 #include <vector>
+#include <chrono>
 #include <atomic>
 #include <unistd.h>
 #include <mutex>
@@ -29,6 +30,10 @@ public:
     std::mutex socketIOMutex;
 
     std::atomic<bool> defenseEnabled{false};
+    std::atomic<long long> lastCommMs{0};
+    std::atomic<long long> lastAggMs{0};
+    std::chrono::steady_clock::time_point roundStartTime;
+    std::mutex roundTimeMutex;
     std::vector<float> globalWeightsPrev;
     std::vector<float> globalWeightsPrevPrev;
     std::mutex globalHistoryMutex;
