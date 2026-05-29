@@ -99,12 +99,16 @@ bool Aggregator::aggregate(const std::string &path)
 
     auto t_comm_end = Clock::now();
 
-    BackdoorDefense::filter(
-        shared.defenseEnabled.load(),
-        globalModel.getWeights(),
-        weightsList,
-        sampleSizesList,
-        clientIDsList);
+    {
+        std::lock_guard<std::mutex> histLock(shared.globalHistoryMutex);
+        BackdoorDefense::filter(
+            shared.defenseEnabled.load(),
+            shared.globalWeightsPrev,
+            shared.globalWeightsPrevPrev,
+            weightsList,
+            sampleSizesList,
+            clientIDsList);
+    }
 
     if (weightsList.empty())
     {
@@ -125,6 +129,13 @@ bool Aggregator::aggregate(const std::string &path)
                 "[Aggregator] aggregation_time_ms: " + std::to_string(agg_ms));
 
     globalModel.setWeights(weights);
+
+    {
+        std::lock_guard<std::mutex> histLock(shared.globalHistoryMutex);
+        shared.globalWeightsPrevPrev = shared.globalWeightsPrev;
+        shared.globalWeightsPrev = weights;
+    }
+    
     JSONManager::updateWeightsInJSON(path, weights);
     ModelExporter::exportModel(path);
 

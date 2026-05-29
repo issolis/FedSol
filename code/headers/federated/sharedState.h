@@ -2,6 +2,7 @@
 #define SHAREDSTATE_H
 
 #include <unordered_map>
+#include <vector>
 #include <atomic>
 #include <unistd.h>
 #include <mutex>
@@ -24,9 +25,13 @@ public:
     std::atomic<uint32_t> epochs{0};
     std::atomic<bool> aggregationStarted{false};
     std::atomic<bool> trainingActive{false};
-    std::atomic<bool> defenseEnabled{false};
-    
+
     std::mutex socketIOMutex;
+
+    std::atomic<bool> defenseEnabled{false};
+    std::vector<float> globalWeightsPrev;
+    std::vector<float> globalWeightsPrevPrev;
+    std::mutex globalHistoryMutex;
 
     size_t clientCount();
     std::string inferServerState();

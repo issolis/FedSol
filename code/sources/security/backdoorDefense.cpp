@@ -1,10 +1,8 @@
 #include "security/backdoorDefense.h"
 #include "logger/logger.h"
-
 #include <algorithm>
 #include <cmath>
 #include <numeric>
-
 double BackdoorDefense::dot(const std::vector<float> &a, const std::vector<float> &b)
 {
     double acc = 0.0;
@@ -13,26 +11,31 @@ double BackdoorDefense::dot(const std::vector<float> &a, const std::vector<float
         acc += static_cast<double>(a[i]) * static_cast<double>(b[i]);
     return acc;
 }
-
-double BackdoorDefense::norm(const std::vector<float> &a)
+double BackdoorDefense::norm(const std::vector<float> &v)
 {
-    return std::sqrt(dot(a, a));
+    return std::sqrt(dot(v, v));
 }
-
 float BackdoorDefense::median(std::vector<float> values)
 {
-    if (values.empty())
-        return 0.0f;
+    if (values.empty()) return 0.0f;
     std::sort(values.begin(), values.end());
     const size_t mid = values.size() / 2;
     if (values.size() % 2 == 0)
         return 0.5f * (values[mid - 1] + values[mid]);
     return values[mid];
 }
-
+std::vector<float> BackdoorDefense::subtract(const std::vector<float> &a,
+                                              const std::vector<float> &b)
+{
+    std::vector<float> result(a.size());
+    for (size_t i = 0; i < a.size(); ++i)
+        result[i] = a[i] - b[i];
+    return result;
+}
 BackdoorDefense::Result BackdoorDefense::filter(
     bool enabled,
-    const std::vector<float> &previousGlobalWeights,
+    const std::vector<float> &globalWeightsPrev,
+    const std::vector<float> &globalWeightsPrevPrev,
     std::vector<std::vector<float>> &weightsList,
     std::vector<uint32_t> &sampleSizesList,
     std::vector<uint32_t> &clientIDs)
@@ -40,129 +43,101 @@ BackdoorDefense::Result BackdoorDefense::filter(
     Result result;
     result.clientsBefore = weightsList.size();
     result.clientsAfter  = weightsList.size();
-
     if (!enabled)
     {
         Logger::log(LogLevel::INFO,
-            "[BackdoorDefense] Disabled by config. Passing all "
-            + std::to_string(weightsList.size()) + " client updates through.");
+            "[BackdoorDefense] Disabled by config. Passing all " +
+            std::to_string(weightsList.size()) + " client(s) through.");
         result.acceptedIDs = clientIDs;
         return result;
     }
-
     result.applied = true;
-
-    const size_t numClients = weightsList.size();
-
-    if (numClients < 3)
+    const bool haveHistory =
+        !globalWeightsPrev.empty() &&
+        !globalWeightsPrevPrev.empty() &&
+        globalWeightsPrev.size() == globalWeightsPrevPrev.size() &&
+        globalWeightsPrev.size() == weightsList[0].size();
+    if (!haveHistory)
     {
         Logger::log(LogLevel::WARNING,
-            "[BackdoorDefense] Only " + std::to_string(numClients) +
-            " client(s) present; need >= 3 for outlier detection. Skipping filter.");
+            "[BackdoorDefense] Insufficient global model history (need 2 rounds). "
+            "Skipping filter this round — behaving as vanilla FedAvg.");
+        result.acceptedIDs    = clientIDs;
+        result.skippedNoHistory = true;
+        return result;
+    }
+    const std::vector<float> deltaGlobal = subtract(globalWeightsPrev, globalWeightsPrevPrev);
+    const double normGlobal = norm(deltaGlobal);
+    if (normGlobal < 1e-12)
+    {
+        Logger::log(LogLevel::WARNING,
+            "[BackdoorDefense] Global model delta is near-zero (model may have converged). "
+            "Skipping filter.");
         result.acceptedIDs = clientIDs;
         return result;
     }
-
-    const bool haveReference =
-        !previousGlobalWeights.empty() &&
-        previousGlobalWeights.size() == weightsList[0].size();
-
-    std::vector<std::vector<float>> updates(numClients);
+    const size_t numClients = weightsList.size();
+    std::vector<std::vector<float>> deltas(numClients);
+    std::vector<double> deltaNorms(numClients);
+    std::vector<float>  cosineScores(numClients);
     for (size_t c = 0; c < numClients; ++c)
     {
-        const auto &w = weightsList[c];
-        updates[c].resize(w.size());
-        if (haveReference)
-            for (size_t i = 0; i < w.size(); ++i)
-                updates[c][i] = w[i] - previousGlobalWeights[i];
+        deltas[c]      = subtract(weightsList[c], globalWeightsPrev);
+        deltaNorms[c]  = norm(deltas[c]);
+        const double denom = deltaNorms[c] * normGlobal;
+        if (denom < 1e-12)
+            cosineScores[c] = 0.0f;
         else
-            updates[c] = w;
+            cosineScores[c] = static_cast<float>(dot(deltas[c], deltaGlobal) / denom);
+        Logger::log(LogLevel::INFO,
+            "[BackdoorDefense] Client " + std::to_string(clientIDs[c]) +
+            " cosine score vs global history: " + std::to_string(cosineScores[c]));
     }
-
-    std::vector<double> updateNorms(numClients);
-    for (size_t c = 0; c < numClients; ++c)
-        updateNorms[c] = norm(updates[c]);
-
-    std::vector<float> avgCosine(numClients, 0.0f);
-    for (size_t a = 0; a < numClients; ++a)
-    {
-        double accum = 0.0;
-        int counted = 0;
-        for (size_t b = 0; b < numClients; ++b)
-        {
-            if (a == b) continue;
-            const double denom = updateNorms[a] * updateNorms[b];
-            double cos = 0.0;
-            if (denom > 1e-12)
-                cos = dot(updates[a], updates[b]) / denom;
-            accum += cos;
-            ++counted;
-        }
-        avgCosine[a] = counted > 0 ? static_cast<float>(accum / counted) : 1.0f;
-    }
-
-
-    const float medCosine = median(avgCosine);
-    const float relativeFloor = medCosine - 0.5f * (medCosine - COSINE_OUTLIER_THRESHOLD);
-
     std::vector<bool> keep(numClients, true);
     for (size_t c = 0; c < numClients; ++c)
     {
-        if (avgCosine[c] < COSINE_OUTLIER_THRESHOLD || avgCosine[c] < relativeFloor)
+        if (cosineScores[c] < COSINE_THRESHOLD)
         {
             keep[c] = false;
             Logger::log(LogLevel::WARNING,
                 "[BackdoorDefense] Client " + std::to_string(clientIDs[c]) +
-                " flagged as backdoor suspect (avg cosine = " +
-                std::to_string(avgCosine[c]) + ", cohort median = " +
-                std::to_string(medCosine) + ").");
+                " REJECTED — cosine score " + std::to_string(cosineScores[c]) +
+                " < threshold " + std::to_string(COSINE_THRESHOLD));
         }
     }
-
-
     if (std::none_of(keep.begin(), keep.end(), [](bool b){ return b; }))
     {
         size_t best = 0;
         for (size_t c = 1; c < numClients; ++c)
-            if (avgCosine[c] > avgCosine[best]) best = c;
+            if (cosineScores[c] > cosineScores[best]) best = c;
         keep[best] = true;
         Logger::log(LogLevel::WARNING,
-            "[BackdoorDefense] All clients flagged; retaining most-aligned "
+            "[BackdoorDefense] All clients rejected — retaining best-scoring "
             "client " + std::to_string(clientIDs[best]) + " to avoid empty cohort.");
     }
-
     std::vector<float> survivorNorms;
-    survivorNorms.reserve(numClients);
     for (size_t c = 0; c < numClients; ++c)
         if (keep[c])
-            survivorNorms.push_back(static_cast<float>(updateNorms[c]));
-
+            survivorNorms.push_back(static_cast<float>(deltaNorms[c]));
     const float clipNorm = median(survivorNorms);
-
-    if (haveReference && clipNorm > 1e-12f)
+    if (clipNorm > 1e-12f)
     {
         for (size_t c = 0; c < numClients; ++c)
         {
             if (!keep[c]) continue;
-            const double n = updateNorms[c];
-            if (n > clipNorm)
+            if (deltaNorms[c] > clipNorm)
             {
-                const double scale = clipNorm / n;
+                const double scale = clipNorm / deltaNorms[c];
                 auto &w = weightsList[c];
                 for (size_t i = 0; i < w.size(); ++i)
-                    w[i] = previousGlobalWeights[i] +
-                           static_cast<float>(updates[c][i] * scale);
+                    w[i] = globalWeightsPrev[i] +
+                           static_cast<float>(deltas[c][i] * scale);
             }
         }
     }
-
     std::vector<std::vector<float>> keptWeights;
-    std::vector<uint32_t> keptSamples;
-    std::vector<uint32_t> keptIDs;
-    keptWeights.reserve(numClients);
-    keptSamples.reserve(numClients);
-    keptIDs.reserve(numClients);
-
+    std::vector<uint32_t>           keptSamples;
+    std::vector<uint32_t>           keptIDs;
     for (size_t c = 0; c < numClients; ++c)
     {
         if (keep[c])
@@ -177,19 +152,15 @@ BackdoorDefense::Result BackdoorDefense::filter(
             result.rejectedIDs.push_back(clientIDs[c]);
         }
     }
-
     weightsList     = std::move(keptWeights);
     sampleSizesList = std::move(keptSamples);
     clientIDs       = std::move(keptIDs);
-
     result.clientsAfter = weightsList.size();
-
     Logger::log(LogLevel::INFO,
-        "[BackdoorDefense] Aggregation cohort: " +
+        "[BackdoorDefense] Round result: " +
         std::to_string(result.clientsBefore) + " received, " +
-        std::to_string(result.clientsAfter) + " accepted, " +
-        std::to_string(result.rejectedIDs.size()) + " rejected. clip_norm = " +
-        std::to_string(clipNorm) + ".");
-
+        std::to_string(result.clientsAfter)  + " accepted, " +
+        std::to_string(result.rejectedIDs.size()) + " rejected. " +
+        "clip_norm=" + std::to_string(clipNorm));
     return result;
 }

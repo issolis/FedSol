@@ -1,5 +1,6 @@
 {
     "backlog": 10,
+    "defense": false,
     "dataset": {
         "target_dtype": "long",
         "test_path": "input_server/dataset_test.npz",
@@ -50,7 +51,6 @@
     "model": {
         "id": 0,
         "pt_path": "input_server/model.pt"
-       
     },
     "port": 9000,
     "training": {

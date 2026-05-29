@@ -16,6 +16,7 @@ SERVER_SRC = main_server.cpp \
              code/sources/security/AuthManager.cpp \
              code/sources/security/envUtils.cpp \
              code/sources/security/SHA256.cpp \
+             code/sources/security/backdoorDefense.cpp \
              code/sources/protocol/*.cpp \
              code/sources/federated/*.cpp \
              code/sources/logger/logger.cpp \

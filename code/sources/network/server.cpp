@@ -25,7 +25,7 @@ Server::Server(
     this->datasetPath = datasetPath;
     this->ptHash = ptHash;
 
-    shared.defenseEnabled.store(defenseEnabled); // ← AÑADIDO
+    shared.defenseEnabled.store(defenseEnabled);
     Logger::log(LogLevel::INFO,
                 std::string("[Server] Backdoor defense is ") +
                     (defenseEnabled ? "ENABLED" : "DISABLED") + ".");

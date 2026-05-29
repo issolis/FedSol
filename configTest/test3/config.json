@@ -1,0 +1,51 @@
+{
+  "backlog": 10,
+  "defense": false,
+  "dataset": {
+    "names": [
+      "pina"
+    ],
+    "nc": 1,
+    "train_path": "input_server/dataset",
+    "type": "yolo",
+    "val_path": "input_server/dataset/val/images"
+  },
+  "evaluation": {
+    "metrics": [
+      "map50",
+      "map50_95",
+      "precision",
+      "recall"
+    ],
+    "prediction_config": {
+      "conf": 0.2,
+      "iou": 0.4
+    },
+    "report_function": {
+      "name": "default_report",
+      "params": {
+        "base_dir": "output_server/globalResults",
+        "print_to_console": true,
+        "save_results": true,
+        "use_timestamp_path": true
+      }
+    },
+    "task_type": "object_detection"
+  },
+  "model": {
+    "id": 0,
+    "pt_path": "input_server/model.pt"
+  },
+  "port": 9000,
+  "training": {
+    "batch_size": 8,
+    "epochs": 3,
+    "imgsz": 640,
+    "loss": {
+      "name": "yolo_default",
+      "params": {}
+    },
+    "lr": 0.01,
+    "optimizer": "sgd"
+  }
+}
