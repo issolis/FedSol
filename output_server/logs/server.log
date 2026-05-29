@@ -388,3 +388,79 @@
 [Thu May 28 20:30:26 2026] [INFO] [Server] Backdoor defense is ENABLED.
 [Thu May 28 20:30:26 2026] [INFO] [MODE] INITIALIZATION
 [Thu May 28 20:31:10 2026] [INFO] [Console] Operator authenticated.
+[Thu May 28 20:32:03 2026] [INFO] Client connected with socket id: 5
+[Thu May 28 20:32:03 2026] [DEBUG] Code: 0
+[Thu May 28 20:32:03 2026] [DEBUG] Content: Auth
+[Thu May 28 20:32:03 2026] [INFO] [Client 3] Authentication success
+[Thu May 28 20:32:03 2026] [INFO] [Client 3] PT hash verified
+[Thu May 28 20:32:03 2026] [INFO] [Client 3] Registered
+[Thu May 28 20:32:03 2026] [INFO] [MODE] READY
+[Thu May 28 20:33:13 2026] [INFO] Client connected with socket id: 6
+[Thu May 28 20:33:13 2026] [DEBUG] Code: 0
+[Thu May 28 20:33:13 2026] [DEBUG] Content: Auth
+[Thu May 28 20:33:13 2026] [INFO] [Client 2] Authentication success
+[Thu May 28 20:33:13 2026] [INFO] [Client 2] PT hash verified
+[Thu May 28 20:33:13 2026] [INFO] [Client 2] Registered
+[Thu May 28 20:34:06 2026] [INFO] [DatasetSplitter] Running: PYTHONPATH=code python3 -m FedSolPython.scripts.split_dataset input_server/dataset 2
+[2026-05-28 20:34:06] [INFO] [split_dataset] YOLO — 863 images → 2 clients (~432 each)
+[2026-05-28 20:34:26] [INFO] [split_dataset] Client 0: 432 images → dataset_train_0.tar.gz (222.8 MB)
+[2026-05-28 20:34:40] [INFO] [split_dataset] Client 1: 431 images → dataset_train_1.tar.gz (220.0 MB)
+[2026-05-28 20:34:40] [INFO] [split_dataset] Done. 2 .tar.gz files saved to 'input_server/'
+[Thu May 28 20:34:40 2026] [INFO] [DatasetSplitter] Split completed successfully
+[Thu May 28 20:34:42 2026] [INFO] [Protocol] Sending file: ./input_server/dataset_train_0.tar.gz (233593650 bytes)
+[Thu May 28 20:34:42 2026] [INFO] [Protocol] Sending file: ./input_server/dataset_train_1.tar.gz (230708789 bytes)
+[Thu May 28 20:35:37 2026] [INFO] [SERVER] pt_path mode — weight validation skipped.
+[Thu May 28 20:35:40 2026] [INFO] Starting training...
+[Thu May 28 20:35:56 2026] [DEBUG] [Watchdog] Client 2 sock 6 state: TRAINING
+[Thu May 28 20:35:56 2026] [DEBUG] [Watchdog] Client 3 sock 5 state: TRAINING
+[Thu May 28 20:36:26 2026] [DEBUG] [Watchdog] Client 2 sock 6 state: TRAINING
+[Thu May 28 20:36:26 2026] [DEBUG] [Watchdog] Client 3 sock 5 state: TRAINING
+[Thu May 28 20:36:56 2026] [DEBUG] [Watchdog] Client 2 sock 6 state: TRAINING
+[Thu May 28 20:36:57 2026] [DEBUG] [Watchdog] Client 3 sock 5 state: TRAINING
+[Thu May 28 20:37:27 2026] [DEBUG] [Watchdog] Client 2 sock 6 state: TRAINING
+[Thu May 28 20:37:27 2026] [DEBUG] [Watchdog] Client 3 sock 5 state: TRAINING
+[Thu May 28 20:37:59 2026] [DEBUG] [Watchdog] Client 2 sock 6 state: TRAINING
+[Thu May 28 20:37:59 2026] [DEBUG] [Watchdog] Client 3 sock 5 state: TRAINING
+[Thu May 28 20:38:30 2026] [DEBUG] [Watchdog] Client 2 sock 6 state: TRAINING
+[Thu May 28 20:38:31 2026] [DEBUG] [Watchdog] Client 3 sock 5 state: TRAINING
+[Thu May 28 20:39:01 2026] [DEBUG] [Watchdog] Client 2 sock 6 state: TRAINING
+[Thu May 28 20:39:01 2026] [DEBUG] [Watchdog] Client 3 sock 5 state: TRAINING
+[Thu May 28 20:39:32 2026] [DEBUG] [Watchdog] Client 2 sock 6 state: TRAINING
+[Thu May 28 20:39:34 2026] [DEBUG] [Watchdog] Client 3 sock 5 state: TRAINING
+[Thu May 28 20:40:05 2026] [DEBUG] [Watchdog] Client 2 sock 6 state: TRAINING
+[Thu May 28 20:40:05 2026] [DEBUG] [Watchdog] Client 3 sock 5 state: TRAINING
+[Thu May 28 20:40:36 2026] [DEBUG] [Watchdog] Client 2 sock 6 state: TRAINING
+[Thu May 28 20:40:36 2026] [DEBUG] [Watchdog] Client 3 sock 5 state: TRAINING
+[Thu May 28 20:41:07 2026] [DEBUG] [Watchdog] Client 2 sock 6 state: TRAINING
+[Thu May 28 20:41:07 2026] [DEBUG] [Watchdog] Client 3 sock 5 state: TRAINING
+[Thu May 28 20:41:38 2026] [DEBUG] [Watchdog] Client 2 sock 6 state: TRAINING
+[Thu May 28 20:41:38 2026] [DEBUG] [Watchdog] Client 3 sock 5 state: TRAINING
+[Thu May 28 20:42:08 2026] [DEBUG] [Watchdog] Client 2 sock 6 state: TRAINING
+[Thu May 28 20:42:10 2026] [DEBUG] [Watchdog] Client 3 sock 5 state: TRAINING
+[Thu May 28 20:42:29 2026] [INFO] Client connected with socket id: 7
+[Thu May 28 20:42:29 2026] [INFO] Client connected with socket id: 8
+[Thu May 28 20:42:35 2026] [DEBUG] Code: 1
+[Thu May 28 20:42:35 2026] [DEBUG] Content: Training Ended
+[Thu May 28 20:42:35 2026] [INFO] [Client 3] Finished training. Sample size: 431
+[Thu May 28 20:42:36 2026] [DEBUG] Code: 1
+[Thu May 28 20:42:36 2026] [DEBUG] Content: Training Ended
+[Thu May 28 20:42:36 2026] [INFO] [Client 2] Finished training. Sample size: 432
+[Thu May 28 20:42:36 2026] [INFO] All clients finished. Aggregating...
+[Thu May 28 20:42:40 2026] [WARNING] [BackdoorDefense] Insufficient global model history (need 2 rounds). Skipping filter this round — behaving as vanilla FedAvg.
+[Thu May 28 20:42:40 2026] [INFO] [Aggregator] comm_time_ms: 3738
+[Thu May 28 20:42:40 2026] [INFO] [Aggregator] aggregation_time_ms: 10
+[Thu May 28 20:42:44 2026] [INFO] [EXPORTER] Running: PYTHONPATH=code python3 -m FedSolPython.scripts.build_and_save "input_server/config.json"
+[2026-05-28 20:42:50] [INFO] Starting build from config: input_server/config.json
+[2026-05-28 20:42:52] [INFO] pt_path mode: loading model from 'input_server/model.pt'
+[2026-05-28 20:42:58] [INFO] Federated weights applied to YOLO (nc=1): 3,021,443 floats
+[2026-05-28 20:42:58] [INFO] Archived model saved to: output_server/models/model_20260528_204258.pt
+[2026-05-28 20:42:58] [INFO] Updated .pt written back to: input_server/model.pt
+[Thu May 28 20:42:59 2026] [INFO] [EXPORTER] Model exported successfully
+[Thu May 28 20:42:59 2026] [INFO] [SERVER] Completed one epoch. Remaining: 0
+[Thu May 28 20:42:59 2026] [INFO] [SERVER] Training finished.
+[Thu May 28 20:45:20 2026] [INFO] Client starting...
+[Thu May 28 20:45:20 2026] [INFO] [Server] Backdoor defense is ENABLED.
+[Thu May 28 20:45:20 2026] [INFO] [MODE] INITIALIZATION
+[Thu May 28 20:45:37 2026] [INFO] [Console] Operator authenticated.
+[Thu May 28 20:45:55 2026] [INFO] [EVALUATOR] Running evaluation script: evaluate
+[Thu May 28 20:46:58 2026] [INFO] [EVALUATOR] Evaluation completed successfully

@@ -12,10 +12,9 @@ public:
         size_t clientsAfter  = 0;
         std::vector<uint32_t> acceptedIDs;
         std::vector<uint32_t> rejectedIDs;
-        bool applied = false;      
-        bool skippedNoHistory = false; 
+        bool applied = false;
+        bool skippedNoHistory = false;
     };
-    static constexpr float COSINE_THRESHOLD = 0.0f;
     static Result filter(
         bool enabled,
         const std::vector<float> &globalWeightsPrev,
@@ -24,10 +23,7 @@ public:
         std::vector<uint32_t> &sampleSizesList,
         std::vector<uint32_t> &clientIDs);
 private:
-    static double dot(const std::vector<float> &a, const std::vector<float> &b);
     static double norm(const std::vector<float> &v);
     static float  median(std::vector<float> values);
-    static std::vector<float> subtract(const std::vector<float> &a,
-                                        const std::vector<float> &b);
 };
 #endif
