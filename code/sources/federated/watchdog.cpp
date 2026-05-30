@@ -34,7 +34,7 @@ bool Watchdog::pingClient(uint32_t id, int sock)
     std::lock_guard<std::mutex> ioLock(shared.socketIOMutex);
 
     timeval timeout{};
-    timeout.tv_sec = 10;
+    timeout.tv_sec = 120;
     timeout.tv_usec = 0;
 
     timeval noTimeout{};

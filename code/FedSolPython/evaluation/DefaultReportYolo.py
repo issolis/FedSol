@@ -16,11 +16,11 @@ class DefaultReportYolo:
         1. Precision-Recall curve
         2. F1 vs Confidence
         3. Confidence histogram
-        4. mAP evolution across rounds
-        5. TP/FP/FN bars  (full width)
-        6. IoU of TP histogram
-        7. AP small / medium / large bars
-        8. Detections per image distribution
+        4. TP/FP/FN bars  (full width)
+        5. IoU of TP histogram
+        6. AP small / medium / large bars
+        7. Detections per image distribution
+      Footer timing pills: training ms, comm ms, agg ms, total ms, samples per client
     """
 
     @staticmethod
@@ -30,9 +30,8 @@ class DefaultReportYolo:
         meta     = results.get("_meta", {})
         base_dir = params.get("base_dir", "output_server/globalResults")
 
-        history = DefaultReportYolo._load_history(base_dir)
-        timing_history = DefaultReportYolo._load_timing_history(base_dir)
-        html    = DefaultReportYolo._build_html(results, curves, extras, meta, history, timing_history)
+        last_timing = DefaultReportYolo._load_last_timing(base_dir)
+        html = DefaultReportYolo._build_html(results, curves, extras, meta, last_timing)
 
         os.makedirs(os.path.dirname(html_path), exist_ok=True)
         with open(html_path, "w", encoding="utf-8") as f:
@@ -40,56 +39,33 @@ class DefaultReportYolo:
 
         print(f"[Report] HTML  → {html_path}")
 
-    # ── History ───────────────────────────────────────────────────────────────
+    # ── Last timing only ──────────────────────────────────────────────────────
 
     @staticmethod
-    def _load_history(base_dir: str) -> list:
-        pattern = os.path.join(base_dir, "**", "*.json")
-        files   = sorted(glob.glob(pattern, recursive=True))
-        history = []
-        for fpath in files:
-            try:
-                with open(fpath) as f:
-                    d = json.load(f)
-                if "map50" not in d:
-                    continue
-                stem = os.path.basename(fpath).replace(".json", "")
-                history.append({
-                    "label":     stem,
-                    "map50":     d.get("map50",     0),
-                    "map50_95":  d.get("map50_95",  0),
-                    "precision": d.get("precision", 0),
-                    "recall":    d.get("recall",    0),
-                })
-            except Exception:
-                pass
-        return history
-
-    @staticmethod
-    def _load_timing_history(base_dir: str) -> list:
+    def _load_last_timing(base_dir: str) -> dict:
+        """Devuelve solo el timing JSON más reciente."""
         pattern = os.path.join(base_dir, "stats", "timing_*.json")
         files   = sorted(glob.glob(pattern))
-        timing  = []
-        for fpath in files:
-            try:
-                with open(fpath) as f:
-                    d = json.load(f)
-                timing.append({
-                    "timestamp":       d.get("timestamp", ""),
-                    "training_ms":     d.get("training_time_ms", 0),
-                    "comm_ms":         d.get("comm_time_ms", 0),
-                    "agg_ms":          d.get("agg_time_ms", 0),
-                    "round_total_ms":  d.get("round_total_ms", 0),
-                    "clients":         d.get("clients", {}),
-                })
-            except Exception:
-                pass
-        return timing
+        if not files:
+            return {}
+        try:
+            with open(files[-1]) as f:
+                d = json.load(f)
+            return {
+                "timestamp":      d.get("timestamp", ""),
+                "training_ms":    d.get("training_time_ms", 0),
+                "comm_ms":        d.get("comm_time_ms", 0),
+                "agg_ms":         d.get("agg_time_ms", 0),
+                "round_total_ms": d.get("round_total_ms", 0),
+                "clients":        d.get("clients", {}),
+            }
+        except Exception:
+            return {}
 
     # ── HTML ──────────────────────────────────────────────────────────────────
 
     @staticmethod
-    def _build_html(results, curves, extras, meta, history, timing_history=None) -> str:
+    def _build_html(results, curves, extras, meta, timing=None) -> str:
         ts        = datetime.now().strftime("%Y-%m-%d  %H:%M:%S")
         map50     = results.get("map50",     0)
         map50_95  = results.get("map50_95",  0)
@@ -114,13 +90,10 @@ class DefaultReportYolo:
         tp50       = meta.get("tp50",        0)
         conf_thr   = meta.get("conf_thresh", 0.25)
 
-        # Use operating-point TP/FP/FN (conf >= conf_thresh) if available,
-        # otherwise fall back to the old calculation.
-        fp = meta.get("op_fp", max((meta.get("total_preds", 0) - tp50) if isinstance(meta.get("total_preds"), int) else 0, 0))
-        fn = meta.get("op_fn", max((meta.get("total_gt",    0) - tp50) if isinstance(meta.get("total_gt"),    int) else 0, 0))
+        fp   = meta.get("op_fp", max((meta.get("total_preds", 0) - tp50) if isinstance(meta.get("total_preds"), int) else 0, 0))
+        fn   = meta.get("op_fn", max((meta.get("total_gt",    0) - tp50) if isinstance(meta.get("total_gt"),    int) else 0, 0))
         tp50 = meta.get("op_tp", tp50)
 
-        # Best F1
         best_f1 = 0.0
         best_f1_conf = conf_thr
         if f1_data["f1s"]:
@@ -128,25 +101,29 @@ class DefaultReportYolo:
             best_f1      = f1_data["f1s"][idx]
             best_f1_conf = f1_data["confs"][idx]
 
-        # Confidence histogram buckets (20 bins)
         raw_confs = hist_data["confs"]
         conf_bins = [0] * 20
         for c in raw_confs:
             conf_bins[min(int(c * 20), 19)] += 1
 
-        # Dets per image histogram (10 bins)
-        dets_hist = [0] * 10
-        if dets_img:
-            max_dets = max(dets_img) if max(dets_img) > 0 else 1
-            for d in dets_img:
-                dets_hist[min(int(d / max_dets * 10), 9)] += 1
         dets_labels = [str(i) for i in range(len(dets_img))]
+
+        # Timing pills
+        t = timing or {}
+        t_train   = t.get("training_ms",    "—")
+        t_comm    = t.get("comm_ms",        "—")
+        t_agg     = t.get("agg_ms",         "—")
+        t_total   = t.get("round_total_ms", "—")
+        t_ts      = t.get("timestamp",      "—")
+        clients   = t.get("clients", {})
+        samples_pills = "".join(
+            f'<div class="pill">client {cid} <span>{n}</span></div>'
+            for cid, n in sorted(clients.items())
+        )
 
         pr_json       = json.dumps(pr_data)
         f1_json       = json.dumps(f1_data)
         conf_bins_json= json.dumps(conf_bins)
-        timing_json   = json.dumps(timing_history or [])
-        hist_json     = json.dumps(history)
         cm_json       = json.dumps({"labels": ["TP", "FP", "FN"], "values": [tp50, fp, fn]})
         iou_hist_json = json.dumps(iou_hist)
         ap_size_json  = json.dumps({
@@ -196,8 +173,6 @@ class DefaultReportYolo:
   }}
   header h1 {{ font-size:20px; font-weight:700; letter-spacing:1px; }}
   .header-ts {{ margin-left:auto; font-family:var(--mono); font-size:11px; color:var(--muted); }}
-
-  /* stat rows */
   .stat-row {{
     display:grid; grid-template-columns:repeat(4,1fr);
     gap:1px; background:var(--border);
@@ -211,8 +186,6 @@ class DefaultReportYolo:
   .stat-value {{ font-size:36px; font-weight:800; line-height:1; }}
   .stat-sub   {{ font-family:var(--mono); font-size:10px; color:var(--muted); }}
   .stat-value.sm {{ font-size:28px; }}
-
-  /* meta pills */
   .meta-bar {{
     display:flex; gap:10px; align-items:center; flex-wrap:wrap;
     padding:12px 36px; border-bottom:1px solid var(--border);
@@ -224,8 +197,6 @@ class DefaultReportYolo:
     border-radius:20px; padding:3px 12px; color:var(--muted);
   }}
   .pill span {{ color:var(--text); }}
-
-  /* charts */
   .charts-grid {{
     display:grid; grid-template-columns:1fr 1fr;
     gap:1px; background:var(--border); position:relative; z-index:1;
@@ -242,7 +213,6 @@ class DefaultReportYolo:
   }}
   .chart-title .bar {{ width:3px; height:14px; border-radius:2px; flex-shrink:0; }}
   canvas {{ width:100% !important; max-height:260px; }}
-
   footer {{
     text-align:center; padding:28px;
     font-family:var(--mono); font-size:10px; color:var(--muted);
@@ -258,7 +228,6 @@ class DefaultReportYolo:
   <div class="header-ts">{ts}</div>
 </header>
 
-<!-- Primary metrics -->
 <div class="stat-row">
   <div class="stat">
     <div class="stat-label">mAP @ 0.50</div>
@@ -282,7 +251,6 @@ class DefaultReportYolo:
   </div>
 </div>
 
-<!-- Extra metrics -->
 <div class="stat-row">
   <div class="stat">
     <div class="stat-label">Inference</div>
@@ -306,77 +274,63 @@ class DefaultReportYolo:
   </div>
 </div>
 
-<!-- Meta pills -->
 <div class="meta-bar">
   <div class="pill">imágenes <span>{n_images}</span></div>
   <div class="pill">GT boxes <span>{total_gt}</span></div>
   <div class="pill">predicciones <span>{total_pred}</span></div>
   <div class="pill">TP@0.50 <span>{tp50}</span></div>
+  <div class="pill">FP <span>{fp}</span></div>
+  <div class="pill">FN <span>{fn}</span></div>
   <div class="pill">best F1 <span>{best_f1:.3f}</span> @ conf <span>{best_f1_conf:.2f}</span></div>
 </div>
 
 <div class="charts-grid">
 
-  <!-- 1. PR Curve -->
   <div class="chart-panel">
     <div class="chart-title"><div class="bar" style="background:var(--green)"></div>Curva Precision-Recall (IoU=0.50)</div>
     <canvas id="prChart"></canvas>
   </div>
 
-  <!-- 2. F1 Curve -->
   <div class="chart-panel">
     <div class="chart-title"><div class="bar" style="background:var(--blue)"></div>F1 vs Confidence Threshold</div>
     <canvas id="f1Chart"></canvas>
   </div>
 
-  <!-- 3. Confidence histogram -->
   <div class="chart-panel">
     <div class="chart-title"><div class="bar" style="background:var(--red)"></div>Histograma de Confianzas</div>
     <canvas id="histChart"></canvas>
   </div>
 
-  <!-- 4. mAP history -->
-  <div class="chart-panel">
-    <div class="chart-title"><div class="bar" style="background:var(--yellow)"></div>Evolución mAP por Round</div>
-    <canvas id="historyChart"></canvas>
-  </div>
-
-  <!-- 5. TP/FP/FN — full width -->
-  <div class="chart-panel full">
-    <div class="chart-title"><div class="bar" style="background:var(--purple)"></div>Detecciones @ IoU=0.50 — TP / FP / FN</div>
-    <canvas id="cmChart" style="max-height:160px"></canvas>
-  </div>
-
-  <!-- 6. IoU of TP histogram -->
   <div class="chart-panel">
     <div class="chart-title"><div class="bar" style="background:var(--purple)"></div>Distribución IoU de TP</div>
     <canvas id="iouHistChart"></canvas>
   </div>
 
-  <!-- 7. AP by object size -->
+  <div class="chart-panel full">
+    <div class="chart-title"><div class="bar" style="background:var(--purple)"></div>Detecciones @ IoU=0.50 — TP / FP / FN</div>
+    <canvas id="cmChart" style="max-height:160px"></canvas>
+  </div>
+
   <div class="chart-panel">
-    <div class="chart-title"><div class="bar" style="background:var(--cyan)"></div>AP por Tamaño de Objeto (IoU=0.50)</div>
+    <div class="chart-title"><div class="bar" style="background:var(--cyan)"></div>AP por Tamaño de Objeto</div>
     <canvas id="apSizeChart"></canvas>
   </div>
 
-  <!-- 8. Dets per image -->
-  <div class="chart-panel full">
+  <div class="chart-panel">
     <div class="chart-title"><div class="bar" style="background:var(--yellow)"></div>Detecciones por Imagen (conf ≥ {conf_thr})</div>
-    <canvas id="detsImgChart" style="max-height:160px"></canvas>
+    <canvas id="detsImgChart"></canvas>
   </div>
 
-  <!-- Timing per Round -->
-  <div class="chart-panel full" id="timingPanel">
-    <div class="chart-title"><div class="bar" style="background:var(--green)"></div>Tiempos por Ronda (ms)</div>
-    <canvas id="timingChart" style="max-height:220px"></canvas>
-  </div>
+</div>
 
-  <!-- Sample sizes per Round -->
-  <div class="chart-panel full" id="samplesPanel">
-    <div class="chart-title"><div class="bar" style="background:var(--blue)"></div>Sample Size por Cliente por Ronda</div>
-    <canvas id="samplesChart" style="max-height:220px"></canvas>
-  </div>
-
+<!-- Timing de la ronda -->
+<div class="meta-bar" style="border-top:1px solid var(--border); border-bottom:none;">
+  <div class="pill">ronda <span>{t_ts}</span></div>
+  <div class="pill">entrenamiento <span>{t_train} ms</span></div>
+  <div class="pill">comunicación <span>{t_comm} ms</span></div>
+  <div class="pill">agregación <span>{t_agg} ms</span></div>
+  <div class="pill">total <span>{t_total} ms</span></div>
+  {samples_pills}
 </div>
 
 <footer>FedSol · Federated Learning for YOLOv8 · {ts}</footer>
@@ -385,7 +339,6 @@ class DefaultReportYolo:
 const G='#39d353', B='#1d8cf8', R='#ff6b6b', Y='#ffd166', P='#a78bfa', C='#22d3ee';
 const GRID='rgba(255,255,255,0.05)', TICK='#4a5568';
 const FONT={{ family:'Fira Code', size:10 }};
-
 const base = {{
   responsive:true,
   animation:{{ duration:500, easing:'easeOutQuart' }},
@@ -399,11 +352,10 @@ const base = {{
     y:{{ grid:{{ color:GRID }}, ticks:{{ color:TICK, font:FONT }} }},
   }}
 }};
-
 function o(extra) {{
   const r = JSON.parse(JSON.stringify(base));
-  if (extra.scales) Object.assign(r.scales, extra.scales);
-  if (extra.plugins) Object.assign(r.plugins, extra.plugins);
+  if (extra.scales)   Object.assign(r.scales, extra.scales);
+  if (extra.plugins)  Object.assign(r.plugins, extra.plugins);
   if (extra.indexAxis) r.indexAxis = extra.indexAxis;
   return r;
 }}
@@ -450,32 +402,19 @@ new Chart(document.getElementById('histChart'), {{
   }} }})
 }});
 
-// 4. History
-const history = {hist_json};
-if (history.length > 0) {{
-  new Chart(document.getElementById('historyChart'), {{
-    type:'line',
-    data:{{
-      labels: history.map((_,i)=>'Round '+(i+1)),
-      datasets:[
-        {{ label:'mAP50',    data:history.map(h=>h.map50),    borderColor:G, backgroundColor:'rgba(57,211,83,0.08)',  borderWidth:2, pointRadius:4, pointBackgroundColor:G, fill:true,  tension:0.3 }},
-        {{ label:'mAP50-95', data:history.map(h=>h.map50_95), borderColor:B, backgroundColor:'rgba(29,140,248,0.05)',borderWidth:2, pointRadius:4, pointBackgroundColor:B, fill:true,  tension:0.3 }},
-        {{ label:'Precision',data:history.map(h=>h.precision),borderColor:Y, borderWidth:1.5, pointRadius:3, pointBackgroundColor:Y, borderDash:[4,3], fill:false, tension:0.3 }},
-        {{ label:'Recall',   data:history.map(h=>h.recall),   borderColor:R, borderWidth:1.5, pointRadius:3, pointBackgroundColor:R, borderDash:[4,3], fill:false, tension:0.3 }},
-      ]
-    }},
-    options:o({{
-      plugins:{{ legend:{{ display:true, labels:{{ color:TICK, font:FONT, boxWidth:12 }} }} }},
-      scales:{{
-        x:{{ ...base.scales.x, title:{{ display:true, text:'Round', color:TICK, font:FONT }} }},
-        y:{{ ...base.scales.y, min:0, max:1, title:{{ display:true, text:'Score', color:TICK, font:FONT }} }}
-      }}
-    }})
-  }});
-}} else {{
-  document.getElementById('historyChart').insertAdjacentHTML('afterend',
-    '<p style="color:#4a5568;font-family:Fira Code;font-size:11px;margin-top:16px">Sin historial — aparecerá tras el primer round guardado.</p>');
-}}
+// 4. IoU TP histogram
+const iouH = {iou_hist_json};
+new Chart(document.getElementById('iouHistChart'), {{
+  type:'bar',
+  data:{{ labels:iouH.map((_,i)=>((0.50+i*0.05).toFixed(2))),
+    datasets:[{{ data:iouH,
+      backgroundColor:iouH.map((_,i)=>`rgba(${{Math.round(167-i*10)}},${{Math.round(139+i*10)}},250,0.85)`),
+      borderWidth:0, borderRadius:2 }}] }},
+  options:o({{ scales:{{
+    x:{{ ...base.scales.x, title:{{ display:true, text:'IoU', color:TICK, font:FONT }} }},
+    y:{{ ...base.scales.y, title:{{ display:true, text:'TP count', color:TICK, font:FONT }} }}
+  }} }})
+}});
 
 // 5. TP/FP/FN
 const cm = {cm_json};
@@ -495,22 +434,7 @@ new Chart(document.getElementById('cmChart'), {{
   }})
 }});
 
-// 6. IoU TP histogram
-const iouH = {iou_hist_json};
-const iouLabels = iouH.map((_,i)=>((0.50+i*0.05).toFixed(2)));
-new Chart(document.getElementById('iouHistChart'), {{
-  type:'bar',
-  data:{{ labels:iouLabels,
-    datasets:[{{ data:iouH,
-      backgroundColor:iouH.map((_,i)=>`rgba(${{Math.round(167-i*10)}},${{Math.round(139+i*10)}},250,0.85)`),
-      borderWidth:0, borderRadius:2 }}] }},
-  options:o({{ scales:{{
-    x:{{ ...base.scales.x, title:{{ display:true, text:'IoU', color:TICK, font:FONT }} }},
-    y:{{ ...base.scales.y, title:{{ display:true, text:'TP count', color:TICK, font:FONT }} }}
-  }} }})
-}});
-
-// 7. AP by size
+// 6. AP by size
 const apS = {ap_size_json};
 new Chart(document.getElementById('apSizeChart'), {{
   type:'bar',
@@ -524,7 +448,7 @@ new Chart(document.getElementById('apSizeChart'), {{
   }} }})
 }});
 
-// 8. Dets per image
+// 7. Dets per image
 const di = {dets_json};
 new Chart(document.getElementById('detsImgChart'), {{
   type:'bar',
@@ -537,63 +461,6 @@ new Chart(document.getElementById('detsImgChart'), {{
     y:{{ ...base.scales.y, title:{{ display:true, text:'Detecciones', color:TICK, font:FONT }} }}
   }} }})
 }});
-
-// ── Timing per round ────────────────────────────────────────────────────────
-const timingHistory = {timing_json};
-if (timingHistory.length > 0) {{
-  const tLabels = timingHistory.map((_, i) => 'R' + (i + 1));
-  new Chart(document.getElementById('timingChart'), {{
-    type: 'bar',
-    data: {{
-      labels: tLabels,
-      datasets: [
-        {{ label: 'Entrenamiento', data: timingHistory.map(t => t.training_ms),
-           backgroundColor: G+'cc', borderWidth: 0, borderRadius: 3 }},
-        {{ label: 'Comunicación', data: timingHistory.map(t => t.comm_ms),
-           backgroundColor: B+'cc', borderWidth: 0, borderRadius: 3 }},
-        {{ label: 'Agregación', data: timingHistory.map(t => t.agg_ms),
-           backgroundColor: Y+'cc', borderWidth: 0, borderRadius: 3 }},
-      ]
-    }},
-    options:o({{
-      plugins: {{ legend: {{ display: true, labels: {{ color: TICK, font: FONT, boxWidth: 12 }} }} }},
-      scales: {{
-        x: {{ ...base.scales.x, title: {{ display: true, text: 'Ronda', color: TICK, font: FONT }} }},
-        y: {{ ...base.scales.y, title: {{ display: true, text: 'ms', color: TICK, font: FONT }} }},
-      }}
-    }})
-  }});
-}} else {{
-  document.getElementById('timingPanel').innerHTML +=
-    '<p style="color:#4a5568;font-family:Fira Code;font-size:11px;margin-top:16px">Sin datos de timing.</p>';
-}}
-if (timingHistory.length > 0) {{
-  const allCids = [...new Set(timingHistory.flatMap(t => Object.keys(t.clients)))].sort();
-  const cColors = [G, B, R, Y, P, C];
-  const sLabels = timingHistory.map((_, i) => 'R' + (i + 1));
-  new Chart(document.getElementById('samplesChart'), {{
-    type: 'line',
-    data: {{ labels: sLabels, datasets: allCids.map((cid, idx) => ({{
-      label: 'Client ' + cid,
-      data: timingHistory.map(t => t.clients[cid] || 0),
-      borderColor: cColors[idx % cColors.length],
-      backgroundColor: cColors[idx % cColors.length] + '22',
-      borderWidth: 2, pointRadius: 4,
-      pointBackgroundColor: cColors[idx % cColors.length],
-      fill: false, tension: 0.3,
-    }})) }},
-    options:o({{
-      plugins: {{ legend: {{ display: true, labels: {{ color: TICK, font: FONT, boxWidth: 12 }} }} }},
-      scales: {{
-        x: {{ ...base.scales.x, title: {{ display: true, text: 'Ronda', color: TICK, font: FONT }} }},
-        y: {{ ...base.scales.y, title: {{ display: true, text: 'Samples', color: TICK, font: FONT }} }},
-      }}
-    }})
-  }});
-}} else {{
-  document.getElementById('samplesPanel').innerHTML +=
-    '<p style="color:#4a5568;font-family:Fira Code;font-size:11px;margin-top:16px">Sin datos de samples.</p>';
-}}
 </script>
 </body>
 </html>"""

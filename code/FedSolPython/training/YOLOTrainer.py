@@ -241,16 +241,17 @@ class YOLOTrainer:
             project=project,
             name=run_name,
             verbose=True,
-            amp=False,
+            amp=True,          # ← mixed precision, ~2x más rápido en GPU
             val=False,
             save=False,
             plots=False,
-            cache=False,
+            cache=True,        # ← cachea imágenes en RAM, elimina I/O
             hsv_h=0.015, hsv_s=0.7, hsv_v=0.4,
             degrees=0.0, translate=0.1, scale=0.5,
             shear=0.0, perspective=0.0,
             flipud=0.0, fliplr=0.5,
-            mosaic=1.0, mixup=0.0,
+            mosaic=0.0,        # ← mosaic es caro, deshabilitalo
+            mixup=0.0,
             seed=42,
         )
 
