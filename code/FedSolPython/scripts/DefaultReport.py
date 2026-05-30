@@ -44,13 +44,10 @@ class DefaultReport:
         with open(json_path, "w") as f:
             json.dump(scalar_results, f, indent=4)
 
-        # ── Solo el último timing — el historial completo queda para generate_history_report ──
-        last_timing = DefaultReport._load_last_timing(base_dir)
-
         # ── Generate HTML report ──────────────────────────────────────────────
         curves = results.get("curves", {})
         meta   = results.get("_meta", {})
-        html   = DefaultReport._build_html(scalar_results, curves, meta, last_timing)
+        html   = DefaultReport._build_html(scalar_results, curves, meta)
 
         with open(html_path, "w", encoding="utf-8") as f:
             f.write(html)
@@ -58,33 +55,10 @@ class DefaultReport:
         print(f"[Report] JSON  → {json_path}")
         print(f"[Report] HTML  → {html_path}")
 
-    # ── Last timing only ─────────────────────────────────────────────────────
-
-    @staticmethod
-    def _load_last_timing(base_dir):
-        """Devuelve solo el timing JSON más reciente."""
-        pattern = os.path.join(base_dir, "stats", "timing_*.json")
-        files   = sorted(glob.glob(pattern))
-        if not files:
-            return {}
-        try:
-            with open(files[-1]) as f:
-                d = json.load(f)
-            return {
-                "timestamp":      d.get("timestamp", ""),
-                "training_ms":    d.get("training_time_ms", 0),
-                "comm_ms":        d.get("comm_time_ms", 0),
-                "agg_ms":         d.get("agg_time_ms", 0),
-                "round_total_ms": d.get("round_total_ms", 0),
-                "clients":        d.get("clients", {}),
-            }
-        except Exception:
-            return {}
-
     # ── HTML builder ─────────────────────────────────────────────────────────
 
     @staticmethod
-    def _build_html(results, curves, meta, timing=None):
+    def _build_html(results, curves, meta):
         ts         = datetime.now().strftime("%Y-%m-%d  %H:%M:%S")
         map50      = results.get("map50", 0)
         map50_95   = results.get("map50_95", 0)
@@ -115,19 +89,6 @@ class DefaultReport:
         for c in raw_confs:
             idx = min(int(c * 20), 19)
             bins[idx] += 1
-
-        # Timing pills
-        t = timing or {}
-        t_train  = t.get("training_ms",    "—")
-        t_comm   = t.get("comm_ms",        "—")
-        t_agg    = t.get("agg_ms",         "—")
-        t_total  = t.get("round_total_ms", "—")
-        t_ts     = t.get("timestamp",      "—")
-        clients  = t.get("clients", {})
-        samples_pills = "".join(
-            f'<div class="pill">client {cid} <span>{n}</span></div>'
-            for cid, n in sorted(clients.items())
-        )
 
         pr_json  = json.dumps(pr_data)
         f1_json  = json.dumps(f1_data)
@@ -227,15 +188,6 @@ class DefaultReport:
     <div class="chart-title">Histograma de Confianzas</div>
     <canvas id="histChart"></canvas>
   </div>
-</div>
-
-<div class="meta-bar" style="border-top:1px solid var(--border); border-bottom:none;">
-  <div class="pill">ronda <span>{t_ts}</span></div>
-  <div class="pill">entrenamiento <span>{t_train} ms</span></div>
-  <div class="pill">comunicación <span>{t_comm} ms</span></div>
-  <div class="pill">agregación <span>{t_agg} ms</span></div>
-  <div class="pill">total <span>{t_total} ms</span></div>
-  {samples_pills}
 </div>
 
 <footer>FedSol · Federated Learning for YOLOv8 · {ts}</footer>

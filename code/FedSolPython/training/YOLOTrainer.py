@@ -244,8 +244,11 @@ class YOLOTrainer:
             amp=True,          # ← mixed precision, ~2x más rápido en GPU
             val=False,
             save=False,
+            save_period=-1,
+            exist_ok=True,
+            workers=4,
             plots=False,
-            cache=True,        # ← cachea imágenes en RAM, elimina I/O
+            cache=False,        # ← cachea imágenes en RAM, elimina I/O
             hsv_h=0.015, hsv_s=0.7, hsv_v=0.4,
             degrees=0.0, translate=0.1, scale=0.5,
             shear=0.0, perspective=0.0,

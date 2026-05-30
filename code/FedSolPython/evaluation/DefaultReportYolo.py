@@ -25,13 +25,10 @@ class DefaultReportYolo:
 
     @staticmethod
     def generate(results: dict, params: dict, html_path: str):
-        curves   = results.get("curves", {})
-        extras   = results.get("extras", {})
-        meta     = results.get("_meta", {})
-        base_dir = params.get("base_dir", "output_server/globalResults")
-
-        last_timing = DefaultReportYolo._load_last_timing(base_dir)
-        html = DefaultReportYolo._build_html(results, curves, extras, meta, last_timing)
+        curves = results.get("curves", {})
+        extras = results.get("extras", {})
+        meta   = results.get("_meta", {})
+        html   = DefaultReportYolo._build_html(results, curves, extras, meta)
 
         os.makedirs(os.path.dirname(html_path), exist_ok=True)
         with open(html_path, "w", encoding="utf-8") as f:
@@ -39,33 +36,10 @@ class DefaultReportYolo:
 
         print(f"[Report] HTML  → {html_path}")
 
-    # ── Last timing only ──────────────────────────────────────────────────────
-
-    @staticmethod
-    def _load_last_timing(base_dir: str) -> dict:
-        """Devuelve solo el timing JSON más reciente."""
-        pattern = os.path.join(base_dir, "stats", "timing_*.json")
-        files   = sorted(glob.glob(pattern))
-        if not files:
-            return {}
-        try:
-            with open(files[-1]) as f:
-                d = json.load(f)
-            return {
-                "timestamp":      d.get("timestamp", ""),
-                "training_ms":    d.get("training_time_ms", 0),
-                "comm_ms":        d.get("comm_time_ms", 0),
-                "agg_ms":         d.get("agg_time_ms", 0),
-                "round_total_ms": d.get("round_total_ms", 0),
-                "clients":        d.get("clients", {}),
-            }
-        except Exception:
-            return {}
-
     # ── HTML ──────────────────────────────────────────────────────────────────
 
     @staticmethod
-    def _build_html(results, curves, extras, meta, timing=None) -> str:
+    def _build_html(results, curves, extras, meta) -> str:
         ts        = datetime.now().strftime("%Y-%m-%d  %H:%M:%S")
         map50     = results.get("map50",     0)
         map50_95  = results.get("map50_95",  0)
@@ -107,19 +81,6 @@ class DefaultReportYolo:
             conf_bins[min(int(c * 20), 19)] += 1
 
         dets_labels = [str(i) for i in range(len(dets_img))]
-
-        # Timing pills
-        t = timing or {}
-        t_train   = t.get("training_ms",    "—")
-        t_comm    = t.get("comm_ms",        "—")
-        t_agg     = t.get("agg_ms",         "—")
-        t_total   = t.get("round_total_ms", "—")
-        t_ts      = t.get("timestamp",      "—")
-        clients   = t.get("clients", {})
-        samples_pills = "".join(
-            f'<div class="pill">client {cid} <span>{n}</span></div>'
-            for cid, n in sorted(clients.items())
-        )
 
         pr_json       = json.dumps(pr_data)
         f1_json       = json.dumps(f1_data)
@@ -321,16 +282,6 @@ class DefaultReportYolo:
     <canvas id="detsImgChart"></canvas>
   </div>
 
-</div>
-
-<!-- Timing de la ronda -->
-<div class="meta-bar" style="border-top:1px solid var(--border); border-bottom:none;">
-  <div class="pill">ronda <span>{t_ts}</span></div>
-  <div class="pill">entrenamiento <span>{t_train} ms</span></div>
-  <div class="pill">comunicación <span>{t_comm} ms</span></div>
-  <div class="pill">agregación <span>{t_agg} ms</span></div>
-  <div class="pill">total <span>{t_total} ms</span></div>
-  {samples_pills}
 </div>
 
 <footer>FedSol · Federated Learning for YOLOv8 · {ts}</footer>
