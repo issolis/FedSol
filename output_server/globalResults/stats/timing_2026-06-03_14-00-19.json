@@ -1,0 +1,11 @@
+{
+  "timestamp": "2026-06-03_14-00-19",
+  "training_time_ms": 80214,
+  "comm_time_ms": 205,
+  "agg_time_ms": 0,
+  "round_total_ms": 83241,
+  "clients": {
+    "2": 31500,
+    "1": 31500
+  }
+}

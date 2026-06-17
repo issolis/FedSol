@@ -1,1033 +1,1021 @@
-[Thu May 28 12:32:20 2026] [INFO] Client connected with socket id: 6
-[Thu May 28 12:32:20 2026] [DEBUG] Code: 0
-[Thu May 28 12:32:20 2026] [DEBUG] Content: Auth
-[Thu May 28 12:32:21 2026] [INFO] [Client 1] Authentication success
-[Thu May 28 12:32:21 2026] [INFO] [Client 1] PT hash verified
-[Thu May 28 12:32:21 2026] [INFO] [Client 1] Registered
-[Thu May 28 12:32:21 2026] [INFO] [MODE] READY
-[Thu May 28 12:32:45 2026] [INFO] Client connected with socket id: 5
-[Thu May 28 12:32:45 2026] [DEBUG] Code: 0
-[Thu May 28 12:32:45 2026] [DEBUG] Content: Auth
-[Thu May 28 12:32:45 2026] [INFO] [Client 2] Authentication success
-[Thu May 28 12:32:45 2026] [INFO] [Client 2] PT hash verified
-[Thu May 28 12:32:45 2026] [INFO] [Client 2] Registered
-[Thu May 28 12:33:12 2026] [INFO] [SERVER] pt_path mode — weight validation skipped.
-[Thu May 28 12:33:47 2026] [INFO] Starting training...
-[Thu May 28 12:34:14 2026] [DEBUG] [Watchdog] Client 2 sock 5 state: TRAINING
-[Thu May 28 12:34:14 2026] [DEBUG] [Watchdog] Client 1 sock 6 state: TRAINING
-[Thu May 28 12:34:44 2026] [DEBUG] [Watchdog] Client 2 sock 5 state: TRAINING
-[Thu May 28 12:34:44 2026] [DEBUG] [Watchdog] Client 1 sock 6 state: TRAINING
-[Thu May 28 12:35:15 2026] [DEBUG] [Watchdog] Client 2 sock 5 state: TRAINING
-[Thu May 28 12:35:15 2026] [DEBUG] [Watchdog] Client 1 sock 6 state: TRAINING
-[Thu May 28 12:35:45 2026] [DEBUG] [Watchdog] Client 2 sock 5 state: TRAINING
-[Thu May 28 12:35:45 2026] [DEBUG] [Watchdog] Client 1 sock 6 state: TRAINING
-[Thu May 28 12:36:18 2026] [DEBUG] [Watchdog] Client 2 sock 5 state: TRAINING
-[Thu May 28 12:36:19 2026] [DEBUG] [Watchdog] Client 1 sock 6 state: TRAINING
-[Thu May 28 12:36:49 2026] [DEBUG] [Watchdog] Client 2 sock 5 state: TRAINING
-[Thu May 28 12:36:50 2026] [DEBUG] [Watchdog] Client 1 sock 6 state: TRAINING
-[Thu May 28 12:37:20 2026] [DEBUG] [Watchdog] Client 2 sock 5 state: TRAINING
-[Thu May 28 12:37:20 2026] [DEBUG] [Watchdog] Client 1 sock 6 state: TRAINING
-[Thu May 28 12:37:53 2026] [DEBUG] [Watchdog] Client 2 sock 5 state: TRAINING
-[Thu May 28 12:37:54 2026] [DEBUG] [Watchdog] Client 1 sock 6 state: TRAINING
-[Thu May 28 12:38:31 2026] [DEBUG] [Watchdog] Client 2 sock 5 state: TRAINING
-[Thu May 28 12:38:31 2026] [DEBUG] [Watchdog] Client 1 sock 6 state: TRAINING
-[Thu May 28 12:39:02 2026] [DEBUG] [Watchdog] Client 2 sock 5 state: TRAINING
-[Thu May 28 12:39:02 2026] [DEBUG] [Watchdog] Client 1 sock 6 state: TRAINING
-[Thu May 28 12:39:34 2026] [DEBUG] [Watchdog] Client 2 sock 5 state: TRAINING
-[Thu May 28 12:39:34 2026] [DEBUG] [Watchdog] Client 1 sock 6 state: TRAINING
-[Thu May 28 12:40:11 2026] [DEBUG] [Watchdog] Client 2 sock 5 state: TRAINING
-[Thu May 28 12:40:11 2026] [DEBUG] [Watchdog] Client 1 sock 6 state: TRAINING
-[Thu May 28 12:40:41 2026] [DEBUG] [Watchdog] Client 2 sock 5 state: TRAINING
-[Thu May 28 12:40:41 2026] [DEBUG] [Watchdog] Client 1 sock 6 state: TRAINING
-[Thu May 28 12:41:13 2026] [DEBUG] [Watchdog] Client 2 sock 5 state: TRAINING
-[Thu May 28 12:41:13 2026] [DEBUG] [Watchdog] Client 1 sock 6 state: TRAINING
-[Thu May 28 12:41:44 2026] [DEBUG] [Watchdog] Client 2 sock 5 state: TRAINING
-[Thu May 28 12:41:44 2026] [DEBUG] [Watchdog] Client 1 sock 6 state: TRAINING
-[Thu May 28 12:42:15 2026] [DEBUG] [Watchdog] Client 2 sock 5 state: TRAINING
-[Thu May 28 12:42:15 2026] [DEBUG] [Watchdog] Client 1 sock 6 state: TRAINING
-[Thu May 28 12:42:46 2026] [DEBUG] [Watchdog] Client 2 sock 5 state: TRAINING
-[Thu May 28 12:42:47 2026] [DEBUG] [Watchdog] Client 1 sock 6 state: TRAINING
-[Thu May 28 12:43:21 2026] [DEBUG] [Watchdog] Client 2 sock 5 state: TRAINING
-[Thu May 28 12:43:29 2026] [DEBUG] [Watchdog] Client 1 sock 6 state: TRAINING
-[Thu May 28 12:44:01 2026] [DEBUG] [Watchdog] Client 2 sock 5 state: TRAINING
-[Thu May 28 12:44:01 2026] [DEBUG] [Watchdog] Client 1 sock 6 state: TRAINING
-[Thu May 28 12:44:35 2026] [DEBUG] [Watchdog] Client 2 sock 5 state: TRAINING
-[Thu May 28 12:44:36 2026] [DEBUG] [Watchdog] Client 1 sock 6 state: TRAINING
-[Thu May 28 12:45:07 2026] [DEBUG] [Watchdog] Client 2 sock 5 state: TRAINING
-[Thu May 28 12:45:08 2026] [DEBUG] [Watchdog] Client 1 sock 6 state: TRAINING
-[Thu May 28 12:45:39 2026] [DEBUG] [Watchdog] Client 2 sock 5 state: TRAINING
-[Thu May 28 12:45:40 2026] [DEBUG] [Watchdog] Client 1 sock 6 state: TRAINING
-[Thu May 28 12:46:21 2026] [WARNING] [Watchdog] Client 2 did not respond to PING. Removing.
-[Thu May 28 12:46:31 2026] [WARNING] [Watchdog] Client 1 did not respond to PING. Removing.
-[Thu May 28 12:46:31 2026] [ERROR] [Watchdog] All clients were removed. Cannot aggregate.
-[Thu May 28 12:46:32 2026] [INFO] Client connected with socket id: 7
-[Thu May 28 12:46:32 2026] [INFO] Client connected with socket id: 5
-[Thu May 28 12:46:32 2026] [DEBUG] Code: 99
-[Thu May 28 12:46:32 2026] [DEBUG] Content: Error
-[Thu May 28 12:46:32 2026] [ERROR] [Protocol] Error received: [Client::listener] Client disconnected (recv = 0)
-[Thu May 28 12:46:32 2026] [ERROR] [Server] Client error: [Client::listener] Client disconnected (recv = 0)
-[Thu May 28 12:46:32 2026] [DEBUG] Code: 99
-[Thu May 28 12:46:32 2026] [DEBUG] Content: Error
-[Thu May 28 12:46:32 2026] [ERROR] [Protocol] Error received: [Client::listener] Client disconnected (recv = 0)
-[Thu May 28 12:46:32 2026] [ERROR] [Server] Client error: [Client::listener] Client disconnected (recv = 0)
-[Thu May 28 13:29:49 2026] [INFO] Client starting...
-[Thu May 28 13:29:49 2026] [INFO] [Server] Backdoor defense is ENABLED.
-[Thu May 28 13:29:49 2026] [INFO] [MODE] INITIALIZATION
-[Thu May 28 13:29:54 2026] [INFO] [Console] Operator authenticated.
-[Thu May 28 13:31:05 2026] [INFO] Client connected with socket id: 5
-[Thu May 28 13:31:06 2026] [DEBUG] Code: 0
-[Thu May 28 13:31:06 2026] [DEBUG] Content: Auth
-[Thu May 28 13:31:06 2026] [INFO] [Client 1] Authentication success
-[Thu May 28 13:31:06 2026] [INFO] [Client 1] PT hash verified
-[Thu May 28 13:31:06 2026] [INFO] [Client 1] Registered
-[Thu May 28 13:31:06 2026] [INFO] [MODE] READY
-[Thu May 28 13:31:09 2026] [INFO] Client connected with socket id: 6
-[Thu May 28 13:31:09 2026] [DEBUG] Code: 0
-[Thu May 28 13:31:09 2026] [DEBUG] Content: Auth
-[Thu May 28 13:31:09 2026] [INFO] [Client 2] Authentication success
-[Thu May 28 13:31:09 2026] [INFO] [Client 2] PT hash verified
-[Thu May 28 13:31:09 2026] [INFO] [Client 2] Registered
-[Thu May 28 13:31:39 2026] [INFO] [DatasetSplitter] Running: PYTHONPATH=code python3 -m FedSolPython.scripts.split_dataset input_server/dataset 2
-[2026-05-28 13:31:40] [INFO] [split_dataset] YOLO — 863 images → 2 clients (~432 each)
-[2026-05-28 13:31:51] [INFO] [split_dataset] Client 0: 432 images → dataset_train_0.tar.gz (222.8 MB)
-[2026-05-28 13:32:03] [INFO] [split_dataset] Client 1: 431 images → dataset_train_1.tar.gz (220.0 MB)
-[2026-05-28 13:32:03] [INFO] [split_dataset] Done. 2 .tar.gz files saved to 'input_server/'
-[Thu May 28 13:32:03 2026] [INFO] [DatasetSplitter] Split completed successfully
-[Thu May 28 13:32:05 2026] [INFO] [Protocol] Sending file: ./input_server/dataset_train_0.tar.gz (233593659 bytes)
-[Thu May 28 13:32:05 2026] [INFO] [Protocol] Sending file: ./input_server/dataset_train_1.tar.gz (230708742 bytes)
-[Thu May 28 13:32:46 2026] [INFO] [SERVER] pt_path mode — weight validation skipped.
-[Thu May 28 13:32:52 2026] [INFO] Starting training...
-[Thu May 28 13:33:19 2026] [DEBUG] [Watchdog] Client 2 sock 6 state: TRAINING
-[Thu May 28 13:33:19 2026] [DEBUG] [Watchdog] Client 1 sock 5 state: TRAINING
-[Thu May 28 13:33:49 2026] [DEBUG] [Watchdog] Client 2 sock 6 state: TRAINING
-[Thu May 28 13:33:49 2026] [DEBUG] [Watchdog] Client 1 sock 5 state: TRAINING
-[Thu May 28 13:34:19 2026] [DEBUG] [Watchdog] Client 2 sock 6 state: TRAINING
-[Thu May 28 13:34:20 2026] [DEBUG] [Watchdog] Client 1 sock 5 state: TRAINING
-[Thu May 28 13:34:50 2026] [DEBUG] [Watchdog] Client 2 sock 6 state: TRAINING
-[Thu May 28 13:34:51 2026] [DEBUG] [Watchdog] Client 1 sock 5 state: TRAINING
-[Thu May 28 13:35:22 2026] [DEBUG] [Watchdog] Client 2 sock 6 state: TRAINING
-[Thu May 28 13:35:23 2026] [DEBUG] [Watchdog] Client 1 sock 5 state: TRAINING
-[Thu May 28 13:35:53 2026] [DEBUG] [Watchdog] Client 2 sock 6 state: TRAINING
-[Thu May 28 13:35:53 2026] [DEBUG] [Watchdog] Client 1 sock 5 state: TRAINING
-[Thu May 28 13:36:24 2026] [DEBUG] [Watchdog] Client 2 sock 6 state: TRAINING
-[Thu May 28 13:36:24 2026] [DEBUG] [Watchdog] Client 1 sock 5 state: TRAINING
-[Thu May 28 13:36:55 2026] [DEBUG] [Watchdog] Client 2 sock 6 state: TRAINING
-[Thu May 28 13:36:56 2026] [DEBUG] [Watchdog] Client 1 sock 5 state: TRAINING
-[Thu May 28 13:37:27 2026] [DEBUG] [Watchdog] Client 2 sock 6 state: TRAINING
-[Thu May 28 13:37:28 2026] [DEBUG] [Watchdog] Client 1 sock 5 state: TRAINING
-[Thu May 28 13:37:59 2026] [DEBUG] [Watchdog] Client 2 sock 6 state: TRAINING
-[Thu May 28 13:37:59 2026] [DEBUG] [Watchdog] Client 1 sock 5 state: TRAINING
-[Thu May 28 13:38:29 2026] [DEBUG] [Watchdog] Client 2 sock 6 state: TRAINING
-[Thu May 28 13:38:30 2026] [DEBUG] [Watchdog] Client 1 sock 5 state: TRAINING
-[Thu May 28 13:39:01 2026] [DEBUG] [Watchdog] Client 2 sock 6 state: TRAINING
-[Thu May 28 13:39:01 2026] [DEBUG] [Watchdog] Client 1 sock 5 state: TRAINING
-[Thu May 28 13:39:31 2026] [DEBUG] [Watchdog] Client 2 sock 6 state: TRAINING
-[Thu May 28 13:39:31 2026] [DEBUG] [Watchdog] Client 1 sock 5 state: TRAINING
-[Thu May 28 13:40:01 2026] [DEBUG] [Watchdog] Client 2 sock 6 state: TRAINING
-[Thu May 28 13:40:02 2026] [DEBUG] [Watchdog] Client 1 sock 5 state: TRAINING
-[Thu May 28 13:40:32 2026] [DEBUG] [Watchdog] Client 2 sock 6 state: TRAINING
-[Thu May 28 13:40:32 2026] [DEBUG] [Watchdog] Client 1 sock 5 state: TRAINING
-[Thu May 28 13:41:03 2026] [DEBUG] [Watchdog] Client 2 sock 6 state: TRAINING
-[Thu May 28 13:41:03 2026] [DEBUG] [Watchdog] Client 1 sock 5 state: TRAINING
-[Thu May 28 13:41:34 2026] [DEBUG] [Watchdog] Client 2 sock 6 state: TRAINING
-[Thu May 28 13:41:34 2026] [DEBUG] [Watchdog] Client 1 sock 5 state: TRAINING
-[Thu May 28 13:42:04 2026] [DEBUG] [Watchdog] Client 2 sock 6 state: TRAINING
-[Thu May 28 13:42:04 2026] [DEBUG] [Watchdog] Client 1 sock 5 state: TRAINING
-[Thu May 28 13:42:35 2026] [DEBUG] [Watchdog] Client 2 sock 6 state: TRAINING
-[Thu May 28 13:42:35 2026] [DEBUG] [Watchdog] Client 1 sock 5 state: TRAINING
-[Thu May 28 13:43:05 2026] [DEBUG] [Watchdog] Client 2 sock 6 state: TRAINING
-[Thu May 28 13:43:05 2026] [DEBUG] [Watchdog] Client 1 sock 5 state: TRAINING
-[Thu May 28 13:43:36 2026] [DEBUG] [Watchdog] Client 2 sock 6 state: TRAINING
-[Thu May 28 13:43:36 2026] [DEBUG] [Watchdog] Client 1 sock 5 state: TRAINING
-[Thu May 28 13:43:43 2026] [INFO] Client connected with socket id: 7
-[Thu May 28 13:43:48 2026] [DEBUG] Code: 1
-[Thu May 28 13:43:48 2026] [DEBUG] Content: Training Ended
-[Thu May 28 13:43:48 2026] [INFO] [Client 1] Finished training. Sample size: 431
-[Thu May 28 13:44:06 2026] [DEBUG] [Watchdog] Client 2 sock 6 state: TRAINING
-[Thu May 28 13:44:45 2026] [DEBUG] [Watchdog] Client 2 sock 6 state: TRAINING
-[Thu May 28 13:45:15 2026] [DEBUG] [Watchdog] Client 2 sock 6 state: TRAINING
-[Thu May 28 13:45:45 2026] [DEBUG] [Watchdog] Client 2 sock 6 state: TRAINING
-[Thu May 28 13:46:02 2026] [INFO] Client connected with socket id: 8
-[Thu May 28 13:46:07 2026] [DEBUG] Code: 1
-[Thu May 28 13:46:07 2026] [DEBUG] Content: Training Ended
-[Thu May 28 13:46:07 2026] [INFO] [Client 2] Finished training. Sample size: 432
-[Thu May 28 13:46:07 2026] [INFO] All clients finished. Aggregating...
-[Thu May 28 13:46:10 2026] [WARNING] [BackdoorDefense] Insufficient global model history (need 2 rounds). Skipping filter this round — behaving as vanilla FedAvg.
-[Thu May 28 13:46:10 2026] [INFO] [Aggregator] comm_time_ms: 2987
-[Thu May 28 13:46:10 2026] [INFO] [Aggregator] aggregation_time_ms: 4
-[Thu May 28 13:46:13 2026] [INFO] [EXPORTER] Running: PYTHONPATH=code python3 -m FedSolPython.scripts.build_and_save "input_server/config.json"
-[2026-05-28 13:46:15] [INFO] Starting build from config: input_server/config.json
-[2026-05-28 13:46:16] [INFO] pt_path mode: loading model from 'input_server/model.pt'
-[2026-05-28 13:46:18] [INFO] Federated weights applied to YOLO (nc=1): 3,021,443 floats
-[2026-05-28 13:46:19] [INFO] Archived model saved to: output_server/models/model_20260528_134618.pt
-[2026-05-28 13:46:19] [INFO] Updated .pt written back to: input_server/model.pt
-[Thu May 28 13:46:20 2026] [INFO] [EXPORTER] Model exported successfully
-[Thu May 28 13:46:20 2026] [INFO] [SERVER] Completed one epoch. Remaining: 3
-[Thu May 28 13:46:45 2026] [DEBUG] [Watchdog] Client 2 sock 6 state: TRAINING
-[Thu May 28 13:46:45 2026] [DEBUG] [Watchdog] Client 1 sock 5 state: TRAINING
-[Thu May 28 13:47:15 2026] [DEBUG] [Watchdog] Client 2 sock 6 state: TRAINING
-[Thu May 28 13:47:15 2026] [DEBUG] [Watchdog] Client 1 sock 5 state: TRAINING
-[Thu May 28 13:47:46 2026] [DEBUG] [Watchdog] Client 2 sock 6 state: TRAINING
-[Thu May 28 13:47:46 2026] [DEBUG] [Watchdog] Client 1 sock 5 state: TRAINING
-[Thu May 28 13:48:16 2026] [DEBUG] [Watchdog] Client 2 sock 6 state: TRAINING
-[Thu May 28 13:48:16 2026] [DEBUG] [Watchdog] Client 1 sock 5 state: TRAINING
-[Thu May 28 13:48:47 2026] [DEBUG] [Watchdog] Client 2 sock 6 state: TRAINING
-[Thu May 28 13:48:47 2026] [DEBUG] [Watchdog] Client 1 sock 5 state: TRAINING
-[Thu May 28 13:49:18 2026] [DEBUG] [Watchdog] Client 2 sock 6 state: TRAINING
-[Thu May 28 13:49:19 2026] [DEBUG] [Watchdog] Client 1 sock 5 state: TRAINING
-[Thu May 28 13:49:50 2026] [DEBUG] [Watchdog] Client 2 sock 6 state: TRAINING
-[Thu May 28 13:49:51 2026] [DEBUG] [Watchdog] Client 1 sock 5 state: TRAINING
-[Thu May 28 13:50:21 2026] [DEBUG] [Watchdog] Client 2 sock 6 state: TRAINING
-[Thu May 28 13:50:21 2026] [DEBUG] [Watchdog] Client 1 sock 5 state: TRAINING
-[Thu May 28 13:50:52 2026] [DEBUG] [Watchdog] Client 2 sock 6 state: TRAINING
-[Thu May 28 13:50:52 2026] [DEBUG] [Watchdog] Client 1 sock 5 state: TRAINING
-[Thu May 28 13:51:22 2026] [DEBUG] [Watchdog] Client 2 sock 6 state: TRAINING
-[Thu May 28 13:51:22 2026] [DEBUG] [Watchdog] Client 1 sock 5 state: TRAINING
-[Thu May 28 13:51:52 2026] [DEBUG] [Watchdog] Client 2 sock 6 state: TRAINING
-[Thu May 28 13:51:52 2026] [DEBUG] [Watchdog] Client 1 sock 5 state: TRAINING
-[Thu May 28 13:52:27 2026] [DEBUG] [Watchdog] Client 2 sock 6 state: TRAINING
-[Thu May 28 13:52:28 2026] [DEBUG] [Watchdog] Client 1 sock 5 state: TRAINING
-[Thu May 28 13:53:00 2026] [DEBUG] [Watchdog] Client 2 sock 6 state: TRAINING
-[Thu May 28 13:53:00 2026] [DEBUG] [Watchdog] Client 1 sock 5 state: TRAINING
-[Thu May 28 13:53:30 2026] [DEBUG] [Watchdog] Client 2 sock 6 state: TRAINING
-[Thu May 28 13:53:31 2026] [DEBUG] [Watchdog] Client 1 sock 5 state: TRAINING
-[Thu May 28 13:54:02 2026] [DEBUG] [Watchdog] Client 2 sock 6 state: TRAINING
-[Thu May 28 13:54:02 2026] [DEBUG] [Watchdog] Client 1 sock 5 state: TRAINING
-[Thu May 28 13:54:34 2026] [DEBUG] [Watchdog] Client 2 sock 6 state: TRAINING
-[Thu May 28 13:54:34 2026] [DEBUG] [Watchdog] Client 1 sock 5 state: TRAINING
-[Thu May 28 13:55:04 2026] [DEBUG] [Watchdog] Client 2 sock 6 state: TRAINING
-[Thu May 28 13:55:05 2026] [DEBUG] [Watchdog] Client 1 sock 5 state: TRAINING
-[Thu May 28 13:55:35 2026] [DEBUG] [Watchdog] Client 2 sock 6 state: TRAINING
-[Thu May 28 13:55:35 2026] [DEBUG] [Watchdog] Client 1 sock 5 state: TRAINING
-[Thu May 28 13:56:05 2026] [DEBUG] [Watchdog] Client 2 sock 6 state: TRAINING
-[Thu May 28 13:56:05 2026] [DEBUG] [Watchdog] Client 1 sock 5 state: TRAINING
-[Thu May 28 13:56:36 2026] [DEBUG] [Watchdog] Client 2 sock 6 state: TRAINING
-[Thu May 28 13:56:36 2026] [DEBUG] [Watchdog] Client 1 sock 5 state: TRAINING
-[Thu May 28 13:56:45 2026] [INFO] Client connected with socket id: 7
-[Thu May 28 13:56:51 2026] [DEBUG] Code: 1
-[Thu May 28 13:56:51 2026] [DEBUG] Content: Training Ended
-[Thu May 28 13:56:51 2026] [INFO] [Client 1] Finished training. Sample size: 431
-[Thu May 28 13:57:08 2026] [DEBUG] [Watchdog] Client 2 sock 6 state: TRAINING
-[Thu May 28 13:57:38 2026] [DEBUG] [Watchdog] Client 2 sock 6 state: TRAINING
-[Thu May 28 13:58:08 2026] [DEBUG] [Watchdog] Client 2 sock 6 state: TRAINING
-[Thu May 28 13:58:38 2026] [DEBUG] [Watchdog] Client 2 sock 6 state: TRAINING
-[Thu May 28 13:58:43 2026] [INFO] Client connected with socket id: 8
-[Thu May 28 13:58:48 2026] [DEBUG] Code: 1
-[Thu May 28 13:58:48 2026] [DEBUG] Content: Training Ended
-[Thu May 28 13:58:48 2026] [INFO] [Client 2] Finished training. Sample size: 432
-[Thu May 28 13:58:48 2026] [INFO] All clients finished. Aggregating...
-[Thu May 28 13:58:51 2026] [WARNING] [BackdoorDefense] Insufficient global model history (need 2 rounds). Skipping filter this round — behaving as vanilla FedAvg.
-[Thu May 28 13:58:51 2026] [INFO] [Aggregator] comm_time_ms: 3155
-[Thu May 28 13:58:51 2026] [INFO] [Aggregator] aggregation_time_ms: 4
-[Thu May 28 13:58:53 2026] [INFO] [EXPORTER] Running: PYTHONPATH=code python3 -m FedSolPython.scripts.build_and_save "input_server/config.json"
-[2026-05-28 13:58:55] [INFO] Starting build from config: input_server/config.json
-[2026-05-28 13:58:57] [INFO] pt_path mode: loading model from 'input_server/model.pt'
-[2026-05-28 13:58:58] [INFO] Federated weights applied to YOLO (nc=1): 3,021,443 floats
-[2026-05-28 13:58:59] [INFO] Archived model saved to: output_server/models/model_20260528_135858.pt
-[2026-05-28 13:58:59] [INFO] Updated .pt written back to: input_server/model.pt
-[Thu May 28 13:59:00 2026] [INFO] [EXPORTER] Model exported successfully
-[Thu May 28 13:59:00 2026] [INFO] [SERVER] Completed one epoch. Remaining: 2
-[Thu May 28 13:59:10 2026] [DEBUG] [Watchdog] Client 2 sock 6 state: TRAINING
-[Thu May 28 13:59:10 2026] [DEBUG] [Watchdog] Client 1 sock 5 state: TRAINING
-[Thu May 28 13:59:40 2026] [DEBUG] [Watchdog] Client 2 sock 6 state: TRAINING
-[Thu May 28 13:59:41 2026] [DEBUG] [Watchdog] Client 1 sock 5 state: TRAINING
-[Thu May 28 14:00:11 2026] [DEBUG] [Watchdog] Client 2 sock 6 state: TRAINING
-[Thu May 28 14:00:11 2026] [DEBUG] [Watchdog] Client 1 sock 5 state: TRAINING
-[Thu May 28 14:00:41 2026] [DEBUG] [Watchdog] Client 2 sock 6 state: TRAINING
-[Thu May 28 14:00:41 2026] [DEBUG] [Watchdog] Client 1 sock 5 state: TRAINING
-[Thu May 28 14:01:11 2026] [DEBUG] [Watchdog] Client 2 sock 6 state: TRAINING
-[Thu May 28 14:01:12 2026] [DEBUG] [Watchdog] Client 1 sock 5 state: TRAINING
-[Thu May 28 14:01:43 2026] [DEBUG] [Watchdog] Client 2 sock 6 state: TRAINING
-[Thu May 28 14:01:43 2026] [DEBUG] [Watchdog] Client 1 sock 5 state: TRAINING
-[Thu May 28 14:02:15 2026] [DEBUG] [Watchdog] Client 2 sock 6 state: TRAINING
-[Thu May 28 14:02:16 2026] [DEBUG] [Watchdog] Client 1 sock 5 state: TRAINING
-[Thu May 28 14:02:46 2026] [DEBUG] [Watchdog] Client 2 sock 6 state: TRAINING
-[Thu May 28 14:02:47 2026] [DEBUG] [Watchdog] Client 1 sock 5 state: TRAINING
-[Thu May 28 14:03:18 2026] [DEBUG] [Watchdog] Client 2 sock 6 state: TRAINING
-[Thu May 28 14:03:18 2026] [DEBUG] [Watchdog] Client 1 sock 5 state: TRAINING
-[Thu May 28 14:03:49 2026] [DEBUG] [Watchdog] Client 2 sock 6 state: TRAINING
-[Thu May 28 14:03:50 2026] [DEBUG] [Watchdog] Client 1 sock 5 state: TRAINING
-[Thu May 28 14:04:21 2026] [DEBUG] [Watchdog] Client 2 sock 6 state: TRAINING
-[Thu May 28 14:04:21 2026] [DEBUG] [Watchdog] Client 1 sock 5 state: TRAINING
-[Thu May 28 14:04:52 2026] [DEBUG] [Watchdog] Client 2 sock 6 state: TRAINING
-[Thu May 28 14:04:52 2026] [DEBUG] [Watchdog] Client 1 sock 5 state: TRAINING
-[Thu May 28 14:05:22 2026] [DEBUG] [Watchdog] Client 2 sock 6 state: TRAINING
-[Thu May 28 14:05:23 2026] [DEBUG] [Watchdog] Client 1 sock 5 state: TRAINING
-[Thu May 28 14:05:53 2026] [DEBUG] [Watchdog] Client 2 sock 6 state: TRAINING
-[Thu May 28 14:05:53 2026] [DEBUG] [Watchdog] Client 1 sock 5 state: TRAINING
-[Thu May 28 14:06:23 2026] [DEBUG] [Watchdog] Client 2 sock 6 state: TRAINING
-[Thu May 28 14:06:24 2026] [DEBUG] [Watchdog] Client 1 sock 5 state: TRAINING
-[Thu May 28 14:06:54 2026] [DEBUG] [Watchdog] Client 2 sock 6 state: TRAINING
-[Thu May 28 14:06:55 2026] [DEBUG] [Watchdog] Client 1 sock 5 state: TRAINING
-[Thu May 28 14:07:26 2026] [DEBUG] [Watchdog] Client 2 sock 6 state: TRAINING
-[Thu May 28 14:07:26 2026] [DEBUG] [Watchdog] Client 1 sock 5 state: TRAINING
-[Thu May 28 14:07:57 2026] [DEBUG] [Watchdog] Client 2 sock 6 state: TRAINING
-[Thu May 28 14:07:57 2026] [DEBUG] [Watchdog] Client 1 sock 5 state: TRAINING
-[Thu May 28 14:08:27 2026] [DEBUG] [Watchdog] Client 2 sock 6 state: TRAINING
-[Thu May 28 14:08:27 2026] [DEBUG] [Watchdog] Client 1 sock 5 state: TRAINING
-[Thu May 28 14:08:57 2026] [DEBUG] [Watchdog] Client 2 sock 6 state: TRAINING
-[Thu May 28 14:08:57 2026] [DEBUG] [Watchdog] Client 1 sock 5 state: TRAINING
-[Thu May 28 14:09:28 2026] [DEBUG] [Watchdog] Client 2 sock 6 state: TRAINING
-[Thu May 28 14:09:28 2026] [DEBUG] [Watchdog] Client 1 sock 5 state: TRAINING
-[Thu May 28 14:09:58 2026] [DEBUG] [Watchdog] Client 2 sock 6 state: TRAINING
-[Thu May 28 14:09:58 2026] [DEBUG] [Watchdog] Client 1 sock 5 state: TRAINING
-[Thu May 28 14:10:28 2026] [DEBUG] [Watchdog] Client 2 sock 6 state: TRAINING
-[Thu May 28 14:10:28 2026] [DEBUG] [Watchdog] Client 1 sock 5 state: TRAINING
-[Thu May 28 14:10:36 2026] [INFO] Client connected with socket id: 7
-[Thu May 28 14:10:41 2026] [DEBUG] Code: 1
-[Thu May 28 14:10:41 2026] [DEBUG] Content: Training Ended
-[Thu May 28 14:10:41 2026] [INFO] [Client 1] Finished training. Sample size: 431
-[Thu May 28 14:10:59 2026] [DEBUG] [Watchdog] Client 2 sock 6 state: TRAINING
-[Thu May 28 14:11:29 2026] [DEBUG] [Watchdog] Client 2 sock 6 state: TRAINING
-[Thu May 28 14:11:44 2026] [INFO] Client connected with socket id: 8
-[Thu May 28 14:11:49 2026] [DEBUG] Code: 1
-[Thu May 28 14:11:49 2026] [DEBUG] Content: Training Ended
-[Thu May 28 14:11:49 2026] [INFO] [Client 2] Finished training. Sample size: 432
-[Thu May 28 14:11:49 2026] [INFO] All clients finished. Aggregating...
-[Thu May 28 14:11:53 2026] [INFO] [BackdoorDefense] Client 2 cosine score vs global history: 0.076263
-[Thu May 28 14:11:53 2026] [INFO] [BackdoorDefense] Client 1 cosine score vs global history: 0.574499
-[Thu May 28 14:11:53 2026] [INFO] [BackdoorDefense] Round result: 2 received, 2 accepted, 0 rejected. clip_norm=13.219337
-[Thu May 28 14:11:53 2026] [INFO] [Aggregator] comm_time_ms: 3827
-[Thu May 28 14:11:53 2026] [INFO] [Aggregator] aggregation_time_ms: 59
-[Thu May 28 14:11:56 2026] [INFO] [EXPORTER] Running: PYTHONPATH=code python3 -m FedSolPython.scripts.build_and_save "input_server/config.json"
-[2026-05-28 14:11:58] [INFO] Starting build from config: input_server/config.json
-[2026-05-28 14:11:59] [INFO] pt_path mode: loading model from 'input_server/model.pt'
-[2026-05-28 14:12:01] [INFO] Federated weights applied to YOLO (nc=1): 3,021,443 floats
-[2026-05-28 14:12:01] [INFO] Archived model saved to: output_server/models/model_20260528_141201.pt
-[2026-05-28 14:12:01] [INFO] Updated .pt written back to: input_server/model.pt
-[Thu May 28 14:12:02 2026] [INFO] [EXPORTER] Model exported successfully
-[Thu May 28 14:12:02 2026] [INFO] [SERVER] Completed one epoch. Remaining: 1
-[Thu May 28 14:12:29 2026] [DEBUG] [Watchdog] Client 2 sock 6 state: TRAINING
-[Thu May 28 14:12:29 2026] [DEBUG] [Watchdog] Client 1 sock 5 state: TRAINING
-[Thu May 28 14:12:59 2026] [DEBUG] [Watchdog] Client 2 sock 6 state: TRAINING
-[Thu May 28 14:12:59 2026] [DEBUG] [Watchdog] Client 1 sock 5 state: TRAINING
-[Thu May 28 14:13:29 2026] [DEBUG] [Watchdog] Client 2 sock 6 state: TRAINING
-[Thu May 28 14:13:29 2026] [DEBUG] [Watchdog] Client 1 sock 5 state: TRAINING
-[Thu May 28 14:14:00 2026] [DEBUG] [Watchdog] Client 2 sock 6 state: TRAINING
-[Thu May 28 14:14:00 2026] [DEBUG] [Watchdog] Client 1 sock 5 state: TRAINING
-[Thu May 28 14:14:30 2026] [DEBUG] [Watchdog] Client 2 sock 6 state: TRAINING
-[Thu May 28 14:14:31 2026] [DEBUG] [Watchdog] Client 1 sock 5 state: TRAINING
-[Thu May 28 14:15:01 2026] [DEBUG] [Watchdog] Client 2 sock 6 state: TRAINING
-[Thu May 28 14:15:03 2026] [DEBUG] [Watchdog] Client 1 sock 5 state: TRAINING
-[Thu May 28 14:15:33 2026] [DEBUG] [Watchdog] Client 2 sock 6 state: TRAINING
-[Thu May 28 14:15:34 2026] [DEBUG] [Watchdog] Client 1 sock 5 state: TRAINING
-[Thu May 28 14:16:05 2026] [DEBUG] [Watchdog] Client 2 sock 6 state: TRAINING
-[Thu May 28 14:16:06 2026] [DEBUG] [Watchdog] Client 1 sock 5 state: TRAINING
-[Thu May 28 14:16:37 2026] [DEBUG] [Watchdog] Client 2 sock 6 state: TRAINING
-[Thu May 28 14:16:38 2026] [DEBUG] [Watchdog] Client 1 sock 5 state: TRAINING
-[Thu May 28 14:17:08 2026] [DEBUG] [Watchdog] Client 2 sock 6 state: TRAINING
-[Thu May 28 14:17:09 2026] [DEBUG] [Watchdog] Client 1 sock 5 state: TRAINING
-[Thu May 28 14:17:39 2026] [DEBUG] [Watchdog] Client 2 sock 6 state: TRAINING
-[Thu May 28 14:17:42 2026] [DEBUG] [Watchdog] Client 1 sock 5 state: TRAINING
-[Thu May 28 14:18:12 2026] [DEBUG] [Watchdog] Client 2 sock 6 state: TRAINING
-[Thu May 28 14:18:12 2026] [DEBUG] [Watchdog] Client 1 sock 5 state: TRAINING
-[Thu May 28 14:18:43 2026] [DEBUG] [Watchdog] Client 2 sock 6 state: TRAINING
-[Thu May 28 14:18:43 2026] [DEBUG] [Watchdog] Client 1 sock 5 state: TRAINING
-[Thu May 28 14:19:14 2026] [DEBUG] [Watchdog] Client 2 sock 6 state: TRAINING
-[Thu May 28 14:19:14 2026] [DEBUG] [Watchdog] Client 1 sock 5 state: TRAINING
-[Thu May 28 14:19:44 2026] [DEBUG] [Watchdog] Client 2 sock 6 state: TRAINING
-[Thu May 28 14:19:46 2026] [DEBUG] [Watchdog] Client 1 sock 5 state: TRAINING
-[Thu May 28 14:20:16 2026] [DEBUG] [Watchdog] Client 2 sock 6 state: TRAINING
-[Thu May 28 14:20:17 2026] [DEBUG] [Watchdog] Client 1 sock 5 state: TRAINING
-[Thu May 28 14:20:47 2026] [DEBUG] [Watchdog] Client 2 sock 6 state: TRAINING
-[Thu May 28 14:20:47 2026] [DEBUG] [Watchdog] Client 1 sock 5 state: TRAINING
-[Thu May 28 14:21:17 2026] [DEBUG] [Watchdog] Client 2 sock 6 state: TRAINING
-[Thu May 28 14:21:18 2026] [DEBUG] [Watchdog] Client 1 sock 5 state: TRAINING
-[Thu May 28 14:21:48 2026] [DEBUG] [Watchdog] Client 2 sock 6 state: TRAINING
-[Thu May 28 14:21:49 2026] [DEBUG] [Watchdog] Client 1 sock 5 state: TRAINING
-[Thu May 28 14:22:19 2026] [DEBUG] [Watchdog] Client 2 sock 6 state: TRAINING
-[Thu May 28 14:22:20 2026] [DEBUG] [Watchdog] Client 1 sock 5 state: TRAINING
-[Thu May 28 14:22:50 2026] [DEBUG] [Watchdog] Client 2 sock 6 state: TRAINING
-[Thu May 28 14:22:50 2026] [DEBUG] [Watchdog] Client 1 sock 5 state: TRAINING
-[Thu May 28 14:23:20 2026] [DEBUG] [Watchdog] Client 2 sock 6 state: TRAINING
-[Thu May 28 14:23:21 2026] [DEBUG] [Watchdog] Client 1 sock 5 state: TRAINING
-[Thu May 28 14:23:39 2026] [INFO] Client connected with socket id: 7
-[Thu May 28 14:23:44 2026] [DEBUG] Code: 1
-[Thu May 28 14:23:44 2026] [DEBUG] Content: Training Ended
-[Thu May 28 14:23:44 2026] [INFO] [Client 2] Finished training. Sample size: 432
-[Thu May 28 14:23:53 2026] [DEBUG] [Watchdog] Client 1 sock 5 state: TRAINING
-[Thu May 28 14:24:23 2026] [DEBUG] [Watchdog] Client 1 sock 5 state: TRAINING
-[Thu May 28 14:24:54 2026] [DEBUG] [Watchdog] Client 1 sock 5 state: TRAINING
-[Thu May 28 14:25:05 2026] [INFO] Client connected with socket id: 8
-[Thu May 28 14:25:11 2026] [DEBUG] Code: 1
-[Thu May 28 14:25:11 2026] [DEBUG] Content: Training Ended
-[Thu May 28 14:25:11 2026] [INFO] [Client 1] Finished training. Sample size: 431
-[Thu May 28 14:25:11 2026] [INFO] All clients finished. Aggregating...
-[Thu May 28 14:25:15 2026] [INFO] [BackdoorDefense] Client 2 cosine score vs global history: 0.327367
-[Thu May 28 14:25:15 2026] [INFO] [BackdoorDefense] Client 1 cosine score vs global history: 0.384299
-[Thu May 28 14:25:15 2026] [INFO] [BackdoorDefense] Round result: 2 received, 2 accepted, 0 rejected. clip_norm=13.335108
-[Thu May 28 14:25:15 2026] [INFO] [Aggregator] comm_time_ms: 4606
-[Thu May 28 14:25:15 2026] [INFO] [Aggregator] aggregation_time_ms: 41
-[Thu May 28 14:25:18 2026] [INFO] [EXPORTER] Running: PYTHONPATH=code python3 -m FedSolPython.scripts.build_and_save "input_server/config.json"
-[2026-05-28 14:25:20] [INFO] Starting build from config: input_server/config.json
-[2026-05-28 14:25:21] [INFO] pt_path mode: loading model from 'input_server/model.pt'
-[2026-05-28 14:25:23] [INFO] Federated weights applied to YOLO (nc=1): 3,021,443 floats
-[2026-05-28 14:25:23] [INFO] Archived model saved to: output_server/models/model_20260528_142523.pt
-[2026-05-28 14:25:23] [INFO] Updated .pt written back to: input_server/model.pt
-[Thu May 28 14:25:24 2026] [INFO] [EXPORTER] Model exported successfully
-[Thu May 28 14:25:24 2026] [INFO] [SERVER] Completed one epoch. Remaining: 0
-[Thu May 28 14:25:24 2026] [INFO] [SERVER] Training finished.
-[Thu May 28 18:11:55 2026] [INFO] Client starting...
-[Thu May 28 18:11:55 2026] [INFO] [Server] Backdoor defense is ENABLED.
-[Thu May 28 18:11:55 2026] [INFO] [MODE] INITIALIZATION
-[Thu May 28 18:14:43 2026] [INFO] Client connected with socket id: 5
-[Thu May 28 18:14:43 2026] [DEBUG] Code: 0
-[Thu May 28 18:14:43 2026] [DEBUG] Content: Auth
-[Thu May 28 18:14:44 2026] [INFO] [Client 2] Authentication success
-[Thu May 28 18:14:44 2026] [INFO] [Client 2] PT hash verified
-[Thu May 28 18:14:44 2026] [INFO] [Client 2] Registered
-[Thu May 28 18:14:44 2026] [INFO] [MODE] READY
-[Thu May 28 20:28:56 2026] [INFO] [Console] Operator authenticated.
-[Thu May 28 20:29:14 2026] [INFO] [DatasetSplitter] Running: PYTHONPATH=code python3 -m FedSolPython.scripts.split_dataset input_server/dataset 1
-[2026-05-28 20:29:14] [INFO] [split_dataset] YOLO — 863 images → 1 clients (~863 each)
-[2026-05-28 20:29:36] [INFO] [split_dataset] Client 0: 863 images → dataset_train_0.tar.gz (374.8 MB)
-[2026-05-28 20:29:36] [INFO] [split_dataset] Done. 1 .tar.gz files saved to 'input_server/'
-[Thu May 28 20:29:36 2026] [INFO] [DatasetSplitter] Split completed successfully
-[Thu May 28 20:29:39 2026] [INFO] [Protocol] Sending file: ./input_server/dataset_train_0.tar.gz (393005723 bytes)
-[Thu May 28 20:30:26 2026] [INFO] Client starting...
-[Thu May 28 20:30:26 2026] [INFO] [Server] Backdoor defense is ENABLED.
-[Thu May 28 20:30:26 2026] [INFO] [MODE] INITIALIZATION
-[Thu May 28 20:31:10 2026] [INFO] [Console] Operator authenticated.
-[Thu May 28 20:32:03 2026] [INFO] Client connected with socket id: 5
-[Thu May 28 20:32:03 2026] [DEBUG] Code: 0
-[Thu May 28 20:32:03 2026] [DEBUG] Content: Auth
-[Thu May 28 20:32:03 2026] [INFO] [Client 3] Authentication success
-[Thu May 28 20:32:03 2026] [INFO] [Client 3] PT hash verified
-[Thu May 28 20:32:03 2026] [INFO] [Client 3] Registered
-[Thu May 28 20:32:03 2026] [INFO] [MODE] READY
-[Thu May 28 20:33:13 2026] [INFO] Client connected with socket id: 6
-[Thu May 28 20:33:13 2026] [DEBUG] Code: 0
-[Thu May 28 20:33:13 2026] [DEBUG] Content: Auth
-[Thu May 28 20:33:13 2026] [INFO] [Client 2] Authentication success
-[Thu May 28 20:33:13 2026] [INFO] [Client 2] PT hash verified
-[Thu May 28 20:33:13 2026] [INFO] [Client 2] Registered
-[Thu May 28 20:34:06 2026] [INFO] [DatasetSplitter] Running: PYTHONPATH=code python3 -m FedSolPython.scripts.split_dataset input_server/dataset 2
-[2026-05-28 20:34:06] [INFO] [split_dataset] YOLO — 863 images → 2 clients (~432 each)
-[2026-05-28 20:34:26] [INFO] [split_dataset] Client 0: 432 images → dataset_train_0.tar.gz (222.8 MB)
-[2026-05-28 20:34:40] [INFO] [split_dataset] Client 1: 431 images → dataset_train_1.tar.gz (220.0 MB)
-[2026-05-28 20:34:40] [INFO] [split_dataset] Done. 2 .tar.gz files saved to 'input_server/'
-[Thu May 28 20:34:40 2026] [INFO] [DatasetSplitter] Split completed successfully
-[Thu May 28 20:34:42 2026] [INFO] [Protocol] Sending file: ./input_server/dataset_train_0.tar.gz (233593650 bytes)
-[Thu May 28 20:34:42 2026] [INFO] [Protocol] Sending file: ./input_server/dataset_train_1.tar.gz (230708789 bytes)
-[Thu May 28 20:35:37 2026] [INFO] [SERVER] pt_path mode — weight validation skipped.
-[Thu May 28 20:35:40 2026] [INFO] Starting training...
-[Thu May 28 20:35:56 2026] [DEBUG] [Watchdog] Client 2 sock 6 state: TRAINING
-[Thu May 28 20:35:56 2026] [DEBUG] [Watchdog] Client 3 sock 5 state: TRAINING
-[Thu May 28 20:36:26 2026] [DEBUG] [Watchdog] Client 2 sock 6 state: TRAINING
-[Thu May 28 20:36:26 2026] [DEBUG] [Watchdog] Client 3 sock 5 state: TRAINING
-[Thu May 28 20:36:56 2026] [DEBUG] [Watchdog] Client 2 sock 6 state: TRAINING
-[Thu May 28 20:36:57 2026] [DEBUG] [Watchdog] Client 3 sock 5 state: TRAINING
-[Thu May 28 20:37:27 2026] [DEBUG] [Watchdog] Client 2 sock 6 state: TRAINING
-[Thu May 28 20:37:27 2026] [DEBUG] [Watchdog] Client 3 sock 5 state: TRAINING
-[Thu May 28 20:37:59 2026] [DEBUG] [Watchdog] Client 2 sock 6 state: TRAINING
-[Thu May 28 20:37:59 2026] [DEBUG] [Watchdog] Client 3 sock 5 state: TRAINING
-[Thu May 28 20:38:30 2026] [DEBUG] [Watchdog] Client 2 sock 6 state: TRAINING
-[Thu May 28 20:38:31 2026] [DEBUG] [Watchdog] Client 3 sock 5 state: TRAINING
-[Thu May 28 20:39:01 2026] [DEBUG] [Watchdog] Client 2 sock 6 state: TRAINING
-[Thu May 28 20:39:01 2026] [DEBUG] [Watchdog] Client 3 sock 5 state: TRAINING
-[Thu May 28 20:39:32 2026] [DEBUG] [Watchdog] Client 2 sock 6 state: TRAINING
-[Thu May 28 20:39:34 2026] [DEBUG] [Watchdog] Client 3 sock 5 state: TRAINING
-[Thu May 28 20:40:05 2026] [DEBUG] [Watchdog] Client 2 sock 6 state: TRAINING
-[Thu May 28 20:40:05 2026] [DEBUG] [Watchdog] Client 3 sock 5 state: TRAINING
-[Thu May 28 20:40:36 2026] [DEBUG] [Watchdog] Client 2 sock 6 state: TRAINING
-[Thu May 28 20:40:36 2026] [DEBUG] [Watchdog] Client 3 sock 5 state: TRAINING
-[Thu May 28 20:41:07 2026] [DEBUG] [Watchdog] Client 2 sock 6 state: TRAINING
-[Thu May 28 20:41:07 2026] [DEBUG] [Watchdog] Client 3 sock 5 state: TRAINING
-[Thu May 28 20:41:38 2026] [DEBUG] [Watchdog] Client 2 sock 6 state: TRAINING
-[Thu May 28 20:41:38 2026] [DEBUG] [Watchdog] Client 3 sock 5 state: TRAINING
-[Thu May 28 20:42:08 2026] [DEBUG] [Watchdog] Client 2 sock 6 state: TRAINING
-[Thu May 28 20:42:10 2026] [DEBUG] [Watchdog] Client 3 sock 5 state: TRAINING
-[Thu May 28 20:42:29 2026] [INFO] Client connected with socket id: 7
-[Thu May 28 20:42:29 2026] [INFO] Client connected with socket id: 8
-[Thu May 28 20:42:35 2026] [DEBUG] Code: 1
-[Thu May 28 20:42:35 2026] [DEBUG] Content: Training Ended
-[Thu May 28 20:42:35 2026] [INFO] [Client 3] Finished training. Sample size: 431
-[Thu May 28 20:42:36 2026] [DEBUG] Code: 1
-[Thu May 28 20:42:36 2026] [DEBUG] Content: Training Ended
-[Thu May 28 20:42:36 2026] [INFO] [Client 2] Finished training. Sample size: 432
-[Thu May 28 20:42:36 2026] [INFO] All clients finished. Aggregating...
-[Thu May 28 20:42:40 2026] [WARNING] [BackdoorDefense] Insufficient global model history (need 2 rounds). Skipping filter this round — behaving as vanilla FedAvg.
-[Thu May 28 20:42:40 2026] [INFO] [Aggregator] comm_time_ms: 3738
-[Thu May 28 20:42:40 2026] [INFO] [Aggregator] aggregation_time_ms: 10
-[Thu May 28 20:42:44 2026] [INFO] [EXPORTER] Running: PYTHONPATH=code python3 -m FedSolPython.scripts.build_and_save "input_server/config.json"
-[2026-05-28 20:42:50] [INFO] Starting build from config: input_server/config.json
-[2026-05-28 20:42:52] [INFO] pt_path mode: loading model from 'input_server/model.pt'
-[2026-05-28 20:42:58] [INFO] Federated weights applied to YOLO (nc=1): 3,021,443 floats
-[2026-05-28 20:42:58] [INFO] Archived model saved to: output_server/models/model_20260528_204258.pt
-[2026-05-28 20:42:58] [INFO] Updated .pt written back to: input_server/model.pt
-[Thu May 28 20:42:59 2026] [INFO] [EXPORTER] Model exported successfully
-[Thu May 28 20:42:59 2026] [INFO] [SERVER] Completed one epoch. Remaining: 0
-[Thu May 28 20:42:59 2026] [INFO] [SERVER] Training finished.
-[Thu May 28 20:45:20 2026] [INFO] Client starting...
-[Thu May 28 20:45:20 2026] [INFO] [Server] Backdoor defense is ENABLED.
-[Thu May 28 20:45:20 2026] [INFO] [MODE] INITIALIZATION
-[Thu May 28 20:45:37 2026] [INFO] [Console] Operator authenticated.
-[Thu May 28 20:45:55 2026] [INFO] [EVALUATOR] Running evaluation script: evaluate
-[Thu May 28 20:46:58 2026] [INFO] [EVALUATOR] Evaluation completed successfully
-[Thu May 28 21:34:26 2026] [INFO] Client connected with socket id: 5
-[Thu May 28 21:34:26 2026] [DEBUG] Code: 0
-[Thu May 28 21:34:26 2026] [DEBUG] Content: Auth
-[Thu May 28 21:34:26 2026] [INFO] [Client 3] Authentication success
-[Thu May 28 21:34:26 2026] [INFO] [Client 3] PT hash verified
-[Thu May 28 21:34:26 2026] [INFO] [Client 3] Registered
-[Thu May 28 21:34:26 2026] [INFO] [MODE] READY
-[Thu May 28 21:34:42 2026] [INFO] Client connected with socket id: 6
-[Thu May 28 21:34:42 2026] [DEBUG] Code: 0
-[Thu May 28 21:34:42 2026] [DEBUG] Content: Auth
-[Thu May 28 21:34:42 2026] [INFO] [Client 1] Authentication success
-[Thu May 28 21:34:42 2026] [INFO] [Client 1] PT hash verified
-[Thu May 28 21:34:42 2026] [INFO] [Client 1] Registered
-[Thu May 28 21:35:08 2026] [INFO] Client connected with socket id: 7
-[Thu May 28 21:35:08 2026] [DEBUG] Code: 0
-[Thu May 28 21:35:08 2026] [DEBUG] Content: Auth
-[Thu May 28 21:35:08 2026] [INFO] [Client 2] Authentication success
-[Thu May 28 21:35:08 2026] [INFO] [Client 2] PT hash verified
-[Thu May 28 21:35:08 2026] [INFO] [Client 2] Registered
-[Thu May 28 21:39:44 2026] [INFO] [SERVER] pt_path mode — weight validation skipped.
-[Thu May 28 21:57:32 2026] [INFO] Starting training...
-[Thu May 28 21:57:50 2026] [DEBUG] [Watchdog] Client 2 sock 7 state: TRAINING
-[Thu May 28 21:57:50 2026] [DEBUG] [Watchdog] Client 1 sock 6 state: TRAINING
-[Thu May 28 21:57:50 2026] [DEBUG] [Watchdog] Client 3 sock 5 state: TRAINING
-[Thu May 28 21:58:20 2026] [DEBUG] [Watchdog] Client 2 sock 7 state: TRAINING
-[Thu May 28 21:58:20 2026] [DEBUG] [Watchdog] Client 1 sock 6 state: TRAINING
-[Thu May 28 21:58:21 2026] [DEBUG] [Watchdog] Client 3 sock 5 state: TRAINING
-[Thu May 28 21:58:51 2026] [DEBUG] [Watchdog] Client 2 sock 7 state: TRAINING
-[Thu May 28 21:58:51 2026] [DEBUG] [Watchdog] Client 1 sock 6 state: TRAINING
-[Thu May 28 21:58:51 2026] [DEBUG] [Watchdog] Client 3 sock 5 state: TRAINING
-[Thu May 28 21:59:21 2026] [DEBUG] [Watchdog] Client 2 sock 7 state: TRAINING
-[Thu May 28 21:59:21 2026] [DEBUG] [Watchdog] Client 1 sock 6 state: TRAINING
-[Thu May 28 21:59:22 2026] [DEBUG] [Watchdog] Client 3 sock 5 state: TRAINING
-[Thu May 28 21:59:52 2026] [DEBUG] [Watchdog] Client 2 sock 7 state: TRAINING
-[Thu May 28 21:59:53 2026] [DEBUG] [Watchdog] Client 1 sock 6 state: TRAINING
-[Thu May 28 21:59:54 2026] [DEBUG] [Watchdog] Client 3 sock 5 state: TRAINING
-[Thu May 28 22:00:24 2026] [DEBUG] [Watchdog] Client 2 sock 7 state: TRAINING
-[Thu May 28 22:00:25 2026] [DEBUG] [Watchdog] Client 1 sock 6 state: TRAINING
-[Thu May 28 22:00:25 2026] [DEBUG] [Watchdog] Client 3 sock 5 state: TRAINING
-[Thu May 28 22:00:56 2026] [DEBUG] [Watchdog] Client 2 sock 7 state: TRAINING
-[Thu May 28 22:00:56 2026] [DEBUG] [Watchdog] Client 1 sock 6 state: TRAINING
-[Thu May 28 22:00:57 2026] [DEBUG] [Watchdog] Client 3 sock 5 state: TRAINING
-[Thu May 28 22:01:28 2026] [DEBUG] [Watchdog] Client 2 sock 7 state: TRAINING
-[Thu May 28 22:01:29 2026] [DEBUG] [Watchdog] Client 1 sock 6 state: TRAINING
-[Thu May 28 22:01:29 2026] [DEBUG] [Watchdog] Client 3 sock 5 state: TRAINING
-[Thu May 28 22:02:19 2026] [INFO] Client starting...
-[Thu May 28 22:02:19 2026] [INFO] [Server] Backdoor defense is ENABLED.
-[Thu May 28 22:02:19 2026] [INFO] [MODE] INITIALIZATION
-[Thu May 28 22:07:03 2026] [INFO] [Console] Operator authenticated.
-[Thu May 28 22:07:25 2026] [INFO] Client connected with socket id: 5
-[Thu May 28 22:07:25 2026] [DEBUG] Code: 0
-[Thu May 28 22:07:25 2026] [DEBUG] Content: Auth
-[Thu May 28 22:07:25 2026] [INFO] [Client 3] Authentication success
-[Thu May 28 22:07:25 2026] [INFO] [Client 3] PT hash verified
-[Thu May 28 22:07:25 2026] [INFO] [Client 3] Registered
-[Thu May 28 22:07:25 2026] [INFO] [MODE] READY
-[Thu May 28 22:08:03 2026] [INFO] Client connected with socket id: 6
-[Thu May 28 22:08:03 2026] [DEBUG] Code: 0
-[Thu May 28 22:08:03 2026] [DEBUG] Content: Auth
-[Thu May 28 22:08:03 2026] [INFO] [Client 1] Authentication success
-[Thu May 28 22:08:03 2026] [INFO] [Client 1] PT hash verified
-[Thu May 28 22:08:03 2026] [INFO] [Client 1] Registered
-[Thu May 28 22:08:29 2026] [INFO] Client connected with socket id: 7
-[Thu May 28 22:08:29 2026] [DEBUG] Code: 0
-[Thu May 28 22:08:29 2026] [DEBUG] Content: Auth
-[Thu May 28 22:08:29 2026] [INFO] [Client 2] Authentication success
-[Thu May 28 22:08:30 2026] [INFO] [Client 2] PT hash verified
-[Thu May 28 22:08:30 2026] [INFO] [Client 2] Registered
-[Thu May 28 22:09:38 2026] [INFO] [SERVER] pt_path mode — weight validation skipped.
-[Thu May 28 22:09:40 2026] [INFO] Starting training...
-[Thu May 28 22:09:51 2026] [DEBUG] [Watchdog] Client 2 sock 7 state: TRAINING
-[Thu May 28 22:09:51 2026] [DEBUG] [Watchdog] Client 1 sock 6 state: TRAINING
-[Thu May 28 22:09:52 2026] [DEBUG] [Watchdog] Client 3 sock 5 state: TRAINING
-[Thu May 28 22:10:22 2026] [DEBUG] [Watchdog] Client 2 sock 7 state: TRAINING
-[Thu May 28 22:10:22 2026] [DEBUG] [Watchdog] Client 1 sock 6 state: TRAINING
-[Thu May 28 22:10:22 2026] [DEBUG] [Watchdog] Client 3 sock 5 state: TRAINING
-[Thu May 28 22:10:52 2026] [DEBUG] [Watchdog] Client 2 sock 7 state: TRAINING
-[Thu May 28 22:10:52 2026] [DEBUG] [Watchdog] Client 1 sock 6 state: TRAINING
-[Thu May 28 22:10:52 2026] [DEBUG] [Watchdog] Client 3 sock 5 state: TRAINING
-[Thu May 28 22:11:23 2026] [DEBUG] [Watchdog] Client 2 sock 7 state: TRAINING
-[Thu May 28 22:11:23 2026] [DEBUG] [Watchdog] Client 1 sock 6 state: TRAINING
-[Thu May 28 22:11:23 2026] [DEBUG] [Watchdog] Client 3 sock 5 state: TRAINING
-[Thu May 28 22:11:54 2026] [DEBUG] [Watchdog] Client 2 sock 7 state: TRAINING
-[Thu May 28 22:11:54 2026] [DEBUG] [Watchdog] Client 1 sock 6 state: TRAINING
-[Thu May 28 22:11:56 2026] [DEBUG] [Watchdog] Client 3 sock 5 state: TRAINING
-[Thu May 28 22:12:26 2026] [DEBUG] [Watchdog] Client 2 sock 7 state: TRAINING
-[Thu May 28 22:12:27 2026] [DEBUG] [Watchdog] Client 1 sock 6 state: TRAINING
-[Thu May 28 22:12:28 2026] [DEBUG] [Watchdog] Client 3 sock 5 state: TRAINING
-[Thu May 28 22:12:58 2026] [DEBUG] [Watchdog] Client 2 sock 7 state: TRAINING
-[Thu May 28 22:12:59 2026] [DEBUG] [Watchdog] Client 1 sock 6 state: TRAINING
-[Thu May 28 22:13:01 2026] [DEBUG] [Watchdog] Client 3 sock 5 state: TRAINING
-[Thu May 28 22:13:31 2026] [DEBUG] [Watchdog] Client 2 sock 7 state: TRAINING
-[Thu May 28 22:13:31 2026] [DEBUG] [Watchdog] Client 1 sock 6 state: TRAINING
-[Thu May 28 22:13:31 2026] [DEBUG] [Watchdog] Client 3 sock 5 state: TRAINING
-[Thu May 28 22:14:02 2026] [DEBUG] [Watchdog] Client 2 sock 7 state: TRAINING
-[Thu May 28 22:14:02 2026] [DEBUG] [Watchdog] Client 1 sock 6 state: TRAINING
-[Thu May 28 22:14:02 2026] [DEBUG] [Watchdog] Client 3 sock 5 state: TRAINING
-[Thu May 28 22:14:32 2026] [DEBUG] [Watchdog] Client 2 sock 7 state: TRAINING
-[Thu May 28 22:14:33 2026] [DEBUG] [Watchdog] Client 1 sock 6 state: TRAINING
-[Thu May 28 22:14:33 2026] [DEBUG] [Watchdog] Client 3 sock 5 state: TRAINING
-[Thu May 28 22:15:04 2026] [DEBUG] [Watchdog] Client 2 sock 7 state: TRAINING
-[Thu May 28 22:15:04 2026] [DEBUG] [Watchdog] Client 1 sock 6 state: TRAINING
-[Thu May 28 22:15:04 2026] [DEBUG] [Watchdog] Client 3 sock 5 state: TRAINING
-[Thu May 28 22:15:35 2026] [DEBUG] [Watchdog] Client 2 sock 7 state: TRAINING
-[Thu May 28 22:15:36 2026] [DEBUG] [Watchdog] Client 1 sock 6 state: TRAINING
-[Thu May 28 22:15:37 2026] [DEBUG] [Watchdog] Client 3 sock 5 state: TRAINING
-[Thu May 28 22:16:07 2026] [DEBUG] [Watchdog] Client 2 sock 7 state: TRAINING
-[Thu May 28 22:16:08 2026] [DEBUG] [Watchdog] Client 1 sock 6 state: TRAINING
-[Thu May 28 22:16:08 2026] [DEBUG] [Watchdog] Client 3 sock 5 state: TRAINING
-[Thu May 28 22:16:39 2026] [DEBUG] [Watchdog] Client 2 sock 7 state: TRAINING
-[Thu May 28 22:16:39 2026] [DEBUG] [Watchdog] Client 1 sock 6 state: TRAINING
-[Thu May 28 22:16:39 2026] [DEBUG] [Watchdog] Client 3 sock 5 state: TRAINING
-[Thu May 28 22:17:10 2026] [DEBUG] [Watchdog] Client 2 sock 7 state: TRAINING
-[Thu May 28 22:17:11 2026] [DEBUG] [Watchdog] Client 1 sock 6 state: TRAINING
-[Thu May 28 22:17:11 2026] [DEBUG] [Watchdog] Client 3 sock 5 state: TRAINING
-[Thu May 28 22:17:43 2026] [DEBUG] [Watchdog] Client 2 sock 7 state: TRAINING
-[Thu May 28 22:17:43 2026] [DEBUG] [Watchdog] Client 1 sock 6 state: TRAINING
-[Thu May 28 22:17:43 2026] [DEBUG] [Watchdog] Client 3 sock 5 state: TRAINING
-[Thu May 28 22:18:14 2026] [DEBUG] [Watchdog] Client 2 sock 7 state: TRAINING
-[Thu May 28 22:18:14 2026] [DEBUG] [Watchdog] Client 1 sock 6 state: TRAINING
-[Thu May 28 22:18:17 2026] [DEBUG] [Watchdog] Client 3 sock 5 state: TRAINING
-[Thu May 28 22:18:48 2026] [DEBUG] [Watchdog] Client 2 sock 7 state: TRAINING
-[Thu May 28 22:18:48 2026] [DEBUG] [Watchdog] Client 1 sock 6 state: TRAINING
-[Thu May 28 22:18:48 2026] [DEBUG] [Watchdog] Client 3 sock 5 state: TRAINING
-[Thu May 28 22:19:17 2026] [INFO] Client connected with socket id: 8
-[Thu May 28 22:19:18 2026] [DEBUG] [Watchdog] Client 2 sock 7 state: TRAINING
-[Thu May 28 22:19:19 2026] [DEBUG] [Watchdog] Client 1 sock 6 state: IDLE
-[Thu May 28 22:19:19 2026] [DEBUG] [Watchdog] Client 3 sock 5 state: TRAINING
-[Thu May 28 22:19:23 2026] [DEBUG] Code: 1
-[Thu May 28 22:19:23 2026] [DEBUG] Content: Training Ended
-[Thu May 28 22:19:23 2026] [INFO] [Client 1] Finished training. Sample size: 431
-[Thu May 28 22:19:50 2026] [DEBUG] [Watchdog] Client 2 sock 7 state: TRAINING
-[Thu May 28 22:19:50 2026] [DEBUG] [Watchdog] Client 3 sock 5 state: TRAINING
-[Thu May 28 22:20:01 2026] [INFO] Client connected with socket id: 9
-[Thu May 28 22:20:06 2026] [DEBUG] Code: 1
-[Thu May 28 22:20:06 2026] [DEBUG] Content: Training Ended
-[Thu May 28 22:20:06 2026] [INFO] [Client 3] Finished training. Sample size: 431
-[Thu May 28 22:20:21 2026] [DEBUG] [Watchdog] Client 2 sock 7 state: TRAINING
-[Thu May 28 22:20:51 2026] [DEBUG] [Watchdog] Client 2 sock 7 state: TRAINING
-[Thu May 28 22:21:21 2026] [DEBUG] [Watchdog] Client 2 sock 7 state: TRAINING
-[Thu May 28 22:21:51 2026] [DEBUG] [Watchdog] Client 2 sock 7 state: TRAINING
-[Thu May 28 22:22:07 2026] [INFO] Client connected with socket id: 8
-[Thu May 28 22:22:12 2026] [DEBUG] Code: 1
-[Thu May 28 22:22:12 2026] [DEBUG] Content: Training Ended
-[Thu May 28 22:22:12 2026] [INFO] [Client 2] Finished training. Sample size: 432
-[Thu May 28 22:22:12 2026] [INFO] All clients finished. Aggregating...
-[Thu May 28 22:22:20 2026] [WARNING] [BackdoorDefense] Insufficient global model history (need 2 rounds). Skipping filter this round — behaving as vanilla FedAvg.
-[Thu May 28 22:22:20 2026] [INFO] [Aggregator] comm_time_ms: 8579
-[Thu May 28 22:22:20 2026] [INFO] [Aggregator] aggregation_time_ms: 12
-[Thu May 28 22:22:23 2026] [INFO] [EXPORTER] Running: PYTHONPATH=code python3 -m FedSolPython.scripts.build_and_save "input_server/config.json"
-[2026-05-28 22:22:25] [INFO] Starting build from config: input_server/config.json
-[2026-05-28 22:22:27] [INFO] pt_path mode: loading model from 'input_server/model.pt'
-[2026-05-28 22:22:30] [INFO] Federated weights applied to YOLO (nc=1): 3,021,443 floats
-[2026-05-28 22:22:30] [INFO] Archived model saved to: output_server/models/model_20260528_222230.pt
-[2026-05-28 22:22:30] [INFO] Updated .pt written back to: input_server/model.pt
-[Thu May 28 22:22:31 2026] [INFO] [EXPORTER] Model exported successfully
-[Thu May 28 22:22:31 2026] [INFO] [SERVER] Completed one epoch. Remaining: 0
-[Thu May 28 22:22:31 2026] [INFO] [SERVER] Training finished.
-[Thu May 28 22:32:22 2026] [INFO] [EVALUATOR] Running evaluation script: evaluate
-[Thu May 28 22:33:40 2026] [INFO] [EVALUATOR] Evaluation completed successfully
-[Thu May 28 22:55:21 2026] [INFO] [SERVER] pt_path mode — weight validation skipped.
-[Thu May 28 22:55:25 2026] [INFO] Starting training...
-[Thu May 28 22:55:51 2026] [DEBUG] [Watchdog] Client 2 sock 7 state: TRAINING
-[Thu May 28 22:55:51 2026] [DEBUG] [Watchdog] Client 1 sock 6 state: TRAINING
-[Thu May 28 22:55:51 2026] [DEBUG] [Watchdog] Client 3 sock 5 state: TRAINING
-[Thu May 28 22:56:21 2026] [DEBUG] [Watchdog] Client 2 sock 7 state: TRAINING
-[Thu May 28 22:56:22 2026] [DEBUG] [Watchdog] Client 1 sock 6 state: TRAINING
-[Thu May 28 22:56:22 2026] [DEBUG] [Watchdog] Client 3 sock 5 state: TRAINING
-[Thu May 28 22:56:52 2026] [DEBUG] [Watchdog] Client 2 sock 7 state: TRAINING
-[Thu May 28 22:56:52 2026] [DEBUG] [Watchdog] Client 1 sock 6 state: TRAINING
-[Thu May 28 22:56:52 2026] [DEBUG] [Watchdog] Client 3 sock 5 state: TRAINING
-[Thu May 28 22:57:22 2026] [DEBUG] [Watchdog] Client 2 sock 7 state: TRAINING
-[Thu May 28 22:57:23 2026] [DEBUG] [Watchdog] Client 1 sock 6 state: TRAINING
-[Thu May 28 22:57:23 2026] [DEBUG] [Watchdog] Client 3 sock 5 state: TRAINING
-[Thu May 28 22:57:54 2026] [DEBUG] [Watchdog] Client 2 sock 7 state: TRAINING
-[Thu May 28 22:57:54 2026] [DEBUG] [Watchdog] Client 1 sock 6 state: TRAINING
-[Thu May 28 22:57:55 2026] [DEBUG] [Watchdog] Client 3 sock 5 state: TRAINING
-[Thu May 28 22:58:26 2026] [DEBUG] [Watchdog] Client 2 sock 7 state: TRAINING
-[Thu May 28 22:58:28 2026] [DEBUG] [Watchdog] Client 1 sock 6 state: TRAINING
-[Thu May 28 22:58:29 2026] [DEBUG] [Watchdog] Client 3 sock 5 state: TRAINING
-[Thu May 28 22:59:00 2026] [DEBUG] [Watchdog] Client 2 sock 7 state: TRAINING
-[Thu May 28 22:59:01 2026] [DEBUG] [Watchdog] Client 1 sock 6 state: TRAINING
-[Thu May 28 22:59:01 2026] [DEBUG] [Watchdog] Client 3 sock 5 state: TRAINING
-[Thu May 28 22:59:32 2026] [DEBUG] [Watchdog] Client 2 sock 7 state: TRAINING
-[Thu May 28 22:59:32 2026] [DEBUG] [Watchdog] Client 1 sock 6 state: TRAINING
-[Thu May 28 22:59:33 2026] [DEBUG] [Watchdog] Client 3 sock 5 state: TRAINING
-[Thu May 28 23:00:03 2026] [DEBUG] [Watchdog] Client 2 sock 7 state: TRAINING
-[Thu May 28 23:00:04 2026] [DEBUG] [Watchdog] Client 1 sock 6 state: TRAINING
-[Thu May 28 23:00:04 2026] [DEBUG] [Watchdog] Client 3 sock 5 state: TRAINING
-[Thu May 28 23:00:34 2026] [DEBUG] [Watchdog] Client 2 sock 7 state: TRAINING
-[Thu May 28 23:00:37 2026] [DEBUG] [Watchdog] Client 1 sock 6 state: TRAINING
-[Thu May 28 23:00:38 2026] [DEBUG] [Watchdog] Client 3 sock 5 state: TRAINING
-[Thu May 28 23:01:08 2026] [DEBUG] [Watchdog] Client 2 sock 7 state: TRAINING
-[Thu May 28 23:01:09 2026] [DEBUG] [Watchdog] Client 1 sock 6 state: TRAINING
-[Thu May 28 23:01:09 2026] [DEBUG] [Watchdog] Client 3 sock 5 state: TRAINING
-[Thu May 28 23:01:39 2026] [DEBUG] [Watchdog] Client 2 sock 7 state: TRAINING
-[Thu May 28 23:01:39 2026] [DEBUG] [Watchdog] Client 1 sock 6 state: TRAINING
-[Thu May 28 23:01:39 2026] [DEBUG] [Watchdog] Client 3 sock 5 state: TRAINING
-[Thu May 28 23:02:10 2026] [DEBUG] [Watchdog] Client 2 sock 7 state: TRAINING
-[Thu May 28 23:02:10 2026] [DEBUG] [Watchdog] Client 1 sock 6 state: TRAINING
-[Thu May 28 23:02:10 2026] [DEBUG] [Watchdog] Client 3 sock 5 state: TRAINING
-[Thu May 28 23:02:41 2026] [DEBUG] [Watchdog] Client 2 sock 7 state: TRAINING
-[Thu May 28 23:02:41 2026] [DEBUG] [Watchdog] Client 1 sock 6 state: TRAINING
-[Thu May 28 23:02:41 2026] [DEBUG] [Watchdog] Client 3 sock 5 state: TRAINING
-[Thu May 28 23:03:12 2026] [DEBUG] [Watchdog] Client 2 sock 7 state: TRAINING
-[Thu May 28 23:03:12 2026] [DEBUG] [Watchdog] Client 1 sock 6 state: TRAINING
-[Thu May 28 23:03:13 2026] [DEBUG] [Watchdog] Client 3 sock 5 state: TRAINING
-[Thu May 28 23:03:44 2026] [DEBUG] [Watchdog] Client 2 sock 7 state: TRAINING
-[Thu May 28 23:03:45 2026] [DEBUG] [Watchdog] Client 1 sock 6 state: TRAINING
-[Thu May 28 23:03:46 2026] [DEBUG] [Watchdog] Client 3 sock 5 state: TRAINING
-[Thu May 28 23:04:16 2026] [DEBUG] [Watchdog] Client 2 sock 7 state: TRAINING
-[Thu May 28 23:04:16 2026] [DEBUG] [Watchdog] Client 1 sock 6 state: TRAINING
-[Thu May 28 23:04:17 2026] [DEBUG] [Watchdog] Client 3 sock 5 state: TRAINING
-[Thu May 28 23:04:47 2026] [DEBUG] [Watchdog] Client 2 sock 7 state: TRAINING
-[Thu May 28 23:04:47 2026] [DEBUG] [Watchdog] Client 1 sock 6 state: TRAINING
-[Thu May 28 23:04:48 2026] [DEBUG] [Watchdog] Client 3 sock 5 state: TRAINING
-[Thu May 28 23:05:18 2026] [DEBUG] [Watchdog] Client 2 sock 7 state: TRAINING
-[Thu May 28 23:05:18 2026] [DEBUG] [Watchdog] Client 1 sock 6 state: TRAINING
-[Thu May 28 23:05:19 2026] [DEBUG] [Watchdog] Client 3 sock 5 state: TRAINING
-[Thu May 28 23:05:49 2026] [DEBUG] [Watchdog] Client 2 sock 7 state: TRAINING
-[Thu May 28 23:05:50 2026] [DEBUG] [Watchdog] Client 1 sock 6 state: TRAINING
-[Thu May 28 23:05:50 2026] [DEBUG] [Watchdog] Client 3 sock 5 state: TRAINING
-[Thu May 28 23:06:20 2026] [DEBUG] [Watchdog] Client 2 sock 7 state: TRAINING
-[Thu May 28 23:06:23 2026] [DEBUG] [Watchdog] Client 1 sock 6 state: TRAINING
-[Thu May 28 23:06:23 2026] [DEBUG] [Watchdog] Client 3 sock 5 state: TRAINING
-[Thu May 28 23:06:54 2026] [DEBUG] [Watchdog] Client 2 sock 7 state: TRAINING
-[Thu May 28 23:06:54 2026] [DEBUG] [Watchdog] Client 1 sock 6 state: TRAINING
-[Thu May 28 23:06:55 2026] [DEBUG] [Watchdog] Client 3 sock 5 state: TRAINING
-[Thu May 28 23:07:25 2026] [DEBUG] [Watchdog] Client 2 sock 7 state: TRAINING
-[Thu May 28 23:07:25 2026] [DEBUG] [Watchdog] Client 1 sock 6 state: TRAINING
-[Thu May 28 23:07:25 2026] [DEBUG] [Watchdog] Client 3 sock 5 state: TRAINING
-[Thu May 28 23:07:55 2026] [DEBUG] [Watchdog] Client 2 sock 7 state: TRAINING
-[Thu May 28 23:07:56 2026] [DEBUG] [Watchdog] Client 1 sock 6 state: TRAINING
-[Thu May 28 23:07:57 2026] [DEBUG] [Watchdog] Client 3 sock 5 state: TRAINING
-[Thu May 28 23:08:05 2026] [INFO] Client connected with socket id: 8
-[Thu May 28 23:08:10 2026] [DEBUG] Code: 1
-[Thu May 28 23:08:10 2026] [DEBUG] Content: Training Ended
-[Thu May 28 23:08:10 2026] [INFO] [Client 2] Finished training. Sample size: 432
-[Thu May 28 23:08:27 2026] [DEBUG] [Watchdog] Client 1 sock 6 state: TRAINING
-[Thu May 28 23:08:28 2026] [DEBUG] [Watchdog] Client 3 sock 5 state: TRAINING
-[Thu May 28 23:08:58 2026] [DEBUG] [Watchdog] Client 1 sock 6 state: TRAINING
-[Thu May 28 23:08:59 2026] [DEBUG] [Watchdog] Client 3 sock 5 state: TRAINING
-[Thu May 28 23:09:11 2026] [INFO] Client connected with socket id: 9
-[Thu May 28 23:09:16 2026] [DEBUG] Code: 1
-[Thu May 28 23:09:16 2026] [DEBUG] Content: Training Ended
-[Thu May 28 23:09:16 2026] [INFO] [Client 1] Finished training. Sample size: 431
-[Thu May 28 23:09:29 2026] [DEBUG] [Watchdog] Client 3 sock 5 state: TRAINING
-[Thu May 28 23:09:35 2026] [INFO] Client connected with socket id: 8
-[Thu May 28 23:09:40 2026] [DEBUG] Code: 1
-[Thu May 28 23:09:40 2026] [DEBUG] Content: Training Ended
-[Thu May 28 23:09:40 2026] [INFO] [Client 3] Finished training. Sample size: 431
-[Thu May 28 23:09:40 2026] [INFO] All clients finished. Aggregating...
-[Thu May 28 23:09:44 2026] [WARNING] [BackdoorDefense] Insufficient global model history (need 2 rounds). Skipping filter this round — behaving as vanilla FedAvg.
-[Thu May 28 23:09:44 2026] [INFO] [Aggregator] comm_time_ms: 4449
-[Thu May 28 23:09:44 2026] [INFO] [Aggregator] aggregation_time_ms: 99
-[Thu May 28 23:09:48 2026] [INFO] [EXPORTER] Running: PYTHONPATH=code python3 -m FedSolPython.scripts.build_and_save "input_server/config.json"
-[2026-05-28 23:09:50] [INFO] Starting build from config: input_server/config.json
-[2026-05-28 23:09:52] [INFO] pt_path mode: loading model from 'input_server/model.pt'
-[2026-05-28 23:09:54] [INFO] Federated weights applied to YOLO (nc=1): 3,021,443 floats
-[2026-05-28 23:09:55] [INFO] Archived model saved to: output_server/models/model_20260528_230954.pt
-[2026-05-28 23:09:55] [INFO] Updated .pt written back to: input_server/model.pt
-[Thu May 28 23:09:56 2026] [INFO] [EXPORTER] Model exported successfully
-[Thu May 28 23:09:56 2026] [INFO] [SERVER] Completed one epoch. Remaining: 2
-[Thu May 28 23:10:29 2026] [DEBUG] [Watchdog] Client 2 sock 7 state: TRAINING
-[Thu May 28 23:10:29 2026] [DEBUG] [Watchdog] Client 1 sock 6 state: TRAINING
-[Thu May 28 23:10:29 2026] [DEBUG] [Watchdog] Client 3 sock 5 state: TRAINING
-[Thu May 28 23:10:59 2026] [DEBUG] [Watchdog] Client 2 sock 7 state: TRAINING
-[Thu May 28 23:10:59 2026] [DEBUG] [Watchdog] Client 1 sock 6 state: TRAINING
-[Thu May 28 23:10:59 2026] [DEBUG] [Watchdog] Client 3 sock 5 state: TRAINING
-[Thu May 28 23:11:29 2026] [DEBUG] [Watchdog] Client 2 sock 7 state: TRAINING
-[Thu May 28 23:11:30 2026] [DEBUG] [Watchdog] Client 1 sock 6 state: TRAINING
-[Thu May 28 23:11:30 2026] [DEBUG] [Watchdog] Client 3 sock 5 state: TRAINING
-[Thu May 28 23:12:00 2026] [DEBUG] [Watchdog] Client 2 sock 7 state: TRAINING
-[Thu May 28 23:12:00 2026] [DEBUG] [Watchdog] Client 1 sock 6 state: TRAINING
-[Thu May 28 23:12:02 2026] [DEBUG] [Watchdog] Client 3 sock 5 state: TRAINING
-[Thu May 28 23:12:32 2026] [DEBUG] [Watchdog] Client 2 sock 7 state: TRAINING
-[Thu May 28 23:12:32 2026] [DEBUG] [Watchdog] Client 1 sock 6 state: TRAINING
-[Thu May 28 23:12:33 2026] [DEBUG] [Watchdog] Client 3 sock 5 state: TRAINING
-[Thu May 28 23:13:03 2026] [DEBUG] [Watchdog] Client 2 sock 7 state: TRAINING
-[Thu May 28 23:13:04 2026] [DEBUG] [Watchdog] Client 1 sock 6 state: TRAINING
-[Thu May 28 23:13:04 2026] [DEBUG] [Watchdog] Client 3 sock 5 state: TRAINING
-[Thu May 28 23:13:35 2026] [DEBUG] [Watchdog] Client 2 sock 7 state: TRAINING
-[Thu May 28 23:13:36 2026] [DEBUG] [Watchdog] Client 1 sock 6 state: TRAINING
-[Thu May 28 23:13:37 2026] [DEBUG] [Watchdog] Client 3 sock 5 state: TRAINING
-[Thu May 28 23:14:08 2026] [DEBUG] [Watchdog] Client 2 sock 7 state: TRAINING
-[Thu May 28 23:14:08 2026] [DEBUG] [Watchdog] Client 1 sock 6 state: TRAINING
-[Thu May 28 23:14:18 2026] [WARNING] [Watchdog] Client 3 did not respond to PING. Removing.
-[Thu May 28 23:14:43 2026] [INFO] Client connected with socket id: 8
-[Thu May 28 23:14:47 2026] [DEBUG] Code: 99
-[Thu May 28 23:14:47 2026] [DEBUG] Content: Error
-[Thu May 28 23:14:47 2026] [ERROR] [Protocol] Error received: [Client::listener] Client disconnected (recv = 0)
-[Thu May 28 23:14:47 2026] [ERROR] [Server] Client error: [Client::listener] Client disconnected (recv = 0)
-[Thu May 28 23:14:49 2026] [DEBUG] [Watchdog] Client 2 sock 7 state: TRAINING
-[Thu May 28 23:14:50 2026] [DEBUG] [Watchdog] Client 1 sock 6 state: TRAINING
-[Thu May 28 23:15:21 2026] [DEBUG] [Watchdog] Client 2 sock 7 state: TRAINING
-[Thu May 28 23:15:21 2026] [DEBUG] [Watchdog] Client 1 sock 6 state: TRAINING
-[Thu May 28 23:15:52 2026] [DEBUG] [Watchdog] Client 2 sock 7 state: TRAINING
-[Thu May 28 23:15:52 2026] [DEBUG] [Watchdog] Client 1 sock 6 state: TRAINING
-[Thu May 28 23:16:23 2026] [DEBUG] [Watchdog] Client 2 sock 7 state: TRAINING
-[Thu May 28 23:16:23 2026] [DEBUG] [Watchdog] Client 1 sock 6 state: TRAINING
-[Thu May 28 23:16:54 2026] [DEBUG] [Watchdog] Client 2 sock 7 state: TRAINING
-[Thu May 28 23:16:54 2026] [DEBUG] [Watchdog] Client 1 sock 6 state: TRAINING
-[Thu May 28 23:17:25 2026] [DEBUG] [Watchdog] Client 2 sock 7 state: TRAINING
-[Thu May 28 23:17:25 2026] [DEBUG] [Watchdog] Client 1 sock 6 state: TRAINING
-[Thu May 28 23:17:55 2026] [DEBUG] [Watchdog] Client 2 sock 7 state: TRAINING
-[Thu May 28 23:17:56 2026] [DEBUG] [Watchdog] Client 1 sock 6 state: TRAINING
-[Thu May 28 23:18:26 2026] [DEBUG] [Watchdog] Client 2 sock 7 state: TRAINING
-[Thu May 28 23:18:26 2026] [DEBUG] [Watchdog] Client 1 sock 6 state: TRAINING
-[Thu May 28 23:18:56 2026] [DEBUG] [Watchdog] Client 2 sock 7 state: TRAINING
-[Thu May 28 23:18:56 2026] [DEBUG] [Watchdog] Client 1 sock 6 state: TRAINING
-[Thu May 28 23:19:27 2026] [DEBUG] [Watchdog] Client 2 sock 7 state: TRAINING
-[Thu May 28 23:19:27 2026] [DEBUG] [Watchdog] Client 1 sock 6 state: TRAINING
-[Thu May 28 23:19:58 2026] [DEBUG] [Watchdog] Client 2 sock 7 state: TRAINING
-[Thu May 28 23:19:58 2026] [DEBUG] [Watchdog] Client 1 sock 6 state: TRAINING
-[Thu May 28 23:20:28 2026] [DEBUG] [Watchdog] Client 2 sock 7 state: TRAINING
-[Thu May 28 23:20:28 2026] [DEBUG] [Watchdog] Client 1 sock 6 state: TRAINING
-[Thu May 28 23:20:59 2026] [DEBUG] [Watchdog] Client 2 sock 7 state: TRAINING
-[Thu May 28 23:21:00 2026] [DEBUG] [Watchdog] Client 1 sock 6 state: TRAINING
-[Thu May 28 23:21:31 2026] [DEBUG] [Watchdog] Client 2 sock 7 state: TRAINING
-[Thu May 28 23:21:31 2026] [DEBUG] [Watchdog] Client 1 sock 6 state: TRAINING
-[Thu May 28 23:21:50 2026] [INFO] Client connected with socket id: 5
-[Thu May 28 23:21:54 2026] [DEBUG] Code: 1
-[Thu May 28 23:21:54 2026] [DEBUG] Content: Training Ended
-[Thu May 28 23:21:54 2026] [INFO] [Client 1] Finished training. Sample size: 431
-[Thu May 28 23:22:01 2026] [DEBUG] [Watchdog] Client 2 sock 7 state: TRAINING
-[Thu May 28 23:22:31 2026] [DEBUG] [Watchdog] Client 2 sock 7 state: TRAINING
-[Thu May 28 23:23:02 2026] [DEBUG] [Watchdog] Client 2 sock 7 state: TRAINING
-[Thu May 28 23:23:32 2026] [DEBUG] [Watchdog] Client 2 sock 7 state: TRAINING
-[Thu May 28 23:24:02 2026] [DEBUG] [Watchdog] Client 2 sock 7 state: TRAINING
-[Thu May 28 23:24:33 2026] [DEBUG] [Watchdog] Client 2 sock 7 state: TRAINING
-[Thu May 28 23:25:03 2026] [DEBUG] [Watchdog] Client 2 sock 7 state: TRAINING
-[Thu May 28 23:25:33 2026] [DEBUG] [Watchdog] Client 2 sock 7 state: TRAINING
-[Thu May 28 23:25:43 2026] [INFO] Client connected with socket id: 8
-[Thu May 28 23:25:48 2026] [DEBUG] Code: 1
-[Thu May 28 23:25:48 2026] [DEBUG] Content: Training Ended
-[Thu May 28 23:25:48 2026] [INFO] [Client 2] Finished training. Sample size: 432
-[Thu May 28 23:25:48 2026] [INFO] All clients finished. Aggregating...
-[Thu May 28 23:25:50 2026] [INFO] [EVALUATOR] Running evaluation script: evaluate
-[Thu May 28 23:25:51 2026] [INFO] [BackdoorDefense] Client 2 cosine score vs global history: 0.151569
-[Thu May 28 23:25:51 2026] [INFO] [BackdoorDefense] Client 1 cosine score vs global history: -0.095316
-[Thu May 28 23:25:51 2026] [WARNING] [BackdoorDefense] Client 1 REJECTED — cosine score -0.095316 < threshold 0.000000
-[Thu May 28 23:25:51 2026] [INFO] [BackdoorDefense] Round result: 2 received, 1 accepted, 1 rejected. clip_norm=13.789110
-[Thu May 28 23:25:51 2026] [INFO] [Aggregator] comm_time_ms: 2604
-[Thu May 28 23:25:51 2026] [INFO] [Aggregator] aggregation_time_ms: 97
-[Thu May 28 23:25:55 2026] [INFO] [EXPORTER] Running: PYTHONPATH=code python3 -m FedSolPython.scripts.build_and_save "input_server/config.json"
-[2026-05-28 23:25:57] [INFO] Starting build from config: input_server/config.json
-[2026-05-28 23:25:59] [INFO] pt_path mode: loading model from 'input_server/model.pt'
-[2026-05-28 23:26:02] [INFO] Federated weights applied to YOLO (nc=1): 3,021,443 floats
-[2026-05-28 23:26:03] [INFO] Archived model saved to: output_server/models/model_20260528_232602.pt
-[2026-05-28 23:26:03] [INFO] Updated .pt written back to: input_server/model.pt
-[Thu May 28 23:26:04 2026] [INFO] [EXPORTER] Model exported successfully
-[Thu May 28 23:26:04 2026] [INFO] [SERVER] Completed one epoch. Remaining: 1
-[Thu May 28 23:26:33 2026] [DEBUG] [Watchdog] Client 2 sock 7 state: TRAINING
-[Thu May 28 23:26:33 2026] [DEBUG] [Watchdog] Client 1 sock 6 state: TRAINING
-[Thu May 28 23:27:03 2026] [DEBUG] [Watchdog] Client 2 sock 7 state: TRAINING
-[Thu May 28 23:27:03 2026] [DEBUG] [Watchdog] Client 1 sock 6 state: TRAINING
-[Thu May 28 23:27:03 2026] [INFO] [EVALUATOR] Evaluation completed successfully
-[Thu May 28 23:27:33 2026] [DEBUG] [Watchdog] Client 2 sock 7 state: TRAINING
-[Thu May 28 23:27:33 2026] [DEBUG] [Watchdog] Client 1 sock 6 state: TRAINING
-[Thu May 28 23:28:03 2026] [DEBUG] [Watchdog] Client 2 sock 7 state: TRAINING
-[Thu May 28 23:28:04 2026] [DEBUG] [Watchdog] Client 1 sock 6 state: TRAINING
-[Thu May 28 23:28:34 2026] [DEBUG] [Watchdog] Client 2 sock 7 state: TRAINING
-[Thu May 28 23:28:35 2026] [DEBUG] [Watchdog] Client 1 sock 6 state: TRAINING
-[Thu May 28 23:29:07 2026] [DEBUG] [Watchdog] Client 2 sock 7 state: TRAINING
-[Thu May 28 23:29:08 2026] [DEBUG] [Watchdog] Client 1 sock 6 state: TRAINING
-[Thu May 28 23:29:40 2026] [DEBUG] [Watchdog] Client 2 sock 7 state: TRAINING
-[Thu May 28 23:29:40 2026] [DEBUG] [Watchdog] Client 1 sock 6 state: TRAINING
-[Thu May 28 23:30:10 2026] [DEBUG] [Watchdog] Client 2 sock 7 state: TRAINING
-[Thu May 28 23:30:11 2026] [DEBUG] [Watchdog] Client 1 sock 6 state: TRAINING
-[Thu May 28 23:30:18 2026] [INFO] Client connected with socket id: 5
-[Thu May 28 23:30:24 2026] [DEBUG] Code: 1
-[Thu May 28 23:30:24 2026] [DEBUG] Content: Training Ended
-[Thu May 28 23:30:24 2026] [INFO] [Client 1] Finished training. Sample size: 431
-[Thu May 28 23:30:41 2026] [DEBUG] [Watchdog] Client 2 sock 7 state: TRAINING
-[Thu May 28 23:30:47 2026] [INFO] Client connected with socket id: 8
-[Thu May 28 23:30:52 2026] [DEBUG] Code: 1
-[Thu May 28 23:30:52 2026] [DEBUG] Content: Training Ended
-[Thu May 28 23:30:52 2026] [INFO] [Client 2] Finished training. Sample size: 432
-[Thu May 28 23:30:52 2026] [INFO] All clients finished. Aggregating...
-[Thu May 28 23:30:55 2026] [INFO] [BackdoorDefense] Client 2 cosine score vs global history: 0.000000
-[Thu May 28 23:30:55 2026] [INFO] [BackdoorDefense] Client 1 cosine score vs global history: 0.000000
-[Thu May 28 23:30:55 2026] [INFO] [BackdoorDefense] Round result: 2 received, 2 accepted, 0 rejected. clip_norm=0.000000
-[Thu May 28 23:30:55 2026] [INFO] [Aggregator] comm_time_ms: 2355
-[Thu May 28 23:30:55 2026] [INFO] [Aggregator] aggregation_time_ms: 35
-[Thu May 28 23:30:57 2026] [INFO] [EXPORTER] Running: PYTHONPATH=code python3 -m FedSolPython.scripts.build_and_save "input_server/config.json"
-[2026-05-28 23:30:59] [INFO] Starting build from config: input_server/config.json
-[2026-05-28 23:31:00] [INFO] pt_path mode: loading model from 'input_server/model.pt'
-[2026-05-28 23:31:01] [INFO] Federated weights applied to YOLO (nc=1): 3,021,443 floats
-[2026-05-28 23:31:02] [INFO] Archived model saved to: output_server/models/model_20260528_233101.pt
-[2026-05-28 23:31:02] [INFO] Updated .pt written back to: input_server/model.pt
-[Thu May 28 23:31:02 2026] [INFO] [EXPORTER] Model exported successfully
-[Thu May 28 23:31:02 2026] [INFO] [SERVER] Completed one epoch. Remaining: 0
-[Thu May 28 23:31:02 2026] [INFO] [SERVER] Training finished.
-[Thu May 28 23:31:46 2026] [INFO] Client starting...
-[Thu May 28 23:31:46 2026] [INFO] [Server] Backdoor defense is ENABLED.
-[Thu May 28 23:31:46 2026] [INFO] [MODE] INITIALIZATION
-[Thu May 28 23:32:28 2026] [INFO] Client connected with socket id: 5
-[Thu May 28 23:32:28 2026] [DEBUG] Code: 0
-[Thu May 28 23:32:28 2026] [DEBUG] Content: Auth
-[Thu May 28 23:32:28 2026] [INFO] [Client 3] Authentication success
-[Thu May 28 23:32:28 2026] [INFO] [Client 3] PT hash verified
-[Thu May 28 23:32:28 2026] [INFO] [Client 3] Registered
-[Thu May 28 23:32:28 2026] [INFO] [MODE] READY
-[Thu May 28 23:37:39 2026] [INFO] [Console] Operator authenticated.
-[Thu May 28 23:37:54 2026] [INFO] Client connected with socket id: 6
-[Thu May 28 23:37:54 2026] [DEBUG] Code: 0
-[Thu May 28 23:37:54 2026] [DEBUG] Content: Auth
-[Thu May 28 23:37:54 2026] [INFO] [Client 3] Authentication success
-[Thu May 28 23:37:54 2026] [ERROR] [Client 3] Duplicate ID. Already connected.
-[Thu May 28 23:37:54 2026] [INFO] Client connected with socket id: 7
-[Thu May 28 23:37:54 2026] [DEBUG] Code: 99
-[Thu May 28 23:37:54 2026] [DEBUG] Content: Error
-[Thu May 28 23:37:54 2026] [ERROR] [Protocol] Error received: [Client::listener] PT handshake failed
-[Thu May 28 23:37:54 2026] [ERROR] [Server] Client error: [Client::listener] PT handshake failed
-[Thu May 28 23:38:02 2026] [INFO] Client connected with socket id: 6
-[Thu May 28 23:38:02 2026] [DEBUG] Code: 0
-[Thu May 28 23:38:02 2026] [DEBUG] Content: Auth
-[Thu May 28 23:38:02 2026] [INFO] [Client 1] Authentication success
-[Thu May 28 23:38:02 2026] [INFO] [Client 1] PT hash verified
-[Thu May 28 23:38:02 2026] [INFO] [Client 1] Registered
-[Thu May 28 23:38:19 2026] [INFO] Client connected with socket id: 7
-[Thu May 28 23:38:19 2026] [DEBUG] Code: 0
-[Thu May 28 23:38:19 2026] [DEBUG] Content: Auth
-[Thu May 28 23:38:19 2026] [INFO] [Client 2] Authentication success
-[Thu May 28 23:38:19 2026] [INFO] [Client 2] PT hash verified
-[Thu May 28 23:38:19 2026] [INFO] [Client 2] Registered
-[Thu May 28 23:39:34 2026] [INFO] [Console] Shutdown sent to client 2
-[Thu May 28 23:39:34 2026] [INFO] [Console] Shutdown sent to client 1
-[Thu May 28 23:39:34 2026] [INFO] [Console] Shutdown sent to client 3
-[Thu May 28 23:40:35 2026] [INFO] Client connected with socket id: 8
-[Thu May 28 23:40:35 2026] [DEBUG] Code: 0
-[Thu May 28 23:40:35 2026] [DEBUG] Content: Auth
-[Thu May 28 23:40:35 2026] [INFO] [Client 2] Authentication success
-[Thu May 28 23:40:35 2026] [INFO] [Client 2] PT hash verified
-[Thu May 28 23:40:35 2026] [INFO] [Client 2] Registered
-[Thu May 28 23:40:35 2026] [INFO] [MODE] READY
-[Thu May 28 23:41:21 2026] [INFO] Client connected with socket id: 5
-[Thu May 28 23:41:21 2026] [DEBUG] Code: 0
-[Thu May 28 23:41:21 2026] [DEBUG] Content: Auth
-[Thu May 28 23:41:21 2026] [INFO] [Client 1] Authentication success
-[Thu May 28 23:41:21 2026] [INFO] [Client 1] PT hash verified
-[Thu May 28 23:41:21 2026] [INFO] [Client 1] Registered
-[Thu May 28 23:42:15 2026] [INFO] Client connected with socket id: 6
-[Thu May 28 23:42:15 2026] [DEBUG] Code: 0
-[Thu May 28 23:42:15 2026] [DEBUG] Content: Auth
-[Thu May 28 23:42:15 2026] [INFO] [Client 3] Authentication success
-[Thu May 28 23:42:15 2026] [INFO] [Client 3] PT hash verified
-[Thu May 28 23:42:15 2026] [INFO] [Client 3] Registered
-[Thu May 28 23:42:23 2026] [INFO] [SERVER] pt_path mode — weight validation skipped.
-[Thu May 28 23:42:31 2026] [INFO] Starting training...
-[Thu May 28 23:42:46 2026] [DEBUG] [Watchdog] Client 3 sock 6 state: TRAINING
-[Thu May 28 23:42:46 2026] [DEBUG] [Watchdog] Client 1 sock 5 state: TRAINING
-[Thu May 28 23:42:46 2026] [DEBUG] [Watchdog] Client 2 sock 8 state: TRAINING
-[Thu May 28 23:43:48 2026] [INFO] Client starting...
-[Thu May 28 23:43:48 2026] [INFO] [Server] Backdoor defense is ENABLED.
-[Thu May 28 23:43:48 2026] [INFO] [MODE] INITIALIZATION
-[Thu May 28 23:44:43 2026] [INFO] [Console] Operator authenticated.
-[Thu May 28 23:45:10 2026] [INFO] Client connected with socket id: 5
-[Thu May 28 23:45:10 2026] [DEBUG] Code: 0
-[Thu May 28 23:45:10 2026] [DEBUG] Content: Auth
-[Thu May 28 23:45:10 2026] [INFO] [Client 3] Authentication success
-[Thu May 28 23:45:10 2026] [INFO] [Client 3] PT hash verified
-[Thu May 28 23:45:10 2026] [INFO] [Client 3] Registered
-[Thu May 28 23:45:10 2026] [INFO] [MODE] READY
-[Thu May 28 23:45:12 2026] [INFO] Client connected with socket id: 6
-[Thu May 28 23:45:12 2026] [DEBUG] Code: 0
-[Thu May 28 23:45:12 2026] [DEBUG] Content: Auth
-[Thu May 28 23:45:12 2026] [INFO] [Client 1] Authentication success
-[Thu May 28 23:45:13 2026] [INFO] [Client 1] PT hash verified
-[Thu May 28 23:45:13 2026] [INFO] [Client 1] Registered
-[Thu May 28 23:45:29 2026] [INFO] Client connected with socket id: 7
-[Thu May 28 23:45:29 2026] [DEBUG] Code: 0
-[Thu May 28 23:45:29 2026] [DEBUG] Content: Auth
-[Thu May 28 23:45:29 2026] [INFO] [Client 2] Authentication success
-[Thu May 28 23:45:29 2026] [INFO] [Client 2] PT hash verified
-[Thu May 28 23:45:29 2026] [INFO] [Client 2] Registered
-[Thu May 28 23:48:13 2026] [INFO] [SERVER] pt_path mode — weight validation skipped.
-[Thu May 28 23:48:20 2026] [INFO] Starting training...
-[Thu May 28 23:48:20 2026] [INFO] [RoundTimer] Round started.
-[Thu May 28 23:58:30 2026] [INFO] Client connected with socket id: 8
-[Thu May 28 23:58:36 2026] [DEBUG] Code: 1
-[Thu May 28 23:58:36 2026] [DEBUG] Content: Training Ended
-[Thu May 28 23:58:36 2026] [INFO] [Client 1] Finished training. Sample size: 431
-[Thu May 28 23:58:37 2026] [INFO] Client connected with socket id: 9
-[Thu May 28 23:58:41 2026] [DEBUG] Code: 1
-[Thu May 28 23:58:41 2026] [DEBUG] Content: Training Ended
-[Thu May 28 23:58:41 2026] [INFO] [Client 3] Finished training. Sample size: 431
-[Thu May 28 23:59:47 2026] [INFO] Client connected with socket id: 8
-[Thu May 28 23:59:51 2026] [DEBUG] Code: 1
-[Thu May 28 23:59:51 2026] [DEBUG] Content: Training Ended
-[Thu May 28 23:59:51 2026] [INFO] [Client 2] Finished training. Sample size: 432
-[Thu May 28 23:59:51 2026] [INFO] [RoundTimer] training_time_ms: 691056
-[Thu May 28 23:59:51 2026] [INFO] All clients finished. Aggregating...
-[Thu May 28 23:59:56 2026] [WARNING] [NormClipping] No reference model yet. Skipping clip this round.
-[Thu May 28 23:59:56 2026] [INFO] [Aggregator] comm_time_ms: 4615
-[Thu May 28 23:59:56 2026] [INFO] [Aggregator] aggregation_time_ms: 12
-[Thu May 28 23:59:59 2026] [INFO] [EXPORTER] Running: PYTHONPATH=code python3 -m FedSolPython.scripts.build_and_save "input_server/config.json"
-[2026-05-29 00:00:01] [INFO] Starting build from config: input_server/config.json
-[2026-05-29 00:00:02] [INFO] pt_path mode: loading model from 'input_server/model.pt'
-[2026-05-29 00:00:04] [INFO] Federated weights applied to YOLO (nc=1): 3,021,443 floats
-[2026-05-29 00:00:04] [INFO] Archived model saved to: output_server/models/model_20260529_000004.pt
-[2026-05-29 00:00:04] [INFO] Updated .pt written back to: input_server/model.pt
-[Fri May 29 00:00:05 2026] [INFO] [EXPORTER] Model exported successfully
-[Fri May 29 00:00:05 2026] [INFO] [RoundTimer] round_total_ms: 704668
-[Fri May 29 00:00:05 2026] [INFO] [RoundTimer] Timing saved -> output_server/globalResults/stats/timing_2026-05-29_00-00-05.json
-[Fri May 29 00:00:05 2026] [INFO] [SERVER] Completed one epoch. Remaining: 2
-[Fri May 29 00:00:05 2026] [INFO] [RoundTimer] Round started.
-[Fri May 29 00:11:39 2026] [INFO] Client connected with socket id: 8
-[Fri May 29 00:11:45 2026] [DEBUG] Code: 1
-[Fri May 29 00:11:45 2026] [DEBUG] Content: Training Ended
-[Fri May 29 00:11:45 2026] [INFO] [Client 1] Finished training. Sample size: 431
-[Fri May 29 00:12:48 2026] [INFO] Client connected with socket id: 9
-[Fri May 29 00:12:53 2026] [DEBUG] Code: 1
-[Fri May 29 00:12:53 2026] [DEBUG] Content: Training Ended
-[Fri May 29 00:12:53 2026] [INFO] [Client 3] Finished training. Sample size: 431
-[Fri May 29 00:13:10 2026] [INFO] Client connected with socket id: 8
-[Fri May 29 00:13:15 2026] [DEBUG] Code: 1
-[Fri May 29 00:13:15 2026] [DEBUG] Content: Training Ended
-[Fri May 29 00:13:15 2026] [INFO] [Client 2] Finished training. Sample size: 432
-[Fri May 29 00:13:15 2026] [INFO] [RoundTimer] training_time_ms: 789791
-[Fri May 29 00:13:15 2026] [INFO] All clients finished. Aggregating...
-[Fri May 29 00:13:21 2026] [INFO] [NormClipping] clip_norm=11.485826
-[Fri May 29 00:13:21 2026] [INFO] [NormClipping] Client 2 clipped: norm 12.883905 -> 11.485826
-[Fri May 29 00:13:21 2026] [INFO] [Aggregator] comm_time_ms: 6535
-[Fri May 29 00:13:21 2026] [INFO] [Aggregator] aggregation_time_ms: 43
-[Fri May 29 00:13:24 2026] [INFO] [EXPORTER] Running: PYTHONPATH=code python3 -m FedSolPython.scripts.build_and_save "input_server/config.json"
-[2026-05-29 00:13:26] [INFO] Starting build from config: input_server/config.json
-[2026-05-29 00:13:27] [INFO] pt_path mode: loading model from 'input_server/model.pt'
-[2026-05-29 00:13:29] [INFO] Federated weights applied to YOLO (nc=1): 3,021,443 floats
-[2026-05-29 00:13:29] [INFO] Archived model saved to: output_server/models/model_20260529_001329.pt
-[2026-05-29 00:13:29] [INFO] Updated .pt written back to: input_server/model.pt
-[Fri May 29 00:13:30 2026] [INFO] [EXPORTER] Model exported successfully
-[Fri May 29 00:13:30 2026] [INFO] [RoundTimer] round_total_ms: 804711
-[Fri May 29 00:13:30 2026] [INFO] [RoundTimer] Timing saved -> output_server/globalResults/stats/timing_2026-05-29_00-13-30.json
-[Fri May 29 00:13:30 2026] [INFO] [SERVER] Completed one epoch. Remaining: 1
-[Fri May 29 00:13:30 2026] [INFO] [RoundTimer] Round started.
-[Fri May 29 00:25:45 2026] [INFO] Client connected with socket id: 8
-[Fri May 29 00:25:51 2026] [DEBUG] Code: 1
-[Fri May 29 00:25:51 2026] [DEBUG] Content: Training Ended
-[Fri May 29 00:25:51 2026] [INFO] [Client 3] Finished training. Sample size: 431
-[Fri May 29 00:26:40 2026] [INFO] Client connected with socket id: 9
-[Fri May 29 00:26:45 2026] [DEBUG] Code: 1
-[Fri May 29 00:26:45 2026] [DEBUG] Content: Training Ended
-[Fri May 29 00:26:45 2026] [INFO] [Client 1] Finished training. Sample size: 431
-[Fri May 29 00:27:49 2026] [INFO] Client connected with socket id: 8
-[Fri May 29 00:27:54 2026] [DEBUG] Code: 1
-[Fri May 29 00:27:54 2026] [DEBUG] Content: Training Ended
-[Fri May 29 00:27:54 2026] [INFO] [Client 2] Finished training. Sample size: 432
-[Fri May 29 00:27:54 2026] [INFO] [RoundTimer] training_time_ms: 864484
-[Fri May 29 00:27:54 2026] [INFO] All clients finished. Aggregating...
-[Fri May 29 00:27:59 2026] [INFO] [NormClipping] clip_norm=9.610454
-[Fri May 29 00:27:59 2026] [INFO] [NormClipping] Client 2 clipped: norm 13.322386 -> 9.610454
-[Fri May 29 00:27:59 2026] [INFO] [Aggregator] comm_time_ms: 5035
-[Fri May 29 00:27:59 2026] [INFO] [Aggregator] aggregation_time_ms: 36
-[Fri May 29 00:28:02 2026] [INFO] [EXPORTER] Running: PYTHONPATH=code python3 -m FedSolPython.scripts.build_and_save "input_server/config.json"
-[2026-05-29 00:28:04] [INFO] Starting build from config: input_server/config.json
-[2026-05-29 00:28:05] [INFO] pt_path mode: loading model from 'input_server/model.pt'
-[2026-05-29 00:28:07] [INFO] Federated weights applied to YOLO (nc=1): 3,021,443 floats
-[2026-05-29 00:28:07] [INFO] Archived model saved to: output_server/models/model_20260529_002807.pt
-[2026-05-29 00:28:07] [INFO] Updated .pt written back to: input_server/model.pt
-[Fri May 29 00:28:08 2026] [INFO] [EXPORTER] Model exported successfully
-[Fri May 29 00:28:08 2026] [INFO] [RoundTimer] round_total_ms: 878139
-[Fri May 29 00:28:08 2026] [INFO] [RoundTimer] Timing saved -> output_server/globalResults/stats/timing_2026-05-29_00-28-08.json
-[Fri May 29 00:28:08 2026] [INFO] [SERVER] Completed one epoch. Remaining: 0
-[Fri May 29 00:28:08 2026] [INFO] [SERVER] Training finished.
-[Fri May 29 08:40:06 2026] [INFO] [EVALUATOR] Running evaluation script: evaluate
-[Fri May 29 08:41:39 2026] [INFO] [EVALUATOR] Evaluation completed successfully
+[Wed Jun  3 10:48:10 2026] [INFO] Client starting...
+[Wed Jun  3 10:48:10 2026] [INFO] [Server] Backdoor defense is ENABLED.
+[Wed Jun  3 10:48:10 2026] [INFO] [MODE] INITIALIZATION
+[Wed Jun  3 10:48:18 2026] [INFO] Client connected with socket id: 5
+[Wed Jun  3 10:48:18 2026] [DEBUG] Code: 0
+[Wed Jun  3 10:48:18 2026] [DEBUG] Content: Auth
+[Wed Jun  3 10:48:18 2026] [INFO] [Client 3] Authentication success
+[Wed Jun  3 10:48:18 2026] [INFO] [Client 3] PT hash verified
+[Wed Jun  3 10:48:18 2026] [INFO] [Client 3] Registered
+[Wed Jun  3 10:48:18 2026] [INFO] [MODE] READY
+[Wed Jun  3 10:48:19 2026] [INFO] [Console] Operator authenticated.
+[Wed Jun  3 10:48:29 2026] [INFO] Client connected with socket id: 6
+[Wed Jun  3 10:48:29 2026] [DEBUG] Code: 0
+[Wed Jun  3 10:48:29 2026] [DEBUG] Content: Auth
+[Wed Jun  3 10:48:29 2026] [INFO] [Client 2] Authentication success
+[Wed Jun  3 10:48:29 2026] [INFO] [Client 2] PT hash verified
+[Wed Jun  3 10:48:29 2026] [INFO] [Client 2] Registered
+[Wed Jun  3 10:48:30 2026] [INFO] [SERVER] pt_path mode — weight validation skipped.
+[Wed Jun  3 10:48:34 2026] [INFO] Starting training...
+[Wed Jun  3 10:48:34 2026] [INFO] [RoundTimer] Round started.
+[Wed Jun  3 10:49:05 2026] [INFO] Client connected with socket id: 7
+[Wed Jun  3 10:49:10 2026] [DEBUG] Code: 1
+[Wed Jun  3 10:49:10 2026] [DEBUG] Content: Training Ended
+[Wed Jun  3 10:49:10 2026] [INFO] [Client 3] Finished training. Sample size: 0
+[Wed Jun  3 10:49:44 2026] [INFO] Client starting...
+[Wed Jun  3 10:49:44 2026] [INFO] [Server] Backdoor defense is ENABLED.
+[Wed Jun  3 10:49:44 2026] [INFO] [MODE] INITIALIZATION
+[Wed Jun  3 10:50:01 2026] [INFO] [Console] Operator authenticated.
+[Wed Jun  3 10:50:20 2026] [INFO] Client connected with socket id: 5
+[Wed Jun  3 10:50:20 2026] [DEBUG] Code: 0
+[Wed Jun  3 10:50:20 2026] [DEBUG] Content: Auth
+[Wed Jun  3 10:50:20 2026] [INFO] [Client 3] Authentication success
+[Wed Jun  3 10:50:20 2026] [INFO] [Client 3] PT hash verified
+[Wed Jun  3 10:50:20 2026] [INFO] [Client 3] Registered
+[Wed Jun  3 10:50:20 2026] [INFO] [MODE] READY
+[Wed Jun  3 10:51:20 2026] [INFO] Client connected with socket id: 6
+[Wed Jun  3 10:51:20 2026] [DEBUG] Code: 0
+[Wed Jun  3 10:51:20 2026] [DEBUG] Content: Auth
+[Wed Jun  3 10:51:20 2026] [INFO] [Client 2] Authentication success
+[Wed Jun  3 10:51:21 2026] [INFO] [Client 2] PT hash verified
+[Wed Jun  3 10:51:21 2026] [INFO] [Client 2] Registered
+[Wed Jun  3 10:52:07 2026] [INFO] [DatasetSplitter] Running: PYTHONPATH=code python3 -m FedSolPython.scripts.split_dataset input_server/dataset 2
+[2026-06-03 10:52:07] [INFO] [split_dataset] YOLO — 863 images → 2 clients (~432 each)
+[2026-06-03 10:52:19] [INFO] [split_dataset] Client 0: 432 images → dataset_train_0.tar.gz (222.8 MB)
+[2026-06-03 10:52:32] [INFO] [split_dataset] Client 1: 431 images → dataset_train_1.tar.gz (220.0 MB)
+[2026-06-03 10:52:32] [INFO] [split_dataset] Done. 2 .tar.gz files saved to 'input_server/'
+[Wed Jun  3 10:52:32 2026] [INFO] [DatasetSplitter] Split completed successfully
+[Wed Jun  3 10:52:34 2026] [INFO] [Protocol] Sending file: ./input_server/dataset_train_1.tar.gz (230708745 bytes)
+[Wed Jun  3 10:52:34 2026] [INFO] [Protocol] Sending file: ./input_server/dataset_train_0.tar.gz (233593639 bytes)
+[Wed Jun  3 10:53:40 2026] [INFO] [SERVER] pt_path mode — weight validation skipped.
+[Wed Jun  3 10:53:45 2026] [INFO] Starting training...
+[Wed Jun  3 10:53:45 2026] [INFO] [RoundTimer] Round started.
+[Wed Jun  3 10:56:27 2026] [INFO] [Console] Shutdown sent to client 2
+[Wed Jun  3 10:56:27 2026] [INFO] [Console] Shutdown sent to client 3
+[Wed Jun  3 11:10:29 2026] [INFO] Client connected with socket id: 7
+[Wed Jun  3 11:10:29 2026] [DEBUG] Code: 0
+[Wed Jun  3 11:10:29 2026] [DEBUG] Content: Auth
+[Wed Jun  3 11:10:29 2026] [WARNING] [Server] New client rejected — training in progress.
+[Wed Jun  3 11:10:29 2026] [INFO] Client connected with socket id: 5
+[Wed Jun  3 11:10:29 2026] [DEBUG] Code: 99
+[Wed Jun  3 11:10:29 2026] [DEBUG] Content: Error
+[Wed Jun  3 11:10:29 2026] [ERROR] [Protocol] Error received: [Client::listener] PT handshake failed
+[Wed Jun  3 11:10:29 2026] [ERROR] [Server] Client error: [Client::listener] PT handshake failed
+[Wed Jun  3 11:11:49 2026] [INFO] Client starting...
+[Wed Jun  3 11:11:49 2026] [INFO] [Server] Backdoor defense is ENABLED.
+[Wed Jun  3 11:11:49 2026] [INFO] [MODE] INITIALIZATION
+[Wed Jun  3 11:12:10 2026] [INFO] [Console] Operator authenticated.
+[Wed Jun  3 11:12:48 2026] [INFO] Client connected with socket id: 5
+[Wed Jun  3 11:12:48 2026] [DEBUG] Code: 0
+[Wed Jun  3 11:12:48 2026] [DEBUG] Content: Auth
+[Wed Jun  3 11:12:48 2026] [INFO] [Client 3] Authentication success
+[Wed Jun  3 11:12:48 2026] [INFO] [Client 3] PT hash verified
+[Wed Jun  3 11:12:48 2026] [INFO] [Client 3] Registered
+[Wed Jun  3 11:12:48 2026] [INFO] [MODE] READY
+[Wed Jun  3 11:13:52 2026] [INFO] Client connected with socket id: 6
+[Wed Jun  3 11:13:52 2026] [DEBUG] Code: 0
+[Wed Jun  3 11:13:52 2026] [DEBUG] Content: Auth
+[Wed Jun  3 11:13:52 2026] [INFO] [Client 2] Authentication success
+[Wed Jun  3 11:13:52 2026] [INFO] [Client 2] PT hash verified
+[Wed Jun  3 11:13:52 2026] [INFO] [Client 2] Registered
+[Wed Jun  3 11:21:59 2026] [INFO] [SERVER] pt_path mode — weight validation skipped.
+[Wed Jun  3 11:22:02 2026] [INFO] Starting training...
+[Wed Jun  3 11:22:02 2026] [INFO] [RoundTimer] Round started.
+[Wed Jun  3 11:42:27 2026] [INFO] Client connected with socket id: 7
+[Wed Jun  3 11:42:31 2026] [DEBUG] Code: 1
+[Wed Jun  3 11:42:31 2026] [DEBUG] Content: Training Ended
+[Wed Jun  3 11:42:31 2026] [INFO] [Client 3] Finished training. Sample size: 431
+[Wed Jun  3 11:48:56 2026] [WARNING] [Watchdog] Client 2 did not respond to PING. Removing.
+[Wed Jun  3 11:48:56 2026] [INFO] [RoundTimer] training_time_ms: 1614280
+[Wed Jun  3 11:48:56 2026] [INFO] All clients finished. Aggregating...
+[Wed Jun  3 11:48:56 2026] [ERROR] [Aggregator] Client 3 failed during aggregation. Removing from state.
+[Wed Jun  3 11:48:56 2026] [WARNING] [NormClipping] No reference model yet. Skipping clip this round.
+[Wed Jun  3 11:48:56 2026] [ERROR] [Aggregator] No weights received. Aborting aggregation.
+[Wed Jun  3 11:48:56 2026] [ERROR] [SERVER] Aggregation failed.
+[Wed Jun  3 11:50:35 2026] [INFO] Client starting...
+[Wed Jun  3 11:50:35 2026] [INFO] [Server] Backdoor defense is ENABLED.
+[Wed Jun  3 11:50:35 2026] [INFO] [MODE] INITIALIZATION
+[Wed Jun  3 11:51:06 2026] [INFO] [Console] Operator authenticated.
+[Wed Jun  3 11:51:15 2026] [INFO] Client connected with socket id: 5
+[Wed Jun  3 11:51:15 2026] [DEBUG] Code: 0
+[Wed Jun  3 11:51:15 2026] [DEBUG] Content: Auth
+[Wed Jun  3 11:51:15 2026] [INFO] [Client 1] Authentication success
+[Wed Jun  3 11:51:15 2026] [INFO] [Client 1] PT hash verified
+[Wed Jun  3 11:51:15 2026] [INFO] [Client 1] Registered
+[Wed Jun  3 11:51:15 2026] [INFO] [MODE] READY
+[Wed Jun  3 11:51:50 2026] [INFO] Client connected with socket id: 6
+[Wed Jun  3 11:51:50 2026] [DEBUG] Code: 0
+[Wed Jun  3 11:51:50 2026] [DEBUG] Content: Auth
+[Wed Jun  3 11:51:50 2026] [INFO] [Client 2] Authentication success
+[Wed Jun  3 11:51:50 2026] [INFO] [Client 2] PT hash verified
+[Wed Jun  3 11:51:50 2026] [INFO] [Client 2] Registered
+[Wed Jun  3 11:51:55 2026] [INFO] [SERVER] pt_path mode — weight validation skipped.
+[Wed Jun  3 11:51:57 2026] [INFO] Starting training...
+[Wed Jun  3 11:51:57 2026] [INFO] [RoundTimer] Round started.
+[Wed Jun  3 12:02:53 2026] [INFO] Client connected with socket id: 7
+[Wed Jun  3 12:02:56 2026] [DEBUG] Code: 1
+[Wed Jun  3 12:02:56 2026] [DEBUG] Content: Training Ended
+[Wed Jun  3 12:02:56 2026] [INFO] [Client 1] Finished training. Sample size: 431
+[Wed Jun  3 12:14:10 2026] [INFO] Client connected with socket id: 8
+[Wed Jun  3 12:14:18 2026] [DEBUG] Code: 1
+[Wed Jun  3 12:14:18 2026] [DEBUG] Content: Training Ended
+[Wed Jun  3 12:14:18 2026] [INFO] [Client 2] Finished training. Sample size: 432
+[Wed Jun  3 12:14:18 2026] [INFO] [RoundTimer] training_time_ms: 1340561
+[Wed Jun  3 12:14:18 2026] [INFO] All clients finished. Aggregating...
+[Wed Jun  3 12:14:22 2026] [WARNING] [NormClipping] No reference model yet. Skipping clip this round.
+[Wed Jun  3 12:14:22 2026] [INFO] [Aggregator] comm_time_ms: 3739
+[Wed Jun  3 12:14:22 2026] [INFO] [Aggregator] aggregation_time_ms: 12
+[Wed Jun  3 12:14:24 2026] [INFO] [EXPORTER] Running: PYTHONPATH=code python3 -m FedSolPython.scripts.build_and_save "input_server/config.json"
+[2026-06-03 12:14:26] [INFO] Starting build from config: input_server/config.json
+[2026-06-03 12:14:27] [INFO] pt_path mode: loading model from 'input_server/model.pt'
+[2026-06-03 12:14:29] [INFO] Federated weights applied to YOLO (nc=1): 3,021,443 floats
+[2026-06-03 12:14:29] [INFO] Archived model saved to: output_server/models/model_20260603_121429.pt
+[2026-06-03 12:14:29] [INFO] Updated .pt written back to: input_server/model.pt
+[Wed Jun  3 12:14:29 2026] [INFO] [EXPORTER] Model exported successfully
+[Wed Jun  3 12:14:29 2026] [INFO] [RoundTimer] round_total_ms: 1351904
+[Wed Jun  3 12:14:29 2026] [INFO] [RoundTimer] Timing saved -> output_server/globalResults/stats/timing_2026-06-03_12-14-29.json
+[Wed Jun  3 12:14:29 2026] [INFO] [SERVER] Completed one epoch. Remaining: 1
+[Wed Jun  3 12:14:29 2026] [INFO] [RoundTimer] Round started.
+[Wed Jun  3 12:25:33 2026] [INFO] Client connected with socket id: 7
+[Wed Jun  3 12:25:36 2026] [DEBUG] Code: 1
+[Wed Jun  3 12:25:36 2026] [DEBUG] Content: Training Ended
+[Wed Jun  3 12:25:36 2026] [INFO] [Client 1] Finished training. Sample size: 431
+[Wed Jun  3 12:36:54 2026] [INFO] Client connected with socket id: 8
+[Wed Jun  3 12:37:02 2026] [DEBUG] Code: 1
+[Wed Jun  3 12:37:02 2026] [DEBUG] Content: Training Ended
+[Wed Jun  3 12:37:02 2026] [INFO] [Client 2] Finished training. Sample size: 432
+[Wed Jun  3 12:37:02 2026] [INFO] [RoundTimer] training_time_ms: 1352778
+[Wed Jun  3 12:37:02 2026] [INFO] All clients finished. Aggregating...
+[Wed Jun  3 12:37:06 2026] [INFO] [NormClipping] clip_norm=5.371881
+[Wed Jun  3 12:37:06 2026] [INFO] [NormClipping] Client 2 clipped: norm 5.396402 -> 5.371881
+[Wed Jun  3 12:37:06 2026] [INFO] [Aggregator] comm_time_ms: 3663
+[Wed Jun  3 12:37:06 2026] [INFO] [Aggregator] aggregation_time_ms: 25
+[Wed Jun  3 12:37:09 2026] [INFO] [EXPORTER] Running: PYTHONPATH=code python3 -m FedSolPython.scripts.build_and_save "input_server/config.json"
+[2026-06-03 12:37:10] [INFO] Starting build from config: input_server/config.json
+[2026-06-03 12:37:11] [INFO] pt_path mode: loading model from 'input_server/model.pt'
+[2026-06-03 12:37:13] [INFO] Federated weights applied to YOLO (nc=1): 3,021,443 floats
+[2026-06-03 12:37:13] [INFO] Archived model saved to: output_server/models/model_20260603_123713.pt
+[2026-06-03 12:37:13] [INFO] Updated .pt written back to: input_server/model.pt
+[Wed Jun  3 12:37:14 2026] [INFO] [EXPORTER] Model exported successfully
+[Wed Jun  3 12:37:14 2026] [INFO] [RoundTimer] round_total_ms: 1364164
+[Wed Jun  3 12:37:14 2026] [INFO] [RoundTimer] Timing saved -> output_server/globalResults/stats/timing_2026-06-03_12-37-14.json
+[Wed Jun  3 12:37:14 2026] [INFO] [SERVER] Completed one epoch. Remaining: 0
+[Wed Jun  3 12:37:14 2026] [INFO] [SERVER] Training finished.
+[Wed Jun  3 12:56:43 2026] [INFO] Client starting...
+[Wed Jun  3 12:56:43 2026] [INFO] [Server] Backdoor defense is DISABLED.
+[Wed Jun  3 12:56:43 2026] [INFO] [MODE] INITIALIZATION
+[Wed Jun  3 12:56:59 2026] [INFO] [Console] Operator authenticated.
+[Wed Jun  3 12:57:41 2026] [INFO] Client connected with socket id: 5
+[Wed Jun  3 12:57:42 2026] [DEBUG] Code: 0
+[Wed Jun  3 12:57:42 2026] [DEBUG] Content: Auth
+[Wed Jun  3 12:57:42 2026] [INFO] [Client 2] Authentication success
+[Wed Jun  3 12:57:42 2026] [INFO] [Client 2] Architecture verified
+[Wed Jun  3 12:57:42 2026] [INFO] [Client 2] Registered
+[Wed Jun  3 12:57:42 2026] [INFO] [MODE] READY
+[Wed Jun  3 12:57:45 2026] [INFO] Client connected with socket id: 6
+[Wed Jun  3 12:57:45 2026] [DEBUG] Code: 0
+[Wed Jun  3 12:57:45 2026] [DEBUG] Content: Auth
+[Wed Jun  3 12:57:45 2026] [INFO] [Client 1] Authentication success
+[Wed Jun  3 12:57:45 2026] [INFO] [Client 1] Architecture verified
+[Wed Jun  3 12:57:45 2026] [INFO] [Client 1] Registered
+[Wed Jun  3 13:04:54 2026] [INFO] [EVALUATOR] Running evaluation script: evaluate
+[Wed Jun  3 13:05:02 2026] [ERROR] [EVALUATOR ERROR] Evaluation failed with code: 1
+[Wed Jun  3 13:05:02 2026] [ERROR] [SERVER] Evaluation failed
+[Wed Jun  3 13:08:34 2026] [INFO] [DatasetSplitter] Running: PYTHONPATH=code python3 -m FedSolPython.scripts.split_dataset input_server/dataset_train.npz 2
+[2026-06-03 13:08:35] [INFO] [split_dataset] NPZ — 63000 samples → 2 clients
+[2026-06-03 13:08:35] [INFO] [split_dataset] Client 0: 31500 samples → input_server/dataset_train_0.npz
+[2026-06-03 13:08:35] [INFO] [split_dataset] Client 1: 31500 samples → input_server/dataset_train_1.npz
+[2026-06-03 13:08:35] [INFO] [split_dataset] Done. 2 .npz files saved to 'input_server/'
+[Wed Jun  3 13:08:35 2026] [INFO] [DatasetSplitter] Split completed successfully
+[Wed Jun  3 13:08:35 2026] [INFO] [Protocol] Sending file: ./input_server/dataset_train_1.npz (24727990 bytes)
+[Wed Jun  3 13:08:35 2026] [INFO] [Protocol] Sending file: ./input_server/dataset_train_0.npz (24727990 bytes)
+[Wed Jun  3 13:08:56 2026] [INFO] Starting training...
+[Wed Jun  3 13:08:56 2026] [INFO] [RoundTimer] Round started.
+[Wed Jun  3 13:09:38 2026] [INFO] Client connected with socket id: 7
+[Wed Jun  3 13:09:38 2026] [DEBUG] Code: 1
+[Wed Jun  3 13:09:38 2026] [DEBUG] Content: Training Ended
+[Wed Jun  3 13:09:38 2026] [INFO] [Client 1] Finished training. Sample size: 31500
+[Wed Jun  3 13:10:16 2026] [INFO] Client connected with socket id: 8
+[Wed Jun  3 13:10:18 2026] [DEBUG] Code: 1
+[Wed Jun  3 13:10:18 2026] [DEBUG] Content: Training Ended
+[Wed Jun  3 13:10:18 2026] [INFO] [Client 2] Finished training. Sample size: 31500
+[Wed Jun  3 13:10:18 2026] [INFO] [RoundTimer] training_time_ms: 82070
+[Wed Jun  3 13:10:18 2026] [INFO] All clients finished. Aggregating...
+[Wed Jun  3 13:10:19 2026] [INFO] [NormClipping] Disabled. Passing all 2 client(s) through.
+[Wed Jun  3 13:10:19 2026] [INFO] [Aggregator] comm_time_ms: 1485
+[Wed Jun  3 13:10:19 2026] [INFO] [Aggregator] aggregation_time_ms: 8
+[Wed Jun  3 13:10:19 2026] [INFO] [EXPORTER] Running: PYTHONPATH=code python3 -m FedSolPython.scripts.build_and_save "input_server/config.json"
+[2026-06-03 13:10:21] [INFO] Starting build from config: input_server/config.json
+[2026-06-03 13:10:21] [INFO] Build/Save completed successfully: output_server/models/model_20260603_131021.pt
+[Wed Jun  3 13:10:21 2026] [INFO] [EXPORTER] Model exported successfully
+[Wed Jun  3 13:10:21 2026] [INFO] [RoundTimer] round_total_ms: 85598
+[Wed Jun  3 13:10:21 2026] [INFO] [RoundTimer] Timing saved -> output_server/globalResults/stats/timing_2026-06-03_13-10-21.json
+[Wed Jun  3 13:10:21 2026] [INFO] [SERVER] Completed one epoch. Remaining: 4
+[Wed Jun  3 13:10:21 2026] [INFO] [RoundTimer] Round started.
+[Wed Jun  3 13:11:02 2026] [INFO] Client connected with socket id: 7
+[Wed Jun  3 13:11:03 2026] [DEBUG] Code: 1
+[Wed Jun  3 13:11:03 2026] [DEBUG] Content: Training Ended
+[Wed Jun  3 13:11:03 2026] [INFO] [Client 1] Finished training. Sample size: 31500
+[Wed Jun  3 13:11:40 2026] [INFO] Client connected with socket id: 8
+[Wed Jun  3 13:11:42 2026] [DEBUG] Code: 1
+[Wed Jun  3 13:11:42 2026] [DEBUG] Content: Training Ended
+[Wed Jun  3 13:11:42 2026] [INFO] [Client 2] Finished training. Sample size: 31500
+[Wed Jun  3 13:11:42 2026] [INFO] [RoundTimer] training_time_ms: 80357
+[Wed Jun  3 13:11:42 2026] [INFO] All clients finished. Aggregating...
+[Wed Jun  3 13:11:43 2026] [INFO] [NormClipping] Disabled. Passing all 2 client(s) through.
+[Wed Jun  3 13:11:43 2026] [INFO] [Aggregator] comm_time_ms: 1049
+[Wed Jun  3 13:11:43 2026] [INFO] [Aggregator] aggregation_time_ms: 1
+[Wed Jun  3 13:11:43 2026] [INFO] [EXPORTER] Running: PYTHONPATH=code python3 -m FedSolPython.scripts.build_and_save "input_server/config.json"
+[2026-06-03 13:11:44] [INFO] Starting build from config: input_server/config.json
+[2026-06-03 13:11:44] [INFO] Build/Save completed successfully: output_server/models/model_20260603_131144.pt
+[Wed Jun  3 13:11:45 2026] [INFO] [EXPORTER] Model exported successfully
+[Wed Jun  3 13:11:45 2026] [INFO] [RoundTimer] round_total_ms: 83351
+[Wed Jun  3 13:11:45 2026] [INFO] [RoundTimer] Timing saved -> output_server/globalResults/stats/timing_2026-06-03_13-11-45.json
+[Wed Jun  3 13:11:45 2026] [INFO] [SERVER] Completed one epoch. Remaining: 3
+[Wed Jun  3 13:11:45 2026] [INFO] [RoundTimer] Round started.
+[Wed Jun  3 13:12:26 2026] [INFO] Client connected with socket id: 7
+[Wed Jun  3 13:12:26 2026] [DEBUG] Code: 1
+[Wed Jun  3 13:12:26 2026] [DEBUG] Content: Training Ended
+[Wed Jun  3 13:12:26 2026] [INFO] [Client 1] Finished training. Sample size: 31500
+[Wed Jun  3 13:13:03 2026] [INFO] Client connected with socket id: 8
+[Wed Jun  3 13:13:05 2026] [DEBUG] Code: 1
+[Wed Jun  3 13:13:05 2026] [DEBUG] Content: Training Ended
+[Wed Jun  3 13:13:05 2026] [INFO] [Client 2] Finished training. Sample size: 31500
+[Wed Jun  3 13:13:05 2026] [INFO] [RoundTimer] training_time_ms: 79924
+[Wed Jun  3 13:13:05 2026] [INFO] All clients finished. Aggregating...
+[Wed Jun  3 13:13:05 2026] [INFO] [NormClipping] Disabled. Passing all 2 client(s) through.
+[Wed Jun  3 13:13:05 2026] [INFO] [Aggregator] comm_time_ms: 799
+[Wed Jun  3 13:13:05 2026] [INFO] [Aggregator] aggregation_time_ms: 1
+[Wed Jun  3 13:13:06 2026] [INFO] [EXPORTER] Running: PYTHONPATH=code python3 -m FedSolPython.scripts.build_and_save "input_server/config.json"
+[2026-06-03 13:13:07] [INFO] Starting build from config: input_server/config.json
+[2026-06-03 13:13:07] [INFO] Build/Save completed successfully: output_server/models/model_20260603_131307.pt
+[Wed Jun  3 13:13:07 2026] [INFO] [EXPORTER] Model exported successfully
+[Wed Jun  3 13:13:07 2026] [INFO] [RoundTimer] round_total_ms: 82568
+[Wed Jun  3 13:13:07 2026] [INFO] [RoundTimer] Timing saved -> output_server/globalResults/stats/timing_2026-06-03_13-13-07.json
+[Wed Jun  3 13:13:07 2026] [INFO] [SERVER] Completed one epoch. Remaining: 2
+[Wed Jun  3 13:13:07 2026] [INFO] [RoundTimer] Round started.
+[Wed Jun  3 13:13:48 2026] [INFO] Client connected with socket id: 7
+[Wed Jun  3 13:13:49 2026] [DEBUG] Code: 1
+[Wed Jun  3 13:13:49 2026] [DEBUG] Content: Training Ended
+[Wed Jun  3 13:13:49 2026] [INFO] [Client 1] Finished training. Sample size: 31500
+[Wed Jun  3 13:14:26 2026] [INFO] Client connected with socket id: 8
+[Wed Jun  3 13:14:27 2026] [DEBUG] Code: 1
+[Wed Jun  3 13:14:27 2026] [DEBUG] Content: Training Ended
+[Wed Jun  3 13:14:27 2026] [INFO] [Client 2] Finished training. Sample size: 31500
+[Wed Jun  3 13:14:27 2026] [INFO] [RoundTimer] training_time_ms: 80194
+[Wed Jun  3 13:14:27 2026] [INFO] All clients finished. Aggregating...
+[Wed Jun  3 13:14:29 2026] [INFO] [NormClipping] Disabled. Passing all 2 client(s) through.
+[Wed Jun  3 13:14:29 2026] [INFO] [Aggregator] comm_time_ms: 1552
+[Wed Jun  3 13:14:29 2026] [INFO] [Aggregator] aggregation_time_ms: 0
+[Wed Jun  3 13:14:29 2026] [INFO] [EXPORTER] Running: PYTHONPATH=code python3 -m FedSolPython.scripts.build_and_save "input_server/config.json"
+[2026-06-03 13:14:31] [INFO] Starting build from config: input_server/config.json
+[2026-06-03 13:14:31] [INFO] Build/Save completed successfully: output_server/models/model_20260603_131431.pt
+[Wed Jun  3 13:14:31 2026] [INFO] [EXPORTER] Model exported successfully
+[Wed Jun  3 13:14:31 2026] [INFO] [RoundTimer] round_total_ms: 83988
+[Wed Jun  3 13:14:31 2026] [INFO] [RoundTimer] Timing saved -> output_server/globalResults/stats/timing_2026-06-03_13-14-31.json
+[Wed Jun  3 13:14:31 2026] [INFO] [SERVER] Completed one epoch. Remaining: 1
+[Wed Jun  3 13:14:31 2026] [INFO] [RoundTimer] Round started.
+[Wed Jun  3 13:15:12 2026] [INFO] Client connected with socket id: 7
+[Wed Jun  3 13:15:13 2026] [DEBUG] Code: 1
+[Wed Jun  3 13:15:13 2026] [DEBUG] Content: Training Ended
+[Wed Jun  3 13:15:13 2026] [INFO] [Client 1] Finished training. Sample size: 31500
+[Wed Jun  3 13:15:50 2026] [INFO] Client connected with socket id: 8
+[Wed Jun  3 13:15:52 2026] [DEBUG] Code: 1
+[Wed Jun  3 13:15:52 2026] [DEBUG] Content: Training Ended
+[Wed Jun  3 13:15:52 2026] [INFO] [Client 2] Finished training. Sample size: 31500
+[Wed Jun  3 13:15:52 2026] [INFO] [RoundTimer] training_time_ms: 80478
+[Wed Jun  3 13:15:52 2026] [INFO] All clients finished. Aggregating...
+[Wed Jun  3 13:15:53 2026] [INFO] [NormClipping] Disabled. Passing all 2 client(s) through.
+[Wed Jun  3 13:15:53 2026] [INFO] [Aggregator] comm_time_ms: 818
+[Wed Jun  3 13:15:53 2026] [INFO] [Aggregator] aggregation_time_ms: 0
+[Wed Jun  3 13:15:53 2026] [INFO] [EXPORTER] Running: PYTHONPATH=code python3 -m FedSolPython.scripts.build_and_save "input_server/config.json"
+[2026-06-03 13:15:54] [INFO] Starting build from config: input_server/config.json
+[2026-06-03 13:15:54] [INFO] Build/Save completed successfully: output_server/models/model_20260603_131554.pt
+[Wed Jun  3 13:15:55 2026] [INFO] [EXPORTER] Model exported successfully
+[Wed Jun  3 13:15:55 2026] [INFO] [RoundTimer] round_total_ms: 83417
+[Wed Jun  3 13:15:55 2026] [INFO] [RoundTimer] Timing saved -> output_server/globalResults/stats/timing_2026-06-03_13-15-55.json
+[Wed Jun  3 13:15:55 2026] [INFO] [SERVER] Completed one epoch. Remaining: 0
+[Wed Jun  3 13:15:55 2026] [INFO] [SERVER] Training finished.
+[Wed Jun  3 13:21:26 2026] [INFO] [EVALUATOR] Running evaluation script: evaluate
+[Wed Jun  3 13:21:35 2026] [INFO] [EVALUATOR] Evaluation completed successfully
+[Wed Jun  3 13:22:57 2026] [INFO] [EVALUATOR] Running evaluation script: evaluate
+[Wed Jun  3 13:22:59 2026] [ERROR] [EVALUATOR ERROR] Evaluation failed with code: 1
+[Wed Jun  3 13:22:59 2026] [ERROR] [SERVER] Evaluation failed
+[Wed Jun  3 13:53:13 2026] [WARNING] overwrite current model weights.
+[Wed Jun  3 13:53:15 2026] [INFO] Random weights generated and loaded into model.
+[Wed Jun  3 13:53:22 2026] [INFO] Starting training...
+[Wed Jun  3 13:53:22 2026] [INFO] [RoundTimer] Round started.
+[Wed Jun  3 13:53:46 2026] [WARNING] [Watchdog] Client 1 did not respond to PING. Removing.
+[Wed Jun  3 13:53:46 2026] [WARNING] [Watchdog] Client 2 did not respond to PING. Removing.
+[Wed Jun  3 13:53:46 2026] [ERROR] [Watchdog] All clients were removed. Cannot aggregate.
+[Wed Jun  3 13:56:19 2026] [INFO] Client connected with socket id: 7
+[Wed Jun  3 13:56:19 2026] [DEBUG] Code: 0
+[Wed Jun  3 13:56:19 2026] [DEBUG] Content: Auth
+[Wed Jun  3 13:56:19 2026] [INFO] [Client 1] Authentication success
+[Wed Jun  3 13:56:19 2026] [INFO] [Client 1] Architecture verified
+[Wed Jun  3 13:56:19 2026] [INFO] [Client 1] Registered
+[Wed Jun  3 13:56:19 2026] [INFO] [MODE] READY
+[Wed Jun  3 13:56:25 2026] [INFO] Client connected with socket id: 5
+[Wed Jun  3 13:56:25 2026] [DEBUG] Code: 0
+[Wed Jun  3 13:56:25 2026] [DEBUG] Content: Auth
+[Wed Jun  3 13:56:25 2026] [INFO] [Client 2] Authentication success
+[Wed Jun  3 13:56:25 2026] [INFO] [Client 2] Architecture verified
+[Wed Jun  3 13:56:25 2026] [INFO] [Client 2] Registered
+[Wed Jun  3 13:56:30 2026] [INFO] Starting training...
+[Wed Jun  3 13:56:30 2026] [INFO] [RoundTimer] Round started.
+[Wed Jun  3 13:56:52 2026] [INFO] Client connected with socket id: 6
+[Wed Jun  3 13:56:52 2026] [DEBUG] Code: 1
+[Wed Jun  3 13:56:52 2026] [DEBUG] Content: Training Ended
+[Wed Jun  3 13:56:52 2026] [INFO] [Client 1] Finished training. Sample size: 31500
+[Wed Jun  3 13:56:53 2026] [INFO] Client connected with socket id: 8
+[Wed Jun  3 13:56:55 2026] [DEBUG] Code: 1
+[Wed Jun  3 13:56:55 2026] [DEBUG] Content: Training Ended
+[Wed Jun  3 13:56:55 2026] [INFO] [Client 2] Finished training. Sample size: 31500
+[Wed Jun  3 13:56:55 2026] [INFO] [RoundTimer] training_time_ms: 24551
+[Wed Jun  3 13:56:55 2026] [INFO] All clients finished. Aggregating...
+[Wed Jun  3 13:56:55 2026] [INFO] [NormClipping] Disabled. Passing all 2 client(s) through.
+[Wed Jun  3 13:56:55 2026] [INFO] [Aggregator] comm_time_ms: 353
+[Wed Jun  3 13:56:55 2026] [INFO] [Aggregator] aggregation_time_ms: 0
+[Wed Jun  3 13:56:55 2026] [INFO] [EXPORTER] Running: PYTHONPATH=code python3 -m FedSolPython.scripts.build_and_save "input_server/config.json"
+[2026-06-03 13:56:57] [INFO] Starting build from config: input_server/config.json
+[2026-06-03 13:56:57] [INFO] Build/Save completed successfully: output_server/models/model_20260603_135657.pt
+[Wed Jun  3 13:56:57 2026] [INFO] [EXPORTER] Model exported successfully
+[Wed Jun  3 13:56:57 2026] [INFO] [RoundTimer] round_total_ms: 26862
+[Wed Jun  3 13:56:57 2026] [INFO] [RoundTimer] Timing saved -> output_server/globalResults/stats/timing_2026-06-03_13-56-57.json
+[Wed Jun  3 13:56:57 2026] [INFO] [SERVER] Completed one epoch. Remaining: 0
+[Wed Jun  3 13:56:57 2026] [INFO] [SERVER] Training finished.
+[Wed Jun  3 13:57:07 2026] [INFO] Client starting...
+[Wed Jun  3 13:57:07 2026] [INFO] [Server] Backdoor defense is DISABLED.
+[Wed Jun  3 13:57:07 2026] [INFO] [MODE] INITIALIZATION
+[Wed Jun  3 13:57:10 2026] [INFO] Client connected with socket id: 5
+[Wed Jun  3 13:57:10 2026] [DEBUG] Code: 0
+[Wed Jun  3 13:57:10 2026] [DEBUG] Content: Auth
+[Wed Jun  3 13:57:10 2026] [INFO] [Client 1] Authentication success
+[Wed Jun  3 13:57:10 2026] [INFO] [Client 1] Architecture verified
+[Wed Jun  3 13:57:10 2026] [INFO] [Client 1] Registered
+[Wed Jun  3 13:57:10 2026] [INFO] [MODE] READY
+[Wed Jun  3 13:57:13 2026] [INFO] Client connected with socket id: 6
+[Wed Jun  3 13:57:13 2026] [DEBUG] Code: 0
+[Wed Jun  3 13:57:13 2026] [DEBUG] Content: Auth
+[Wed Jun  3 13:57:13 2026] [INFO] [Client 2] Authentication success
+[Wed Jun  3 13:57:13 2026] [INFO] [Client 2] Architecture verified
+[Wed Jun  3 13:57:13 2026] [INFO] [Client 2] Registered
+[Wed Jun  3 13:57:18 2026] [INFO] [Console] Operator authenticated.
+[Wed Jun  3 13:57:31 2026] [INFO] Starting training...
+[Wed Jun  3 13:57:31 2026] [INFO] [RoundTimer] Round started.
+[Wed Jun  3 13:58:11 2026] [INFO] Client connected with socket id: 7
+[Wed Jun  3 13:58:12 2026] [DEBUG] Code: 1
+[Wed Jun  3 13:58:12 2026] [DEBUG] Content: Training Ended
+[Wed Jun  3 13:58:12 2026] [INFO] [Client 1] Finished training. Sample size: 31500
+[Wed Jun  3 13:58:50 2026] [INFO] Client connected with socket id: 8
+[Wed Jun  3 13:58:52 2026] [DEBUG] Code: 1
+[Wed Jun  3 13:58:52 2026] [DEBUG] Content: Training Ended
+[Wed Jun  3 13:58:52 2026] [INFO] [Client 2] Finished training. Sample size: 31500
+[Wed Jun  3 13:58:52 2026] [INFO] [RoundTimer] training_time_ms: 81117
+[Wed Jun  3 13:58:52 2026] [INFO] All clients finished. Aggregating...
+[Wed Jun  3 13:58:52 2026] [INFO] [NormClipping] Disabled. Passing all 2 client(s) through.
+[Wed Jun  3 13:58:52 2026] [INFO] [Aggregator] comm_time_ms: 552
+[Wed Jun  3 13:58:52 2026] [INFO] [Aggregator] aggregation_time_ms: 1
+[Wed Jun  3 13:58:52 2026] [INFO] [EXPORTER] Running: PYTHONPATH=code python3 -m FedSolPython.scripts.build_and_save "input_server/config.json"
+[2026-06-03 13:58:55] [INFO] Starting build from config: input_server/config.json
+[2026-06-03 13:58:55] [INFO] Build/Save completed successfully: output_server/models/model_20260603_135855.pt
+[Wed Jun  3 13:58:55 2026] [INFO] [EXPORTER] Model exported successfully
+[Wed Jun  3 13:58:55 2026] [INFO] [RoundTimer] round_total_ms: 84805
+[Wed Jun  3 13:58:55 2026] [INFO] [RoundTimer] Timing saved -> output_server/globalResults/stats/timing_2026-06-03_13-58-55.json
+[Wed Jun  3 13:58:55 2026] [INFO] [SERVER] Completed one epoch. Remaining: 4
+[Wed Jun  3 13:58:55 2026] [INFO] [RoundTimer] Round started.
+[Wed Jun  3 13:59:36 2026] [INFO] Client connected with socket id: 7
+[Wed Jun  3 13:59:37 2026] [DEBUG] Code: 1
+[Wed Jun  3 13:59:37 2026] [DEBUG] Content: Training Ended
+[Wed Jun  3 13:59:37 2026] [INFO] [Client 1] Finished training. Sample size: 31500
+[Wed Jun  3 14:00:14 2026] [INFO] Client connected with socket id: 8
+[Wed Jun  3 14:00:16 2026] [DEBUG] Code: 1
+[Wed Jun  3 14:00:16 2026] [DEBUG] Content: Training Ended
+[Wed Jun  3 14:00:16 2026] [INFO] [Client 2] Finished training. Sample size: 31500
+[Wed Jun  3 14:00:16 2026] [INFO] [RoundTimer] training_time_ms: 80214
+[Wed Jun  3 14:00:16 2026] [INFO] All clients finished. Aggregating...
+[Wed Jun  3 14:00:16 2026] [INFO] [NormClipping] Disabled. Passing all 2 client(s) through.
+[Wed Jun  3 14:00:16 2026] [INFO] [Aggregator] comm_time_ms: 205
+[Wed Jun  3 14:00:16 2026] [INFO] [Aggregator] aggregation_time_ms: 0
+[Wed Jun  3 14:00:16 2026] [INFO] [EXPORTER] Running: PYTHONPATH=code python3 -m FedSolPython.scripts.build_and_save "input_server/config.json"
+[2026-06-03 14:00:18] [INFO] Starting build from config: input_server/config.json
+[2026-06-03 14:00:18] [INFO] Build/Save completed successfully: output_server/models/model_20260603_140018.pt
+[Wed Jun  3 14:00:19 2026] [INFO] [EXPORTER] Model exported successfully
+[Wed Jun  3 14:00:19 2026] [INFO] [RoundTimer] round_total_ms: 83241
+[Wed Jun  3 14:00:19 2026] [INFO] [RoundTimer] Timing saved -> output_server/globalResults/stats/timing_2026-06-03_14-00-19.json
+[Wed Jun  3 14:00:19 2026] [INFO] [SERVER] Completed one epoch. Remaining: 3
+[Wed Jun  3 14:00:19 2026] [INFO] [RoundTimer] Round started.
+[Wed Jun  3 14:00:59 2026] [INFO] Client connected with socket id: 7
+[Wed Jun  3 14:01:00 2026] [DEBUG] Code: 1
+[Wed Jun  3 14:01:00 2026] [DEBUG] Content: Training Ended
+[Wed Jun  3 14:01:00 2026] [INFO] [Client 1] Finished training. Sample size: 31500
+[Wed Jun  3 14:01:37 2026] [INFO] Client connected with socket id: 8
+[Wed Jun  3 14:01:38 2026] [DEBUG] Code: 1
+[Wed Jun  3 14:01:38 2026] [DEBUG] Content: Training Ended
+[Wed Jun  3 14:01:38 2026] [INFO] [Client 2] Finished training. Sample size: 31500
+[Wed Jun  3 14:01:38 2026] [INFO] [RoundTimer] training_time_ms: 79824
+[Wed Jun  3 14:01:38 2026] [INFO] All clients finished. Aggregating...
+[Wed Jun  3 14:01:39 2026] [INFO] [NormClipping] Disabled. Passing all 2 client(s) through.
+[Wed Jun  3 14:01:39 2026] [INFO] [Aggregator] comm_time_ms: 836
+[Wed Jun  3 14:01:39 2026] [INFO] [Aggregator] aggregation_time_ms: 2
+[Wed Jun  3 14:01:40 2026] [INFO] [EXPORTER] Running: PYTHONPATH=code python3 -m FedSolPython.scripts.build_and_save "input_server/config.json"
+[2026-06-03 14:01:49] [INFO] Starting build from config: input_server/config.json
+[2026-06-03 14:01:49] [INFO] Build/Save completed successfully: output_server/models/model_20260603_140149.pt
+[Wed Jun  3 14:01:51 2026] [INFO] [EXPORTER] Model exported successfully
+[Wed Jun  3 14:01:51 2026] [INFO] [RoundTimer] round_total_ms: 92176
+[Wed Jun  3 14:01:51 2026] [INFO] [RoundTimer] Timing saved -> output_server/globalResults/stats/timing_2026-06-03_14-01-51.json
+[Wed Jun  3 14:01:51 2026] [INFO] [SERVER] Completed one epoch. Remaining: 2
+[Wed Jun  3 14:01:51 2026] [INFO] [RoundTimer] Round started.
+[Wed Jun  3 14:02:31 2026] [INFO] Client connected with socket id: 7
+[Wed Jun  3 14:02:32 2026] [DEBUG] Code: 1
+[Wed Jun  3 14:02:32 2026] [DEBUG] Content: Training Ended
+[Wed Jun  3 14:02:32 2026] [INFO] [Client 1] Finished training. Sample size: 31500
+[Wed Jun  3 14:03:09 2026] [INFO] Client connected with socket id: 8
+[Wed Jun  3 14:03:11 2026] [DEBUG] Code: 1
+[Wed Jun  3 14:03:11 2026] [DEBUG] Content: Training Ended
+[Wed Jun  3 14:03:11 2026] [INFO] [Client 2] Finished training. Sample size: 31500
+[Wed Jun  3 14:03:11 2026] [INFO] [RoundTimer] training_time_ms: 79879
+[Wed Jun  3 14:03:11 2026] [INFO] All clients finished. Aggregating...
+[Wed Jun  3 14:03:11 2026] [INFO] [NormClipping] Disabled. Passing all 2 client(s) through.
+[Wed Jun  3 14:03:11 2026] [INFO] [Aggregator] comm_time_ms: 308
+[Wed Jun  3 14:03:11 2026] [INFO] [Aggregator] aggregation_time_ms: 0
+[Wed Jun  3 14:03:11 2026] [INFO] [EXPORTER] Running: PYTHONPATH=code python3 -m FedSolPython.scripts.build_and_save "input_server/config.json"
+[2026-06-03 14:03:13] [INFO] Starting build from config: input_server/config.json
+[2026-06-03 14:03:13] [INFO] Build/Save completed successfully: output_server/models/model_20260603_140313.pt
+[Wed Jun  3 14:03:13 2026] [INFO] [EXPORTER] Model exported successfully
+[Wed Jun  3 14:03:13 2026] [INFO] [RoundTimer] round_total_ms: 82715
+[Wed Jun  3 14:03:13 2026] [INFO] [RoundTimer] Timing saved -> output_server/globalResults/stats/timing_2026-06-03_14-03-13.json
+[Wed Jun  3 14:03:13 2026] [INFO] [SERVER] Completed one epoch. Remaining: 1
+[Wed Jun  3 14:03:13 2026] [INFO] [RoundTimer] Round started.
+[Wed Jun  3 14:03:54 2026] [INFO] Client connected with socket id: 7
+[Wed Jun  3 14:03:55 2026] [DEBUG] Code: 1
+[Wed Jun  3 14:03:55 2026] [DEBUG] Content: Training Ended
+[Wed Jun  3 14:03:55 2026] [INFO] [Client 1] Finished training. Sample size: 31500
+[Wed Jun  3 14:04:32 2026] [INFO] Client connected with socket id: 8
+[Wed Jun  3 14:04:33 2026] [DEBUG] Code: 1
+[Wed Jun  3 14:04:33 2026] [DEBUG] Content: Training Ended
+[Wed Jun  3 14:04:33 2026] [INFO] [Client 2] Finished training. Sample size: 31500
+[Wed Jun  3 14:04:33 2026] [INFO] [RoundTimer] training_time_ms: 79842
+[Wed Jun  3 14:04:33 2026] [INFO] All clients finished. Aggregating...
+[Wed Jun  3 14:04:34 2026] [INFO] [NormClipping] Disabled. Passing all 2 client(s) through.
+[Wed Jun  3 14:04:34 2026] [INFO] [Aggregator] comm_time_ms: 1029
+[Wed Jun  3 14:04:34 2026] [INFO] [Aggregator] aggregation_time_ms: 4
+[Wed Jun  3 14:04:35 2026] [INFO] [EXPORTER] Running: PYTHONPATH=code python3 -m FedSolPython.scripts.build_and_save "input_server/config.json"
+[2026-06-03 14:04:36] [INFO] Starting build from config: input_server/config.json
+[2026-06-03 14:04:37] [INFO] Build/Save completed successfully: output_server/models/model_20260603_140437.pt
+[Wed Jun  3 14:04:37 2026] [INFO] [EXPORTER] Model exported successfully
+[Wed Jun  3 14:04:37 2026] [INFO] [RoundTimer] round_total_ms: 83512
+[Wed Jun  3 14:04:37 2026] [INFO] [RoundTimer] Timing saved -> output_server/globalResults/stats/timing_2026-06-03_14-04-37.json
+[Wed Jun  3 14:04:37 2026] [INFO] [SERVER] Completed one epoch. Remaining: 0
+[Wed Jun  3 14:04:37 2026] [INFO] [SERVER] Training finished.
+[Wed Jun  3 14:06:07 2026] [WARNING] overwrite current model weights.
+[Wed Jun  3 14:06:09 2026] [INFO] Random weights generated and loaded into model.
+[Wed Jun  3 14:06:26 2026] [INFO] Starting training...
+[Wed Jun  3 14:06:26 2026] [INFO] [RoundTimer] Round started.
+[Wed Jun  3 14:07:06 2026] [INFO] Client connected with socket id: 7
+[Wed Jun  3 14:07:07 2026] [DEBUG] Code: 1
+[Wed Jun  3 14:07:07 2026] [DEBUG] Content: Training Ended
+[Wed Jun  3 14:07:07 2026] [INFO] [Client 1] Finished training. Sample size: 31500
+[Wed Jun  3 14:07:45 2026] [INFO] Client connected with socket id: 8
+[Wed Jun  3 14:07:46 2026] [DEBUG] Code: 1
+[Wed Jun  3 14:07:46 2026] [DEBUG] Content: Training Ended
+[Wed Jun  3 14:07:46 2026] [INFO] [Client 2] Finished training. Sample size: 31500
+[Wed Jun  3 14:07:46 2026] [INFO] [RoundTimer] training_time_ms: 80329
+[Wed Jun  3 14:07:46 2026] [INFO] All clients finished. Aggregating...
+[Wed Jun  3 14:07:47 2026] [INFO] [NormClipping] Disabled. Passing all 2 client(s) through.
+[Wed Jun  3 14:07:47 2026] [INFO] [Aggregator] comm_time_ms: 601
+[Wed Jun  3 14:07:47 2026] [INFO] [Aggregator] aggregation_time_ms: 1
+[Wed Jun  3 14:07:47 2026] [INFO] [EXPORTER] Running: PYTHONPATH=code python3 -m FedSolPython.scripts.build_and_save "input_server/config.json"
+[2026-06-03 14:07:48] [INFO] Starting build from config: input_server/config.json
+[2026-06-03 14:07:48] [INFO] Build/Save completed successfully: output_server/models/model_20260603_140748.pt
+[Wed Jun  3 14:07:49 2026] [INFO] [EXPORTER] Model exported successfully
+[Wed Jun  3 14:07:49 2026] [INFO] [RoundTimer] round_total_ms: 83181
+[Wed Jun  3 14:07:49 2026] [INFO] [RoundTimer] Timing saved -> output_server/globalResults/stats/timing_2026-06-03_14-07-49.json
+[Wed Jun  3 14:07:49 2026] [INFO] [SERVER] Completed one epoch. Remaining: 4
+[Wed Jun  3 14:07:49 2026] [INFO] [RoundTimer] Round started.
+[Wed Jun  3 14:08:29 2026] [INFO] Client connected with socket id: 7
+[Wed Jun  3 14:08:30 2026] [DEBUG] Code: 1
+[Wed Jun  3 14:08:30 2026] [DEBUG] Content: Training Ended
+[Wed Jun  3 14:08:30 2026] [INFO] [Client 1] Finished training. Sample size: 31500
+[Wed Jun  3 14:09:07 2026] [INFO] Client connected with socket id: 8
+[Wed Jun  3 14:09:09 2026] [DEBUG] Code: 1
+[Wed Jun  3 14:09:09 2026] [DEBUG] Content: Training Ended
+[Wed Jun  3 14:09:09 2026] [INFO] [Client 2] Finished training. Sample size: 31500
+[Wed Jun  3 14:09:09 2026] [INFO] [RoundTimer] training_time_ms: 79811
+[Wed Jun  3 14:09:09 2026] [INFO] All clients finished. Aggregating...
+[Wed Jun  3 14:09:09 2026] [INFO] [NormClipping] Disabled. Passing all 2 client(s) through.
+[Wed Jun  3 14:09:09 2026] [INFO] [Aggregator] comm_time_ms: 173
+[Wed Jun  3 14:09:09 2026] [INFO] [Aggregator] aggregation_time_ms: 2
+[Wed Jun  3 14:09:09 2026] [INFO] [EXPORTER] Running: PYTHONPATH=code python3 -m FedSolPython.scripts.build_and_save "input_server/config.json"
+[2026-06-03 14:09:10] [INFO] Starting build from config: input_server/config.json
+[2026-06-03 14:09:11] [INFO] Build/Save completed successfully: output_server/models/model_20260603_140911.pt
+[Wed Jun  3 14:09:11 2026] [INFO] [EXPORTER] Model exported successfully
+[Wed Jun  3 14:09:11 2026] [INFO] [RoundTimer] round_total_ms: 82085
+[Wed Jun  3 14:09:11 2026] [INFO] [RoundTimer] Timing saved -> output_server/globalResults/stats/timing_2026-06-03_14-09-11.json
+[Wed Jun  3 14:09:11 2026] [INFO] [SERVER] Completed one epoch. Remaining: 3
+[Wed Jun  3 14:09:11 2026] [INFO] [RoundTimer] Round started.
+[Wed Jun  3 14:09:52 2026] [INFO] Client connected with socket id: 7
+[Wed Jun  3 14:09:52 2026] [DEBUG] Code: 1
+[Wed Jun  3 14:09:52 2026] [DEBUG] Content: Training Ended
+[Wed Jun  3 14:09:52 2026] [INFO] [Client 1] Finished training. Sample size: 31500
+[Wed Jun  3 14:10:30 2026] [INFO] Client connected with socket id: 8
+[Wed Jun  3 14:10:31 2026] [DEBUG] Code: 1
+[Wed Jun  3 14:10:31 2026] [DEBUG] Content: Training Ended
+[Wed Jun  3 14:10:31 2026] [INFO] [Client 2] Finished training. Sample size: 31500
+[Wed Jun  3 14:10:31 2026] [INFO] [RoundTimer] training_time_ms: 80423
+[Wed Jun  3 14:10:31 2026] [INFO] All clients finished. Aggregating...
+[Wed Jun  3 14:10:32 2026] [INFO] [NormClipping] Disabled. Passing all 2 client(s) through.
+[Wed Jun  3 14:10:32 2026] [INFO] [Aggregator] comm_time_ms: 395
+[Wed Jun  3 14:10:32 2026] [INFO] [Aggregator] aggregation_time_ms: 2
+[Wed Jun  3 14:10:32 2026] [INFO] [EXPORTER] Running: PYTHONPATH=code python3 -m FedSolPython.scripts.build_and_save "input_server/config.json"
+[2026-06-03 14:10:34] [INFO] Starting build from config: input_server/config.json
+[2026-06-03 14:10:34] [INFO] Build/Save completed successfully: output_server/models/model_20260603_141034.pt
+[Wed Jun  3 14:10:34 2026] [INFO] [EXPORTER] Model exported successfully
+[Wed Jun  3 14:10:34 2026] [INFO] [RoundTimer] round_total_ms: 83138
+[Wed Jun  3 14:10:34 2026] [INFO] [RoundTimer] Timing saved -> output_server/globalResults/stats/timing_2026-06-03_14-10-34.json
+[Wed Jun  3 14:10:34 2026] [INFO] [SERVER] Completed one epoch. Remaining: 2
+[Wed Jun  3 14:10:34 2026] [INFO] [RoundTimer] Round started.
+[Wed Jun  3 14:11:15 2026] [INFO] Client connected with socket id: 7
+[Wed Jun  3 14:11:16 2026] [DEBUG] Code: 1
+[Wed Jun  3 14:11:16 2026] [DEBUG] Content: Training Ended
+[Wed Jun  3 14:11:16 2026] [INFO] [Client 1] Finished training. Sample size: 31500
+[Wed Jun  3 14:11:53 2026] [INFO] Client connected with socket id: 8
+[Wed Jun  3 14:11:55 2026] [DEBUG] Code: 1
+[Wed Jun  3 14:11:55 2026] [DEBUG] Content: Training Ended
+[Wed Jun  3 14:11:55 2026] [INFO] [Client 2] Finished training. Sample size: 31500
+[Wed Jun  3 14:11:55 2026] [INFO] [RoundTimer] training_time_ms: 80516
+[Wed Jun  3 14:11:55 2026] [INFO] All clients finished. Aggregating...
+[Wed Jun  3 14:11:55 2026] [INFO] [NormClipping] Disabled. Passing all 2 client(s) through.
+[Wed Jun  3 14:11:55 2026] [INFO] [Aggregator] comm_time_ms: 611
+[Wed Jun  3 14:11:55 2026] [INFO] [Aggregator] aggregation_time_ms: 0
+[Wed Jun  3 14:11:55 2026] [INFO] [EXPORTER] Running: PYTHONPATH=code python3 -m FedSolPython.scripts.build_and_save "input_server/config.json"
+[2026-06-03 14:11:57] [INFO] Starting build from config: input_server/config.json
+[2026-06-03 14:11:57] [INFO] Build/Save completed successfully: output_server/models/model_20260603_141157.pt
+[Wed Jun  3 14:11:57 2026] [INFO] [EXPORTER] Model exported successfully
+[Wed Jun  3 14:11:57 2026] [INFO] [RoundTimer] round_total_ms: 83284
+[Wed Jun  3 14:11:57 2026] [INFO] [RoundTimer] Timing saved -> output_server/globalResults/stats/timing_2026-06-03_14-11-57.json
+[Wed Jun  3 14:11:57 2026] [INFO] [SERVER] Completed one epoch. Remaining: 1
+[Wed Jun  3 14:11:57 2026] [INFO] [RoundTimer] Round started.
+[Wed Jun  3 14:12:38 2026] [INFO] Client connected with socket id: 7
+[Wed Jun  3 14:12:39 2026] [DEBUG] Code: 1
+[Wed Jun  3 14:12:39 2026] [DEBUG] Content: Training Ended
+[Wed Jun  3 14:12:39 2026] [INFO] [Client 1] Finished training. Sample size: 31500
+[Wed Jun  3 14:13:16 2026] [INFO] Client connected with socket id: 8
+[Wed Jun  3 14:13:17 2026] [DEBUG] Code: 1
+[Wed Jun  3 14:13:17 2026] [DEBUG] Content: Training Ended
+[Wed Jun  3 14:13:17 2026] [INFO] [Client 2] Finished training. Sample size: 31500
+[Wed Jun  3 14:13:17 2026] [INFO] [RoundTimer] training_time_ms: 79963
+[Wed Jun  3 14:13:17 2026] [INFO] All clients finished. Aggregating...
+[Wed Jun  3 14:13:18 2026] [INFO] [NormClipping] Disabled. Passing all 2 client(s) through.
+[Wed Jun  3 14:13:18 2026] [INFO] [Aggregator] comm_time_ms: 332
+[Wed Jun  3 14:13:18 2026] [INFO] [Aggregator] aggregation_time_ms: 0
+[Wed Jun  3 14:13:18 2026] [INFO] [EXPORTER] Running: PYTHONPATH=code python3 -m FedSolPython.scripts.build_and_save "input_server/config.json"
+[2026-06-03 14:13:20] [INFO] Starting build from config: input_server/config.json
+[2026-06-03 14:13:20] [INFO] Build/Save completed successfully: output_server/models/model_20260603_141320.pt
+[Wed Jun  3 14:13:20 2026] [INFO] [EXPORTER] Model exported successfully
+[Wed Jun  3 14:13:20 2026] [INFO] [RoundTimer] round_total_ms: 83058
+[Wed Jun  3 14:13:20 2026] [INFO] [RoundTimer] Timing saved -> output_server/globalResults/stats/timing_2026-06-03_14-13-20.json
+[Wed Jun  3 14:13:20 2026] [INFO] [SERVER] Completed one epoch. Remaining: 0
+[Wed Jun  3 14:13:20 2026] [INFO] [SERVER] Training finished.
+[Wed Jun  3 15:03:24 2026] [INFO] [EVALUATOR] Running evaluation script: evaluate
+[Wed Jun  3 15:03:30 2026] [INFO] [EVALUATOR] Evaluation completed successfully
+[Wed Jun  3 21:14:04 2026] [INFO] Client starting...
+[Wed Jun  3 21:14:04 2026] [INFO] [Server] Backdoor defense is DISABLED.
+[Wed Jun  3 21:14:04 2026] [INFO] [MODE] INITIALIZATION
+[Wed Jun  3 21:14:09 2026] [INFO] [Console] Operator authenticated.
+[Wed Jun  3 21:19:21 2026] [INFO] Client connected with socket id: 5
+[Wed Jun  3 21:19:21 2026] [DEBUG] Code: 0
+[Wed Jun  3 21:19:21 2026] [DEBUG] Content: Auth
+[Wed Jun  3 21:19:21 2026] [INFO] [Client 2] Authentication success
+[Wed Jun  3 21:19:21 2026] [INFO] [Client 2] Architecture verified
+[Wed Jun  3 21:19:21 2026] [INFO] [Client 2] Registered
+[Wed Jun  3 21:19:21 2026] [INFO] [MODE] READY
+[Wed Jun  3 21:19:44 2026] [INFO] Client connected with socket id: 6
+[Wed Jun  3 21:19:44 2026] [DEBUG] Code: 0
+[Wed Jun  3 21:19:44 2026] [DEBUG] Content: Auth
+[Wed Jun  3 21:19:44 2026] [INFO] [Client 1] Authentication success
+[Wed Jun  3 21:19:44 2026] [INFO] [Client 1] Architecture verified
+[Wed Jun  3 21:19:44 2026] [INFO] [Client 1] Registered
+[Wed Jun  3 21:21:20 2026] [INFO] [DatasetSplitter] Running: PYTHONPATH=code python3 -m FedSolPython.scripts.split_dataset input_server/dataset_train.npz 2
+[2026-06-03 21:21:21] [INFO] [split_dataset] NPZ — 63000 samples → 2 clients
+[2026-06-03 21:21:21] [INFO] [split_dataset] Client 0: 31500 samples → input_server/dataset_train_0.npz
+[2026-06-03 21:21:21] [INFO] [split_dataset] Client 1: 31500 samples → input_server/dataset_train_1.npz
+[2026-06-03 21:21:21] [INFO] [split_dataset] Done. 2 .npz files saved to 'input_server/'
+[Wed Jun  3 21:21:21 2026] [INFO] [DatasetSplitter] Split completed successfully
+[Wed Jun  3 21:21:21 2026] [INFO] [Protocol] Sending file: ./input_server/dataset_train_0.npz (24727990 bytes)
+[Wed Jun  3 21:21:21 2026] [INFO] [Protocol] Sending file: ./input_server/dataset_train_1.npz (24727990 bytes)
+[Wed Jun  3 21:21:28 2026] [WARNING] overwrite current model weights.
+[Wed Jun  3 21:21:29 2026] [INFO] Random weights generated and loaded into model.
+[Wed Jun  3 21:21:34 2026] [INFO] Starting training...
+[Wed Jun  3 21:21:34 2026] [INFO] [RoundTimer] Round started.
+[Wed Jun  3 21:23:40 2026] [INFO] Client connected with socket id: 7
+[Wed Jun  3 21:23:43 2026] [INFO] Client connected with socket id: 8
+[Wed Jun  3 21:23:44 2026] [DEBUG] Code: 1
+[Wed Jun  3 21:23:44 2026] [DEBUG] Content: Training Ended
+[Wed Jun  3 21:23:44 2026] [INFO] [Client 2] Finished training. Sample size: 31500
+[Wed Jun  3 21:23:47 2026] [DEBUG] Code: 1
+[Wed Jun  3 21:23:47 2026] [DEBUG] Content: Training Ended
+[Wed Jun  3 21:23:47 2026] [INFO] [Client 1] Finished training. Sample size: 31500
+[Wed Jun  3 21:23:47 2026] [INFO] [RoundTimer] training_time_ms: 133054
+[Wed Jun  3 21:23:47 2026] [INFO] All clients finished. Aggregating...
+[Wed Jun  3 21:23:47 2026] [INFO] [NormClipping] Disabled. Passing all 2 client(s) through.
+[Wed Jun  3 21:23:47 2026] [INFO] [Aggregator] comm_time_ms: 634
+[Wed Jun  3 21:23:47 2026] [INFO] [Aggregator] aggregation_time_ms: 0
+[Wed Jun  3 21:23:47 2026] [INFO] [EXPORTER] Running: PYTHONPATH=code python3 -m FedSolPython.scripts.build_and_save "input_server/config.json"
+[2026-06-03 21:23:49] [INFO] Starting build from config: input_server/config.json
+[2026-06-03 21:23:49] [INFO] Build/Save completed successfully: output_server/models/model_20260603_212349.pt
+[Wed Jun  3 21:23:49 2026] [INFO] [EXPORTER] Model exported successfully
+[Wed Jun  3 21:23:49 2026] [INFO] [RoundTimer] round_total_ms: 135571
+[Wed Jun  3 21:23:49 2026] [INFO] [RoundTimer] Timing saved -> output_server/globalResults/stats/timing_2026-06-03_21-23-49.json
+[Wed Jun  3 21:23:49 2026] [INFO] [SERVER] Completed one epoch. Remaining: 4
+[Wed Jun  3 21:23:49 2026] [INFO] [RoundTimer] Round started.
+[Wed Jun  3 21:25:16 2026] [INFO] Client connected with socket id: 7
+[Wed Jun  3 21:25:17 2026] [INFO] Client connected with socket id: 8
+[Wed Jun  3 21:25:21 2026] [DEBUG] Code: 1
+[Wed Jun  3 21:25:21 2026] [DEBUG] Content: Training Ended
+[Wed Jun  3 21:25:21 2026] [INFO] [Client 1] Finished training. Sample size: 31500
+[Wed Jun  3 21:25:21 2026] [DEBUG] Code: 1
+[Wed Jun  3 21:25:21 2026] [DEBUG] Content: Training Ended
+[Wed Jun  3 21:25:21 2026] [INFO] [Client 2] Finished training. Sample size: 31500
+[Wed Jun  3 21:25:21 2026] [INFO] [RoundTimer] training_time_ms: 92083
+[Wed Jun  3 21:25:21 2026] [INFO] All clients finished. Aggregating...
+[Wed Jun  3 21:25:22 2026] [INFO] [NormClipping] Disabled. Passing all 2 client(s) through.
+[Wed Jun  3 21:25:22 2026] [INFO] [Aggregator] comm_time_ms: 575
+[Wed Jun  3 21:25:22 2026] [INFO] [Aggregator] aggregation_time_ms: 0
+[Wed Jun  3 21:25:22 2026] [INFO] [EXPORTER] Running: PYTHONPATH=code python3 -m FedSolPython.scripts.build_and_save "input_server/config.json"
+[2026-06-03 21:25:23] [INFO] Starting build from config: input_server/config.json
+[2026-06-03 21:25:23] [INFO] Build/Save completed successfully: output_server/models/model_20260603_212523.pt
+[Wed Jun  3 21:25:24 2026] [INFO] [EXPORTER] Model exported successfully
+[Wed Jun  3 21:25:24 2026] [INFO] [RoundTimer] round_total_ms: 94663
+[Wed Jun  3 21:25:24 2026] [INFO] [RoundTimer] Timing saved -> output_server/globalResults/stats/timing_2026-06-03_21-25-24.json
+[Wed Jun  3 21:25:24 2026] [INFO] [SERVER] Completed one epoch. Remaining: 3
+[Wed Jun  3 21:25:24 2026] [INFO] [RoundTimer] Round started.
+[Wed Jun  3 21:26:11 2026] [INFO] Client connected with socket id: 7
+[Wed Jun  3 21:26:13 2026] [DEBUG] Code: 1
+[Wed Jun  3 21:26:13 2026] [DEBUG] Content: Training Ended
+[Wed Jun  3 21:26:13 2026] [INFO] [Client 1] Finished training. Sample size: 31500
+[Wed Jun  3 21:26:43 2026] [INFO] Client connected with socket id: 8
+[Wed Jun  3 21:26:47 2026] [DEBUG] Code: 1
+[Wed Jun  3 21:26:47 2026] [DEBUG] Content: Training Ended
+[Wed Jun  3 21:26:47 2026] [INFO] [Client 2] Finished training. Sample size: 31500
+[Wed Jun  3 21:26:47 2026] [INFO] [RoundTimer] training_time_ms: 83128
+[Wed Jun  3 21:26:47 2026] [INFO] All clients finished. Aggregating...
+[Wed Jun  3 21:26:47 2026] [INFO] [NormClipping] Disabled. Passing all 2 client(s) through.
+[Wed Jun  3 21:26:47 2026] [INFO] [Aggregator] comm_time_ms: 527
+[Wed Jun  3 21:26:47 2026] [INFO] [Aggregator] aggregation_time_ms: 1
+[Wed Jun  3 21:26:48 2026] [INFO] [EXPORTER] Running: PYTHONPATH=code python3 -m FedSolPython.scripts.build_and_save "input_server/config.json"
+[2026-06-03 21:26:49] [INFO] Starting build from config: input_server/config.json
+[2026-06-03 21:26:49] [INFO] Build/Save completed successfully: output_server/models/model_20260603_212649.pt
+[Wed Jun  3 21:26:49 2026] [INFO] [EXPORTER] Model exported successfully
+[Wed Jun  3 21:26:49 2026] [INFO] [RoundTimer] round_total_ms: 85507
+[Wed Jun  3 21:26:49 2026] [INFO] [RoundTimer] Timing saved -> output_server/globalResults/stats/timing_2026-06-03_21-26-49.json
+[Wed Jun  3 21:26:49 2026] [INFO] [SERVER] Completed one epoch. Remaining: 2
+[Wed Jun  3 21:26:49 2026] [INFO] [RoundTimer] Round started.
+[Wed Jun  3 21:27:32 2026] [INFO] Client connected with socket id: 7
+[Wed Jun  3 21:27:33 2026] [DEBUG] Code: 1
+[Wed Jun  3 21:27:33 2026] [DEBUG] Content: Training Ended
+[Wed Jun  3 21:27:33 2026] [INFO] [Client 1] Finished training. Sample size: 31500
+[Wed Jun  3 21:27:48 2026] [INFO] Client connected with socket id: 8
+[Wed Jun  3 21:27:50 2026] [DEBUG] Code: 1
+[Wed Jun  3 21:27:50 2026] [DEBUG] Content: Training Ended
+[Wed Jun  3 21:27:50 2026] [INFO] [Client 2] Finished training. Sample size: 31500
+[Wed Jun  3 21:27:50 2026] [INFO] [RoundTimer] training_time_ms: 60699
+[Wed Jun  3 21:27:50 2026] [INFO] All clients finished. Aggregating...
+[Wed Jun  3 21:27:51 2026] [INFO] [NormClipping] Disabled. Passing all 2 client(s) through.
+[Wed Jun  3 21:27:51 2026] [INFO] [Aggregator] comm_time_ms: 630
+[Wed Jun  3 21:27:51 2026] [INFO] [Aggregator] aggregation_time_ms: 1
+[Wed Jun  3 21:27:51 2026] [INFO] [EXPORTER] Running: PYTHONPATH=code python3 -m FedSolPython.scripts.build_and_save "input_server/config.json"
+[2026-06-03 21:27:52] [INFO] Starting build from config: input_server/config.json
+[2026-06-03 21:27:52] [INFO] Build/Save completed successfully: output_server/models/model_20260603_212752.pt
+[Wed Jun  3 21:27:52 2026] [INFO] [EXPORTER] Model exported successfully
+[Wed Jun  3 21:27:52 2026] [INFO] [RoundTimer] round_total_ms: 63169
+[Wed Jun  3 21:27:52 2026] [INFO] [RoundTimer] Timing saved -> output_server/globalResults/stats/timing_2026-06-03_21-27-52.json
+[Wed Jun  3 21:27:52 2026] [INFO] [SERVER] Completed one epoch. Remaining: 1
+[Wed Jun  3 21:27:52 2026] [INFO] [RoundTimer] Round started.
+[Wed Jun  3 21:28:31 2026] [INFO] Client connected with socket id: 7
+[Wed Jun  3 21:28:33 2026] [DEBUG] Code: 1
+[Wed Jun  3 21:28:33 2026] [DEBUG] Content: Training Ended
+[Wed Jun  3 21:28:33 2026] [INFO] [Client 1] Finished training. Sample size: 31500
+[Wed Jun  3 21:28:33 2026] [INFO] Client connected with socket id: 8
+[Wed Jun  3 21:28:35 2026] [DEBUG] Code: 1
+[Wed Jun  3 21:28:35 2026] [DEBUG] Content: Training Ended
+[Wed Jun  3 21:28:35 2026] [INFO] [Client 2] Finished training. Sample size: 31500
+[Wed Jun  3 21:28:35 2026] [INFO] [RoundTimer] training_time_ms: 42172
+[Wed Jun  3 21:28:35 2026] [INFO] All clients finished. Aggregating...
+[Wed Jun  3 21:28:35 2026] [INFO] [NormClipping] Disabled. Passing all 2 client(s) through.
+[Wed Jun  3 21:28:35 2026] [INFO] [Aggregator] comm_time_ms: 641
+[Wed Jun  3 21:28:35 2026] [INFO] [Aggregator] aggregation_time_ms: 1
+[Wed Jun  3 21:28:35 2026] [INFO] [EXPORTER] Running: PYTHONPATH=code python3 -m FedSolPython.scripts.build_and_save "input_server/config.json"
+[2026-06-03 21:28:37] [INFO] Starting build from config: input_server/config.json
+[2026-06-03 21:28:37] [INFO] Build/Save completed successfully: output_server/models/model_20260603_212837.pt
+[Wed Jun  3 21:28:37 2026] [INFO] [EXPORTER] Model exported successfully
+[Wed Jun  3 21:28:37 2026] [INFO] [RoundTimer] round_total_ms: 44684
+[Wed Jun  3 21:28:37 2026] [INFO] [RoundTimer] Timing saved -> output_server/globalResults/stats/timing_2026-06-03_21-28-37.json
+[Wed Jun  3 21:28:37 2026] [INFO] [SERVER] Completed one epoch. Remaining: 0
+[Wed Jun  3 21:28:37 2026] [INFO] [SERVER] Training finished.
+[Wed Jun  3 22:29:07 2026] [INFO] Starting training...
+[Wed Jun  3 22:29:07 2026] [INFO] [RoundTimer] Round started.
+[Wed Jun  3 22:29:44 2026] [INFO] Client connected with socket id: 7
+[Wed Jun  3 22:29:45 2026] [DEBUG] Code: 1
+[Wed Jun  3 22:29:45 2026] [DEBUG] Content: Training Ended
+[Wed Jun  3 22:29:45 2026] [INFO] [Client 1] Finished training. Sample size: 31500
+[Wed Jun  3 22:29:45 2026] [INFO] Client connected with socket id: 8
+[Wed Jun  3 22:29:47 2026] [DEBUG] Code: 1
+[Wed Jun  3 22:29:47 2026] [DEBUG] Content: Training Ended
+[Wed Jun  3 22:29:47 2026] [INFO] [Client 2] Finished training. Sample size: 31500
+[Wed Jun  3 22:29:47 2026] [INFO] [RoundTimer] training_time_ms: 39308
+[Wed Jun  3 22:29:47 2026] [INFO] All clients finished. Aggregating...
+[Wed Jun  3 22:29:47 2026] [INFO] [NormClipping] Disabled. Passing all 2 client(s) through.
+[Wed Jun  3 22:29:47 2026] [INFO] [Aggregator] comm_time_ms: 227
+[Wed Jun  3 22:29:47 2026] [INFO] [Aggregator] aggregation_time_ms: 0
+[Wed Jun  3 22:29:47 2026] [INFO] [EXPORTER] Running: PYTHONPATH=code python3 -m FedSolPython.scripts.build_and_save "input_server/config.json"
+[2026-06-03 22:29:49] [INFO] Starting build from config: input_server/config.json
+[2026-06-03 22:29:49] [INFO] Build/Save completed successfully: output_server/models/model_20260603_222949.pt
+[Wed Jun  3 22:29:49 2026] [INFO] [EXPORTER] Model exported successfully
+[Wed Jun  3 22:29:49 2026] [INFO] [RoundTimer] round_total_ms: 41949
+[Wed Jun  3 22:29:49 2026] [INFO] [RoundTimer] Timing saved -> output_server/globalResults/stats/timing_2026-06-03_22-29-49.json
+[Wed Jun  3 22:29:49 2026] [INFO] [SERVER] Completed one epoch. Remaining: 4
+[Wed Jun  3 22:29:49 2026] [INFO] [RoundTimer] Round started.
+[Wed Jun  3 22:30:25 2026] [INFO] Client connected with socket id: 7
+[Wed Jun  3 22:30:25 2026] [INFO] Client connected with socket id: 8
+[Wed Jun  3 22:30:26 2026] [DEBUG] Code: 1
+[Wed Jun  3 22:30:26 2026] [DEBUG] Content: Training Ended
+[Wed Jun  3 22:30:26 2026] [INFO] [Client 1] Finished training. Sample size: 31500
+[Wed Jun  3 22:30:26 2026] [DEBUG] Code: 1
+[Wed Jun  3 22:30:26 2026] [DEBUG] Content: Training Ended
+[Wed Jun  3 22:30:26 2026] [INFO] [Client 2] Finished training. Sample size: 31500
+[Wed Jun  3 22:30:26 2026] [INFO] [RoundTimer] training_time_ms: 37177
+[Wed Jun  3 22:30:26 2026] [INFO] All clients finished. Aggregating...
+[Wed Jun  3 22:30:27 2026] [INFO] [NormClipping] Disabled. Passing all 2 client(s) through.
+[Wed Jun  3 22:30:27 2026] [INFO] [Aggregator] comm_time_ms: 818
+[Wed Jun  3 22:30:27 2026] [INFO] [Aggregator] aggregation_time_ms: 1
+[Wed Jun  3 22:30:27 2026] [INFO] [EXPORTER] Running: PYTHONPATH=code python3 -m FedSolPython.scripts.build_and_save "input_server/config.json"
+[2026-06-03 22:30:29] [INFO] Starting build from config: input_server/config.json
+[2026-06-03 22:30:29] [INFO] Build/Save completed successfully: output_server/models/model_20260603_223029.pt
+[Wed Jun  3 22:30:30 2026] [INFO] [EXPORTER] Model exported successfully
+[Wed Jun  3 22:30:30 2026] [INFO] [RoundTimer] round_total_ms: 40422
+[Wed Jun  3 22:30:30 2026] [INFO] [RoundTimer] Timing saved -> output_server/globalResults/stats/timing_2026-06-03_22-30-30.json
+[Wed Jun  3 22:30:30 2026] [INFO] [SERVER] Completed one epoch. Remaining: 3
+[Wed Jun  3 22:30:30 2026] [INFO] [RoundTimer] Round started.
+[Wed Jun  3 22:31:05 2026] [INFO] Client connected with socket id: 7
+[Wed Jun  3 22:31:06 2026] [DEBUG] Code: 1
+[Wed Jun  3 22:31:06 2026] [DEBUG] Content: Training Ended
+[Wed Jun  3 22:31:06 2026] [INFO] [Client 2] Finished training. Sample size: 31500
+[Wed Jun  3 22:31:11 2026] [INFO] Client connected with socket id: 8
+[Wed Jun  3 22:31:13 2026] [DEBUG] Code: 1
+[Wed Jun  3 22:31:13 2026] [DEBUG] Content: Training Ended
+[Wed Jun  3 22:31:13 2026] [INFO] [Client 1] Finished training. Sample size: 31500
+[Wed Jun  3 22:31:13 2026] [INFO] [RoundTimer] training_time_ms: 43250
+[Wed Jun  3 22:31:13 2026] [INFO] All clients finished. Aggregating...
+[Wed Jun  3 22:31:14 2026] [INFO] [NormClipping] Disabled. Passing all 2 client(s) through.
+[Wed Jun  3 22:31:14 2026] [INFO] [Aggregator] comm_time_ms: 777
+[Wed Jun  3 22:31:14 2026] [INFO] [Aggregator] aggregation_time_ms: 0
+[Wed Jun  3 22:31:14 2026] [INFO] [EXPORTER] Running: PYTHONPATH=code python3 -m FedSolPython.scripts.build_and_save "input_server/config.json"
+[2026-06-03 22:31:15] [INFO] Starting build from config: input_server/config.json
+[2026-06-03 22:31:15] [INFO] Build/Save completed successfully: output_server/models/model_20260603_223115.pt
+[Wed Jun  3 22:31:16 2026] [INFO] [EXPORTER] Model exported successfully
+[Wed Jun  3 22:31:16 2026] [INFO] [RoundTimer] round_total_ms: 45951
+[Wed Jun  3 22:31:16 2026] [INFO] [RoundTimer] Timing saved -> output_server/globalResults/stats/timing_2026-06-03_22-31-16.json
+[Wed Jun  3 22:31:16 2026] [INFO] [SERVER] Completed one epoch. Remaining: 2
+[Wed Jun  3 22:31:16 2026] [INFO] [RoundTimer] Round started.
+[Wed Jun  3 22:31:51 2026] [INFO] Client connected with socket id: 7
+[Wed Jun  3 22:31:53 2026] [DEBUG] Code: 1
+[Wed Jun  3 22:31:53 2026] [DEBUG] Content: Training Ended
+[Wed Jun  3 22:31:53 2026] [INFO] [Client 2] Finished training. Sample size: 31500
+[Wed Jun  3 22:31:57 2026] [INFO] Client connected with socket id: 8
+[Wed Jun  3 22:31:59 2026] [DEBUG] Code: 1
+[Wed Jun  3 22:31:59 2026] [DEBUG] Content: Training Ended
+[Wed Jun  3 22:31:59 2026] [INFO] [Client 1] Finished training. Sample size: 31500
+[Wed Jun  3 22:31:59 2026] [INFO] [RoundTimer] training_time_ms: 42871
+[Wed Jun  3 22:31:59 2026] [INFO] All clients finished. Aggregating...
+[Wed Jun  3 22:31:59 2026] [INFO] [NormClipping] Disabled. Passing all 2 client(s) through.
+[Wed Jun  3 22:31:59 2026] [INFO] [Aggregator] comm_time_ms: 620
+[Wed Jun  3 22:31:59 2026] [INFO] [Aggregator] aggregation_time_ms: 0
+[Wed Jun  3 22:31:59 2026] [INFO] [EXPORTER] Running: PYTHONPATH=code python3 -m FedSolPython.scripts.build_and_save "input_server/config.json"
+[2026-06-03 22:32:01] [INFO] Starting build from config: input_server/config.json
+[2026-06-03 22:32:01] [INFO] Build/Save completed successfully: output_server/models/model_20260603_223201.pt
+[Wed Jun  3 22:32:01 2026] [INFO] [EXPORTER] Model exported successfully
+[Wed Jun  3 22:32:01 2026] [INFO] [RoundTimer] round_total_ms: 45598
+[Wed Jun  3 22:32:01 2026] [INFO] [RoundTimer] Timing saved -> output_server/globalResults/stats/timing_2026-06-03_22-32-01.json
+[Wed Jun  3 22:32:01 2026] [INFO] [SERVER] Completed one epoch. Remaining: 1
+[Wed Jun  3 22:32:01 2026] [INFO] [RoundTimer] Round started.
+[Wed Jun  3 22:32:40 2026] [INFO] Client connected with socket id: 7
+[Wed Jun  3 22:32:42 2026] [DEBUG] Code: 1
+[Wed Jun  3 22:32:42 2026] [DEBUG] Content: Training Ended
+[Wed Jun  3 22:32:42 2026] [INFO] [Client 2] Finished training. Sample size: 31500
+[Wed Jun  3 22:32:42 2026] [INFO] Client connected with socket id: 8
+[Wed Jun  3 22:32:44 2026] [DEBUG] Code: 1
+[Wed Jun  3 22:32:44 2026] [DEBUG] Content: Training Ended
+[Wed Jun  3 22:32:44 2026] [INFO] [Client 1] Finished training. Sample size: 31500
+[Wed Jun  3 22:32:44 2026] [INFO] [RoundTimer] training_time_ms: 42748
+[Wed Jun  3 22:32:44 2026] [INFO] All clients finished. Aggregating...
+[Wed Jun  3 22:32:45 2026] [INFO] [NormClipping] Disabled. Passing all 2 client(s) through.
+[Wed Jun  3 22:32:45 2026] [INFO] [Aggregator] comm_time_ms: 668
+[Wed Jun  3 22:32:45 2026] [INFO] [Aggregator] aggregation_time_ms: 1
+[Wed Jun  3 22:32:45 2026] [INFO] [EXPORTER] Running: PYTHONPATH=code python3 -m FedSolPython.scripts.build_and_save "input_server/config.json"
+[2026-06-03 22:32:46] [INFO] Starting build from config: input_server/config.json
+[2026-06-03 22:32:46] [INFO] Build/Save completed successfully: output_server/models/model_20260603_223246.pt
+[Wed Jun  3 22:32:47 2026] [INFO] [EXPORTER] Model exported successfully
+[Wed Jun  3 22:32:47 2026] [INFO] [RoundTimer] round_total_ms: 45533
+[Wed Jun  3 22:32:47 2026] [INFO] [RoundTimer] Timing saved -> output_server/globalResults/stats/timing_2026-06-03_22-32-47.json
+[Wed Jun  3 22:32:47 2026] [INFO] [SERVER] Completed one epoch. Remaining: 0
+[Wed Jun  3 22:32:47 2026] [INFO] [SERVER] Training finished.
+[Wed Jun  3 22:34:03 2026] [INFO] [EVALUATOR] Running evaluation script: evaluate
+[Wed Jun  3 22:34:09 2026] [INFO] [EVALUATOR] Evaluation completed successfully
+[Wed Jun  3 22:34:11 2026] [WARNING] overwrite current model weights.
+[Wed Jun  3 22:34:12 2026] [INFO] Random weights generated and loaded into model.
+[Wed Jun  3 22:34:16 2026] [INFO] Starting training...
+[Wed Jun  3 22:34:16 2026] [INFO] [RoundTimer] Round started.
+[Wed Jun  3 22:34:57 2026] [INFO] Client connected with socket id: 7
+[Wed Jun  3 22:34:58 2026] [INFO] Client connected with socket id: 8
+[Wed Jun  3 22:34:59 2026] [DEBUG] Code: 1
+[Wed Jun  3 22:34:59 2026] [DEBUG] Content: Training Ended
+[Wed Jun  3 22:34:59 2026] [INFO] [Client 2] Finished training. Sample size: 31500
+[Wed Jun  3 22:35:00 2026] [DEBUG] Code: 1
+[Wed Jun  3 22:35:00 2026] [DEBUG] Content: Training Ended
+[Wed Jun  3 22:35:00 2026] [INFO] [Client 1] Finished training. Sample size: 31500
+[Wed Jun  3 22:35:00 2026] [INFO] [RoundTimer] training_time_ms: 43615
+[Wed Jun  3 22:35:00 2026] [INFO] All clients finished. Aggregating...
+[Wed Jun  3 22:35:00 2026] [INFO] [NormClipping] Disabled. Passing all 2 client(s) through.
+[Wed Jun  3 22:35:00 2026] [INFO] [Aggregator] comm_time_ms: 526
+[Wed Jun  3 22:35:00 2026] [INFO] [Aggregator] aggregation_time_ms: 1
+[Wed Jun  3 22:35:00 2026] [INFO] [EXPORTER] Running: PYTHONPATH=code python3 -m FedSolPython.scripts.build_and_save "input_server/config.json"
+[2026-06-03 22:35:02] [INFO] Starting build from config: input_server/config.json
+[2026-06-03 22:35:02] [INFO] Build/Save completed successfully: output_server/models/model_20260603_223502.pt
+[Wed Jun  3 22:35:03 2026] [INFO] [EXPORTER] Model exported successfully
+[Wed Jun  3 22:35:03 2026] [INFO] [RoundTimer] round_total_ms: 47076
+[Wed Jun  3 22:35:03 2026] [INFO] [RoundTimer] Timing saved -> output_server/globalResults/stats/timing_2026-06-03_22-35-03.json
+[Wed Jun  3 22:35:03 2026] [INFO] [SERVER] Completed one epoch. Remaining: 4
+[Wed Jun  3 22:35:03 2026] [INFO] [RoundTimer] Round started.
+[Wed Jun  3 22:35:42 2026] [INFO] Client connected with socket id: 7
+[Wed Jun  3 22:35:43 2026] [INFO] Client connected with socket id: 8
+[Wed Jun  3 22:35:44 2026] [DEBUG] Code: 1
+[Wed Jun  3 22:35:44 2026] [DEBUG] Content: Training Ended
+[Wed Jun  3 22:35:44 2026] [INFO] [Client 2] Finished training. Sample size: 31500
+[Wed Jun  3 22:35:44 2026] [DEBUG] Code: 1
+[Wed Jun  3 22:35:44 2026] [DEBUG] Content: Training Ended
+[Wed Jun  3 22:35:44 2026] [INFO] [Client 1] Finished training. Sample size: 31500
+[Wed Jun  3 22:35:44 2026] [INFO] [RoundTimer] training_time_ms: 41248
+[Wed Jun  3 22:35:44 2026] [INFO] All clients finished. Aggregating...
+[Wed Jun  3 22:35:45 2026] [INFO] [NormClipping] Disabled. Passing all 2 client(s) through.
+[Wed Jun  3 22:35:45 2026] [INFO] [Aggregator] comm_time_ms: 721
+[Wed Jun  3 22:35:45 2026] [INFO] [Aggregator] aggregation_time_ms: 1
+[Wed Jun  3 22:35:45 2026] [INFO] [EXPORTER] Running: PYTHONPATH=code python3 -m FedSolPython.scripts.build_and_save "input_server/config.json"
+[2026-06-03 22:35:47] [INFO] Starting build from config: input_server/config.json
+[2026-06-03 22:35:48] [INFO] Build/Save completed successfully: output_server/models/model_20260603_223548.pt
+[Wed Jun  3 22:35:48 2026] [INFO] [EXPORTER] Model exported successfully
+[Wed Jun  3 22:35:48 2026] [INFO] [RoundTimer] round_total_ms: 44950
+[Wed Jun  3 22:35:48 2026] [INFO] [RoundTimer] Timing saved -> output_server/globalResults/stats/timing_2026-06-03_22-35-48.json
+[Wed Jun  3 22:35:48 2026] [INFO] [SERVER] Completed one epoch. Remaining: 3
+[Wed Jun  3 22:35:48 2026] [INFO] [RoundTimer] Round started.
+[Wed Jun  3 22:36:24 2026] [INFO] Client connected with socket id: 7
+[Wed Jun  3 22:36:25 2026] [DEBUG] Code: 1
+[Wed Jun  3 22:36:25 2026] [DEBUG] Content: Training Ended
+[Wed Jun  3 22:36:25 2026] [INFO] [Client 1] Finished training. Sample size: 31500
+[Wed Jun  3 22:36:27 2026] [INFO] Client connected with socket id: 8
+[Wed Jun  3 22:36:28 2026] [DEBUG] Code: 1
+[Wed Jun  3 22:36:28 2026] [DEBUG] Content: Training Ended
+[Wed Jun  3 22:36:28 2026] [INFO] [Client 2] Finished training. Sample size: 31500
+[Wed Jun  3 22:36:28 2026] [INFO] [RoundTimer] training_time_ms: 39854
+[Wed Jun  3 22:36:28 2026] [INFO] All clients finished. Aggregating...
+[Wed Jun  3 22:36:28 2026] [INFO] [NormClipping] Disabled. Passing all 2 client(s) through.
+[Wed Jun  3 22:36:28 2026] [INFO] [Aggregator] comm_time_ms: 391
+[Wed Jun  3 22:36:28 2026] [INFO] [Aggregator] aggregation_time_ms: 2
+[Wed Jun  3 22:36:29 2026] [INFO] [EXPORTER] Running: PYTHONPATH=code python3 -m FedSolPython.scripts.build_and_save "input_server/config.json"
+[2026-06-03 22:36:31] [INFO] Starting build from config: input_server/config.json
+[2026-06-03 22:36:32] [INFO] Build/Save completed successfully: output_server/models/model_20260603_223632.pt
+[Wed Jun  3 22:36:32 2026] [INFO] [EXPORTER] Model exported successfully
+[Wed Jun  3 22:36:32 2026] [INFO] [RoundTimer] round_total_ms: 44236
+[Wed Jun  3 22:36:32 2026] [INFO] [RoundTimer] Timing saved -> output_server/globalResults/stats/timing_2026-06-03_22-36-32.json
+[Wed Jun  3 22:36:32 2026] [INFO] [SERVER] Completed one epoch. Remaining: 2
+[Wed Jun  3 22:36:32 2026] [INFO] [RoundTimer] Round started.
+[Wed Jun  3 22:37:08 2026] [INFO] Client connected with socket id: 7
+[Wed Jun  3 22:37:09 2026] [DEBUG] Code: 1
+[Wed Jun  3 22:37:09 2026] [DEBUG] Content: Training Ended
+[Wed Jun  3 22:37:09 2026] [INFO] [Client 2] Finished training. Sample size: 31500
+[Wed Jun  3 22:37:09 2026] [INFO] Client connected with socket id: 8
+[Wed Jun  3 22:37:10 2026] [DEBUG] Code: 1
+[Wed Jun  3 22:37:10 2026] [DEBUG] Content: Training Ended
+[Wed Jun  3 22:37:10 2026] [INFO] [Client 1] Finished training. Sample size: 31500
+[Wed Jun  3 22:37:10 2026] [INFO] [RoundTimer] training_time_ms: 37917
+[Wed Jun  3 22:37:10 2026] [INFO] All clients finished. Aggregating...
+[Wed Jun  3 22:37:11 2026] [INFO] [NormClipping] Disabled. Passing all 2 client(s) through.
+[Wed Jun  3 22:37:11 2026] [INFO] [Aggregator] comm_time_ms: 498
+[Wed Jun  3 22:37:11 2026] [INFO] [Aggregator] aggregation_time_ms: 1
+[Wed Jun  3 22:37:11 2026] [INFO] [EXPORTER] Running: PYTHONPATH=code python3 -m FedSolPython.scripts.build_and_save "input_server/config.json"
+[2026-06-03 22:37:13] [INFO] Starting build from config: input_server/config.json
+[2026-06-03 22:37:13] [INFO] Build/Save completed successfully: output_server/models/model_20260603_223713.pt
+[Wed Jun  3 22:37:13 2026] [INFO] [EXPORTER] Model exported successfully
+[Wed Jun  3 22:37:13 2026] [INFO] [RoundTimer] round_total_ms: 40972
+[Wed Jun  3 22:37:13 2026] [INFO] [RoundTimer] Timing saved -> output_server/globalResults/stats/timing_2026-06-03_22-37-13.json
+[Wed Jun  3 22:37:13 2026] [INFO] [SERVER] Completed one epoch. Remaining: 1
+[Wed Jun  3 22:37:13 2026] [INFO] [RoundTimer] Round started.
+[Wed Jun  3 22:37:48 2026] [INFO] Client connected with socket id: 7
+[Wed Jun  3 22:37:49 2026] [DEBUG] Code: 1
+[Wed Jun  3 22:37:49 2026] [DEBUG] Content: Training Ended
+[Wed Jun  3 22:37:49 2026] [INFO] [Client 2] Finished training. Sample size: 31500
+[Wed Jun  3 22:37:49 2026] [INFO] Client connected with socket id: 8
+[Wed Jun  3 22:37:50 2026] [DEBUG] Code: 1
+[Wed Jun  3 22:37:50 2026] [DEBUG] Content: Training Ended
+[Wed Jun  3 22:37:50 2026] [INFO] [Client 1] Finished training. Sample size: 31500
+[Wed Jun  3 22:37:50 2026] [INFO] [RoundTimer] training_time_ms: 36678
+[Wed Jun  3 22:37:50 2026] [INFO] All clients finished. Aggregating...
+[Wed Jun  3 22:37:50 2026] [INFO] [NormClipping] Disabled. Passing all 2 client(s) through.
+[Wed Jun  3 22:37:50 2026] [INFO] [Aggregator] comm_time_ms: 360
+[Wed Jun  3 22:37:50 2026] [INFO] [Aggregator] aggregation_time_ms: 4
+[Wed Jun  3 22:37:51 2026] [INFO] [EXPORTER] Running: PYTHONPATH=code python3 -m FedSolPython.scripts.build_and_save "input_server/config.json"
+[2026-06-03 22:37:53] [INFO] Starting build from config: input_server/config.json
+[2026-06-03 22:37:53] [INFO] Build/Save completed successfully: output_server/models/model_20260603_223753.pt
+[Wed Jun  3 22:37:53 2026] [INFO] [EXPORTER] Model exported successfully
+[Wed Jun  3 22:37:53 2026] [INFO] [RoundTimer] round_total_ms: 40027
+[Wed Jun  3 22:37:53 2026] [INFO] [RoundTimer] Timing saved -> output_server/globalResults/stats/timing_2026-06-03_22-37-53.json
+[Wed Jun  3 22:37:53 2026] [INFO] [SERVER] Completed one epoch. Remaining: 0
+[Wed Jun  3 22:37:53 2026] [INFO] [SERVER] Training finished.
+[Wed Jun  3 22:46:31 2026] [INFO] Client starting...
+[Wed Jun  3 22:46:31 2026] [INFO] [Server] Backdoor defense is DISABLED.
+[Wed Jun  3 22:46:31 2026] [INFO] [MODE] INITIALIZATION
+[Wed Jun  3 22:46:38 2026] [INFO] [Console] Operator authenticated.
+[Wed Jun  3 22:46:40 2026] [INFO] Client connected with socket id: 5
+[Wed Jun  3 22:46:40 2026] [DEBUG] Code: 0
+[Wed Jun  3 22:46:40 2026] [DEBUG] Content: Auth
+[Wed Jun  3 22:46:40 2026] [INFO] [Client 2] Authentication success
+[Wed Jun  3 22:46:40 2026] [ERROR] [Client 2] PT hash mismatch — model rejected
+[Wed Jun  3 22:46:40 2026] [INFO] Client connected with socket id: 6
+[Wed Jun  3 22:46:40 2026] [DEBUG] Code: 99
+[Wed Jun  3 22:46:40 2026] [DEBUG] Content: Error
+[Wed Jun  3 22:46:40 2026] [ERROR] [Protocol] Error received: [Client::listener] PT handshake failed
+[Wed Jun  3 22:46:40 2026] [ERROR] [Server] Client error: [Client::listener] PT handshake failed
+[Wed Jun  3 22:46:57 2026] [INFO] Client connected with socket id: 5
+[Wed Jun  3 22:46:57 2026] [DEBUG] Code: 0
+[Wed Jun  3 22:46:57 2026] [DEBUG] Content: Auth
+[Wed Jun  3 22:46:57 2026] [INFO] [Client 1] Authentication success
+[Wed Jun  3 22:46:57 2026] [ERROR] [Client 1] PT hash mismatch — model rejected
+[Wed Jun  3 22:46:57 2026] [INFO] Client connected with socket id: 6
+[Wed Jun  3 22:46:57 2026] [DEBUG] Code: 99
+[Wed Jun  3 22:46:57 2026] [DEBUG] Content: Error
+[Wed Jun  3 22:46:57 2026] [ERROR] [Protocol] Error received: [Client::listener] PT handshake failed
+[Wed Jun  3 22:46:57 2026] [ERROR] [Server] Client error: [Client::listener] PT handshake failed
+[Wed Jun  3 23:07:12 2026] [INFO] Client connected with socket id: 5
+[Wed Jun  3 23:07:12 2026] [DEBUG] Code: 0
+[Wed Jun  3 23:07:12 2026] [DEBUG] Content: Auth
+[Wed Jun  3 23:07:12 2026] [INFO] [Client 2] Authentication success
+[Wed Jun  3 23:07:12 2026] [INFO] [Client 2] PT hash verified
+[Wed Jun  3 23:07:12 2026] [INFO] [Client 2] Registered
+[Wed Jun  3 23:07:12 2026] [INFO] [MODE] READY
+[Wed Jun  3 23:07:20 2026] [INFO] Client connected with socket id: 6
+[Wed Jun  3 23:07:20 2026] [DEBUG] Code: 0
+[Wed Jun  3 23:07:20 2026] [DEBUG] Content: Auth
+[Wed Jun  3 23:07:20 2026] [INFO] [Client 1] Authentication success
+[Wed Jun  3 23:07:20 2026] [INFO] [Client 1] PT hash verified
+[Wed Jun  3 23:07:20 2026] [INFO] [Client 1] Registered
+[Wed Jun  3 23:33:21 2026] [INFO] [SERVER] pt_path mode — weight validation skipped.
+[Wed Jun  3 23:33:25 2026] [INFO] Starting training...
+[Wed Jun  3 23:33:25 2026] [INFO] [RoundTimer] Round started.
+[Wed Jun  3 23:43:49 2026] [INFO] Client connected with socket id: 7
+[Wed Jun  3 23:43:54 2026] [DEBUG] Code: 1
+[Wed Jun  3 23:43:54 2026] [DEBUG] Content: Training Ended
+[Wed Jun  3 23:43:54 2026] [INFO] [Client 2] Finished training. Sample size: 288
+[Wed Jun  3 23:44:53 2026] [INFO] Client connected with socket id: 8
+[Wed Jun  3 23:44:58 2026] [DEBUG] Code: 1
+[Wed Jun  3 23:44:58 2026] [DEBUG] Content: Training Ended
+[Wed Jun  3 23:44:58 2026] [INFO] [Client 1] Finished training. Sample size: 288
+[Wed Jun  3 23:44:58 2026] [INFO] [RoundTimer] training_time_ms: 693522
+[Wed Jun  3 23:44:58 2026] [INFO] All clients finished. Aggregating...
+[Wed Jun  3 23:45:01 2026] [INFO] [NormClipping] Disabled. Passing all 2 client(s) through.
+[Wed Jun  3 23:45:01 2026] [INFO] [Aggregator] comm_time_ms: 3268
+[Wed Jun  3 23:45:01 2026] [INFO] [Aggregator] aggregation_time_ms: 22
+[Wed Jun  3 23:45:04 2026] [INFO] [EXPORTER] Running: PYTHONPATH=code python3 -m FedSolPython.scripts.build_and_save "input_server/config.json"
+[2026-06-03 23:45:07] [INFO] Starting build from config: input_server/config.json
+[2026-06-03 23:45:09] [INFO] pt_path mode: loading model from 'input_server/model.pt'
+[2026-06-03 23:45:12] [INFO] Federated weights applied to YOLO (nc=1): 3,021,443 floats
+[2026-06-03 23:45:12] [INFO] Archived model saved to: output_server/models/model_20260603_234512.pt
+[2026-06-03 23:45:12] [INFO] Updated .pt written back to: input_server/model.pt
+[Wed Jun  3 23:45:13 2026] [INFO] [EXPORTER] Model exported successfully
+[Wed Jun  3 23:45:13 2026] [INFO] [RoundTimer] round_total_ms: 708224
+[Wed Jun  3 23:45:13 2026] [INFO] [RoundTimer] Timing saved -> output_server/globalResults/stats/timing_2026-06-03_23-45-13.json
+[Wed Jun  3 23:45:13 2026] [INFO] [SERVER] Completed one epoch. Remaining: 1
+[Wed Jun  3 23:45:13 2026] [INFO] [RoundTimer] Round started.
+[Wed Jun  3 23:59:35 2026] [INFO] Client connected with socket id: 7
+[Wed Jun  3 23:59:40 2026] [DEBUG] Code: 1
+[Wed Jun  3 23:59:40 2026] [DEBUG] Content: Training Ended
+[Wed Jun  3 23:59:40 2026] [INFO] [Client 2] Finished training. Sample size: 288
+[Thu Jun  4 00:00:28 2026] [INFO] Client connected with socket id: 8
+[Thu Jun  4 00:00:32 2026] [DEBUG] Code: 1
+[Thu Jun  4 00:00:32 2026] [DEBUG] Content: Training Ended
+[Thu Jun  4 00:00:32 2026] [INFO] [Client 1] Finished training. Sample size: 288
+[Thu Jun  4 00:00:32 2026] [INFO] [RoundTimer] training_time_ms: 919390
+[Thu Jun  4 00:00:32 2026] [INFO] All clients finished. Aggregating...
+[Thu Jun  4 00:00:37 2026] [INFO] [NormClipping] Disabled. Passing all 2 client(s) through.
+[Thu Jun  4 00:00:37 2026] [INFO] [Aggregator] comm_time_ms: 4326
+[Thu Jun  4 00:00:37 2026] [INFO] [Aggregator] aggregation_time_ms: 6
+[Thu Jun  4 00:00:41 2026] [INFO] [EXPORTER] Running: PYTHONPATH=code python3 -m FedSolPython.scripts.build_and_save "input_server/config.json"
+[2026-06-04 00:00:45] [INFO] Starting build from config: input_server/config.json
+[2026-06-04 00:00:47] [INFO] pt_path mode: loading model from 'input_server/model.pt'
+[2026-06-04 00:00:51] [INFO] Federated weights applied to YOLO (nc=1): 3,021,443 floats
+[2026-06-04 00:00:51] [INFO] Archived model saved to: output_server/models/model_20260604_000051.pt
+[2026-06-04 00:00:51] [INFO] Updated .pt written back to: input_server/model.pt
+[Thu Jun  4 00:00:52 2026] [INFO] [EXPORTER] Model exported successfully
+[Thu Jun  4 00:00:52 2026] [INFO] [RoundTimer] round_total_ms: 938847
+[Thu Jun  4 00:00:52 2026] [INFO] [RoundTimer] Timing saved -> output_server/globalResults/stats/timing_2026-06-04_00-00-52.json
+[Thu Jun  4 00:00:52 2026] [INFO] [SERVER] Completed one epoch. Remaining: 0
+[Thu Jun  4 00:00:52 2026] [INFO] [SERVER] Training finished.

@@ -1,6 +1,6 @@
 {
     "client": {
-        "id": 3
+        "id": 2
     },
     "connection": {
         "password": "federated123",
@@ -40,14 +40,13 @@
         "task_type": "object_detection"
     },
     "model": {
-        "id": 4,
         "pt_path": "input_client/model.pt"
     },
     "training": {
-        "epochs": 2,
-        "batch_size": 2,
+        "epochs": 1,
+        "batch_size": 8,
         "imgsz": 320,
-        "lr": 0.01,
+        "lr": 0.001,
         "optimizer": "sgd",
         "loss": {
             "name": "yolo_default",
